@@ -1,0 +1,127 @@
+---
+title: "1. Data"
+author: "Ross Dahlke"
+date: "9/25/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(rtweet)
+library(Rfacebook)
+```
+
+# Social Media Data
+
+## Data Collection
+
+```{r}
+all_social <- read_csv("~/git/political_donor_motivations/data/candidates_social_media.csv") %>% 
+  janitor::clean_names()  %>% 
+  mutate_all(funs(str_replace(., "\\?", ""))) %>% 
+  mutate_all(funs(str_replace(., "\\@", ""))) %>% 
+  mutate_all(funs(str_replace(., "\xa0", ""))) %>% 
+  mutate_all(funs(str_trim(.)))
+```
+
+## Twitter Data
+
+Note: This data was pulled in October 2017. Certain data may not be available now (data pulled at that time included in this repo and accessed later in this document). Also, you will have to set up your own tokens.
+
+```{r}
+twitter_campaign_users <- all_social %>% 
+  filter(!is.na(twitter_campaign)) %>% 
+  pull(twitter_campaign) 
+
+twitter_campaign_tweets <- tibble()
+for (i in twitter_campaign_users) {
+  tryCatch({
+  print(i)
+  temp <- get_timeline(i, n=3200, retryonratelimit=T)
+  twitter_campaign_tweets <- rbind(twitter_campaign_tweets, temp) %>% 
+    mutate(sm = "twitter",
+           type = "campaign")
+  }, error=function(e){})}
+
+
+twitter_official_users <- all_social %>% 
+  filter(!is.na(twitter_official)) %>% 
+  pull(twitter_official) 
+
+twitter_official_tweets <- tibble()
+for (i in twitter_official_users) {
+  tryCatch({
+  print(i)
+  temp <- get_timeline(i, n=3200, retryonratelimit=T)
+  twitter_official_tweets <- rbind(twitter_official_tweets, temp) %>% 
+    mutate(sm = "twitter",
+           type = "official")
+  }, error=function(e){})}
+
+```
+
+# Facebook Data
+
+Note: This API has been severely limited since this data was initially pulled
+
+```{r}
+facebook_campaign_users <- all_social %>% 
+  filter(!is.na(facebook_campaign)) %>% 
+  pull(facebook_campaign) 
+
+facebook_campaign_posts <- tibble()
+for (i in facebook_campaign_users) {
+  tryCatch({
+  print(i)
+  temp <- get_timeline(i, n=3200, retryonratelimit=T)
+  facebook_campaign_posts <- rbind(facebook_campaign_posts, temp) %>% 
+    mutate(sm = "facebook",
+           type = "campaign")
+  }, error=function(e){})}
+facebook_campaign_users <- all_social %>% 
+  filter(!is.na(facebook_campaign)) %>% 
+  pull(facebook_campaign) 
+
+facebook_official_users <- all_social %>% 
+  filter(!is.na(facebook_official)) %>% 
+  pull(facebook_official) 
+
+facebook_official_posts <- tibble()
+for (i in facebook_official_users) {
+  tryCatch({
+  print(i)
+  temp <- get_timeline(i, n=3200, retryonratelimit=T)
+  facebook_campaign_posts <- rbind(facebook_official_posts, temp) %>% 
+    mutate(sm = "facebook",
+           type = "official")
+  }, error=function(e){})}
+
+
+```
+
+```{r}
+twitter <- twitter_campaign_tweets %>% 
+  rbind(twitter_official_tweets) %>% 
+  filter(created_at >= "2015-01-01" & created_at <= "2016-11-08") %>% 
+  select(screen_name, text, sm, type, date = created_at) %>% 
+  filter(!is.na(text))
+
+facebook <- facebook_campaign_posts %>% 
+  rbind(facebook_official_posts) %>% 
+  filter(created_time >= "2015-01-01" & created_time <= "2016-11-08") %>% 
+  select(screen_name = from_name, text = message, sm, type, date = created_time) %>% 
+  filter(!is.na(message))
+
+tw_fb <- twitter %>% 
+  rbind(facebook)
+```
+
+```{r}
+social_media <- all_social %>% 
+  gather("type", "screen_name", -target) %>% 
+  filter(!is.na(screen_name)) %>% 
+  select(-type) %>% 
+  inner_join(tw_fb, by = "screen_name") %>% 
+  filter(target != "Friends of Chris Larson")
+```
