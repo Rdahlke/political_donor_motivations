@@ -1,0 +1,44 @@
+---
+title: "4. Scoring"
+author: "Ross Dahlke"
+date: "9/25/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+options(scipen = 9999)
+```
+
+```{r}
+ds <- read_csv("~/git/political_donor_motivations/data/2016_donations_w_clusters.csv")
+```
+
+```{r}
+total <- ds %>%
+  group_by(target, office) %>%
+  summarize(total = sum(contribution)) %>% 
+  filter(!is.na(target))
+
+donor_scores <- ds %>%
+  group_by(target, office, modularity_class) %>%
+  summarize(cluster_contributions = sum(contribution)) %>% 
+  filter(!is.na(target)) %>% 
+  left_join(total) %>%
+  mutate(candidate_cluster = (cluster_contributions/total_contributions)*100, 
+         target_cluster = case_when(
+           # Not sure where the State Assemly typo came from!
+           office == "State Assemly" ~ cluster_contributions / 57446.74 * 100,
+           office == "State Senate" ~ cluster_contributions / 336868.93 * 100
+         ),
+         cluster_score = candidate_cluster * target_cluster)
+           
+```
+
+```{r}
+saveRDS(donor_scores, "~/git/political_donor_motivations/data/candidate_donor_scores.RDA")
+```
+
+
+
