@@ -17,7 +17,6 @@ library(quanteda)
 ```{r}
 coded <- read_csv("~/git/political_donor_motivations/data/posts_coded.csv") %>% 
   gather("topic", "value", -text, na.rm = T) %>% 
-  select(text, topic) %>% 
   sample_frac(1)
 ```
 
@@ -57,187 +56,69 @@ predicted <- predict(nb_classifier, test_dfm)
 ```
 
 ```{r}
-predicted_2 <- tibble(text = test_data$text, predicted = predicted$nb.predicted)
-```
-
-```{r}
-uncoded <- read_csv("~/git/political_donor_motivations/data/posts_uncoded.csv")
+predicted_2 <- cbind(test_data, predicted = predicted$nb.predicted)
 ```
 
 ```{r}
 predicted_2 %>% 
-  right_join(uncoded, by = c("text"))
+  mutate(correct = if_else(topic == predicted, 1, 0)) %>% 
+  summarize(correct = sum(correct),
+            count = n(),
+            per = correct / count)
 ```
 
 
 ```{r}
+uncoded <- read_csv("~/git/political_donor_motivations/data/posts_uncoded.csv") %>% 
+  mutate(topic = NA)
 
-sm <- read.csv("socialmedia.thesis.csv")
+all_posts <- coded %>% 
+  select(-value) %>% 
+  rbind(uncoded %>% select(text, topic))
 
-df <- merge(sm, pred.2, by="text")
+all_corpus <- corpus(all_posts$text)
+docvars(all_corpus) <- all_posts$topic
+  
+all_dfm <- dfm(all_corpus, tolower = T, remove = stopwords(), remove_punct = T, remove_symbols = T) %>% 
+  dfm_trim(min_count = 2, min_docfreq = 1) %>% 
+  dfm_weight(type = "tfidf")
 
-df.2 <- df[!duplicated(df[c("text","target","date","predicted")]),]
+train_dfm <- all_dfm[1:split_n,]
+train_data <- all_posts[1:split_n,]
 
-ms.1 <- df.2 %>%
-  group_by(target) %>%
-  summarize(total=n())
-
-ms.2 <- df.2 %>%
-  group_by(target, predicted) %>%
-  summarize(topic_count=n()) %>%
-  left_join(ms.1) %>%
-  mutate(candidate_topic=topic_count/total*100, target_topic=topic_count/210*100, topic_score=candidate_topic*target_topic) %>%
-  filter(!str_detect(predicted, "other"))
-
-ggplot(ms.2, aes(topic_score)) +
-  geom_histogram()
-
-saveRDS(ms.2, "topic_scores.RDA")
+uncoded_start <- nrow(all_posts)-nrow(uncoded)+1
+uncoded_dfm <- all_dfm[uncoded_start:nrow(all_posts),]
 ```
 
+```{r}
+nb_classifier <- textmodel_nb(train_dfm, train_data$topic, force = T)
+
+uncoded_predicted <- cbind(uncoded, predicted = predict(nb_classifier, uncoded_dfm)$nb.predicted)
+```
+
+```{r}
+total_counts <- uncoded_predicted %>%
+  group_by(target) %>%
+  summarize(total_count=n())
+
+topic_scores <- uncoded_predicted %>% 
+  group_by(target, predicted) %>% 
+  summarize(topic_count = n()) %>% 
+  left_join(total_counts) %>% 
+  mutate(candidate_topic=topic_count/total_count*100, 
+         target_topic=topic_count/210*100, 
+         topic_score=candidate_topic*target_topic)%>%
+  filter(!str_detect(predicted, "other"))
+```
+
+```{r}
+topic_scores %>% 
+  arrange(desc(topic_score))
+```
 
 
 ```{r}
-##### sLDA model
-library(quanteda)
-library(reshape2)
-library(data.table)
-
-df <- read.csv("seniorthesis.4.csv")
-df.2 <- df
-df.2[is.na(df.2)] <- ""
-df <- melt(df, id=c("text"), variable.name="topic", value.name="value")
-
-df <- subset(df, df$value=="1")
-df <- df[sample(nrow(df)),]
-
-df <- df[1:12428,c(1:2)]
-df$text <- as.character(df$text)
-df$topic <- as.character(df$topic)
-
-
-table(df$topic)
-
-text.corpus <- corpus(df$text)
-summary(text.corpus)
-docvars(text.corpus) <- df$topic
-head(text.corpus)
-summary(text.corpus)
-
-#separating Train and test data
-traindata <- df[1:8285,]
-testdata <- df[8286:12428,]
-
-
-
-text.dfm <- dfm(text.corpus, tolower = TRUE, remove=stopwords(), remove_punct=T, remove_symbols=T)  #generating document freq matrix
-text.dfm <- dfm_trim(text.dfm, min_count = 2, min_docfreq = 1)  
-text.dfm <- dfm_weight(text.dfm, type = "tfidf") 
-
-head(text.dfm)
-
-#trining and testing data of dfm 
-text.dfm.train<-text.dfm[1:8285,]
-head(text.dfm.train)
-text.dfm.test<-text.dfm[8286:12428,]
-head(text.dfm.test[1:10])
-
-nb.classifier<-textmodel_nb(text.dfm.train,traindata$topic)
-nb.classifier
-
-
-pred<-predict(nb.classifier,text.dfm.test)
-
-pred.2 <- data.table(text=testdata$text, predicted=pred$nb.predicted,actual=testdata$topic)
-pred.2$match <- ifelse(pred.2$predicted==pred.2$actual,1,0)
-write.csv(pred.2, "model_results.csv", row.names = F)
-
-
-
-##### ALL DATA
-df <- read.csv("seniorthesis.4.csv")
-df.2 <- df
-df.2[is.na(df.2)] <- ""
-df <- melt(df, id=c("text"), variable.name="topic", value.name="value")
-
-df <- subset(df, df$value=="1")
-df <- df[sample(nrow(df)),]
-
-df <- df[1:12428,c(1:2)]
-
-df.1 <- read.csv("sm.posts.csv")
-
-df <- rbind(df, df.1)
-
-df$text <- as.character(df$text)
-df$topic <- as.character(df$topic)
-
-
-table(df$topic)
-
-text.corpus <- corpus(df$text)
-summary(text.corpus)
-docvars(text.corpus) <- df$topic
-head(text.corpus)
-summary(text.corpus)
-
-#separating Train and test data
-traindata <- df[1:12428,]
-testdata <- df[12429:95279,]
-
-
-
-text.dfm <- dfm(text.corpus, tolower = TRUE, remove=stopwords(), remove_punct=T, remove_symbols=T)  #generating document freq matrix
-text.dfm <- dfm_trim(text.dfm, min_count = 2, min_docfreq = 1)  
-text.dfm <- dfm_weight(text.dfm, type = "tfidf") 
-
-head(text.dfm)
-
-#trining and testing data of dfm 
-text.dfm.train<-text.dfm[1:12428,]
-head(text.dfm.train)
-text.dfm.test<-text.dfm[12429:95279,]
-head(text.dfm.test[1:10])
-
-nb.classifier<-textmodel_nb(text.dfm.train,traindata$topic)
-nb.classifier
-
-
-pred<-predict(nb.classifier,text.dfm.test)
-
-pred.2 <- data.table(text=testdata$text, predicted=pred$nb.predicted)
-
-sm <- read.csv("socialmedia.thesis.csv")
-
-df <- merge(sm, pred.2, by="text")
-
-df.2 <- df[!duplicated(df[c("text","target","date","predicted")]),]
-
-ms.1 <- df.2 %>%
-  group_by(target) %>%
-  summarize(total=n())
-
-ms.2 <- df.2 %>%
-  group_by(target, predicted) %>%
-  summarize(topic_count=n()) %>%
-  left_join(ms.1) %>%
-  mutate(candidate_topic=topic_count/total*100, target_topic=topic_count/210*100, topic_score=candidate_topic*target_topic) %>%
-  filter(!str_detect(predicted, "other"))
-
-ggplot(ms.2, aes(topic_score)) +
-  geom_histogram()
-
-saveRDS(ms.2, "topic_scores.RDA")
-
-
-
-
-
-
-
+saveRDS(topic_scores, "~/git/political_donor_motivations/data/candidate_topic_scores.RDA")
 ```
-
-
-
 
 
