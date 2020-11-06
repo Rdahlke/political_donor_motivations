@@ -1,0 +1,33 @@
+---
+output:
+  pdf_document:
+    # citation_package: biblatex
+    keep_tex: true
+    fig_caption: true
+    latex_engine: pdflatex
+    template: ../svm-latex-ms.tex
+title: ""
+thanks: ""
+author:
+- name: Ross Dahlke
+affiliation: Stanford University
+abstract: ""
+keywords: ""
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+geometry: margin=1in
+fontfamily: mathpazo
+fontsize: 12pt
+spacing: double
+bibliography: ../bibliography.bib
+biblio-style: apsr
+header-includes: \usepackage{graphicx}
+---
+
+Ross Dahlke
+
+My research studies how communication ecosystems impact individuals' collective-action behavior decisions. So far, I have focused on political donations. The predominant folk-theory of political donors is of smokey backrooms where donors trade money for favorable votes on legislation. In this access-oriented model of political donations donors are conceived as being a _causal_ mechanism in legislators taking particular policy stances. However, the story of political donations since the 2016 election has been of small-dollar, primarily online donors. These donors have changed the way that political campaigns execute fundraising operations. This shift in donors lends itself toward the "consumption" model of political donations instead of the "access-oriented" model.
+
+The consumption model of donors places contributions on a spectrum of political participation. In other words, donations can be seen as an extension of voting--a step towards greater participation in democracy. In this model, donors are _reactive_ to politicians. Donors decide to participate in political campaigns that they already agree with. These two models, the access-oriented and consumption, have conflicting causal orders. Under the access-oriented donor model, donors cause a change in politicians' policies. In the consumption model, politicians' policies attract donors. 
+
+My research question is: **Do donations from specific donors impact politicians' public support of policies or do does public support from politicians attract certain political donors?**
+

@@ -9,6 +9,7 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(quanteda)
+library(quanteda.textmodels)
 ```
 
 
@@ -18,18 +19,19 @@ library(quanteda)
 coded <- read_csv("~/git/political_donor_motivations/data/posts_coded.csv") %>% 
   gather("topic", "value", -text, na.rm = T) %>% 
   sample_frac(1)
+
 ```
 
 
 ```{r}
 text_corpus <- corpus(coded$text)
-docvars(text_corpus) <- coded$topic
+docvars(text_corpus, field = "topic") <- coded$topic
 ```
 
 ```{r}
 text_dfm <- dfm(text_corpus, tolower = T, remove = stopwords(), remove_punct = T, remove_symbols = T) %>% 
-  dfm_trim(min_count = 2, min_docfreq = 1) %>% 
-  dfm_weight(type = "tfidf")
+  dfm_trim(min_termfreqError = 2, min_docfreq = 1) %>% 
+  dfm_tfidf()
 
 split_n <- as.integer(nrow(coded) * 2 / 3)
 split_n_1 <- split_n + 1
@@ -44,7 +46,7 @@ test_dfm <- text_dfm[split_n_1:nrow(coded),]
 ```
 
 ```{r}
-nb_classifier <- textmodel_nb(train_dfm, train_data$topic, force = T)
+nb_classifier <- textmodel_nb(train_dfm, train_data$topic)
 ```
 
 ```{r}
@@ -52,11 +54,11 @@ nb_classifier
 ```
 
 ```{r}
-predicted <- predict(nb_classifier, test_dfm)
+predicted <- predict(nb_classifier, test_dfm, type = "class")
 ```
 
 ```{r}
-predicted_2 <- cbind(test_data, predicted = predicted$nb.predicted)
+predicted_2 <- cbind(test_data, tibble(predicted))
 ```
 
 ```{r}
@@ -77,11 +79,11 @@ all_posts <- coded %>%
   rbind(uncoded %>% select(text, topic))
 
 all_corpus <- corpus(all_posts$text)
-docvars(all_corpus) <- all_posts$topic
+docvars(all_corpus, field = "topic") <- all_posts$topic
   
 all_dfm <- dfm(all_corpus, tolower = T, remove = stopwords(), remove_punct = T, remove_symbols = T) %>% 
-  dfm_trim(min_count = 2, min_docfreq = 1) %>% 
-  dfm_weight(type = "tfidf")
+  dfm_trim(min_termfreqError = 2, min_docfreq = 1) %>% 
+  dfm_tfidf()
 
 train_dfm <- all_dfm[1:split_n,]
 train_data <- all_posts[1:split_n,]
@@ -91,9 +93,9 @@ uncoded_dfm <- all_dfm[uncoded_start:nrow(all_posts),]
 ```
 
 ```{r}
-nb_classifier <- textmodel_nb(train_dfm, train_data$topic, force = T)
+nb_classifier <- textmodel_nb(train_dfm, train_data$topic)
 
-uncoded_predicted <- cbind(uncoded, predicted = predict(nb_classifier, uncoded_dfm)$nb.predicted)
+uncoded_predicted <- cbind(uncoded, tibble(predicted = predict(nb_classifier, uncoded_dfm)))
 ```
 
 ```{r}
