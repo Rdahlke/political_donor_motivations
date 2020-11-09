@@ -1,0 +1,205 @@
+\documentclass[12pt,]{article}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+
+
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+
+
+
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+
+\renewenvironment{abstract}
+ {{%
+    \setlength{\leftmargin}{0mm}
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \relax}
+ {\endlist}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
+
+
+
+
+\setcounter{secnumdepth}{0}
+
+
+
+
+\title{Political Donors as Consumers versus Influencers of Campaign Policy
+Support: A Timeseries Analysis \thanks{Code and data available at: github.com/rossdahlke}  }
+
+
+
+\author{\Large Ross Dahlke\vspace{0.05in} \newline\normalsize\emph{}  }
+
+
+\date{}
+
+\usepackage{titlesec}
+
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\itshape}
+\titleformat*{\subsubsection}{\normalsize\itshape}
+\titleformat*{\paragraph}{\normalsize\itshape}
+\titleformat*{\subparagraph}{\normalsize\itshape}
+
+
+
+
+
+\newtheorem{hypothesis}{Hypothesis}
+\usepackage{setspace}
+
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{graphicx}
+
+% move the hyperref stuff down here, after header-includes, to allow for - \usepackage{hyperref}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \PassOptionsToPackage{hyphens}{url}\usepackage[draft,unicode=true]{hyperref}
+\fi
+}
+
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Ross Dahlke ()},
+             pdfkeywords = {},  
+            pdftitle={Political Donors as Consumers versus Influencers of Campaign Policy
+Support: A Timeseries Analysis},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Add an option for endnotes. -----
+
+
+% add tightlist ----------
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% add some other packages ----------
+
+% \usepackage{multicol}
+% This should regulate where figures float
+% See: https://tex.stackexchange.com/questions/2275/keeping-tables-figures-close-to-where-they-are-mentioned
+\usepackage[section]{placeins}
+
+
+\begin{document}
+	
+% \pagenumbering{arabic}% resets `page` counter to 1 
+%
+% \maketitle
+
+{% \usefont{T1}{pnc}{m}{n}
+\setlength{\parindent}{0pt}
+\thispagestyle{plain}
+{\fontsize{18}{20}\selectfont\raggedright 
+\maketitle  % title \par  
+
+}
+
+{
+   \vskip 13.5pt\relax \normalsize\fontsize{11}{12} 
+\textbf{\authorfont Ross Dahlke} \hskip 15pt \emph{\small }   
+
+}
+
+}
+
+
+
+
+
+
+
+
+\begin{abstract}
+
+    \hbox{\vrule height .2pt width 39.14pc}
+
+    \vskip 8.5pt % \small 
+
+\noindent As the amount of money raised by political campaigns continues to grow,
+scholars have studied donors to campaigns as group of unique political
+actors. Particularly, online donations from small-dollar donors have
+grown in prominence in contemporary campaigns. Observational and survey
+data have been used to make ideological inferences about donors to
+understand more about who donors are, what donors care about, and
+potential motivations for making a donations. However, there is little
+consensus on the psychological processes of making a donations. The two
+predominant explanations of donor motivations--donors are
+`access-oriented' and seek to influence candidates to support issues or
+donations are acts of political consumption that seek to support
+candidates that donors already agree with--posits two different orders
+of events. Under the access-oriented model, donors first contribute to
+candidates in order to influence candidates support of issues. Under the
+consumption model, donors participate in the political realm by
+contributing to candidates who are support of issues that the donor is
+already supportive of. This study uses timeseries analysis to analyze
+the relationship between contributions from communities of donors and
+social media posts of candidates to identify if donations preceed or lag
+public support of certain policy issues. The results find that groups of
+donors largely respond displays of support for public issues. This
+finding supports the consumption model of political donations.
+
+
+    \hbox{\vrule height .2pt width 39.14pc}
+
+
+\end{abstract}
+
+
+\vskip -8.5pt
+
+
+ % removetitleabstract
+
+\noindent \doublespacing 
+
+
+
+
+
+
+
+\newpage
+\singlespacing 
+\end{document}
