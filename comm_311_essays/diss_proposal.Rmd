@@ -25,11 +25,15 @@ header-includes: \usepackage{graphicx}
 
 Ross Dahlke
 
+# Introduction 
+
 While the term "political donor networks" is often thought of in abstract terms with a connotation of wealthy political elites with personal connections to one another, I like to conceive of the term more literally. The landscape of political donations creates a network through. We can think of political donors and candidates as nodes who are connected by donations which serve as edges. Thinking of political campaigns and political donors as nodes and connected by edges in a network opens up the rich methodological traditional of social network analysis to the study of political donors. 
 
-Viewing the political donor landscape through a network analysis lens allows for traditional network statistics to be calculated, such as centrality, modularity/ polarization, and connection degrees. In addition, a natural step to take in this network approach is to create sub-networks of donors. Each cluster or community of donors is comprised of donors who have similar network connections. In other words, donors who are clustered together have similar donations patterns. 
+Viewing the political donor landscape through a network analysis lens allows for traditional network statistics to be calculated, such as centrality, modularity/ polarization, and connection degrees. In addition, a natural step to take in this network approach is to create sub-networks of donors. Each cluster or community of donors is comprised of individuals who have similar network connections. In other words, donors who are clustered together have similar donations patterns. 
 
+Traditional studies of political donors do not take this network approach. Instead, individuals are treated as the unit of analysis. Often, behaviors and motivations of political donors are ascertained through surveys. Researchers often just gather a list of political donors and send the donors a survey asking them questions about their demographics and political attitudes. This approach is useful and has its place, however, it also sacrifices a lot of the rich context and nuance of the observational data that is generated from political donations. In addition, individuals donors have very sparse data. It is difficult to find patterns when an individual only makes one or two contributions. 
 
+Instead, using donor clusters as the unit of analysis maintains the richness of the contextual information of the network as well as provides non-sparse data by which one can look for statistically meaningful patterns. For example, there are two primary theories of the motivations of political donors, the access-oriented model and the consumption model. However, it is difficult to measure either of these behaviors in observational data when taking an individualistic approach. Instead, using a network approach provides adequate data to test these models.
 
 The predominant folk-theory of political donors is of smokey backrooms where donors trade money for favorable votes on legislation. In this access-oriented model of political donations donors are conceived as being a _causal_ mechanism in legislators taking particular policy stances. However, the story of political donations since the 2016 election has been of small-dollar, primarily online donors. These donors have changed the way that political campaigns execute fundraising operations. This shift in donors lends itself toward the "consumption" model of political donations instead of the "access-oriented" model.
 
@@ -38,6 +42,14 @@ The consumption model of donors places contributions on a spectrum of political 
 My research question is: **Do donations from specific donor communities impact politicians' public support of policies or does public support from politicians attract certain political donor communities?**
 
 Given my previous research findings and a general shift among scholars towards the consumption model of politics, I theorize that the causal order is public support for certain policy issues by politicians drives donations from specific donor communities. 
+
+**H1: Public support of certain policy issues precedes political donations from various donor clusters.**
+
+The alternative hypothesis, **H2: Donations from various donor clusters precedes public support of certain policy issues.**
+
+This question is important to study because it furthers our understanding of the motivations of groups of political donors--a topic that has been explored only using an individualistic approach that is constrained due to various factors. In addition, candidates and professional political fundraisers spend a significant amount of time fundraising, but they have little knowledge of the working psychological process of making a donation.
+
+# Time Dimension
 
 Little is definitely known about political donors' motivations, and even less is known about the temporal dimension of these decisions. However, thinking of a donation as a decision that seeks to increase one's preferred candidate's chances of winning can be thought of as being similar to purchasing a product. There are large brands, companies (ex. Apple and Microsoft) and parties (Democrats and Republicans), that provide an immediate heuristic for making a participatory decision. Then, there is a consumer journey that seeks to build brand awareness and ultimately triggers a reaction. Under this analogy, just as products must build awareness and then ultimately trigger a purchase, political campaigns build awareness of a candidates' policies and try to trigger a vote or donation. These two different steps in this participatory process operate on different time scales. 
 
@@ -50,3 +62,13 @@ Under the access-oriented model of political donations, where individuals seek t
 One constraint of this research is the specific event that triggers a political contribution. Often, decisions to make a donation are triggered by some discrete event. The specific type of event can vary. For example, a donor can be triggered to donate in response to news that alters the perceived stakes of the election, in response to an explicit solicitation (either by mail, email, or social media), for example at the end of a fundraising reporting time period, or by attending a fundraising event, either in-person or increasingly digitally. In the first two examples, a decision to make a donation is most likely on a time scale of seconds or milliseconds. The perception of the stakes of the election increasing, or a response to a call-to-action, is a psychological response to one's in-group needing assistance. The tribal nature of our contemporary politics posits donations as a call to arms to protect that tribe. In the world of marketing sciences, this last-step mechanism is similar to a "buy now" to receive a discount promotions that is meant to elicit an immediate reaction. While the last-step mechanism of donating happens within seconds, getting someone to identify as a member of a political tribe takes longer. My research does not focus on this last step but the contribution funnel, but it does acknowledge that more research should be done to understand the psychological processes that happen in this final step. In addition, my research might be impacted by these triggering events. For example, one would expect that contributions may happen around these triggering events and not at a consistent time from knowledge of a candidate's public support of a policy issue. These donations around specific events may cause noise within my data.
 
 While my research is bounded by constraints like long-term political shifts and short-term donation triggers, it investigates the space between. I am not entering this research with a precise time that I expect to be able to measure the connection between public support from candidates and political donations. There has not been prior research on the timescale of the process of being primed to make a contribution to a candidate. This process may happen over days, weeks, or even months. A part of the methodology that I will use assists in finding this best time specification to use. And so, this paper will give insight into both the causal ordering of events (which comes first, political donations or public support of issues) and insight into the length of the process that connects those two events.
+
+# Where in the communication or social science literatures
+
+# Definition of media
+
+# Definition of communicaiton
+
+# Fit into current organization of communicaiton research
+
+# How might this work change in a different field or variable

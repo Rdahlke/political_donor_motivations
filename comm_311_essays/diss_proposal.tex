@@ -1,0 +1,350 @@
+\documentclass[12pt,]{article}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+
+
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+
+
+
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+
+\renewenvironment{abstract}
+ {{%
+    \setlength{\leftmargin}{0mm}
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \relax}
+ {\endlist}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
+
+
+
+
+\setcounter{secnumdepth}{0}
+
+
+
+
+
+
+
+\author{\Large Ross Dahlke\vspace{0.05in} \newline\normalsize\emph{}  }
+
+
+\date{}
+
+\usepackage{titlesec}
+
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\itshape}
+\titleformat*{\subsubsection}{\normalsize\itshape}
+\titleformat*{\paragraph}{\normalsize\itshape}
+\titleformat*{\subparagraph}{\normalsize\itshape}
+
+
+
+
+
+\newtheorem{hypothesis}{Hypothesis}
+\usepackage{setspace}
+
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{graphicx}
+
+% move the hyperref stuff down here, after header-includes, to allow for - \usepackage{hyperref}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \PassOptionsToPackage{hyphens}{url}\usepackage[draft,unicode=true]{hyperref}
+\fi
+}
+
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={Ross Dahlke ()},
+             pdfkeywords = {},  
+            pdftitle={},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Add an option for endnotes. -----
+
+
+% add tightlist ----------
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% add some other packages ----------
+
+% \usepackage{multicol}
+% This should regulate where figures float
+% See: https://tex.stackexchange.com/questions/2275/keeping-tables-figures-close-to-where-they-are-mentioned
+\usepackage[section]{placeins}
+
+
+\begin{document}
+	
+% \pagenumbering{arabic}% resets `page` counter to 1 
+%
+
+
+
+
+\vskip -8.5pt
+
+
+ % removetitleabstract
+
+\noindent \doublespacing 
+
+Ross Dahlke
+
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+While the term ``political donor networks'' is often thought of in
+abstract terms with a connotation of wealthy political elites with
+personal connections to one another, I like to conceive of the term more
+literally. The landscape of political donations creates a network
+through. We can think of political donors and candidates as nodes who
+are connected by donations which serve as edges. Thinking of political
+campaigns and political donors as nodes and connected by edges in a
+network opens up the rich methodological traditional of social network
+analysis to the study of political donors.
+
+Viewing the political donor landscape through a network analysis lens
+allows for traditional network statistics to be calculated, such as
+centrality, modularity/ polarization, and connection degrees. In
+addition, a natural step to take in this network approach is to create
+sub-networks of donors. Each cluster or community of donors is comprised
+of individuals who have similar network connections. In other words,
+donors who are clustered together have similar donations patterns.
+
+Traditional studies of political donors do not take this network
+approach. Instead, individuals are treated as the unit of analysis.
+Often, behaviors and motivations of political donors are ascertained
+through surveys. Researchers often just gather a list of political
+donors and send the donors a survey asking them questions about their
+demographics and political attitudes. This approach is useful and has
+its place, however, it also sacrifices a lot of the rich context and
+nuance of the observational data that is generated from political
+donations. In addition, individuals donors have very sparse data. It is
+difficult to find patterns when an individual only makes one or two
+contributions.
+
+Instead, using donor clusters as the unit of analysis maintains the
+richness of the contextual information of the network as well as
+provides non-sparse data by which one can look for statistically
+meaningful patterns. For example, there are two primary theories of the
+motivations of political donors, the access-oriented model and the
+consumption model. However, it is difficult to measure either of these
+behaviors in observational data when taking an individualistic approach.
+Instead, using a network approach provides adequate data to test these
+models.
+
+The predominant folk-theory of political donors is of smokey backrooms
+where donors trade money for favorable votes on legislation. In this
+access-oriented model of political donations donors are conceived as
+being a \emph{causal} mechanism in legislators taking particular policy
+stances. However, the story of political donations since the 2016
+election has been of small-dollar, primarily online donors. These donors
+have changed the way that political campaigns execute fundraising
+operations. This shift in donors lends itself toward the ``consumption''
+model of political donations instead of the ``access-oriented'' model.
+
+The consumption model of donors places contributions on a spectrum of
+political participation. In other words, donations can be seen as an
+extension of voting--a step towards greater participation in democracy.
+In this model, donors are \emph{reactive} to politicians. Donors decide
+to participate in political campaigns that they already agree with.
+These two models, the access-oriented and consumption models, have
+conflicting causal orders. Under the access-oriented donor model, donors
+cause a change in politicians' policies. In the consumption model,
+politicians' policies attract donors.
+
+My research question is: \textbf{Do donations from specific donor
+communities impact politicians' public support of policies or does
+public support from politicians attract certain political donor
+communities?}
+
+Given my previous research findings and a general shift among scholars
+towards the consumption model of politics, I theorize that the causal
+order is public support for certain policy issues by politicians drives
+donations from specific donor communities.
+
+\textbf{H1: Public support of certain policy issues precedes political
+donations from various donor clusters.}
+
+The alternative hypothesis, \textbf{H2: Donations from various donor
+clusters precedes public support of certain policy issues.}
+
+This question is important to study because it furthers our
+understanding of the motivations of groups of political donors--a topic
+that has been explored only using an individualistic approach that is
+constrained due to various factors. In addition, candidates and
+professional political fundraisers spend a significant amount of time
+fundraising, but they have little knowledge of the working psychological
+process of making a donation.
+
+\hypertarget{time-dimension}{%
+\section{Time Dimension}\label{time-dimension}}
+
+Little is definitely known about political donors' motivations, and even
+less is known about the temporal dimension of these decisions. However,
+thinking of a donation as a decision that seeks to increase one's
+preferred candidate's chances of winning can be thought of as being
+similar to purchasing a product. There are large brands, companies (ex.
+Apple and Microsoft) and parties (Democrats and Republicans), that
+provide an immediate heuristic for making a participatory decision.
+Then, there is a consumer journey that seeks to build brand awareness
+and ultimately triggers a reaction. Under this analogy, just as products
+must build awareness and then ultimately trigger a purchase, political
+campaigns build awareness of a candidates' policies and try to trigger a
+vote or donation. These two different steps in this participatory
+process operate on different time scales.
+
+The process to identify as a member of a particular political tribe
+takes at least weeks, if not months, years, or even decades. There is a
+rich political science literature on political socialization and
+generational shifts that show the decades-long timescale of partisan
+identification. However, this paper takes a more granular view of
+political tribes. The decision to make a political donation to a
+particular campaign is like choosing a sub-tribe within one's broader
+partisan tribe. Although national figures such as Donald Trump can be a
+significant part in speeding up or slowing down shifts that have
+multi-year or even multi-decade time horizons, I'm going to constrain my
+timescale to be within a single election cycle. Every election cycle has
+new candidates running for different offices, generally on different
+evolving topics to the point where every election cycle is unique and
+generally gets assigned its own ``narrative.'' And so, within an
+election cycle, I ask what activates membership within sub-tribes to the
+point where an individual makes a contribution to further that
+sub-tribe's electoral prospects.
+
+Building this self-identification is similar to firms building brand
+awareness. In order for an individual to be primed so that one of the
+aforementioned triggers (heightened sense of stakes in the election,
+call-to-action, etc.) elicits an action, one must have a sense of
+identity or at least support in that sub-tribe. For example, for an
+individual who cares about the environment, who may be triggered to make
+a contribution to a campaign, must first know that candidate's position
+on environmental issues. The length of time it takes campaigns' public
+support of certain policy issues to translate into contributions is
+largely unstudied. And in part, that is a component of the analysis that
+I intend to undertake.
+
+Under the access-oriented model of political donations, where
+individuals seek to influence candidates' support of issues. We would
+anticipate contributions from members of certain communities resulting
+in support of issues later. For example, pro-environment individuals
+could make a contributions to a candidate that result in that candidate
+being more supportive of conservation policies. Although studies have
+been done on the connection between contributions during an election
+cycle and legislative votes in the subsequent legislative term, there
+has not been much study of the temporal dimension of the possibility of
+donations from issue groups manifesting in public support of policy
+issues, such as social media posts.
+
+One constraint of this research is the specific event that triggers a
+political contribution. Often, decisions to make a donation are
+triggered by some discrete event. The specific type of event can vary.
+For example, a donor can be triggered to donate in response to news that
+alters the perceived stakes of the election, in response to an explicit
+solicitation (either by mail, email, or social media), for example at
+the end of a fundraising reporting time period, or by attending a
+fundraising event, either in-person or increasingly digitally. In the
+first two examples, a decision to make a donation is most likely on a
+time scale of seconds or milliseconds. The perception of the stakes of
+the election increasing, or a response to a call-to-action, is a
+psychological response to one's in-group needing assistance. The tribal
+nature of our contemporary politics posits donations as a call to arms
+to protect that tribe. In the world of marketing sciences, this
+last-step mechanism is similar to a ``buy now'' to receive a discount
+promotions that is meant to elicit an immediate reaction. While the
+last-step mechanism of donating happens within seconds, getting someone
+to identify as a member of a political tribe takes longer. My research
+does not focus on this last step but the contribution funnel, but it
+does acknowledge that more research should be done to understand the
+psychological processes that happen in this final step. In addition, my
+research might be impacted by these triggering events. For example, one
+would expect that contributions may happen around these triggering
+events and not at a consistent time from knowledge of a candidate's
+public support of a policy issue. These donations around specific events
+may cause noise within my data.
+
+While my research is bounded by constraints like long-term political
+shifts and short-term donation triggers, it investigates the space
+between. I am not entering this research with a precise time that I
+expect to be able to measure the connection between public support from
+candidates and political donations. There has not been prior research on
+the timescale of the process of being primed to make a contribution to a
+candidate. This process may happen over days, weeks, or even months. A
+part of the methodology that I will use assists in finding this best
+time specification to use. And so, this paper will give insight into
+both the causal ordering of events (which comes first, political
+donations or public support of issues) and insight into the length of
+the process that connects those two events.
+
+\hypertarget{where-in-the-communication-or-social-science-literatures}{%
+\section{Where in the communication or social science
+literatures}\label{where-in-the-communication-or-social-science-literatures}}
+
+\hypertarget{definition-of-media}{%
+\section{Definition of media}\label{definition-of-media}}
+
+\hypertarget{definition-of-communicaiton}{%
+\section{Definition of
+communicaiton}\label{definition-of-communicaiton}}
+
+\hypertarget{fit-into-current-organization-of-communicaiton-research}{%
+\section{Fit into current organization of communicaiton
+research}\label{fit-into-current-organization-of-communicaiton-research}}
+
+\hypertarget{how-might-this-work-change-in-a-different-field-or-variable}{%
+\section{How might this work change in a different field or
+variable}\label{how-might-this-work-change-in-a-different-field-or-variable}}
+
+
+
+
+
+\newpage
+\singlespacing 
+\end{document}
