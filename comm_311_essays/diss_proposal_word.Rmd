@@ -1,11 +1,11 @@
 ---
 output:
-  pdf_document:
+  word_document:
     # citation_package: biblatex
-    keep_tex: true
-    fig_caption: true
-    latex_engine: pdflatex
-    template: ../svm-latex-ms.tex
+    # keep_tex: true
+    # fig_caption: true
+    # latex_engine: pdflatex
+    # template: ../svm-latex-ms.tex
 title: "Ross Dahlke, COMM 311, Dissertation Proposal"
 thanks: ""
 author:
