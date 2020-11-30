@@ -42,7 +42,7 @@ Initial results suggest that both models of political donor motivation--the acce
 The next step is to analyze the results to see which donor clusters fall under which donor model and with what policy topics. Another step is to analyze potential confounding factors that could describe the motivations of political donors, such as geographic proximity, or competitiveness of the races the cluster contributed to in aggregate.
 
 
-```{r warning = F, message = F}
+```{r warning = F, message = F, echo = F}
 wordcountaddin:::text_stats()
 ```
 
