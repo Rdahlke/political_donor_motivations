@@ -1,0 +1,294 @@
+\documentclass[12pt,]{article}
+\usepackage[left=1in,top=1in,right=1in,bottom=1in]{geometry}
+\newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
+\usepackage[]{mathpazo}
+
+
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+
+
+
+
+\usepackage{abstract}
+\renewcommand{\abstractname}{}    % clear the title
+\renewcommand{\absnamepos}{empty} % originally center
+
+\renewenvironment{abstract}
+ {{%
+    \setlength{\leftmargin}{0mm}
+    \setlength{\rightmargin}{\leftmargin}%
+  }%
+  \relax}
+ {\endlist}
+
+\makeatletter
+\def\@maketitle{%
+  \newpage
+%  \null
+%  \vskip 2em%
+%  \begin{center}%
+  \let \footnote \thanks
+    {\fontsize{18}{20}\selectfont\raggedright  \setlength{\parindent}{0pt} \@title \par}%
+}
+%\fi
+\makeatother
+
+
+
+
+\setcounter{secnumdepth}{0}
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+
+
+
+\title{Political Donor Motivations and Social Media: A Time-Series Analysis  }
+
+
+
+\author{\Large \vspace{0.05in} \newline\normalsize\emph{}  }
+
+
+\date{}
+
+\usepackage{titlesec}
+
+\titleformat*{\section}{\normalsize\bfseries}
+\titleformat*{\subsection}{\normalsize\itshape}
+\titleformat*{\subsubsection}{\normalsize\itshape}
+\titleformat*{\paragraph}{\normalsize\itshape}
+\titleformat*{\subparagraph}{\normalsize\itshape}
+
+
+
+
+
+\newtheorem{hypothesis}{Hypothesis}
+\usepackage{setspace}
+
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{graphicx}
+
+% move the hyperref stuff down here, after header-includes, to allow for - \usepackage{hyperref}
+
+\makeatletter
+\@ifpackageloaded{hyperref}{}{%
+\ifxetex
+  \PassOptionsToPackage{hyphens}{url}\usepackage[setpagesize=false, % page size defined by xetex
+              unicode=false, % unicode breaks when used with xetex
+              xetex]{hyperref}
+\else
+  \PassOptionsToPackage{hyphens}{url}\usepackage[draft,unicode=true]{hyperref}
+\fi
+}
+
+\@ifpackageloaded{color}{
+    \PassOptionsToPackage{usenames,dvipsnames}{color}
+}{%
+    \usepackage[usenames,dvipsnames]{color}
+}
+\makeatother
+\hypersetup{breaklinks=true,
+            bookmarks=true,
+            pdfauthor={ ()},
+             pdfkeywords = {},  
+            pdftitle={Political Donor Motivations and Social Media: A Time-Series Analysis},
+            colorlinks=true,
+            citecolor=blue,
+            urlcolor=blue,
+            linkcolor=magenta,
+            pdfborder={0 0 0}}
+\urlstyle{same}  % don't use monospace font for urls
+
+% Add an option for endnotes. -----
+
+
+% add tightlist ----------
+\providecommand{\tightlist}{%
+\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+% add some other packages ----------
+
+% \usepackage{multicol}
+% This should regulate where figures float
+% See: https://tex.stackexchange.com/questions/2275/keeping-tables-figures-close-to-where-they-are-mentioned
+\usepackage[section]{placeins}
+
+
+\begin{document}
+	
+% \pagenumbering{arabic}% resets `page` counter to 1 
+%
+% \maketitle
+
+{% \usefont{T1}{pnc}{m}{n}
+\setlength{\parindent}{0pt}
+\thispagestyle{plain}
+{\fontsize{18}{20}\selectfont\raggedright 
+\maketitle  % title \par  
+
+}
+
+{
+   \vskip 13.5pt\relax \normalsize\fontsize{11}{12} 
+\textbf{\authorfont } \hskip 15pt \emph{\small }   
+
+}
+
+}
+
+
+
+
+
+
+\vskip -8.5pt
+
+
+ % removetitleabstract
+
+\noindent \doublespacing 
+
+The two predominant theories of political donor motivations are the
+access-oriented model and the consumption model. In the access-oriented
+model, political donors contribute to campaigns in order to seek and
+acquire access and influence with politicians in order to get them to
+support specific policy issues. The consumption model of donors sees
+political contributions as being an extension of voting along a
+participatory spectrum, and that donors support candidates who they
+already know support policy issues that the donors care about. This
+paper combines Twitter and Facebook posts from politicians in the 2016
+election cycle to measure public support of policy issues and
+administrative political donation data. These two datasets are analyzed
+in conjunction with one another to see if politicians' public support of
+various policy issues on social media precede, lag, or have no
+relationship with donations from various clusters of political donors.
+The access-oriented model of political donors would predict that
+donations from specific groups of donors would precede public support of
+various policies. In contrast, the consumption model of political donors
+would predict that donations from various groups of donors would lag in
+response to public support of policy issues by candidates. This paper
+sets these two models of political donors against each to see if
+evidence of either model is found in observational data.
+
+\hypertarget{data}{%
+\section{Data}\label{data}}
+
+Data for this research comes from two primary sources: politicians'
+social media posts and political donation data. For social media posts,
+this paper used the Facebook and Twitter APIs to collect social media
+posts from all candidates for the Wisconsin State Senate and Wisconsin
+State Assembly during the 2016 election cycle (\emph{n} = 82,851). A
+subset of these posts were hand-coded into 27 topical categories. This
+subset was used to train a BERT deep learning transfer model that was
+used to predict the remainder of the posts (train dataset = 8,242, 10\%
+of posts; validation dataset = 4,122, 5\% of posts). Political donation
+data for all candidates to the Wisconsin State Legislature during the
+2016 election cycle was collected from the Wisconsin Campaign
+Information System (CFIS). These donations were used to create a network
+of political donations with candidates and donors serving as nodes and
+donations between them as edges. This network was clustered into
+distinct communities so that donors in each community are most similar
+to one another based on which campaigns they contributed to.
+
+\hypertarget{methodology}{%
+\section{Methodology}\label{methodology}}
+
+These two datasets were analyzed against each other using the granger
+causality time-series methodology. This methodology detects whether
+movements in one time series precedes, lags, or is not related to
+another time series. Specifically, this paper compares time series of
+donations from clusters of political donors and times series of the
+number of social media posts by each topic that were made by campaigns
+that each donor cluster contributed to. For example, a time series of
+donations from a donor cluster was compared to the aggregate count of
+posts about a given topic made by candidates that the donor cluster
+contributed to.
+
+\hypertarget{results}{%
+\section{Results}\label{results}}
+
+Initial results suggest that both models of political donor
+motivation--the access-oriented and consumptive models--are potentially
+found. Different clusters of political donors exhibit different
+behaviors. Some clusters of political donors show behavior that is
+in-line with the access-oriented model, where their donations precede
+public support of policy issues by the candidates that they contributed
+to. Contribution from other donor clusters align with the conumptive
+model of political donors and contributions from their cluster lag
+public support of various policy issues by candidates. Other donor
+clusters exhibit no behavioral connection to candidates' public support
+of policy issues--suggesting that there is some confounding factor or
+motivation for donating to the campaigns that they contributed to.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{wordcountaddin}\OperatorTok{:::}\KeywordTok{text_stats}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Method & koRpus & stringi\tabularnewline
+\midrule
+\endhead
+Word count & 614 & 610\tabularnewline
+Character count & 4017 & 4017\tabularnewline
+Sentence count & 26 & Not available\tabularnewline
+Reading time & 3.1 minutes & 3 minutes\tabularnewline
+\bottomrule
+\end{longtable}
+
+
+
+
+
+\newpage
+\singlespacing 
+\end{document}
