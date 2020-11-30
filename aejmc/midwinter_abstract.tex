@@ -198,30 +198,29 @@
 The two predominant theories of political donor motivations are the
 access-oriented model (Fouirnaies and Hall 2015) and the consumption
 model (Ansolabehere, Figueiredo, and Snyder 2003). In the
-access-oriented model, political donors and political action committees
-(PACs) contribute to campaigns in an effort to acquire access and
-influence with politicians with the hopes of the politicians supporting
-specific policy issues (Fouirnaies and Hall 2015). The consumption model
-of donors sees political contributions as being an extension of voting
-along a participatory spectrum, and that donors support candidates who
-they already know support policy issues that the donors care about or
-are ideologically motivated (Barber 2016; Johnson 2010). Previous
-studies have posited these two models of political donor motivations
-against each other (Heerwig 2016).
+access-oriented model, individual political donors and political action
+committees (PACs) contribute to campaigns in an effort to acquire access
+and influence politicians into supporting specific policy issues
+(Fouirnaies and Hall 2015). The consumption model of donors sees
+political contributions as being an extension of voting along a
+participatory spectrum, and that donors support candidates who they
+already know support policy issues that the donors care about or are
+ideologically motivated (Barber 2016; Johnson 2010). Previous studies
+have posited these two models of political donor motivations against
+each other (Heerwig 2016).
 
 This paper combines political donation records and Twitter and Facebook
-posts from politicians in the 2016 election cycle to measure public
-support of policy issues. These two datasets are analyzed in conjunction
-with one another to see if politicians' public support of various policy
-issues on social media precede, lag, or have no relationship with
-donations from various clusters of political donors. The access-oriented
-model of political donors would predict that donations from specific
-groups of donors would precede public support of various policies. In
-contrast, the consumption model of political donors would predict that
-donations from various groups of donors would lag in response to public
-support of policy issues by candidates. This paper sets these two models
-of political donors against each to see if evidence of either model is
-found in observational data.
+posts from politicians in the 2016 election cycle. These two datasets
+are analyzed in conjunction with one another to see if politicians'
+public support of various policy issues on social media precede, lag, or
+have no relationship with donations from various communities of
+political donors. The access-oriented model of political donors predicts
+that donations from specific groups of donors would precede public
+support of certain policies. In contrast, the consumption model of
+political donors predicts that donations from various groups of donors
+would lag in response to public support of certain policy issues by
+candidates. This paper sets these two models of political donors against
+each to see if evidence of either model is found in observational data.
 
 \hypertarget{data}{%
 \section{Data}\label{data}}
@@ -233,20 +232,21 @@ posts from all candidates for the Wisconsin State Senate and Wisconsin
 State Assembly during the 2016 election cycle (\emph{n} = 82,851). A
 subset of these posts were hand-coded into 27 topical categories. This
 subset was used to train a BERT deep learning transfer model that was
-used to predict the topic of remainder of the posts (train dataset =
-8,242, 10\% of total posts; validation dataset = 4,122, 5\% of total
-posts). Political donation data for all candidates to the Wisconsin
-State Legislature during the 2016 election cycle was collected from the
-Wisconsin Campaign Information System (CFIS). These donations were used
-to create a network of political donations with candidates and donors
-serving as nodes and donations between them as edges. This network was
-clustered into distinct communities so that donors in each community are
-most similar to one another based on which campaigns they contributed
-to. I theorize that these clusters/ communities represent different
-coalitions of political donors with unique motivations. Viewing
-political donors as members of a coalition of fundraisers has been
-studied in the past, but often in a more informal sense (Adams 2007;
-Heerwig 2016).
+used to predict the topic of the remainder of the posts (training
+dataset = 8,242, 10\% of total posts; testing dataset = 4,122, 5\% of
+total posts). Political donation data for all candidates to the
+Wisconsin State Legislature during the 2016 election cycle were
+collected from the Wisconsin Campaign Information System (CFIS). These
+donations were used to create a network of political donations with
+candidates and donors serving as nodes and donations between them as
+edges. This network was clustered into distinct communities so that
+donors in each community are most similar to one another based on which
+campaigns they contributed to. I theorize that these clusters/
+communities represent different coalitions of political donors with
+unique motivations. Viewing political donors as members of a coalition
+of fundraisers has been studied in the past (Adams 2007; Heerwig 2016)
+but often in a more informal sense and not as statistically-derived
+groups like this paper.
 
 \hypertarget{methodology}{%
 \section{Methodology}\label{methodology}}
@@ -266,17 +266,24 @@ contributed to.
 \section{Results}\label{results}}
 
 Initial results suggest that both models of political donor
-motivation--the access-oriented and consumptive models--are potentially
-found. Different clusters of political donors exhibit different
-behaviors. Some clusters of political donors show behavior that is
-in-line with the access-oriented model, where their donations precede
-public support of policy issues by the candidates that they contributed
-to. Contribution from other donor clusters align with the conumptive
-model of political donors and contributions from their cluster lag
-public support of various policy issues by candidates. Other donor
-clusters exhibit no behavioral connection to candidates' public support
-of policy issues--suggesting that there is some confounding factor or
-motivation for donating to the campaigns that they contributed to.
+motivation--the access-oriented and consumptive models--are present in
+the observational data. Different clusters of political donors exhibit
+different behaviors. Some clusters of political donors show behavior
+that is in-line with the access-oriented model, where their donations
+precede public support of policy issues by the candidates that they
+contributed to. Contributions from other donor clusters align with the
+conumption model of political donors and contributions from their
+clusters lag public support of various policy issues by candidates.
+Other donor clusters exhibit no behavioral connection to candidates'
+public support of policy issues--suggesting that there is some
+confounding factor or motivation for donating to the campaigns that they
+contributed to.
+
+The next step is to analyze the results to see which donor clusters fall
+under which donor model and with what policy topics. Another step is to
+analyze potential confounding factors that could describe the
+motivations of political donors, such as geographic proximity, or
+competitiveness of the races the cluster contributed to in aggregate.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -289,10 +296,10 @@ motivation for donating to the campaigns that they contributed to.
 Method & koRpus & stringi\tabularnewline
 \midrule
 \endhead
-Word count & 685 & 681\tabularnewline
-Character count & 4580 & 4580\tabularnewline
-Sentence count & 31 & Not available\tabularnewline
-Reading time & 3.4 minutes & 3.4 minutes\tabularnewline
+Word count & 738 & 735\tabularnewline
+Character count & 4936 & 4936\tabularnewline
+Sentence count & 33 & Not available\tabularnewline
+Reading time & 3.7 minutes & 3.7 minutes\tabularnewline
 \bottomrule
 \end{longtable}
 
