@@ -196,27 +196,28 @@ is found in observational data.
 
 Data for this research comes from two primary sources: politicians'
 social media posts and political donation data. For social media posts,
-this paper used the Facebook and Twitter APIs to collect social media
-posts from all candidates for the Wisconsin State Senate and Wisconsin
-State Assembly during the 2016 election cycle (\emph{n} = 82,851). A
-subset of these posts were hand-coded into 27 topical categories. This
-subset was used to train a BERT deep learning transfer model that was
-used to predict the topic of the remainder of the posts (training
-dataset = 8,242, 10\% of total posts; testing dataset = 4,122, 5\% of
-total posts). Political donation data for all candidates to the
-Wisconsin State Legislature during the 2016 election cycle were
-collected from the Wisconsin Campaign Information System (CFIS). These
-donations were used to create a network of political donations with
-candidates and donors serving as nodes and donations between them as
-edges. This network was clustered into distinct communities so that
-donors in each community are most similar to one another based on which
-campaigns they contributed to. I theorize that these clusters of donors
-represent \emph{latent coalitions} of donors who, whether they operate
-in an organized fashion or not, are working toward the goal of electing
-the same candidates. Studying political fundraisers as members of
-political coalitions has been studied in the past (Adams 2007; Heerwig
-2016), and this paper's statistically-driven definition of latent
-coalitions seeks to add to the coalition literature.
+this paper used the Facebook (Barbera, Geisler, and Atteveldt 2017) and
+Twitter (Kearney 2019) APIs to collect social media posts from all
+candidates for the Wisconsin State Senate and Wisconsin State Assembly
+during the 2016 election cycle (\emph{n} = 82,851). A subset of these
+posts were hand-coded into 27 topical categories. This subset was used
+to train a BERT deep learning transfer model that was used to predict
+the topic of the remainder of the posts (training dataset = 8,242, 10\%
+of total posts; testing dataset = 4,122, 5\% of total posts). Political
+donation data for all candidates to the Wisconsin State Legislature
+during the 2016 election cycle were collected from the Wisconsin
+Campaign Information System (CFIS). These donations were used to create
+a network of political donations with candidates and donors serving as
+nodes and donations between them as edges. This network was clustered
+into distinct communities so that donors in each community are most
+similar to one another based on which campaigns they contributed to. I
+theorize that these clusters of donors represent \emph{latent
+coalitions} of donors who, whether they operate in an organized fashion
+or not, are working toward the goal of electing the same candidates.
+Studying political fundraisers as members of political coalitions has
+been studied in the past (Adams 2007; Heerwig 2016), and this paper's
+statistically-driven definition of latent coalitions seeks to add to the
+coalition literature.
 
 \hypertarget{methodology}{%
 \section{Methodology}\label{methodology}}
@@ -273,10 +274,10 @@ a relationship.
 Method & koRpus & stringi\tabularnewline
 \midrule
 \endhead
-Word count & 789 & 778\tabularnewline
-Character count & 5240 & 5239\tabularnewline
+Word count & 791 & 780\tabularnewline
+Character count & 5263 & 5262\tabularnewline
 Sentence count & 34 & Not available\tabularnewline
-Reading time & 3.9 minutes & 3.9 minutes\tabularnewline
+Reading time & 4 minutes & 3.9 minutes\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -299,6 +300,11 @@ Economic Perspectives} 17 (1): 105--30.
 Barber, Michael. 2016. ``Donation Motivations: Testing Theories of
 Access and Ideology.'' \emph{Political Research Quarterly} 69 (1):
 148--59.
+
+\leavevmode\hypertarget{ref-rfacebook}{}%
+Barbera, Pablo, Andrew Geisler, and Wouter van Atteveldt. 2017.
+\emph{Rfacebook}.
+\url{https://cran.r-project.org/web/packages/Rfacebook/Rfacebook.pdf}.
 
 \leavevmode\hypertarget{ref-bastos2015}{}%
 Bastos, Marco T., Dan Mercea, and Arthur Charpentier. 2015. ``Tents,
@@ -328,6 +334,11 @@ Johnson, Bertram. 2010. ``Individual Contributions: A Fundraising
 Advantage for the Ideologically Extreme?'' \emph{American Politics
 Research}, June, 890--908.
 \url{https://doi.org/10.1177/1532673X09357500}.
+
+\leavevmode\hypertarget{ref-rtweet}{}%
+Kearney, Michael W. 2019. ``Rtweet: Collecting and Analyzing Twitter
+Data.'' \emph{Journal of Open Source Software} 4 (42): 1829.
+\url{https://doi.org/10.21105/joss.01829}.
 
 \leavevmode\hypertarget{ref-lukito2020}{}%
 Lukito, Josephine. 2020. ``Coordinating a Multi-Platform Disinformation
