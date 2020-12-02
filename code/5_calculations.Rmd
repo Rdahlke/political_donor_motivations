@@ -159,11 +159,13 @@ plot <- granger_results %>%
        y = "topic",
        fill = "donor motivation model",
        caption = "p-values adjusted with Holm's method") +
-  theme_bw()
+  theme_bw() +
+  theme(legend.position = "bottom") +
+  guides(fill = guide_legend(nrow = 2))
 ```
 
 ```{r}
-ggsave("../tables_and_figures/aejmc_abstract_1.jpg", plot, height = 4, width = 7)
+ggsave("../tables_and_figures/aejmc_abstract_1.jpg", plot, height = 7.1, width = 7.1)
 ```
 
 ```{r}
