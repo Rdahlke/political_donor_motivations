@@ -17,9 +17,26 @@ uncoded_predicted <- read_csv("~/git/political_donor_motivations/data/uncoded_pr
 ```
 
 ```{r}
+n_clusters <- donations %>% 
+  filter(modularity_class <= 12) %>% 
+  distinct(modularity_class) %>% 
+  count() %>% 
+  pull(n)
+
+n_topics <- uncoded_predicted %>% 
+  distinct(predicted) %>% 
+  count() %>% 
+  pull(n)
+
+p_adjustments <- n_clusters * n_topics
+```
+
+
+```{r}
 granger_model <- function(cluster,
                           topic,
-                          donation_per_threshold = .01){
+                          donation_per_threshold = .01,
+                          adjustments = p_adjustments){
 
 campaigns <- donations %>% 
   filter(modularity_class == cluster) %>%
@@ -65,8 +82,9 @@ results <- access_model %>%
   rbind(consumption_model) %>% 
   janitor::clean_names() %>% 
   mutate(modularity_class = cluster,
-         topic = topic) %>% 
-  filter(pr_f < .05) 
+         topic = topic,
+         adjusted_pr_f = p.adjust(pr_f, method = "holm", n = adjustments)) %>% 
+  filter(adjusted_pr_f < .05) 
 
 if(nrow(results) == 0){
   result <- "no relationship detected"
