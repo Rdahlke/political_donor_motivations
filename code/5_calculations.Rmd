@@ -12,86 +12,84 @@ options(scipen = 999)
 ```
 
 ```{r}
-ds <- readRDS("~/git/political_donor_motivations/data/candidate_donor_scores.RDA") %>% 
+donations <- read_csv("~/git/political_donor_motivations/data/2016_donations_w_clusters.csv")
+uncoded_predicted <- read_csv("~/git/political_donor_motivations/data/uncoded_predicted.csv")
+```
+
+```{r}
+granger_model <- function(cluster,
+                          topic,
+                          donation_per_threshold = .01){
+
+campaigns <- donations %>% 
+  filter(modularity_class == cluster) %>%
+  count(target) %>% 
+  mutate(per = n / sum(n)) %>% 
+  filter(per >= donation_per_threshold) %>% 
+  pull(target)
+
+posts_by_topic <- uncoded_predicted %>% 
+  filter(target %in% campaigns) %>% 
+  group_by(predicted, date) %>% 
+  summarize(topic_count = n()) %>% 
+  mutate(date = lubridate::mdy(date)) %>% 
+  arrange(date)
+
+cluster_donations <- donations %>% 
+  filter(modularity_class == cluster) %>% 
+  group_by(modularity_class, date) %>% 
+  summarize(donation_count = n(),
+            donation_amount = sum(contribution)) %>% 
+  mutate(date = lubridate::mdy(date)) %>% 
+  arrange(date) %>% 
   ungroup()
-ts <- readRDS("~/git/political_donor_motivations/data/candidate_topic_scores.RDA") %>% 
-  ungroup()
 
-all_targets <- ds %>%
-  select(target) %>% 
-  rbind(ts %>% 
-          select(target)) %>% 
-  distinct(target) %>% 
-  pull()
+granger_data <- tibble(date = seq.Date(as.Date("2015-01-01"), as.Date("2016-11-06"), by = 1)) %>% 
+  left_join(cluster_donations) %>%  
+  left_join(posts_by_topic %>% 
+              filter(predicted == topic)) %>% 
+  select(date, topic_count, donation_count, donation_amount) %>% 
+  mutate_if(is.numeric, replace_na, replace = 0)
+  
+access_model <- lmtest::grangertest(diff(granger_data$topic_count) ~ diff(granger_data$donation_amount)) %>% 
+  tibble() %>% 
+  filter(row_number() == 2) %>% 
+  mutate(model = "access")
 
-all_predicted <- ts %>% 
-  distinct(predicted) %>% 
-  pull()
+consumption_model <- lmtest::grangertest(diff(granger_data$donation_amount) ~ diff(granger_data$topic_count)) %>% 
+  tibble() %>% 
+  filter(row_number() == 2) %>% 
+  mutate(model = "consumption")
+  
+results <- access_model %>% 
+  rbind(consumption_model) %>% 
+  janitor::clean_names() %>% 
+  mutate(modularity_class = cluster,
+         topic = topic) %>% 
+  filter(pr_f < .05) 
 
-all_modularity <- ds %>% 
-  distinct(modularity_class) %>% 
-  pull()
+if(nrow(results) == 0){
+  result <- "no relationship detected"
+}
 
-```
+if(nrow(results) == 1){
+  result <- results %>% pull(model)
+}
 
+if(nrow(results) == 2){
+  result <- "confounder"
+}
 
-```{r}
-results <- expand.grid(target = all_targets,
-                    predicted = all_predicted,
-                    modularity_class = all_modularity) %>% 
-  left_join(ts %>% select(target, predicted, topic_score)) %>% 
-  left_join(ds %>% select(target, modularity_class, cluster_score)) %>% 
-  filter(!is.na(predicted) | !is.na(modularity_class)) %>% 
-  filter(modularity_class <= 12) %>% 
-  replace(is.na(.), 0) %>% 
-  mutate(cluster_score.quart = cluster_score^(1/10),
-       topic_score.quart = topic_score^(1/10)) %>% 
-  ungroup() %>% 
-  group_by(modularity_class, predicted) %>%
-  summarize(correlation = cor.test(cluster_score, topic_score)$estimate,
-            p_value = p.adjust(cor.test(cluster_score, topic_score)$p.value, "BH"),
-            correlation_quart = cor.test(cluster_score.quart, topic_score.quart)$estimate,
-            p_value_quart = p.adjust(cor.test(cluster_score.quart, topic_score.quart)$p.value, "BH")) %>% 
-  mutate(significance = if_else(p_value < .05, "significant", "not_significant"),
-            significance_quart = if_else(p_value_quart < .05, "significant", "not_significant"),
-            correlation_sig = ifelse(significance == "significant", correlation, NA),
-            correlation_quart_sig = ifelse(significance_quart == "significant", correlation_quart, NA))
+output <- tibble(cluster = c(cluster),
+       topic = c(topic),
+       result = c(result))
+  
+return(output)
 
-```
-
-```{r}
-ggplot(results, aes(modularity_class, predicted, fill=correlation)) +
-  geom_raster() +
-  scale_fill_distiller(palette="OrRd", direction=1) +
-  scale_x_continuous(breaks=seq(0,12,1), position="top") +
-  labs(x = "donor cluster",
-       y = "topic",
-       fill = "correlation") +
-  theme_minimal()
-
+}
 ```
 
 ```{r}
-ggplot(results, aes(modularity_class, predicted, fill=significance)) +
-  geom_raster() +
-  scale_x_continuous(breaks=seq(0,12,1), position="top") +
-  labs(x = "donor cluster",
-       y = "topic",
-       fill = "significance") +
-  theme_minimal()
-
-```
-
-
-```{r}
-ggplot(results, aes(modularity_class, predicted, fill=correlation_sig)) +
-  geom_raster() +
-  scale_fill_distiller(palette="OrRd", direction=1) +
-  scale_x_continuous(breaks=seq(0,12,1), position="top") +
-  labs(x = "donor cluster",
-       y = "topic",
-       fill = "correlation") +
-  theme_minimal()
-
+granger_model(cluster = 10, topic = "prochoice.womenshealth")
 ```
 
