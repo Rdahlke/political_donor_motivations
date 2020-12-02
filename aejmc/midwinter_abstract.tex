@@ -41,6 +41,15 @@
 
 \usepackage{longtable,booktabs}
 
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 
 \title{Political Donor Motivations and Social Media: A Time-Series Analysis  }
@@ -170,18 +179,17 @@ have posited these two models of political donor motivations against
 each other (Heerwig 2016).
 
 This paper combines political donation records and Twitter and Facebook
-posts from politicians in the 2016 election cycle. These two datasets
-are analyzed in conjunction with one another to examine if politicians'
-public support of various policy issues on social media precede, lag, or
-have no relationship with donations from various communities of
-political donors. The access-oriented model of political donors predicts
-that donations from specific groups of donors will precede public
-support of certain policies. In contrast, the consumption model of
-political donors predicts that donations from various groups of donors
-would lag in response to public support of certain policy issues by
-candidates. This paper sets these two models of political donors against
-each other to see if evidence of either model is found in observational
-data.
+posts from politicians. These two datasets are analyzed together to
+examine if politicians' public support of various policy issues on
+social media precede, lag, or have no relationship with donations from
+various communities of political donors. The access-oriented model of
+political donors predicts that donations from specific groups of donors
+will precede public support of certain policies. In contrast, the
+consumption model of political donors predicts that donations from
+various groups of donors would lag in response to public support of
+certain policy issues by candidates. This paper sets these two models of
+political donors against each other to see if evidence of either model
+is found in observational data.
 
 \hypertarget{data}{%
 \section{Data}\label{data}}
@@ -202,19 +210,25 @@ donations were used to create a network of political donations with
 candidates and donors serving as nodes and donations between them as
 edges. This network was clustered into distinct communities so that
 donors in each community are most similar to one another based on which
-campaigns they contributed to. I theorize that these clusters/
-communities represent different coalitions of political donors with
-unique motivations. Viewing political donors as members of a coalition
-of fundraisers has been studied in the past (Adams 2007; Heerwig 2016)
-but often in a more informal sense and not as statistically-derived
-groups like this paper.
+campaigns they contributed to. I theorize that these clusters of donors
+represent \emph{latent coalitions} of donors who, whether they operate
+in an organized fashion or not, are working toward the goal of electing
+the same candidates. Studying political fundraisers as members of
+political coalitions has been studied in the past (Adams 2007; Heerwig
+2016), and this paper's statistically-driven definition of latent
+coalitions seeks to add to the coalition literature.
 
 \hypertarget{methodology}{%
 \section{Methodology}\label{methodology}}
 
-These two datasets were analyzed against each other using the granger
-causality time-series methodology. This methodology detects whether
-movements in one time series precedes, lags, or is not related to
+These two datasets were analyzed against each other using the Granger
+causality time-series methodology This methodology has been used by
+other researchers to study social media (Freelon, McIlwain, and Clark
+2018; Lukito 2020). Similar to political donations, this methodology has
+been used to study non-social media events such as offline protests
+(Bastos, Mercea, and Charpentier 2015) and stock prices (Park, Leung,
+and Ma 2017). This methodology detects whether movements in one time
+series precedes, lags, has a confounding variable, or is not related to
 another time series. Specifically, this paper compares time series of
 donations from clusters of political donors and times series of the
 number of social media posts by each topic that were made by campaigns
@@ -227,35 +241,48 @@ contributed to.
 \section{Results}\label{results}}
 
 Initial results provide some evidence consistent with both the
-access-oriented and consumption models. Different clusters of political
-donors exhibit different behaviors. Some clusters of political donors
-show behavior that is in-line with the access-oriented model, where
-their donations precede public support of policy issues by the
-candidates that they contributed to. Contributions from other donor
-clusters align with the conumption model of political donors and
-contributions from their clusters lag public support of various policy
-issues by candidates. Other donor clusters exhibit no behavioral
-connection to candidates' public support of policy issues--suggesting
-that there is some confounding factor or motivation for donating to the
-campaigns that they contributed to.
+access-oriented and consumption models, but more coalitions of donors
+exhibit behavior that is consistent with the consumption model of donor
+motivations. In about 31\% (4/13) of coalitions, donations from the
+coalition lagged social media posts about at least one specific topic by
+the candidates that they donated to--behavior that is predicted by the
+consumption model of donor motivations. About 15\% (2/13) of coalitions
+showed behavior inline with the access-oriented model of donors where
+their donations preceded social media posts about at least one specific
+topic made by candidates that they contributed to. Specific results can
+be found in Figure 1.
 
-The next step is to analyze the results to see which donor clusters fall
-under which donor model and with what policy topics. Another step is to
-analyze potential confounding factors that could describe the
-motivations of political donors, such as geographic proximity, or
-competitiveness of the races the cluster contributed to in aggregate.
+\begin{figure}
+\centering
+\includegraphics{../tables_and_figures/aejmc_abstract_1.jpg}
+\caption{Donor Motivation Models}
+\end{figure}
+
+The next step is to analyze potential confounding factors that could
+describe the motivations of political donors, such as geographic
+proximity or competitiveness of the races the cluster contributed to in
+aggregate. These factors are especially important for the coalitions
+that the model identified as having a confounding variable or not having
+a relationship.
+
+\hypertarget{word-count}{%
+\section{Word Count}\label{word-count}}
 
 \begin{longtable}[]{@{}lll@{}}
 \toprule
 Method & koRpus & stringi\tabularnewline
 \midrule
 \endhead
-Word count & 736 & 731\tabularnewline
-Character count & 4909 & 4909\tabularnewline
-Sentence count & 33 & Not available\tabularnewline
-Reading time & 3.7 minutes & 3.7 minutes\tabularnewline
+Word count & 789 & 778\tabularnewline
+Character count & 5240 & 5239\tabularnewline
+Sentence count & 34 & Not available\tabularnewline
+Reading time & 3.9 minutes & 3.9 minutes\tabularnewline
 \bottomrule
 \end{longtable}
+
+\hypertarget{references}{%
+\section*{References}\label{references}}
+\addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
 \leavevmode\hypertarget{ref-adams2016}{}%
@@ -273,11 +300,22 @@ Barber, Michael. 2016. ``Donation Motivations: Testing Theories of
 Access and Ideology.'' \emph{Political Research Quarterly} 69 (1):
 148--59.
 
+\leavevmode\hypertarget{ref-bastos2015}{}%
+Bastos, Marco T., Dan Mercea, and Arthur Charpentier. 2015. ``Tents,
+Tweets, and Events: The Interplay Between Ongoing Protests and Social
+Media.'' \emph{Journal of Communication} 65 (2): 320--50.
+\url{https://doi.org/10.1111/jcom.12145}.
+
 \leavevmode\hypertarget{ref-fouirnaies2015}{}%
 Fouirnaies, Alexander, and Andrew Hall. 2015. ``The Exposure Theory of
 Access: Why Some Firms Seek More Access to Incumbents Than Others.''
 \emph{SSRN Electronic Journal}, January.
 \url{https://doi.org/10.2139/ssrn.2652361}.
+
+\leavevmode\hypertarget{ref-freelon2018}{}%
+Freelon, D, C McIlwain, and M Clark. 2018. ``Quantifying the Power and
+Consequences of Social Media Protest.'' \emph{New Media \& Society} 20
+(3): 990--1011. \url{https://doi.org/10.1177/1461444816676646}.
 
 \leavevmode\hypertarget{ref-heerwig2016}{}%
 Heerwig, Jennifer A. 2016. ``Donations and Dependence: Individual
@@ -290,6 +328,19 @@ Johnson, Bertram. 2010. ``Individual Contributions: A Fundraising
 Advantage for the Ideologically Extreme?'' \emph{American Politics
 Research}, June, 890--908.
 \url{https://doi.org/10.1177/1532673X09357500}.
+
+\leavevmode\hypertarget{ref-lukito2020}{}%
+Lukito, Josephine. 2020. ``Coordinating a Multi-Platform Disinformation
+Campaign: Internet Research Agency Activity on Three U.s. Social Media
+Platforms, 2015 to 2017.'' \emph{Political Communication} 37 (2):
+238--55. \url{https://doi.org/10.1080/10584609.2019.1661889}.
+
+\leavevmode\hypertarget{ref-park2017}{}%
+Park, J., H. Leung, and K. Ma. 2017. ``Information Fusion of Stock
+Prices and Sentiment in Social Media Using Granger Causality.'' In
+\emph{2017 Ieee International Conference on Multisensor Fusion and
+Integration for Intelligent Systems (Mfi)}, 614--19.
+\url{https://doi.org/10.1109/MFI.2017.8170390}.
 
 
 

@@ -70,10 +70,10 @@ granger_data <- tibble(date = seq.Date(as.Date("2015-01-01"), as.Date("2016-11-0
   select(date, topic_count, donation_count, donation_amount) %>% 
   mutate_if(is.numeric, replace_na, replace = 0)
 
-best_lag <- tsDyn::lags.select(granger_data %>% select(topic_count, donation_amount), lag.max = 8)
+best_lag <- tsDyn::lags.select(granger_data %>% select(topic_count, donation_count), lag.max = 8)
 order <-  best_lag$BIC_min[2]
 
-if(sum(granger_data$topic_count) == 0 | sum(granger_data$donation_amount) == 0){
+if(sum(granger_data$topic_count) == 0 | sum(granger_data$donation_count) == 0){
   
   output <- tibble(cluster = cluster,
        topic = topic,
@@ -83,12 +83,12 @@ if(sum(granger_data$topic_count) == 0 | sum(granger_data$donation_amount) == 0){
   return(output)
 }
   
-access_model <- lmtest::grangertest(diff(granger_data$topic_count) ~ diff(granger_data$donation_amount), order = order) %>% 
+access_model <- lmtest::grangertest(diff(granger_data$topic_count) ~ diff(granger_data$donation_count), order = order) %>% 
   tibble() %>% 
   filter(row_number() == 2) %>% 
   mutate(model = "access")
 
-consumption_model <- lmtest::grangertest(diff(granger_data$donation_amount) ~ diff(granger_data$topic_count), order = order) %>% 
+consumption_model <- lmtest::grangertest(diff(granger_data$donation_count) ~ diff(granger_data$topic_count), order = order) %>% 
   tibble() %>% 
   filter(row_number() == 2) %>% 
   mutate(model = "consumption")
@@ -124,7 +124,7 @@ return(output)
 ```
 
 ```{r}
-topics <- posts_by_topic %>% distinct(predicted) %>% pull()
+topics <- uncoded_predicted %>% distinct(predicted) %>% pull()
 modularity_classes <- donations %>% filter(modularity_class <= 12) %>%  distinct(modularity_class) %>% arrange(modularity_class) %>% pull() 
 ```
 
@@ -135,7 +135,7 @@ registerDoParallel(makeCluster(n_cores - 1))
 ```
 
 ```{r}
-granger_results_amount <- foreach(cluster = modularity_classes,
+granger_results <- foreach(cluster = modularity_classes,
                            .packages = c("dplyr", "tidyr"),
                            .errorhandling = c("pass"),
                            .combine = "rbind") %:%
@@ -148,5 +148,27 @@ granger_results_amount <- foreach(cluster = modularity_classes,
 
 ```
 
+```{r}
+plot <- granger_results %>% 
+  mutate(result = factor(result, c("access", "consumption", "confounder", "no relationship detected"))) %>% 
+  ggplot(aes(cluster, topic, fill = result)) +
+  geom_raster() +
+  scale_x_continuous(breaks = seq(0, 12, 1), position = "top") +
+  scale_fill_grey() +
+  labs(x = "donor coalition",
+       y = "topic",
+       fill = "donor motivation model",
+       caption = "p-values adjusted with Holm's method") +
+  theme_bw()
+```
+
+```{r}
+ggsave("../tables_and_figures/aejmc_abstract_1.jpg", plot, height = 4, width = 7)
+```
+
+```{r}
+granger_results %>% 
+  write_csv("../data/granger_results.csv")
+```
 
 
