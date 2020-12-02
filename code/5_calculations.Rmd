@@ -67,13 +67,16 @@ granger_data <- tibble(date = seq.Date(as.Date("2015-01-01"), as.Date("2016-11-0
               filter(predicted == topic)) %>% 
   select(date, topic_count, donation_count, donation_amount) %>% 
   mutate_if(is.numeric, replace_na, replace = 0)
+
+best_lag <- tsDyn::lags.select(granger_data %>% select(topic_count, donation_count), lag.max = 8)
+order = best_lag$BIC_min[2]
   
-access_model <- lmtest::grangertest(diff(granger_data$topic_count) ~ diff(granger_data$donation_amount)) %>% 
+access_model <- lmtest::grangertest(diff(granger_data$topic_count) ~ diff(granger_data$donation_count), order = order) %>% 
   tibble() %>% 
   filter(row_number() == 2) %>% 
   mutate(model = "access")
 
-consumption_model <- lmtest::grangertest(diff(granger_data$donation_amount) ~ diff(granger_data$topic_count)) %>% 
+consumption_model <- lmtest::grangertest(diff(granger_data$donation_count) ~ diff(granger_data$topic_count), order = order) %>% 
   tibble() %>% 
   filter(row_number() == 2) %>% 
   mutate(model = "consumption")
@@ -100,7 +103,8 @@ if(nrow(results) == 2){
 
 output <- tibble(cluster = c(cluster),
        topic = c(topic),
-       result = c(result))
+       result = c(result),
+       lag = c(order))
   
 return(output)
 
