@@ -27,7 +27,7 @@ coded_long = coded_long.merge(variable_key)
 trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .1, random_state = 1)
 
 # load in the large BERT model
-model = BertForSequenceClassification.from_pretrained("bert-large-uncased", num_labels = 1)
+model = BertForSequenceClassification.from_pretrained("bert-large-uncased")
 
 # loving that cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
