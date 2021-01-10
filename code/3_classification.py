@@ -101,4 +101,4 @@ torch.cuda.empty_cache()
 
 trainer.evaluate()
 
-print(model(eval_input_ids, eval_attention_mask, labels = eval_labels))
+print(model(test_dl_input_ids, test_attention_mask, labels = test_labels))
