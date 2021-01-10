@@ -6,7 +6,7 @@ output:
     fig_caption: true
     latex_engine: pdflatex
     template: ../svm-latex-ms.tex
-title: "Political Donor Motivations and Social Media: A Time-Series Analysis"
+title: "Political Donor Motivations and Social Media: A Time Series Analysis"
 thanks: ""
 author:
   - Ross Dahlke
@@ -31,11 +31,11 @@ Data for this research comes from two primary sources: politicians' social media
 
 # Methodology
 
-These two datasets were analyzed against each other using the Granger causality time-series methodology. This methodology has been used by other researchers to study social media [@freelon2018; @lukito2020]. Similar to political donations, this methodology has been used to study the relationship between social media and non-social media events such as offline protests [@bastos2015] and stock prices [@park2017]. Granger causality detects whether movements in one time series precedes, lags, has a confounding variable, or is not related to another time series. Specifically, this paper compares time series of donations from clusters of political donors and times series of the number of social media posts by each topic that were made by campaigns that each donor cluster contributed to. For example, a time series of donations from a donor coalition was compared to the aggregate count of posts about a given topic made by candidates that the donor cluster contributed to. 
+These two datasets were analyzed against each other using the Granger causality time-series methodology. This methodology has been used by other researchers to study social media [@freelon2018; @lukito2020]. Similar to political donations, this methodology has been used to study the relationship between social media and non-social media events such as offline protests [@bastos2015] and stock prices [@park2017]. Granger causality detects whether movements in one time series precedes, lags, has a confounding variable, or is not related to another time series. Specifically, this paper compares time series of donations from clusters of political donors and time series of the number of social media posts by each topic that were made by campaigns that each donor cluster contributed to. For example, a time series of donations from a donor coalition was compared to the aggregate count of posts about a given topic made by candidates that the donor cluster contributed to. 
 
 # Preliminary Results
 
-Initial results suggest that it is more common to observe behavior consistent with the consumption model (31% of coalitions, 4/13) than the access-oriented model. However, the access-oriented model is still observed in 15% of coalition (2/13). Under a strict interpretation of either model, we would expect to find behavior that fits only with that model. These results that find both the models present in the data is in line with some other research in suggesting that there are a "diversity of roles individual contributors play in the campaign finance system" [@heerwig2016]. Specific results of the Granger causality model are in Figure 1 below. 
+Initial results suggest that it is more common to observe behavior consistent with the consumption model (31% of coalitions, 4/13) than the access-oriented model. However, the access-oriented model is still observed in 15% of coalitions (2/13). Under a strict interpretation of either model, we would expect to find behavior that fits only with that model. These results that find both the models present in the data is in line with some other research in suggesting that there are a "diversity of roles individual contributors play in the campaign finance system" [@heerwig2016]. Specific results of the Granger causality model are in Figure 1 below. 
 
 ![Donor Motivation Models](../tables_and_figures/aejmc_abstract_1.jpg)
 
