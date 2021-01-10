@@ -27,7 +27,7 @@ coded_long = coded_long.merge(variable_key)
 trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .1, random_state = 1)
 
 # load in the large BERT model
-model = BertForSequenceClassification.from_pretrained("bert-large-uncased")
+model = BertForSequenceClassification.from_pretrained("bert-large-uncased", num_labels = len(variable_key))
 
 # loving that cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -79,8 +79,8 @@ def dummy_data_collector(features):
 training_args = TrainingArguments(
     output_dir='./results',          # output directory
     num_train_epochs=200,              # total # of training epochs
-    per_device_train_batch_size=1,  # batch size per device during training
-    per_device_eval_batch_size=1,   # batch size for evaluation
+    per_device_train_batch_size=100,  # batch size per device during training
+    per_device_eval_batch_size=100,   # batch size for evaluation
     warmup_steps=500,                # number of warmup steps for learning rate scheduler
     weight_decay=0.01,               # strength of weight decay
     logging_dir='./logs',
