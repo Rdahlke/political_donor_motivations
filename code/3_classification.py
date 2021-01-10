@@ -61,6 +61,44 @@ test_encoding = tokenizer(test_batch, return_tensors='pt', padding=True, truncat
 test_input_ids = test_encoding['input_ids'].to(device)
 test_input_ids = test_input_ids.type(dtype = torch.long)
 test_attention_mask = test_encoding['attention_mask'].to(device).float()
-test_labels = torch.tensor([coded_long["label"][i] for i in trn_idx])
+test_labels = torch.tensor([coded_long["label"][i] for i in test_idx])
 test_labels = test_labels.type(torch.float)
 test_labels = test_labels.to(device)
+
+train_dataset = TensorDataset(train_input_ids, train_attention_mask, train_labels)
+
+test_dataset = TensorDataset(test_input_ids, test_attention_mask, test_labels)
+
+def dummy_data_collector(features):
+    batch = {}
+    batch['input_ids'] = torch.stack([f[0] for f in features])
+    batch['attention_mask'] = torch.stack([f[1] for f in features])
+    batch['labels'] = torch.stack([f[2] for f in features])
+    return batch
+
+training_args = TrainingArguments(
+    output_dir='./results',          # output directory
+    num_train_epochs=200,              # total # of training epochs
+    per_device_train_batch_size=1,  # batch size per device during training
+    per_device_eval_batch_size=1,   # batch size for evaluation
+    warmup_steps=500,                # number of warmup steps for learning rate scheduler
+    weight_decay=0.01,               # strength of weight decay
+    logging_dir='./logs',
+    save_total_limit=4,
+)
+
+trainer = Trainer(
+    model=model,                         # the instantiated 🤗 Transformers model to be trained
+    args=training_args,                  # training arguments, defined above
+    train_dataset=train_dataset,         # training dataset
+    eval_dataset=test_dataset,           # evaluation dataset
+    data_collator = dummy_data_collector
+)
+
+trainer.train()
+
+torch.cuda.empty_cache()
+
+trainer.evaluate()
+
+print(model(eval_input_ids, eval_attention_mask, labels = eval_labels))
