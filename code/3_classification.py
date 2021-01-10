@@ -88,7 +88,7 @@ training_args = TrainingArguments(
 )
 
 trainer = Trainer(
-    model=model,                         # the instantiated 🤗 Transformers model to be trained
+    model=model,                         # the instantiated Transformers model to be trained
     args=training_args,                  # training arguments, defined above
     train_dataset=train_dataset,         # training dataset
     eval_dataset=test_dataset,           # evaluation dataset
