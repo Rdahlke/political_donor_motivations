@@ -24,7 +24,7 @@ variable_key["label"] = variable_key.index
 coded_long = coded_long.merge(variable_key)
 
 # split into train and test datasets
-trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .1, random_state = 1)
+trn_idx, test_idx = train_test_split(np.arange(10), test_size = .1, random_state = 1)
 
 # load in the large BERT model
 model = BertForSequenceClassification.from_pretrained("bert-large-uncased", num_labels = len(variable_key))
@@ -47,7 +47,7 @@ tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 # preparing training batch
 train_batch = [coded_long["text"][i] for i in trn_idx]
-train_encoding = tokenizer(train_batch, return_tensors='pt', padding=True, truncation=True, max_length = 200)
+train_encoding = tokenizer(train_batch, return_tensors='pt', padding=True, truncation=True, max_length = 50)
 train_input_ids = train_encoding['input_ids'].to(device)
 train_input_ids = train_input_ids.type(dtype = torch.long)
 train_attention_mask = train_encoding['attention_mask'].to(device).float()
@@ -57,7 +57,7 @@ train_labels = train_labels.to(device)
 
 # preparing test batch
 test_batch = [coded_long["text"][i] for i in test_idx]
-test_encoding = tokenizer(test_batch, return_tensors='pt', padding=True, truncation=True, max_length = 200)
+test_encoding = tokenizer(test_batch, return_tensors='pt', padding=True, truncation=True, max_length = 50)
 test_input_ids = test_encoding['input_ids'].to(device)
 test_input_ids = test_input_ids.type(dtype = torch.long)
 test_attention_mask = test_encoding['attention_mask'].to(device).float()
@@ -79,8 +79,8 @@ def dummy_data_collector(features):
 training_args = TrainingArguments(
     output_dir='./results',          # output directory
     num_train_epochs=1,              # total # of training epochs
-    per_device_train_batch_size=1000,  # batch size per device during training
-    per_device_eval_batch_size=1000,   # batch size for evaluation
+    per_device_train_batch_size=1,  # batch size per device during training
+    per_device_eval_batch_size=1,   # batch size for evaluation
     warmup_steps=500,                # number of warmup steps for learning rate scheduler
     weight_decay=0.01,               # strength of weight decay
     logging_dir='./logs',
