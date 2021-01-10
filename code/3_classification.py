@@ -52,7 +52,7 @@ train_input_ids = train_encoding['input_ids'].to(device)
 train_input_ids = train_input_ids.type(dtype = torch.long)
 train_attention_mask = train_encoding['attention_mask'].to(device).float()
 train_labels = torch.tensor([coded_long["label"][i] for i in trn_idx])
-train_labels = train_labels.type(torch.float)
+train_labels = train_labels.type(torch.long)
 train_labels = train_labels.to(device)
 
 # preparing test batch
@@ -62,7 +62,7 @@ test_input_ids = test_encoding['input_ids'].to(device)
 test_input_ids = test_input_ids.type(dtype = torch.long)
 test_attention_mask = test_encoding['attention_mask'].to(device).float()
 test_labels = torch.tensor([coded_long["label"][i] for i in test_idx])
-test_labels = test_labels.type(torch.float)
+test_labels = test_labels.type(torch.long)
 test_labels = test_labels.to(device)
 
 train_dataset = TensorDataset(train_input_ids, train_attention_mask, train_labels)
