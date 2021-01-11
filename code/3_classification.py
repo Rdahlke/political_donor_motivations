@@ -106,78 +106,15 @@ print((model(test_input_ids, test_attention_mask, labels = test_labels)))
 
 output = model(test_input_ids, test_attention_mask)
 
-_, prediction = torch.max(output, dim = 1)
+preds = torch.max(F.softmax(output[0]), dim = 1)[1]
 
-torch.max(F.softmax(output[0]), dim = 1)
+print("test labels")
+print(test_labels)
 
-output.preds
+print("    ")
+print("outputs")
+print(preds)
 
-F.softmax(model.predict(test_dataset))
+predictions = pd.DataFrame({"test_text": test_batch, "test_labels": test_labels, "test_predictions": preds})
 
-output
-
-_, prediction = torch.max(output, dim=1)
-
-prediction
-
-
-
-def get_predictions(model, text_batch, input_ids, attention_mask, labels):
-  model = model.eval()
-  texts = []
-  predictions = []
-  prediction_probs = []
-  real_values = []
-  with torch.no_grad():
-    for i in range(len(text_batch)):
-      texts = text_batch
-      input_ids = input_ids.to(device)
-      attention_mask = attention_mask.to(device)
-      targets = labels.to(device)
-      outputs = model(
-        input_ids = input_ids,
-        attention_mask = attention_mask
-      )
-      _, preds = torch.max(outputs, dim=1)
-      review_texts.extend(texts)
-      predictions.extend(preds)
-      prediction_probs.extend(outputs)
-      real_values.extend(targets)
-  predictions = torch.stack(predictions).cpu()
-  prediction_probs = torch.stack(prediction_probs).cpu()
-  real_values = torch.stack(real_values).cpu()
-  return review_texts, predictions, prediction_probs, real_values
-
-y_review_texts, y_pred, y_pred_probs, y_test = get_predictions(
-    model,
-    test_batch,
-    test_input_ids,
-    test_attention_mask,
-    test_labels
-)
-
-def get_predictions(model, text_batch, input_ids, attensio):
-  model = model.eval()
-  texts = []
-  predictions = []
-  prediction_probs = []
-  real_values = []
-  with torch.no_grad():
-    for i in range(len(test_dataset)):
-      texts = test_batch[0]
-      input_ids = test_dataset[0][0].to(device)
-      attention_mask = test_dataset[0][1].to(device)
-      targets = test_dataset[0][2].to(device)
-      outputs = model(
-        input_ids=input_ids,
-        attention_mask=attention_mask
-      )
-      _, preds = torch.max(outputs)
-      review_texts.extend(texts)
-      predictions.extend(preds)
-      prediction_probs.extend(outputs)
-      real_values.extend(targets)
-  predictions = torch.stack(predictions).cpu()
-  prediction_probs = torch.stack(prediction_probs).cpu()
-  real_values = torch.stack(real_values).cpu()
-  return review_texts, predictions, prediction_probs, real_values
+predictions.to_csv("data/bert_predictions.csv")
