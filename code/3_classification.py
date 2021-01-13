@@ -62,7 +62,7 @@ train_labels = train_labels.to(device)
 
 # preparing test batch
 test_batch = [coded_long["text"][i] for i in test_idx]
-test_encoding = tokenizer(test_batch, return_tensors='pt', padding=True, truncation=True, max_length = 50)
+test_encoding = tokenizer(test_batch, return_tensors='pt', padding=True, truncation=True, max_length = 40)
 test_input_ids = test_encoding['input_ids'].to(device)
 test_input_ids = test_input_ids.type(dtype = torch.long)
 test_attention_mask = test_encoding['attention_mask'].to(device).float()
