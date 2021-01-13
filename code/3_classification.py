@@ -66,6 +66,7 @@ test_batch = [coded_long["text"][i] for i in test_idx]
 test_encoding = tokenizer(test_batch, return_tensors='pt', padding=True, truncation=True, max_length = 40)
 test_input_ids = test_encoding['input_ids'].to(device)
 test_input_ids = test_input_ids.type(dtype = torch.long)
+test_input_ids = test_input_ids.to(device)
 test_attention_mask = test_encoding['attention_mask'].to(device).float()
 test_labels = torch.tensor([coded_long["label"][i] for i in test_idx])
 test_labels = test_labels.type(torch.long)
@@ -118,6 +119,8 @@ print("starting evaluation")
 print("training and evaluation complete")
 
 # print((model(test_input_ids, test_attention_mask, labels = test_labels)))
+
+model.to(device)
 
 output = model(test_input_ids.to(device), test_attention_mask.to(device))
 
