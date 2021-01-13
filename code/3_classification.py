@@ -109,7 +109,7 @@ trainer.train()
 
 print("training completed")
 
-torch.cuda.empty_cache()
+# torch.cuda.empty_cache()
 
 print("starting evaluation")
 
@@ -121,7 +121,11 @@ print("training and evaluation complete")
 
 output = model(test_input_ids, test_attention_mask)
 
+print("model output created")
+
 preds = torch.max(F.softmax(output[0]), dim = 1)[1]
+
+print("test preditions created")
 
 print("test labels")
 print(test_labels)
