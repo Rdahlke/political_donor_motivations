@@ -74,7 +74,7 @@ train_dataset = TensorDataset(train_input_ids, train_attention_mask, train_label
 
 test_dataset = TensorDataset(test_input_ids, test_attention_mask, test_labels)
 
-def dummy_data_collector(features):
+def data_collector(features):
     batch = {}
     batch['input_ids'] = torch.stack([f[0] for f in features])
     batch['attention_mask'] = torch.stack([f[1] for f in features])
@@ -99,7 +99,7 @@ trainer = Trainer(
     args=training_args,                  # training arguments, defined above
     train_dataset=train_dataset,         # training dataset
     eval_dataset=test_dataset,           # evaluation dataset
-    data_collator = dummy_data_collector
+    data_collator = data_collector
 )
 
 print("starting training")
@@ -112,7 +112,7 @@ torch.cuda.empty_cache()
 
 print("starting evaluation")
 
-trainer.evaluate()
+# trainer.evaluate()
 
 print("training and evaluation complete")
 
