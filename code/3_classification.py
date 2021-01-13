@@ -119,7 +119,7 @@ print("training and evaluation complete")
 
 # print((model(test_input_ids, test_attention_mask, labels = test_labels)))
 
-output = model(test_input_ids, test_attention_mask)
+output = model(test_input_ids.to(device), test_attention_mask.to(device))
 
 print("model output created")
 
