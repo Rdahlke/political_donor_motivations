@@ -116,7 +116,7 @@ print("starting evaluation")
 
 print("training and evaluation complete")
 
-print((model(test_input_ids, test_attention_mask, labels = test_labels)))
+# print((model(test_input_ids, test_attention_mask, labels = test_labels)))
 
 output = model(test_input_ids, test_attention_mask)
 
