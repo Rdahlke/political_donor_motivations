@@ -29,7 +29,7 @@ coded_long = coded_long.merge(variable_key)[0:1000]
 print("data imported and formatted")
 
 # split into train and test datasets
-trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .5, random_state = 2)
+trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .1, random_state = 2)
 
 # load in the large BERT model
 model = BertForSequenceClassification.from_pretrained("bert-base-uncased")
