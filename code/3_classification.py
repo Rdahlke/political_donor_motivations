@@ -13,6 +13,8 @@ from sklearn.model_selection import train_test_split
 from torch.utils.data import TensorDataset, DataLoader, RandomSampler, SequentialSampler
 from torch.nn import functional as F
 
+print("pages imported")
+
 # read in pre-coded data
 coded = pd.read_csv("data/posts_coded.csv")
 
@@ -23,6 +25,8 @@ coded_long = pd.melt(coded, id_vars = ["text"]).dropna(thresh = 3).reset_index()
 variable_key = pd.DataFrame({"variable": coded_long["variable"].unique()})
 variable_key["label"] = variable_key.index
 coded_long = coded_long.merge(variable_key)
+
+print("data imported and formatted")
 
 # split into train and test datasets
 trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .5, random_state = 1)
@@ -88,6 +92,8 @@ training_args = TrainingArguments(
     save_total_limit=1,
 )
 
+print("starting training")
+
 trainer = Trainer(
     model=model,                         # the instantiated Transformers model to be trained
     args=training_args,                  # training arguments, defined above
@@ -101,6 +107,8 @@ trainer.train()
 torch.cuda.empty_cache()
 
 trainer.evaluate()
+
+print("training and evaluation complete")
 
 print((model(test_input_ids, test_attention_mask, labels = test_labels)))
 
