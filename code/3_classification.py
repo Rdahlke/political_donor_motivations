@@ -92,7 +92,7 @@ training_args = TrainingArguments(
     save_total_limit=1,
 )
 
-print("starting training")
+print("trainer set up")
 
 trainer = Trainer(
     model=model,                         # the instantiated Transformers model to be trained
@@ -102,9 +102,15 @@ trainer = Trainer(
     data_collator = dummy_data_collector
 )
 
+print("starting training")
+
 trainer.train()
 
+print("training completed")
+
 torch.cuda.empty_cache()
+
+print("starting evaluation")
 
 trainer.evaluate()
 
