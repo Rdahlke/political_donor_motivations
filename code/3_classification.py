@@ -32,7 +32,7 @@ print("data imported and formatted")
 trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .5, random_state = 2)
 
 # load in the large BERT model
-model = BertForSequenceClassification.from_pretrained("bert-large-uncased")
+model = BertForSequenceClassification.from_pretrained("bert-base-uncased")
 
 # loving that cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -48,7 +48,7 @@ optimizer_grouped_parameters = [
 ]
 optimizer = AdamW(optimizer_grouped_parameters, lr = 1e-5)
 
-tokenizer = BertTokenizer.from_pretrained("bert-large-uncased")
+tokenizer = BertTokenizer.from_pretrained("bert-base-uncased")
 
 # preparing training batch
 train_batch = [coded_long["text"][i] for i in trn_idx]
