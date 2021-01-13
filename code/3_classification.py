@@ -131,4 +131,6 @@ print(preds)
 
 predictions = pd.DataFrame({"test_text": test_batch, "test_labels": test_labels.cpu(), "test_predictions": preds.cpu()})
 
-predictions.to_csv("data/bert_predictions.csv")
+predictions.to_csv("data/bert_eval_predictions.csv")
+
+print("model successfully trained, test predictions written to data/bert_eval_predictions.csv")
