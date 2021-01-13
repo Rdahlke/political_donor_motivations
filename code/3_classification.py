@@ -32,7 +32,7 @@ print("data imported and formatted")
 trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .1, random_state = 2)
 
 # load in the large BERT model
-model = BertForSequenceClassification.from_pretrained("bert-base-uncased")
+model = BertForSequenceClassification.from_pretrained("bert-base-uncased", num_labels = 27)
 
 # loving that cuda
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
