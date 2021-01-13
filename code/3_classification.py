@@ -129,6 +129,6 @@ print("    ")
 print("outputs")
 print(preds)
 
-predictions = pd.DataFrame({"test_text": test_batch.cpu(), "test_labels": test_labels.cpu(), "test_predictions": preds.cpu()})
+predictions = pd.DataFrame({"test_text": test_batch, "test_labels": test_labels.cpu(), "test_predictions": preds.cpu()})
 
 predictions.to_csv("data/bert_predictions.csv")
