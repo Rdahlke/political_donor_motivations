@@ -129,7 +129,16 @@ print("    ")
 print("outputs")
 print(preds)
 
-predictions = pd.DataFrame({"test_text": test_batch, "test_labels": test_labels.cpu(), "test_predictions": preds.cpu()})
+predictions = pd.DataFrame({"test_text": test_batch, "test_label": test_labels.cpu(), "test_prediction": preds.cpu()})
+
+predictions["correct_flag"] = np.where(predictions["test_label"] == predictions["test_prediction"], 1, 0)
+
+accuracy = np.sum(predictions["correct_flag"]) / len(predictions)
+
+print(" ")
+print("accuracy:")
+print(accuracy)
+print(" ")
 
 predictions.to_csv("data/bert_eval_predictions.csv")
 
