@@ -24,12 +24,12 @@ coded_long = pd.melt(coded, id_vars = ["text"]).dropna(thresh = 3).reset_index()
 # create a key for the labels
 variable_key = pd.DataFrame({"variable": coded_long["variable"].unique()})
 variable_key["label"] = variable_key.index
-coded_long = coded_long.merge(variable_key)
+coded_long = coded_long.merge(variable_key)[0:10]
 
 print("data imported and formatted")
 
 # split into train and test datasets
-trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .1, random_state = 2)
+trn_idx, test_idx = train_test_split(np.arange(len(coded_long)), test_size = .5, random_state = 2)
 
 # load in the large BERT model
 model = BertForSequenceClassification.from_pretrained("bert-large-uncased")
