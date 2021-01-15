@@ -8,4 +8,4 @@
 #SBATCH --mem-per-cpu=8G
 
 srun hostname
-srun python3 code/3_classification.py
+srun python3 ../code/3_classification.py

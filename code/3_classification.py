@@ -172,7 +172,7 @@ print("predit_output created")
 
 predict_preds = torch.max(F.softmax(predict_output[0]), dim = 1)[1]
 
-print("predictionso on uncoded data created")
+print("predictions on uncoded data created")
 
 uncoded["topic"] = predict_preds
 
