@@ -151,3 +151,29 @@ print(" ")
 predictions.to_csv("data/bert_eval_predictions.csv")
 
 print("model successfully trained, test predictions written to data/bert_eval_predictions.csv")
+
+## going to run the model on all posts
+# read in data
+uncoded = pd.read_csv("data/posts_uncoded_no_encoding.csv")
+uncoded["text"] = uncoded["text"].astype(str)
+
+# preparing prediction batch
+predict_batch = uncoded["text"].to_list()
+predict_encoding = tokenizer(predict_batch, return_tensors='pt', padding=True, truncation=True, max_length = 40)
+predict_input_ids = predict_encoding['input_ids'].to(device)
+predict_input_ids = predict_input_ids.type(dtype = torch.long)
+predict_input_ids = predict_input_ids.to(device)
+predict_attention_mask = predict_encoding['attention_mask'].to(device).float()
+
+# apply model to make predictions on uncoded posts
+predict_output = model(test_input_ids.to(device), test_attention_mask.to(device))
+
+print("predit_output created")
+
+predict_preds = torch.max(F.softmax(predict_output[0]), dim = 1)[1]
+
+print("predictionso on uncoded data created")
+
+uncoded["topic"] = predict_preds
+
+uncoded.to_csv("data/bert_uncoded_preditions.csv")
