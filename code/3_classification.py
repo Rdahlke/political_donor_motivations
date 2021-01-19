@@ -85,7 +85,7 @@ def data_collector(features):
 
 training_args = TrainingArguments(
     output_dir='./results',          # output directory
-    num_train_epochs=10,              # total # of training epochs
+    num_train_epochs=4,              # total # of training epochs
     per_device_train_batch_size=100,  # batch size per device during training
     per_device_eval_batch_size=1,   # batch size for evaluation
     warmup_steps=500,                # number of warmup steps for learning rate scheduler
@@ -162,7 +162,7 @@ print("preparing uncoded batch")
 # preparing prediction batch
 predict_batch = uncoded["text"].to_list()
 print("encoding predict_batch")
-predict_encoding = tokenizer(predict_batch[0:4000], return_tensors='pt', padding=True, truncation=True, max_length = 40)
+predict_encoding = tokenizer(predict_batch[0:2500], return_tensors='pt', padding=True, truncation=True, max_length = 40)
 len(predict_batch)
 print("input_ids to device")
 predict_input_ids = predict_encoding['input_ids'].to(device)
