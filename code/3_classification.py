@@ -162,6 +162,7 @@ print("preparing uncoded batch")
 # preparing prediction batch
 predict_batch = uncoded["text"].to_list()
 print("encoding predict_batch")
+# experiencing some memory issues with the tokenizer, will work with a 1/2 subset
 predict_encoding = tokenizer(predict_batch, return_tensors='pt', padding=True, truncation=True, max_length = 40)
 print("input_ids to device")
 predict_input_ids = predict_encoding['input_ids'].to(device)
@@ -172,6 +173,7 @@ predict_attention_mask = predict_encoding['attention_mask'].to(device).float()
 
 print("applying model to uncoded data")
 # apply model to make predictions on uncoded posts
+# also having a memory problem here, even with a 1/2 subset
 predict_output = model(test_input_ids.to(device), test_attention_mask.to(device))
 
 print("predit_output created")
