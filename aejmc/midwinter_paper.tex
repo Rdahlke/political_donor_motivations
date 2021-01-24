@@ -39,6 +39,7 @@
 
 \setcounter{secnumdepth}{0}
 
+\usepackage{longtable,booktabs}
 
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -188,6 +189,18 @@ coalitions of similar donors and tests the competing models of political
 donor motivations on these more granular groups of donors who support
 similar candidates.
 
+\begin{longtable}[]{@{}lll@{}}
+\toprule
+Method & koRpus & stringi\tabularnewline
+\midrule
+\endhead
+Word count & 1676 & 1679\tabularnewline
+Character count & 11389 & 11388\tabularnewline
+Sentence count & 70 & Not available\tabularnewline
+Reading time & 8.4 minutes & 8.4 minutes\tabularnewline
+\bottomrule
+\end{longtable}
+
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
@@ -197,45 +210,93 @@ similar candidates.
 \section{Access-Oriented Model}\label{access-oriented-model}}
 
 Access-oriented political donors are those that attempt to use their
-contributions to gain access to politicians. The theory goes that this
-access can then influence legislative behavior (Francia et al. 2003).
-Milbrath (1958) centers legislative influence as a communicative process
-where those seeking to influence legislators must be able to
-``communicate their power, as well as the facts and arguments supporting
-their position, when they confer with a legislator.'' Congress is
-operating in a ``vacuum filled with noise.'' And political contributions
-can gain direct access that allows to to cut through all the noise of
-competing information that the legislator might be encountering
-(Milbrath 1958). In interviews, business groups themselves said that
-they seek ``access'' to either a member of congress or a member of their
-staff when they make a contribution. But these groups stated that their
-contribution only gains the access to make an argument and it is the
-merit of the argument that determines support for their cause or not
-(Herndon 1982). Empirical studies of financial documents backup this
-claim that donors seek access in order to influence policy (Fouirnaies
-and Hall 2015).
-
-Empirical research has suggested that political contributors are
-successful in their goals to gain access as measured by the amount of
-time that organized interest groups spend with members of congress
-(Langbein 1986).
+contributions to gain access to politicians. Most often, access-oriented
+donors are thought to be the motivation behind contributions from
+Political Action Committees (PACs) and donors with business interest.
+The theory goes that this access can then influence legislative behavior
+(Francia et al. 2003). Milbrath (1958) centers legislative influence as
+a communicative process where those seeking to influence legislators
+must be able to ``communicate their power, as well as the facts and
+arguments supporting their position, when they confer with a
+legislator.'' Congress is operating in a ``vacuum filled with noise.''
+And political contributions can gain direct access that allows to to cut
+through all the noise of competing information that the legislator might
+be encountering (Milbrath 1958). In interviews, business groups
+themselves said that they seek ``access'' to either a member of congress
+or a member of their staff when they make a contribution. But these
+groups stated that their contribution only gains the access to make an
+argument and it is the merit of the argument that determines support for
+their cause or not (Herndon 1982). Empirical studies of financial
+documents backup this claim that donors seek access in order to
+influence policy (Fouirnaies and Hall 2015). Past research has suggested
+that political contributors are successful in their goals to gain access
+as measured by the amount of time that organized interest groups spend
+with members of congress (Langbein 1986).
 
 However, measuring the direct access that political financiers gain from
 political contributions is difficult to measure. Instead, researchers
-have baked the ``access'' component of contributor influence into their
-assumptions and instead look for evidence of ``influence'' of political
-contributors on politicians. Many political science papers do not use
-the explicit term ``access-oriented donor'' and instead refer to their
-work as examining the potential ``influence'' of political donors on
-politicians. This line of influence research implies a gain of access by
-political contributors. As Langbein (1986) states, ``{[}Access{]} is a
-precondition for having influence over public policy. Contributions
+have treated the ``access'' component of contributor influence as an
+implicit assumption and instead look for evidence of ``influence'' of
+political contributors on politicians. Many political science papers do
+not use the explicit term ``access-oriented donor'' and instead refer to
+their work as examining the potential ``influence'' of political donors
+on politicians. This line of influence research implies a gain of access
+by political contributors. As Langbein (1986) states, ``{[}Access{]} is
+a precondition for having influence over public policy. Contributions
 themselves have little meaning for a congressman, because they do not
 carry any `message.' Only access, or some other form of direct or
-indirect communication, can translate money into influence.'' As such,
-this paper will consider research that investigates the ``influence'' of
-money on politics as operating under the access-oriented model of
-political contributions.
+indirect communication, can translate money into influence.''
+
+Even though research has suggested there is a connection between
+political contributions and access. It is unclear if that access
+actually converts to \emph{influence} in the political process. Despite
+confirmation that PACs attempt to influence the legislative process
+(Grenzke 1989), past research has found PAC contributions to have a
+limited effect on roll-call voting (Wright 1985). In rare instances,
+there is an apparent connection between PAC contributions and roll-call
+votes, but it that correlation is most likely due to broader support
+from larger interest groups (Grenzke 1989). These sparse correlations
+could be manifestation of the finding that legislators are responsive to
+changes to the opinions of the national individual donor class
+(Canes-Wrone and Gibson 2019). One article went so far as to conclude
+that ``evidence in the article undermines belief in the
+military-industrial complex model'' (Wayman 1985) when studying the
+effect of defense-related PACs on roll-call voting.
+
+Other studies on the connection between campaign contributions and
+legislative voting does support that moneyed interests play a
+significant role in the legislative process, particularly organized
+business interests that are within a member's district (Hall and Wayman
+1990), potentially similar to how members of congress prioritize public
+opinion of their district over national public opinion {[}butler2011{]}.
+Further, there appears to be a stronger influence as a result of
+contributions from individuals with business interests, opposed to PACs,
+which many other studies focus on (Fellowes and Wolf 2004). A
+meta-analysis found that model specification played a significant role
+in whether significant results were found when looking for a connection
+between donations and roll-calls votes, concluding that studies that
+controlled for ``friendly giving by including a measure of legislators'
+ideology and that include more than one contributions variable are less
+likely to produce significant results'' (Roscoe and Jenkins 2005).
+Despite this variability in model specification, the authors conclude
+that one-third of roll-call votes are impacted by campaign contributions
+(Roscoe and Jenkins 2005).
+
+Potentially, the influence exerted by contributors when making a
+political contribution is so indirect that it doesn't always materialize
+in statistical patterns of legislative voting, but there is evidence of
+the influence as a result of the legislation. For example, one study
+found that future returns of firms is positively and significantly
+correlated with contributions in support for candidates, finding the
+strongest effect among firms that support candidates within the state
+that the firm is based (Cooper, Gulen, and Ovtchinnikov 2010). In
+addition to immediately-felt financial returns, donors may
+systematically contribute money to legislative agenda setters, such as
+chairs of financial committees, in an effort to set future legislative
+agendas (Fouirnaies 2018). Even campaign contribution from business
+executives are ``best understood as purchases of `good will' whose
+returns, while positive in expectation, are contingent and rare''
+(Gordon, Hafer, and Landa 2007).
 
 \hypertarget{consumption-model}{%
 \section{Consumption Model}\label{consumption-model}}
@@ -352,6 +413,29 @@ Tweets, and Events: The Interplay Between Ongoing Protests and Social
 Media.'' \emph{Journal of Communication} 65 (2): 320--50.
 \url{https://doi.org/10.1111/jcom.12145}.
 
+\leavevmode\hypertarget{ref-caneswrone2019}{}%
+Canes-Wrone, Brandice, and Nathan Gibson. 2019. ``Does Money Buy
+Congressional Love? Individual Donors and Legislative Voting.''
+\emph{Congress \& the Presidency} 46 (1): 1--27.
+\url{https://doi.org/10.1080/07343469.2018.1518965}.
+
+\leavevmode\hypertarget{ref-cooper2010}{}%
+Cooper, Michael J., Huseyin Gulen, and Alexei V. Ovtchinnikov. 2010.
+``Corporate Political Contributions and Stock Returns.'' \emph{The
+Journal of Finance} 65 (2): 687--724.
+\url{https://doi.org/https://doi.org/10.1111/j.1540-6261.2009.01548.x}.
+
+\leavevmode\hypertarget{ref-fellowes2004}{}%
+Fellowes, Matthew C., and Patrick J. Wolf. 2004. ``Funding Mechanisms
+and Policy Instruments: How Business Campaign Contributions Influence
+Congressional Votes.'' \emph{Political Research Quarterly} 57 (2):
+315--24.
+
+\leavevmode\hypertarget{ref-fouirnaies2018}{}%
+Fouirnaies, Alexander. 2018. ``When Are Agenda Setters Valuable?''
+\emph{American Journal of Political Science} 62 (1): 176--91.
+\url{https://doi.org/https://doi.org/10.1111/ajps.12316}.
+
 \leavevmode\hypertarget{ref-fouirnaies2015}{}%
 Fouirnaies, Alexander, and Andrew Hall. 2015. ``The Exposure Theory of
 Access: Why Some Firms Seek More Access to Incumbents Than Others.''
@@ -367,6 +451,22 @@ Elections}. New York, NY: Columbia University Press.
 Freelon, D, C McIlwain, and M Clark. 2018. ``Quantifying the Power and
 Consequences of Social Media Protest.'' \emph{New Media \& Society} 20
 (3): 990--1011. \url{https://doi.org/10.1177/1461444816676646}.
+
+\leavevmode\hypertarget{ref-gordon2007}{}%
+Gordon, Sanford C., Catherine Hafer, and Dimitri Landa. 2007.
+``Consumption or Investment? On Motivations for Political Giving.''
+\emph{The Journal of Politics} 69 (4): 1057--72.
+
+\leavevmode\hypertarget{ref-grenzke1989}{}%
+Grenzke, Janet M. 1989. ``PACs and the Congressional Supermarket: The
+Currency Is Complex.'' \emph{American Journal of Political Science} 33
+(1): 1--24. \url{http://www.jstor.org/stable/2111251}.
+
+\leavevmode\hypertarget{ref-hall1990}{}%
+Hall, Richard L., and Frank W. Wayman. 1990. ``Buying Time: Moneyed
+Interests and the Mobilization of Bias in Congressional Committees.''
+\emph{American Political Science Review} 84 (3): 797--820.
+\url{https://doi.org/10.2307/1962767}.
 
 \leavevmode\hypertarget{ref-heerwig2016}{}%
 Heerwig, Jennifer A. 2016. ``Donations and Dependence: Individual
@@ -404,6 +504,23 @@ Prices and Sentiment in Social Media Using Granger Causality.'' In
 \emph{2017 Ieee International Conference on Multisensor Fusion and
 Integration for Intelligent Systems (Mfi)}, 614--19.
 \url{https://doi.org/10.1109/MFI.2017.8170390}.
+
+\leavevmode\hypertarget{ref-roscoe2005}{}%
+Roscoe, Douglas D., and Shannon Jenkins. 2005. ``A Meta-Analysis of
+Campaign Contributions' Impact on Roll Call Voting*.'' \emph{Social
+Science Quarterly} 86 (1): 52--68.
+\url{https://doi.org/https://doi.org/10.1111/j.0038-4941.2005.00290.x}.
+
+\leavevmode\hypertarget{ref-wayman1985}{}%
+Wayman, Frank Whelon. 1985. ``Arms Control and Strategic Arms Voting in
+the U.s. Senate: Patterns of Change, 1967-1983.'' \emph{The Journal of
+Conflict Resolution} 29 (2): 225--51.
+\url{http://www.jstor.org/stable/174100}.
+
+\leavevmode\hypertarget{ref-wright1985}{}%
+Wright, John R. 1985. ``PACs, Contributions, and Roll Calls: An
+Organizational Perspective.'' \emph{American Political Science Review}
+79 (2): 400--414. \url{https://doi.org/10.2307/1956656}.
 
 
 
