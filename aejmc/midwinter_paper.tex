@@ -157,14 +157,15 @@
 
 
 
-\vskip -8.5pt
 
 
- % removetitleabstract
+\begin{abstract}
 
-\noindent \doublespacing 
+    \hbox{\vrule height .2pt width 39.14pc}
 
-The two predominant theories of political donor motivations are the
+    \vskip 8.5pt % \small 
+
+\noindent The two predominant theories of political donor motivations are the
 access-oriented model and the consumption model. This paper combines
 political donation records and social media posts from politicians to
 test whether either behavior is observed. In the access-oriented model,
@@ -189,15 +190,29 @@ coalitions of similar donors and tests the competing models of political
 donor motivations on these more granular groups of donors who support
 similar candidates.
 
+
+    \hbox{\vrule height .2pt width 39.14pc}
+
+
+\end{abstract}
+
+
+\vskip -8.5pt
+
+
+ % removetitleabstract
+
+\noindent \doublespacing 
+
 \begin{longtable}[]{@{}lll@{}}
 \toprule
 Method & koRpus & stringi\tabularnewline
 \midrule
 \endhead
-Word count & 1676 & 1679\tabularnewline
-Character count & 11389 & 11388\tabularnewline
-Sentence count & 70 & Not available\tabularnewline
-Reading time & 8.4 minutes & 8.4 minutes\tabularnewline
+Word count & 1784 & 1764\tabularnewline
+Character count & 11988 & 11987\tabularnewline
+Sentence count & 76 & Not available\tabularnewline
+Reading time & 8.9 minutes & 8.8 minutes\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -231,7 +246,13 @@ documents backup this claim that donors seek access in order to
 influence policy (Fouirnaies and Hall 2015). Past research has suggested
 that political contributors are successful in their goals to gain access
 as measured by the amount of time that organized interest groups spend
-with members of congress (Langbein 1986).
+with members of congress (Langbein 1986). This increased access has been
+not only in PACs but also for increased access for individual donors. A
+randomized experiment found that when it is revealed to congressional
+offices that prospective meeting attendees contributed to the member's
+campaign that senior members of the office took meetings between three
+to four times more often than when information about contributions were
+withheld (Kalla and Broockman 2016).
 
 However, measuring the direct access that political financiers gain from
 political contributions is difficult to measure. Instead, researchers
@@ -268,19 +289,19 @@ legislative voting does support that moneyed interests play a
 significant role in the legislative process, particularly organized
 business interests that are within a member's district (Hall and Wayman
 1990), potentially similar to how members of congress prioritize public
-opinion of their district over national public opinion {[}butler2011{]}.
-Further, there appears to be a stronger influence as a result of
-contributions from individuals with business interests, opposed to PACs,
-which many other studies focus on (Fellowes and Wolf 2004). A
-meta-analysis found that model specification played a significant role
-in whether significant results were found when looking for a connection
-between donations and roll-calls votes, concluding that studies that
-controlled for ``friendly giving by including a measure of legislators'
-ideology and that include more than one contributions variable are less
-likely to produce significant results'' (Roscoe and Jenkins 2005).
-Despite this variability in model specification, the authors conclude
-that one-third of roll-call votes are impacted by campaign contributions
-(Roscoe and Jenkins 2005).
+opinion of their district over national public opinion (Butler and
+Nickerson 2011). Further, there appears to be a stronger influence as a
+result of contributions from individuals with business interests,
+opposed to PACs, which many other studies focus on (Fellowes and Wolf
+2004). A meta-analysis found that model specification played a
+significant role in whether significant results were found when looking
+for a connection between donations and roll-calls votes, concluding that
+studies that controlled for ``friendly giving by including a measure of
+legislators' ideology and that include more than one contributions
+variable are less likely to produce significant results'' (Roscoe and
+Jenkins 2005). Despite this variability in model specification, the
+authors conclude that one-third of roll-call votes are impacted by
+campaign contributions (Roscoe and Jenkins 2005).
 
 Potentially, the influence exerted by contributors when making a
 political contribution is so indirect that it doesn't always materialize
@@ -298,8 +319,45 @@ executives are ``best understood as purchases of `good will' whose
 returns, while positive in expectation, are contingent and rare''
 (Gordon, Hafer, and Landa 2007).
 
+Instead of focusing on direct access or financial outcomes, this
+research article examines politicians' public support of policy issues.
+Under the access-oriented/ influence model of political donor
+motivations, we would expect to find politicians who are more supportive
+of certain policy issues after receiving campaign contributions from
+access-oriented donors, which leads to \(H_{1}\).
+
+\textbf{\(H_{1}\): Donations from various coalitions of political donors
+will precede, or Granger cause, increased public support on certain
+political issues from the politicians to whom they donate.}
+
+Since access-oriented donors are thought to be wealthier contributors,
+sometimes seeking access for financial gain, this paper will also
+examine the amount contributed by members of donor coalitions that are
+accepted by \(H_{1}\). \(H_{2}\) also serves as a measure of face
+validity for the theory of access-oriented motivation and this study's
+measurement.
+
+\textbf{\(H_{2}\): Donors from access-oriented coalitions will on
+average be \emph{larger} contributors to political campaigns than donors
+not in access-oriented coalitions.}
+
 \hypertarget{consumption-model}{%
 \section{Consumption Model}\label{consumption-model}}
+
+\textbf{\(H_{3}\): Public support from politicians on certain political
+issues will precede, or Granger cause, donations from various coalitions
+of political donors.}
+
+With the rise of small-dollar donors on the internet and the assumption
+that these small-dollar donors are motivated by the consumption model of
+donor motivations, this paper will examine the amount contributed by
+members of donor coalitions that are accepted by \(H_{3}\). \(H_{4}\)
+also serves as a measure of face validity for the theory of
+access-oriented motivation and this study's measurement.
+
+\textbf{\(H_{4}\): Donors from consumption coalitions will on average be
+\emph{smaller} contributors to political campaigns than donors not in
+consumption coalitions.}
 
 \hypertarget{online-fundraising}{%
 \section{Online Fundraising}\label{online-fundraising}}
@@ -413,6 +471,11 @@ Tweets, and Events: The Interplay Between Ongoing Protests and Social
 Media.'' \emph{Journal of Communication} 65 (2): 320--50.
 \url{https://doi.org/10.1111/jcom.12145}.
 
+\leavevmode\hypertarget{ref-butler2011}{}%
+Butler, Daniel M., and David W. Nickerson. 2011. ``Can Learning
+Constituency Opinion Affect How Legislators Vote? Results from a Field
+Experiment.'' \emph{Quarterly Journal of Political Science} 6: 55--83.
+
 \leavevmode\hypertarget{ref-caneswrone2019}{}%
 Canes-Wrone, Brandice, and Nathan Gibson. 2019. ``Does Money Buy
 Congressional Love? Individual Donors and Legislative Voting.''
@@ -478,6 +541,12 @@ Research} 60: 181--98.
 Herndon, James F. 1982. ``Access, Record, and Competition as Influences
 on Interest Group Contributions to Congressional Campaigns.'' \emph{The
 Journal of Politics} 44 (4): 996--1019.
+
+\leavevmode\hypertarget{ref-kalla2015}{}%
+Kalla, Joshua L., and David E. Broockman. 2016. ``Campaign Contributions
+Facilitate Access to Congressional Officials: A Randomized Field
+Experiment.'' \emph{American Journal of Political Science} 60 (3):
+545--58. \url{https://doi.org/https://doi.org/10.1111/ajps.12180}.
 
 \leavevmode\hypertarget{ref-rtweet}{}%
 Kearney, Michael W. 2019. ``Rtweet: Collecting and Analyzing Twitter
