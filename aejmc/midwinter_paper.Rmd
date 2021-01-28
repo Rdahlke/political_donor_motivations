@@ -69,13 +69,20 @@ Often associated with the consumption model of donation is the idea of ideologic
 
 **$H_{3}$: Public support from politicians on certain political issues will precede, or Granger cause, donations from various coalitions of political donors.**
 
-With the rise of small-dollar donors on the internet and the assumption that these small-dollar donors are motivated by the consumption model of donor motivations, this paper will examine the amount contributed by members of donor coalitions that are accepted by $H_{3}$. $H_{4}$ also serves as a measure of face validity for the theory of access-oriented motivation and this study's measurement.  
+Individual donors, as opposed to PACs, continue to make up a clear majority of donations to political candidates [@heerwig2016]. And these individual donors have been found to most often exhibit behavior consistent with the consumption model of donations [@barber2016; @heerwig2016]. Further, individual donors arguably play an even more central role in politics more recently with the growth in small-dollar individual donors. 
 
+With the rise of small-dollar donors on the internet and the assumption that these small-dollar donors are motivated by the consumption model of donor motivations, this paper will examine the amount contributed by members of donor coalitions that are accepted by $H_{3}$. $H_{4}$ also serves as a measure of face validity for the theory of the consumption motivation model of political donors and this study's measurement.  
 **$H_{4}$: Donors from consumption coalitions will on average be _smaller_ contributors to political campaigns than donors not in consumption coalitions.**
 
-# Online Fundraising
-
 # Rise of Small-Dollar Donors
+
+The growing number of small-dollar donors in the political process suggests that there will be more consumption-oriented donors in the future. The anecdotal examples of the Bernie Sanders and Donald Trump presidential campaigns, both of which received a large number of small-dollar donors [@choma2020], illustrate the consumption-oriented model's connection to small-dollar donors. Small dollar donors did not directly access or influence the politics of the Sanders or Trump campaigns. Instead, donors reacted to their messages and decided to move further down the participatory spectrum in those campaigns. 
+
+The Democratic Party as a whole has recently grown its proportion of money that is coming from small-dollar donors [@albert2020]. And incumbents have been able to sustain their small-dollar fundraising programs [@heberlig2020]--suggesting that this trend is not going to go away. This growth in small-dollar donors has created a donorate that is more demographically representative of America but is more ideologically extreme [@albert2020]--this trend can be anecdotally seem in the Sanders and Trump campaigns. It is conceivable that campaigns that rely on small donors will adopt rhetoric and tout their "outsider" status in an effort to activate these small, more ideologically extreme donors [@arbour2020]. As a result, some have predicted that small-dollar donors will polarize the nation's politics even further. And although legislators who receive a large number of small-dollar donors aren't more polarized in their voting in the next legislative session, legislators taking up a more polarized agenda does increase the number of small-dollar donors they attract in the subsequent election [@keena2019]. Other studies have agrees that mass donors are the cause of partisan polarization [@laraja2011]. And so, even though small-dollar donors themselves may not be polarizing, they may provide incentive for politicians to take more polarized positions.
+
+This rise in small-dollar donors has been driven primary by technological advancements [@albert2020] including growing sophistication with big data analytics [@walker2018], particularly in modeling political behaviors [@nickerson2014]. Digital firms, including Facebook Twitter, and Google embed themselves into political campaigns and serve as "quasi-digital consultants" to political campaigns that shape the "digital strategy, content, and execution" of campaigns [@kreiss2018].  Along with virtually every other component of political campaigns, fundraising, especially from small-dollar donors is moving online [@chester2017]. 
+
+# Online Fundraising
 
 # Ideological Measurement Using Donor Data
 
