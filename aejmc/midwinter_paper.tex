@@ -211,10 +211,10 @@ similar candidates.
 Method & koRpus & stringi\tabularnewline
 \midrule
 \endhead
-Word count & 2714 & 2716\tabularnewline
-Character count & 18393 & 18384\tabularnewline
-Sentence count & 117 & Not available\tabularnewline
-Reading time & 13.6 minutes & 13.6 minutes\tabularnewline
+Word count & 4223 & 4253\tabularnewline
+Character count & 29182 & 29173\tabularnewline
+Sentence count & 183 & Not available\tabularnewline
+Reading time & 21.1 minutes & 21.3 minutes\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -250,30 +250,48 @@ of donors and individuals appear to be motivated by political
 consumption/ ideology. Heerwig (2016) drills down into individual donors
 by categorizing individual donors as either frequent or infrequent
 donors, concluding that frequent donors are more access-oriented whereas
-infrequent donors are more motivated by consumption/ ideology. This
-paper continues in this direction of segmenting donors to understand
-unique motivations. Instead of making a descriptive distinction between
-donors (PACs versus individuals (Barber 2016) or frequent versus
-infrequent donors (Heerwig 2016)) clusters donors who are similar to one
-another using a network approach where donors in a cluster are similar
-to one another in who they contributed to.
+infrequent donors are more motivated by consumption/ ideology. Rhodes
+et. al (2018) find four types of unique individual donors:
+Party-Oriented Donors, Local-Oriented Donors, Idiosyncratic Donors, and
+Nationalized Donors, with each group having a unique set of motivations.
+This paper continues in this direction of segmenting donors to
+understand unique motivations. Instead of making a descriptive
+distinction between donors (PACs versus individuals (Barber 2016),
+frequent versus infrequent donors (Heerwig 2016), or other heuristics
+(Rhodes, Schaffner, and Raja 2018)) clusters donors who are similar to
+one another using a network approach where donors in a cluster are
+similar to one another in who they contributed to. This approach is
+similar to that of Wahl and Sheppard (2018) who then use other pieces of
+information from the contributions themselves to identify the
+associations that connect the members of the community to each other.
+This study takes the approach another step forward by layering in
+another unique dataset, social media data from politicians, to identify
+behaviors, and potentially the underlying reasons why donors are in the
+same statistical community, in order to test theories of motivations of
+clusters of political donors.
 
 This network-based approach conceives of clusters of donors acting as a
 \emph{coalition} where coach coalition can have a distinct motivation.
-Further, I believe that this coalition-based approach can capture
-evidence of donor motivations more accurately. For example, a
-contributor may only make a single donation. That single donation may
-not have a statistically-identifiable influence on politicians, but if
-that single donor is acting in concert with other donors, there is a
-potential for identifiable results. For example, under an
-access-oriented/ influence model of donor motivations, this single donor
-could be a member of a pro-environment interest groups. If many members
-of this group give individually to a candidate, the coalition could
-exhibit influence over that campaign. Similarly, under a consumption/
-ideology model of motivation, a candidate could come out with a strong
-pro-environmental message and many members of the coalition could be
-attracted to the message and reward the pro-environment stance taken by
-the campaign.
+Previous network studies have concluded that this type of network
+clustering has been highly predictive for other types of political
+analysis, including voting behavior in the U.S. House of Representatives
+and Senate (Wahl, Sheppard, and Shanahan 2019). Instead of focusing on
+the clusters in the campaign finance networks that legislators belong
+to, this study examines the donors themselves and their
+statistically-derived clusters.Further, I believe that this
+coalition-based approach can capture evidence of donor motivations more
+accurately. For example, a contributor may only make a single donation.
+That single donation may not have a statistically-identifiable influence
+on politicians, but if that single donor is acting in concert with other
+donors, there is a potential for identifiable results. For example,
+under an access-oriented/ influence model of donor motivations, this
+single donor could be a member of a pro-environment interest groups. If
+many members of this group give individually to a candidate, the
+coalition could exhibit influence over that campaign. Similarly, under a
+consumption/ ideology model of motivation, a candidate could come out
+with a strong pro-environmental message and many members of the
+coalition could be attracted to the message and reward the
+pro-environment stance taken by the campaign.
 
 In addition, this paper adds a dimension of policy issues. Are there
 certain policy issues that have donors who exhibit behavior inline with
@@ -285,11 +303,14 @@ by the consumption model of politics. This paper combines donation
 records with social media data collected in Wisconsin during the 2016
 election cycle to measure whether campaigns' support of certain policy
 issues respond to donations from clusters or whether donations from
-coalitions respond to public support of policy issues. Particularly with
-the rise of politics online, adding in social media data provides a
-valuable variable in understanding the information ecology that
-political donors experience and how the information ecology relates to
-their donation motivations.
+coalitions respond to public support of policy issues. Previous studies
+have used social media posts as a proxy for public appeals in support of
+President Trump and the impact legislators' posts about President Trump
+immediately impacted their fundraising (Fu and Howell 2020).
+Particularly with the rise of politics online, adding in social media
+data provides a valuable variable in understanding the information
+ecology that political donors experience and how the information ecology
+relates to their donation motivations.
 
 \hypertarget{access-oriented-model}{%
 \section{Access-Oriented Model}\label{access-oriented-model}}
@@ -356,9 +377,20 @@ changes to the opinions of the national individual donor class
 (Canes-Wrone and Gibson 2019). One article went so far as to conclude
 that ``evidence in the article undermines belief in the
 military-industrial complex model'' (Wayman 1985) when studying the
-effect of defense-related PACs on roll-call voting.
+effect of defense-related PACs on roll-call voting. One study using
+meta-analytic methods found over 93 studies that "corporate political
+activity only weakly impacts public policy and at best has a (direct)
+weak effect on corporate outcomes (Hadani, Bonardi, and Dahan 2017) that
+may be more of a signalling of policy preference than anything else
+(Austen-Smith 1995), but this signalling is likely only effective if the
+contribution is large enough that influence the likelihood of the
+candidate being elected (Schnakenberg and Turner 2021).
 
-Other studies on the connection between campaign contributions and
+However, other research has found evidence that contributions from the
+financial (Hayes 2017), telecommunications (Edwards and Figueiredo
+2016), education (Constant 2006), environmental (Hogan 2020) and the
+healthcare interest groups (McKay 2018) have influenced legislation
+passed. One study on the connection between campaign contributions and
 legislative voting does support that moneyed interests play a
 significant role in the legislative process, particularly organized
 business interests that are within a member's district (Hall and Wayman
@@ -367,7 +399,16 @@ opinion of their district over national public opinion (Butler and
 Nickerson 2011). Further, there appears to be a stronger influence as a
 result of contributions from individuals with business interests,
 opposed to PACs, which many other studies focus on (Fellowes and Wolf
-2004). A meta-analysis found that model specification played a
+2004). While it is ``nearly universal'' (Bonica 2016) that corporate
+executives of Fortune 500 firms make political contributions, and their
+is a significant increase in contribution once they are promoted to
+executive status (Fremeth, Richter, and Schaufele 2013), there is
+heterogeneity in their political leanings (Bonica 2016).
+
+In addition, PACs have been found to use contributions in an attempt to
+acquire access and favor, a result that suggests that they ``at least
+anticipate that the donations will influence policy'' (Powell and
+Grimmer 2016). A meta-analysis found that model specification played a
 significant role in whether significant results were found when looking
 for a connection between donations and roll-calls votes, concluding that
 studies that controlled for ``friendly giving by including a measure of
@@ -375,25 +416,45 @@ legislators' ideology and that include more than one contributions
 variable are less likely to produce significant results'' (Roscoe and
 Jenkins 2005). Despite this variability in model specification, the
 authors conclude that one-third of roll-call votes are impacted by
-campaign contributions (Roscoe and Jenkins 2005).
+campaign contributions (Roscoe and Jenkins 2005). Research suggests that
+campaign contributions only try to influence a small number of votes
+that have an outsized impact on whether legislation actually passes or
+not (Gordon 2001) or on ideological or highly visible political issues
+(Witko 2006).
+
+One consideration when assessing the impact of PAC donations on
+roll-call voting is that donations are just a piece of the broader
+lobbying effort when trying to influence legislation. Ideologically
+extreme groups and groups that are more liberal have been found to favor
+PAC contribution over other lobbying methods (McKay 2010) or
+legislators' perceptions of the power of the interest group, for
+example, union membership rates (Finger 2019). However, firms that make
+larger political contributions have been found to get more
+``sweetheart'' contracts from the government even when controlling for
+lobbying, negotiation power, and the employment of former government
+employees (Ferris, Houston, and Javakhadze 2019).
 
 Potentially, the influence exerted by contributors when making a
 political contribution is so indirect that it doesn't always materialize
 in statistical patterns of legislative voting, but there is evidence of
-the influence as a result of the legislation. For example, one study
-found that firms that donated to winning candidates experienced an
-abnormal equity return of 3\% compared to firms that contributed to
-losing campaigns (Akey 2015). Another study found that future returns of
-firms is positively and significantly correlated with contributions in
-support for candidates, finding the strongest effect among firms that
-support candidates within the state that the firm is based (Cooper,
-Gulen, and Ovtchinnikov 2010). In addition to immediately-felt financial
-returns, donors may systematically contribute money to legislative
-agenda setters, such as chairs of financial committees, in an effort to
-set future legislative agendas (Fouirnaies 2018). Even campaign
-contribution from business executives are ``best understood as purchases
-of `good will' whose returns, while positive in expectation, are
-contingent and rare'' (Gordon, Hafer, and Landa 2007).
+the influence as a result of the legislation. Interest groups have been
+found to seek direct and indirect access to the policy making process
+(Fouirnaies 2018). In addition, one study found that firms that donated
+to winning candidates experienced an abnormal equity return of 3\%
+compared to firms that contributed to losing campaigns (Akey 2015).
+Another study found that future returns of firms is positively and
+significantly correlated with contributions in support for candidates,
+finding the strongest effect among firms that support candidates within
+the state that the firm is based (Cooper, Gulen, and Ovtchinnikov 2010).
+In addition to immediately-felt financial returns, donors may
+systematically contribute money to legislative agenda setters, such as
+chairs of financial committees, in an effort to set future legislative
+agendas (Fouirnaies 2018). Even campaign contribution from business
+executives are ``best understood as purchases of `good will' whose
+returns, while positive in expectation, are contingent and rare''
+(Gordon, Hafer, and Landa 2007). Political contributions have also been
+found to reduce the punishment for business executives who are
+sanctioned for committing fraud (Fulmer, Knill, and Yu 2017).
 
 Instead of focusing on direct access or financial outcomes, this
 research article examines politicians' public support of policy issues.
@@ -437,43 +498,162 @@ are a way for individuals to participate and be responsive to their
 ``perception of the stakes in the election'' (Hill and Huber 2017).
 Ideological proximity has been found to be an important component of
 explaining a donor's decision to make a contribution (Ensley 2009).
-Divergence of ideology among the candidates for an office does not seem
-to impact donors' decision to make a contribution (Ensley 2009).
+Ideological proximity has been found to be more important than specific
+issue positions (Barber, Canes-Wrone, and Thrower 2019). Divergence of
+ideology among the candidates for an office does not seem to impact
+donors' decision to make a contribution (Ensley 2009).
 
 Often associated with the consumption model of donation is the idea of
 ideological proximity. In other words, donors give to candidates that
 they are ideologically similar to. For example, the similarity between a
 donor's policy preferences and a senator's roll calls is a predictor of
 whether a donor makes a contribution (Barber, Canes-Wrone, and Thrower
-2017). Out-of-state donors have been found to have policy motivations
-for making a donation in an effort to acquire surrogate representation
-(Baker 2020b), but this finding didn't hold for in-district donations.
+2017). But this relationship between individual donors' opinions and
+senators' roll-call voting may be a recent phenomenon and has not
+existed historically (Canes-Wrone and Gibson 2019). Out-of-state donors
+have been found to have policy motivations for making a donation in an
+effort to acquire surrogate representation (Baker 2020b), but this
+finding didn't hold for in-district donations. One study found that PACs
+for organized labor unions reduced contributions to members of the U.S.
+House of Representatives when they supported the North American Free
+Trade Agreement (NAFTA) (Engel and Jackson 1998), suggesting that labor
+PACs responded to perceived changes in a change in ideological proximity
+opposed to doubling-down on their efforts to potentially influence
+legislators who have become estranged from the PAC's priorities. Labor
+unions have been found to participate in ``punishing'' legislators for
+their votes (Jansa and Hoyman 2018). This punishment has been found to
+coax incumbents into changing their position back to being pro-labor
+(Jansa 2019). In addition, recent studies have found PACs in the oil and
+gas industry to be taking the consumption, opposed to access-oriented/
+influence, route when making contributions to candidates (Goldberg et
+al. 2020). Contributions from cotton farmers or cotton PACs were not
+found to be significant predictors of votes to amend the 2008 Farm Bill
+(Callahan 2019).
 
 \textbf{\(H_{3}\): Public support from politicians on certain political
 issues will precede, or Granger cause, donations from various coalitions
 of political donors.}
 
+Individual donors, as opposed to PACs, continue to make up a clear
+majority of donations to political candidates (Heerwig 2016). And these
+individual donors have been found to most often exhibit behavior
+consistent with the consumption model of donations (Barber 2016; Heerwig
+2016). Further, individual donors arguably play an even more central
+role in politics more recently with the growth in small-dollar
+individual donors.
+
 With the rise of small-dollar donors on the internet and the assumption
 that these small-dollar donors are motivated by the consumption model of
 donor motivations, this paper will examine the amount contributed by
 members of donor coalitions that are accepted by \(H_{3}\). \(H_{4}\)
-also serves as a measure of face validity for the theory of
-access-oriented motivation and this study's measurement.
-
+also serves as a measure of face validity for the theory of the
+consumption motivation model of political donors and this study's
+measurement.\\
 \textbf{\(H_{4}\): Donors from consumption coalitions will on average be
 \emph{smaller} contributors to political campaigns than donors not in
 consumption coalitions.}
-
-\hypertarget{online-fundraising}{%
-\section{Online Fundraising}\label{online-fundraising}}
 
 \hypertarget{rise-of-small-dollar-donors}{%
 \section{Rise of Small-Dollar
 Donors}\label{rise-of-small-dollar-donors}}
 
-\hypertarget{ideological-measurement-using-donor-data}{%
-\section{Ideological Measurement Using Donor
-Data}\label{ideological-measurement-using-donor-data}}
+The growing number of small-dollar donors in the political process
+suggests that there will be more consumption-oriented donors in the
+future. The anecdotal examples of the Bernie Sanders and Donald Trump
+presidential campaigns, both of which received a large number of
+small-dollar donors (Choma and Voght 2020), illustrate the
+consumption-oriented model's connection to small-dollar donors. Small
+dollar donors did not directly access or influence the politics of the
+Sanders or Trump campaigns. Instead, donors reacted to their messages
+and decided to move further down the participatory spectrum in those
+campaigns. Individual contributors are ``fickle financiers of
+elections'' whose donations can be impacted by things such as moving to
+an area that is more or less Democratic or Republican (Kettler and Lyons
+2019).
+
+The Democratic Party as a whole has recently grown its proportion of
+money that is coming from small-dollar donors (Albert and Raja 2020).
+Incumbents have been able to sustain their small-dollar fundraising
+programs (Heberlig and Larson 2020)--suggesting that this trend is not
+going to go away. This growth in small-dollar donors has created a
+donorate that is more demographically representative of America but is
+more ideologically extreme (Albert and Raja 2020) and give
+indiscriminately to incumbents, challengers, and open seat candidates
+(Culberson, McDonald, and Robbins 2019)--this trend can be seen
+anecdotally in the Sanders and Trump campaigns. It is conceivable that
+campaigns that rely on small donors will adopt rhetoric and tout their
+``outsider'' status in an effort to activate these small, more
+ideologically extreme donors (Arbour 2020). In addition, extremist
+legislators have been able to leverage politically divisive and
+contentious moments into increased fundraising. As a result, some have
+predicted that small-dollar donors will polarize the nation's politics
+even further (Oklobdzija 2017). Although legislators who receive a large
+number of small-dollar donors aren't more polarized in their voting in
+the next legislative session, legislators taking up a more polarized
+agenda does increase the number of small-dollar donors they attract in
+the subsequent election (Keena and Knight-Finley 2019). Other studies
+have agreed that mass donors are the cause of partisan polarization
+(Raja and Wiltse 2012) and some do not (Harden and Kirkland 2016). And
+so, even though small-dollar donors themselves may not be polarizing,
+they may provide incentive for politicians to take more polarized
+positions.
+
+This rise in small-dollar donors has been driven primary by
+technological advancements (Albert and Raja 2020) including growing
+sophistication with big data analytics (Walker and Nowlin 2018),
+particularly in modeling political behaviors (Nickerson and Rogers
+2014). Digital firms, including Facebook Twitter, and Google embed
+themselves into political campaigns and serve as ``quasi-digital
+consultants'' to political campaigns that shape the ``digital strategy,
+content, and execution'' of campaigns (Kreiss and McGregor 2018). Along
+with virtually every other component of political campaigns,
+fundraising, especially from small-dollar donors is moving online
+(Chester and Montgomery 2017). While scholars remain skeptical of the
+power of data analytics on political campaigns, firms have successfully
+cultivated their images and businesses around the role of advanced data
+methods on political campaigns (Simon 2019).
+
+\hypertarget{online-fundraising}{%
+\section{Online Fundraising}\label{online-fundraising}}
+
+The study of the connection between the internet and financial donors
+has historically been researched in the field of non-profit
+organizational studies {[}Hazard (2003); marx2000; miller2009;
+raihani2015{]} and not political science. The few studies that have
+researched the connection between social media posts and political
+fundraising have found a connection between the two (Wang et al. 2020).
+Before political scientists studied the digital world and donations to
+campaigns, the internet was seen more broadly as an agora public
+discussion {[}anduiza2010; Gennaro and Dutton (2006); dezuniga2009;
+valenzuela2011; vesnic2012{]}, a hub of political organizing {[}Cogburn
+and Espinoza-Vasquez (2011); Jost et al. (2018); levenshus2010{]}, and a
+useful predictor of offline political capital {[}Gil de Zúñiga, Jung,
+and Valenzuela (2012); hardina2005{]}.
+
+Although the study of the internet as a medium is relatively new to
+political science, research suggests that its communication methods are
+similar to traditional political communication and can be extrapolated
+to offline characteristics. The differences that are seen in online
+political communication, like lowered costs and eased barriers to entry,
+represent a ``difference-of-degree'' and not a paradigm shifting
+``difference-in-kind'' (Karpf 2010). There is a strong connection
+between online channels of communication in the form of social networks
+and offline connections and building and maintaining social capital from
+those offline connections {[}Cranshaw et al. (2010); ellison2006;
+liben2005; scellato2010{]}. Online social networks have also been used
+to study offline-based actions and beliefs like opinion polarization
+(Lee et al. 2014), political polarization (Hanna et al. 2013), political
+participation (Lawrence, Sides, and Farrell 2010) and political
+discourse (Kushin and Kitchener 2009).
+
+The bottom line is that online actions and behaviors have been found to
+reflect the offline world, and the online world is frequently
+extrapolated to explain offline actions and behaviors by prior
+researchers. This study builds upon these previous uses of online
+indicators of offline actions and beliefs by combining political
+administrative records of political donations and politicians' social
+media accounts to discern the relationship between political donations
+and public support of policy issues.
 
 \hypertarget{data}{%
 \section{Data}\label{data}}
@@ -498,10 +678,7 @@ community are most similar to one another based on which campaigns they
 contributed to. I theorize that these clusters of donors represent
 \emph{latent coalitions} of donors who, whether they operate in an
 organized fashion or not, are working toward the goal of electing the
-same candidates. Studying political fundraisers as members of political
-coalitions has been studied in the past (Adams 2007; Heerwig 2016). This
-paper's statistically-driven definition of latent coalitions seeks to
-add to the coalition literature.
+same candidates.
 
 \hypertarget{methodology}{%
 \section{Methodology}\label{methodology}}
@@ -560,21 +737,30 @@ contributed to.
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
-\leavevmode\hypertarget{ref-adams2016}{}%
-Adams, Brian E. 2007. ``Fundraising Coalitions in Open Seat Mayoral
-Elections.'' \emph{Journal of Urban Affairs} 29 (5): 481--99.
-\url{https://doi.org/10.1111/j.1467-9906.2007.00361.x}.
-
 \leavevmode\hypertarget{ref-akey2015}{}%
 Akey, Pat. 2015. ``Valuing Changes in Political Networks: Evidence from
 Campaign Contributions to Close Congressional Elections.'' \emph{The
 Review of Financial Studies} 28 (11): 3188--3223.
 \url{https://doi.org/10.1093/rfs/hhv035}.
 
+\leavevmode\hypertarget{ref-albert2020}{}%
+Albert, Zachary, and Raymond La Raja. 2020. ``Small Dollar Donors and
+the Evolving Democratic Party.'' \emph{APSA Preprints}.
+
 \leavevmode\hypertarget{ref-ansolabehere2003}{}%
 Ansolabehere, Stephen, John M. de Figueiredo, and James M. Snyder. 2003.
 ``Why Is There so Little Money in U.s. Politics.'' \emph{Journal of
 Economic Perspectives} 17 (1): 105--30.
+
+\leavevmode\hypertarget{ref-arbour2020}{}%
+Arbour, Brian. 2020. ``Tiny Donations, Big Impact: How Small-Dollar
+Donors Are Eroding the Power of Party Insiders.'' \emph{Society} 57:
+496--506.
+
+\leavevmode\hypertarget{ref-austensmith1995}{}%
+Austen-Smith, David. 1995. ``Campaign Contributions and Access.''
+\emph{The American Political Science Review} 89 (3): 566--81.
+\url{http://www.jstor.org/stable/2082974}.
 
 \leavevmode\hypertarget{ref-baker2020a}{}%
 Baker, Anne. 2020a. ``Policies, Profits, Networks, or Duty?: Donors'
@@ -593,6 +779,12 @@ Barber, Michael. 2016. ``Donation Motivations: Testing Theories of
 Access and Ideology.'' \emph{Political Research Quarterly} 69 (1):
 148--59.
 
+\leavevmode\hypertarget{ref-barber2019}{}%
+Barber, Michael, Brandice Canes-Wrone, and Sharece Thrower. 2019.
+``Campaign Contributions and Donors' Policy Agreement with Presidential
+Candidates.'' \emph{Presidential Studies Quarterly} 49 (4): 770--97.
+\url{https://doi.org/https://doi.org/10.1111/psq.12609}.
+
 \leavevmode\hypertarget{ref-barber2017}{}%
 Barber, Michael J., Brandice Canes-Wrone, and Sharece Thrower. 2017.
 ``Ideologically Sophisticated Donors: Which Candidates Do Individual
@@ -610,10 +802,23 @@ Tweets, and Events: The Interplay Between Ongoing Protests and Social
 Media.'' \emph{Journal of Communication} 65 (2): 320--50.
 \url{https://doi.org/10.1111/jcom.12145}.
 
+\leavevmode\hypertarget{ref-bonica2016}{}%
+Bonica, Adam. 2016. ``Avenues of Influence: On the Political
+Expenditures of Corporations and Their Directors and Executives.''
+\emph{Business and Politics} 18 (4): 367--94.
+\url{https://doi.org/10.1515/bap-2016-0004}.
+
 \leavevmode\hypertarget{ref-butler2011}{}%
 Butler, Daniel M., and David W. Nickerson. 2011. ``Can Learning
 Constituency Opinion Affect How Legislators Vote? Results from a Field
 Experiment.'' \emph{Quarterly Journal of Political Science} 6: 55--83.
+
+\leavevmode\hypertarget{ref-callahan2019}{}%
+Callahan, Scott. 2019. ``Do Campaign Contributions from Farmers
+Influence Agricultural Policy? Evidence from a 2008 Farm Bill Amendment
+Vote to Curtail Cotton Subsidies.'' \emph{Journal of Agricultural and
+Applied Economics} 51 (3): 417--33.
+\url{https://doi.org/10.1017/aae.2019.9}.
 
 \leavevmode\hypertarget{ref-caneswrone2019}{}%
 Canes-Wrone, Brandice, and Nathan Gibson. 2019. ``Does Money Buy
@@ -621,11 +826,56 @@ Congressional Love? Individual Donors and Legislative Voting.''
 \emph{Congress \& the Presidency} 46 (1): 1--27.
 \url{https://doi.org/10.1080/07343469.2018.1518965}.
 
+\leavevmode\hypertarget{ref-chester2017}{}%
+Chester, Jeff, and Kathryn C. Montgomery. 2017. ``The Role of Digital
+Marketing in Political Campaigns.'' \emph{Internet Policy Review} 6 (4):
+1--20. \url{https://doi.org/10.14763/2017.4.773}.
+
+\leavevmode\hypertarget{ref-choma2020}{}%
+Choma, Russ, and Kara Voght. 2020. ``Small-Dollar Donors Powered the
+2020 Race. Then the Pandemic Happened.'' \emph{Mother Jones}, April.
+
+\leavevmode\hypertarget{ref-cogburn2011}{}%
+Cogburn, Derrick L., and Fatima K. Espinoza-Vasquez. 2011. ``From
+Networked Nominee to Networked Nation: Examining the Impact of Web 2.0
+and Social Media on Political Participation and Civic Engagement in the
+2008 Obama Campaign.'' \emph{Journal of Political Marketing} 10 (1-2):
+189--213. \url{https://doi.org/10.1080/15377857.2011.540224}.
+
+\leavevmode\hypertarget{ref-constant2006}{}%
+Constant, Louay M. 2006. ``When Money Matters: Campaign Contributions,
+Roll Call Votes, and School Choice in Florida.'' \emph{State Politics \&
+Policy Quarterly} 6 (2): 195--219.
+\url{https://doi.org/10.1177/153244000600600204}.
+
 \leavevmode\hypertarget{ref-cooper2010}{}%
 Cooper, Michael J., Huseyin Gulen, and Alexei V. Ovtchinnikov. 2010.
 ``Corporate Political Contributions and Stock Returns.'' \emph{The
 Journal of Finance} 65 (2): 687--724.
 \url{https://doi.org/https://doi.org/10.1111/j.1540-6261.2009.01548.x}.
+
+\leavevmode\hypertarget{ref-cranshaw2010}{}%
+Cranshaw, Justin, Eran Toch, J. Hong, A. Kittur, and N. Sadeh. 2010.
+``Bridging the Gap Between Physical Location and Online Social
+Networks.'' \emph{Proceedings of the 12th ACM International Conference
+on Ubiquitous Computing}.
+
+\leavevmode\hypertarget{ref-culberson2019}{}%
+Culberson, Tyler, Michael P. McDonald, and Suzanne M. Robbins. 2019.
+``Small Donors in Congressional Elections.'' \emph{American Politics
+Research} 47 (5): 970--99.
+\url{https://doi.org/10.1177/1532673X18763918}.
+
+\leavevmode\hypertarget{ref-edwards2016}{}%
+Edwards, Geoff, and Rui de Figueiredo. 2016. ``The Market for
+Legislative Influence over Regulatory Policy'' 34 (May).
+\url{https://doi.org/10.1108/S0742-332220160000034007}.
+
+\leavevmode\hypertarget{ref-engel1998}{}%
+Engel, Steven T., and David J. Jackson. 1998. ``Wielding the Stick
+Instead of the Carrot: Labor Pac Punishment of Pro-Nafta Democrats.''
+\emph{Political Research Quarterly} 51 (3): 813--28.
+\url{https://doi.org/10.1177/106591299805100312}.
 
 \leavevmode\hypertarget{ref-ensley2009}{}%
 Ensley, Michael J. 2009. ``Individual Campaign Contributions and
@@ -637,6 +887,17 @@ Fellowes, Matthew C., and Patrick J. Wolf. 2004. ``Funding Mechanisms
 and Policy Instruments: How Business Campaign Contributions Influence
 Congressional Votes.'' \emph{Political Research Quarterly} 57 (2):
 315--24.
+
+\leavevmode\hypertarget{ref-ferris2019}{}%
+Ferris, Stephen P., Reza Houston, and David Javakhadze. 2019. ``It Is a
+Sweetheart of a Deal: Political Connections and Corporate-Federal
+Contracting.'' \emph{Financial Review} 54 (1): 57--84.
+\url{https://doi.org/https://doi.org/10.1111/fire.12181}.
+
+\leavevmode\hypertarget{ref-finger2019}{}%
+Finger, Leslie K. 2019. ``Interest Group Influence and the Two Faces of
+Power.'' \emph{American Politics Research} 47 (4): 852--86.
+\url{https://doi.org/10.1177/1532673X18786723}.
 
 \leavevmode\hypertarget{ref-fouirnaies2018}{}%
 Fouirnaies, Alexander. 2018. ``When Are Agenda Setters Valuable?''
@@ -659,21 +920,101 @@ Freelon, D, C McIlwain, and M Clark. 2018. ``Quantifying the Power and
 Consequences of Social Media Protest.'' \emph{New Media \& Society} 20
 (3): 990--1011. \url{https://doi.org/10.1177/1461444816676646}.
 
+\leavevmode\hypertarget{ref-fremeth2013}{}%
+Fremeth, Adam, Brian Kelleher Richter, and Brandon Schaufele. 2013.
+``Campaign Contributions over Ceos' Careers.'' \emph{American Economic
+Journal: Applied Economics} 5 (3): 170--88.
+\url{https://doi.org/10.1257/app.5.3.170}.
+
+\leavevmode\hypertarget{ref-fu2020}{}%
+Fu, Shu, and William G. Howell. 2020. ``The Behavioral Consequences of
+Public Appeals: Evidence on Campaign Fundraising from the 2018
+Congressional Elections.'' \emph{Presidential Studies Quarterly} 50 (2):
+325--47. \url{https://doi.org/https://doi.org/10.1111/psq.12645}.
+
+\leavevmode\hypertarget{ref-fulmer2017}{}%
+Fulmer, Sarah, A. Knill, and X. Yu. 2017. ``Negation of Sanctions: The
+Personal Effect of Political Contributions.'' \emph{Business History
+eJournal}.
+
+\leavevmode\hypertarget{ref-degennaro2006}{}%
+Gennaro, Corinna di, and William Dutton. 2006. ``The Internet and the
+Public: Online and Offline Political Participation in the United
+Kingdom.'' \emph{Parliamentary Affairs} 59 (2): 299--313.
+\url{https://doi.org/10.1093/pa/gsl004}.
+
+\leavevmode\hypertarget{ref-zuniga2012}{}%
+Gil de Zúñiga, Homero, Nakwon Jung, and Sebastián Valenzuela. 2012.
+``Social Media Use for News and Individuals' Social Capital, Civic
+Engagement and Political Participation.'' \emph{Journal of
+Computer-Mediated Communication} 17 (3): 319--36.
+\url{https://doi.org/10.1111/j.1083-6101.2012.01574.x}.
+
+\leavevmode\hypertarget{ref-goldberg2020}{}%
+Goldberg, Matthew H., Jennifer R. Marlon, Xinran Wang, Sander van der
+Linden, and Anthony Leiserowitz. 2020. ``Oil and Gas Companies Invest in
+Legislators That Vote Against the Environment.'' \emph{Proceedings of
+the National Academy of Sciences} 117 (10): 5111--2.
+\url{https://doi.org/10.1073/pnas.1922175117}.
+
 \leavevmode\hypertarget{ref-gordon2007}{}%
 Gordon, Sanford C., Catherine Hafer, and Dimitri Landa. 2007.
 ``Consumption or Investment? On Motivations for Political Giving.''
 \emph{The Journal of Politics} 69 (4): 1057--72.
+
+\leavevmode\hypertarget{ref-gordon2001}{}%
+Gordon, Stacy B. 2001. ``All Votes Are Not Created Equal: Campaign
+Contributions and Critical Votes.'' \emph{The Journal of Politics} 63
+(1): 249--69. \url{https://doi.org/10.1111/0022-3816.00067}.
 
 \leavevmode\hypertarget{ref-grenzke1989}{}%
 Grenzke, Janet M. 1989. ``PACs and the Congressional Supermarket: The
 Currency Is Complex.'' \emph{American Journal of Political Science} 33
 (1): 1--24. \url{http://www.jstor.org/stable/2111251}.
 
+\leavevmode\hypertarget{ref-hadani2017}{}%
+Hadani, Michael, Jean-Philippe Bonardi, and Nicolas M Dahan. 2017.
+``Corporate Political Activity, Public Policy Uncertainty, and Firm
+Outcomes: A Meta-Analysis.'' \emph{Strategic Organization} 15 (3):
+338--66. \url{https://doi.org/10.1177/1476127016651001}.
+
 \leavevmode\hypertarget{ref-hall1990}{}%
 Hall, Richard L., and Frank W. Wayman. 1990. ``Buying Time: Moneyed
 Interests and the Mobilization of Bias in Congressional Committees.''
 \emph{American Political Science Review} 84 (3): 797--820.
 \url{https://doi.org/10.2307/1962767}.
+
+\leavevmode\hypertarget{ref-hanna2013}{}%
+Hanna, Alex, Chris Wells, Peter Maurer, Lew Friedland, Dhavan Shah, and
+Jörg Matthes. 2013. ``Partisan Alignments and Political Polarization
+Online: A Computational Approach to Understanding the French and Us
+Presidential Elections.'' In \emph{Proceedings of the 2nd Workshop on
+Politics, Elections and Data}, 15--22. PLEAD '13. New York, NY, USA:
+Association for Computing Machinery.
+\url{https://doi.org/10.1145/2508436.2508438}.
+
+\leavevmode\hypertarget{ref-harden2016}{}%
+Harden, Jeffrey J., and Justin H. Kirkland. 2016. ``Do Campaign Donors
+Influence Polarization? Evidence from Public Financing in the American
+States.'' \emph{Legislative Studies Quarterly} 41 (1): 119--52.
+\url{https://doi.org/https://doi.org/10.1111/lsq.12108}.
+
+\leavevmode\hypertarget{ref-hayes2017}{}%
+Hayes, Thomas J. 2017. ``Bankruptcy Reform and Congressional Action: The
+Role of Organized Interests in Shaping Policy.'' \emph{Social Science
+Research} 64: 67--78.
+\url{https://doi.org/https://doi.org/10.1016/j.ssresearch.2016.09.026}.
+
+\leavevmode\hypertarget{ref-hazard2003}{}%
+Hazard, Brenda L. 2003. ``Online Fundraising at Arl Libraries.''
+\emph{The Journal of Academic Librarianship} 29 (1): 8--15.
+\url{https://doi.org/https://doi.org/10.1016/S0099-1333(02)00399-3}.
+
+\leavevmode\hypertarget{ref-heberlig2020}{}%
+Heberlig, Eric, and Bruce Larson. 2020. ``Gender and Small
+Contributions: Fundraising by the Democratic Freshman Class of 2018 in
+the 2020 Election.'' \emph{Society} 57: 534--39.
+\url{https://doi.org/https://doi.org/10.1007/s12115-020-00528-w}.
 
 \leavevmode\hypertarget{ref-heerwig2016}{}%
 Heerwig, Jennifer A. 2016. ``Donations and Dependence: Individual
@@ -692,20 +1033,87 @@ Motivations of the Contemporary Donorate: Results from Merged Survey and
 Administrative Records.'' \emph{Political Behavior} 39 (1): 3--29.
 \url{https://doi.org/10.1007/s11109-016-9343-y}.
 
+\leavevmode\hypertarget{ref-hogan2020}{}%
+Hogan, Robert E. 2020. ``Legislative Voting and Environmental
+Policymaking in the American States.'' \emph{Environmental Politics} 0
+(0): 1--20. \url{https://doi.org/10.1080/09644016.2020.1788897}.
+
+\leavevmode\hypertarget{ref-jansa2019}{}%
+Jansa, Joshua M. 2019. ``You Catch More Flies with Honey: An Analysis of
+Pac Punishment and Congressional Vote Switching.'' \emph{Interest Groups
+\& Advocacy} 8 (2).
+
+\leavevmode\hypertarget{ref-jansa2018}{}%
+Jansa, Joshua M., and Michele M. Hoyman. 2018. ``Do Unions Punish
+Democrats? Free-Trade Votes and Labor Pac Contributions, 1999--2012.''
+\emph{Political Research Quarterly} 71 (2): 424--39.
+\url{https://doi.org/10.1177/1065912917738575}.
+
+\leavevmode\hypertarget{ref-jost2018}{}%
+Jost, John, Pablo Barberá, Richard Bonneau, Melanie Langer, Megan
+Metzger, Jonathan Nagler, Joanna Sterling, and Joshua Tucker. 2018.
+``How Social Media Facilitates Political Protest: Information,
+Motivation, and Social Networks: Social Media and Political Protest.''
+\emph{Political Psychology} 39 (February): 85--118.
+\url{https://doi.org/10.1111/pops.12478}.
+
 \leavevmode\hypertarget{ref-kalla2015}{}%
 Kalla, Joshua L., and David E. Broockman. 2016. ``Campaign Contributions
 Facilitate Access to Congressional Officials: A Randomized Field
 Experiment.'' \emph{American Journal of Political Science} 60 (3):
 545--58. \url{https://doi.org/https://doi.org/10.1111/ajps.12180}.
 
+\leavevmode\hypertarget{ref-karpf2010}{}%
+Karpf, David. 2010. ``Online Political Mobilization from the Advocacy
+Group's Perspective: Looking Beyond Clicktivism.'' \emph{Policy \&
+Internet} 2 (4): 7--41.
+\url{https://doi.org/https://doi.org/10.2202/1944-2866.1098}.
+
 \leavevmode\hypertarget{ref-rtweet}{}%
 Kearney, Michael W. 2019. ``Rtweet: Collecting and Analyzing Twitter
 Data.'' \emph{Journal of Open Source Software} 4 (42): 1829.
 \url{https://doi.org/10.21105/joss.01829}.
 
+\leavevmode\hypertarget{ref-keena2019}{}%
+Keena, Alex, and Misty Knight-Finley. 2019. ``Are Small Donors
+Polarizing? A Longitudinal Study of the Senate.'' \emph{Election Law
+Journal: Rules, Politics, and Policy} 18 (2): 132--44.
+\url{https://doi.org/10.1089/elj.2018.0498}.
+
+\leavevmode\hypertarget{ref-kettler2019}{}%
+Kettler, Jaclyn J., and Jeffrey Lyons. 2019. ``The Fickle Financiers of
+Elections? The Impact of Moving on Individual Contributions.''
+\emph{Journal of Elections, Public Opinion and Parties} 0 (0): 1--19.
+\url{https://doi.org/10.1080/17457289.2019.1652620}.
+
+\leavevmode\hypertarget{ref-kreiss2018}{}%
+Kreiss, Daniel, and Shannon C. McGregor. 2018. ``Technology Firms Shape
+Political Communication: The Work of Microsoft, Facebook, Twitter, and
+Google with Campaigns During the 2016 U.s. Presidential Cycle.''
+\emph{Political Communication} 35 (2): 155--77.
+\url{https://doi.org/10.1080/10584609.2017.1364814}.
+
+\leavevmode\hypertarget{ref-kushin2009}{}%
+Kushin, Matthew J., and Kelin Kitchener. 2009. ``Getting Political on
+Social Network Sites: Exploring Online Political Discourse on
+Facebook.'' \emph{First Monday} 14 (11).
+\url{https://doi.org/10.5210/fm.v14i11.2645}.
+
 \leavevmode\hypertarget{ref-langbein1986}{}%
 Langbein, Laura I. 1986. ``Money and Access: Some Empirical Evidence.''
 \emph{The Journal of Politics} 40 (4): 1052--62.
+
+\leavevmode\hypertarget{ref-lawrence2010}{}%
+Lawrence, Eric, John Sides, and Henry Farrell. 2010. ``Self-Segregation
+or Deliberation? Blog Readership, Participation, and Polarization in
+American Politics.'' \emph{Perspectives on Politics} 8 (1): 141--57.
+\url{http://www.jstor.org/stable/25698520}.
+
+\leavevmode\hypertarget{ref-lee2014}{}%
+Lee, Jae Kook, Jihyang Choi, Cheonsoo Kim, and Yonghwan Kim. 2014.
+``Social Media, Network Heterogeneity, and Opinion Polarization.''
+\emph{Journal of Communication} 64 (4): 702--22.
+\url{https://doi.org/10.1111/jcom.12077}.
 
 \leavevmode\hypertarget{ref-lukito2020}{}%
 Lukito, Josephine. 2020. ``Coordinating a Multi-Platform Disinformation
@@ -713,9 +1121,28 @@ Campaign: Internet Research Agency Activity on Three U.s. Social Media
 Platforms, 2015 to 2017.'' \emph{Political Communication} 37 (2):
 238--55. \url{https://doi.org/10.1080/10584609.2019.1661889}.
 
+\leavevmode\hypertarget{ref-mckay2010}{}%
+McKay, Amy. 2010. ``The Effects of Interest Groups' Ideology on Their
+Pac and Lobbying Expenditures.'' \emph{Business and Politics} 12 (2):
+1--21. \url{https://doi.org/10.2202/1469-3569.1306}.
+
+\leavevmode\hypertarget{ref-mckay2018}{}%
+---------. 2018. ``What Do Campaign Contributions Buy? Lobbyists'
+Strategic Giving.'' \emph{Interest Groups \& Advocacy} 7 (1).
+
 \leavevmode\hypertarget{ref-milbrath1958}{}%
 Milbrath, Lester W. 1958. ``The Political Party Activity of Washington
 Lobbyists.'' \emph{The Journal of Politics} 20 (2): 339--52.
+
+\leavevmode\hypertarget{ref-nickerson2014}{}%
+Nickerson, David W., and Todd Rogers. 2014. ``Political Campaigns and
+Big Data.'' \emph{Journal of Economic Perspectives} 28 (2): 51--74.
+\url{https://doi.org/10.1257/jep.28.2.51}.
+
+\leavevmode\hypertarget{ref-oklobdzija2017}{}%
+Oklobdzija, Stan. 2017. ``Closing down and Cashing in: Extremism and
+Political Fundraising.'' \emph{State Politics \& Policy Quarterly} 17
+(2): 201--24. \url{https://doi.org/10.1177/1532440016679373}.
 
 \leavevmode\hypertarget{ref-park2017}{}%
 Park, J., H. Leung, and K. Ma. 2017. ``Information Fusion of Stock
@@ -724,11 +1151,66 @@ Prices and Sentiment in Social Media Using Granger Causality.'' In
 Integration for Intelligent Systems (Mfi)}, 614--19.
 \url{https://doi.org/10.1109/MFI.2017.8170390}.
 
+\leavevmode\hypertarget{ref-powell2016}{}%
+Powell, Eleanor Neff, and Justin Grimmer. 2016. ``Money in Exile:
+Campaign Contributions and Committee Access.'' \emph{The Journal of
+Politics} 78 (4): 974--88. \url{https://doi.org/10.1086/686615}.
+
+\leavevmode\hypertarget{ref-laraja2012}{}%
+Raja, Raymond J. La, and David L. Wiltse. 2012. ``Don't Blame Donors for
+Ideological Polarization of Political Parties: Ideological Change and
+Stability Among Political Dontributors, 1972-2008.'' \emph{American
+Politics Research} 40 (3): 501--30.
+\url{https://doi.org/https://doi.org/10.1177/1532673X11429845}.
+
+\leavevmode\hypertarget{ref-rhodes2018}{}%
+Rhodes, Jesse H., Brian F. Schaffner, and Raymond J. La Raja. 2018.
+``Detecting and Understanding Donor Strategies in Midterm Elections.''
+\emph{Political Research Quarterly} 71 (3): 503--16.
+\url{https://doi.org/10.1177/1065912917749323}.
+
 \leavevmode\hypertarget{ref-roscoe2005}{}%
 Roscoe, Douglas D., and Shannon Jenkins. 2005. ``A Meta-Analysis of
 Campaign Contributions' Impact on Roll Call Voting*.'' \emph{Social
 Science Quarterly} 86 (1): 52--68.
 \url{https://doi.org/https://doi.org/10.1111/j.0038-4941.2005.00290.x}.
+
+\leavevmode\hypertarget{ref-schnakenberg2021}{}%
+Schnakenberg, Keith E., and Ian R. Turner. 2021. ``Helping Friends or
+Influencing Foes: Electoral and Policy Effects of Campaign Finance
+Contributions.'' \emph{American Journal of Political Science} 65 (1):
+88--100. \url{https://doi.org/https://doi.org/10.1111/ajps.12534}.
+
+\leavevmode\hypertarget{ref-simon2019}{}%
+Simon, Felix M. 2019. ```We Power Democracy': Exploring the Promises of
+the Political Data Analytics Industry.'' \emph{The Information Society}
+35 (3): 158--69. \url{https://doi.org/10.1080/01972243.2019.1582570}.
+
+\leavevmode\hypertarget{ref-wahl2018}{}%
+Wahl, S., and J. Sheppard. 2018. ``Association Rule Mining in Fuzzy
+Political Donor Communities.'' In \emph{MLDM 2018: Machine Learning and
+Data Mining in Pattern Recognition}. Vol. 10935.
+\url{https://doi.org/https://doi.org/10.1007/978-3-319-96133-0_18}.
+
+\leavevmode\hypertarget{ref-wahl2019}{}%
+Wahl, S., J. Sheppard, and E. Shanahan. 2019. ``Legislative Vote
+Prediction Using Campaign Donations and Fuzzy Hierarchical
+Communities.'' In \emph{2019 18th Ieee International Conference on
+Machine Learning and Applications (Icmla)}, 718--25.
+\url{https://doi.org/10.1109/ICMLA.2019.00129}.
+
+\leavevmode\hypertarget{ref-walker2018}{}%
+Walker, Doug, and Edward L. Nowlin. 2018. ``Data-Driven Precision and
+Selectiveness in Political Campaign Fundraising.'' \emph{Journal of
+Political Marketing} 0 (0): 1--20.
+\url{https://doi.org/10.1080/15377857.2018.1457590}.
+
+\leavevmode\hypertarget{ref-wang2020}{}%
+Wang, Austin Horng-En, Fei-Pei Lai, Fushun Hsu, and Peter Shaojui Wang.
+2020. ``Mobilizing Sophisticated Donors: What Candidate Facebook Posts
+Do Attract Intra- and Inter-District Donations?'' \emph{Issues \&
+Studies} 56 (04): 2050005.
+\url{https://doi.org/10.1142/S1013251120500058}.
 
 \leavevmode\hypertarget{ref-wayman1985}{}%
 Wayman, Frank Whelon. 1985. ``Arms Control and Strategic Arms Voting in
@@ -740,6 +1222,11 @@ Conflict Resolution} 29 (2): 225--51.
 Welch, W. P. 1980. ``The Allocation of Political Monies: Economic
 Interest Groups.'' \emph{Public Choice} 35 (1): 97--120.
 \url{https://doi.org/10.1007/BF00154752}.
+
+\leavevmode\hypertarget{ref-witko2006}{}%
+Witko, Christopher. 2006. ``PACs, Issue Context, and Congressional
+Decisionmaking.'' \emph{Political Research Quarterly} 59 (2): 283--95.
+\url{https://doi.org/10.1177/106591290605900210}.
 
 \leavevmode\hypertarget{ref-wright1985}{}%
 Wright, John R. 1985. ``PACs, Contributions, and Roll Calls: An
