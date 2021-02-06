@@ -211,10 +211,10 @@ similar candidates.
 Method & koRpus & stringi\tabularnewline
 \midrule
 \endhead
-Word count & 4448 & 4468\tabularnewline
-Character count & 30634 & 30625\tabularnewline
+Word count & 4265 & 4276\tabularnewline
+Character count & 29571 & 29562\tabularnewline
 Sentence count & 194 & Not available\tabularnewline
-Reading time & 22.2 minutes & 22.3 minutes\tabularnewline
+Reading time & 21.3 minutes & 21.4 minutes\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -223,40 +223,62 @@ Reading time & 22.2 minutes & 22.3 minutes\tabularnewline
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
 
-Previous studies on the motivations of political donors have often
-treated donors as a monolith. These studies would contrast the two
-predominant theories of political donor motivation--access-oriented or
-consumption--against each other. In the seminal paper, ``Why is There so
-Little Money in U.S. Politics?,'' Ansolabehere, de Figueiredo, and
-Snyder (2003) stated that ``two extreme views bracket the range of
-thinking about the amount of money in U.S. political campaigns.'' They
-conclude that ``campaign contributions should be viewed \emph{primarily}
-as a type of consumption good.'' Similarly, Gordon, Hager, and Landa
-(2007) succinctly asked, ``Consumption or Investment?'' Welch explained
-that there two models of campaign contributions. In one model,
-contributions are given in exchange for political favors (the
-access-oriented model) or to alter election probabilities in a way that
-helps one's preferred candidate (the consumption model) (Welch 1980).
-Many other studies have focused on a single model of donor motivation
-and seek evidence for that model without considering alternatives.
+The amount of money raised and spent by political campaigns in the
+United States continues to rise with each election cycle (Goldmacher
+2020). However, the explanations of the motivations of political donors,
+the psychological reasons why political donors decide to make a
+contribution, remain divided. The predominant theories of political
+donor motivation fall into two broad categories, the access-oriented
+model or the consumption model (Ansolabehere, Figueiredo, and Snyder
+2003; Gordon, Hafer, and Landa 2007; Welch 1980). In the access-oriented
+model, contributions are given in exchange for access and political
+favors that presumably materialize in altered government policy (Welch
+1980). The consumption model of donations sees donors as participants in
+the political process who seek to alter election probabilities in a way
+that helps one's preferred campaign, similar to how voting seeks to help
+a campaign achieve election (Welch 1980).
 
-Recently, a more nuanced view of the motivations of political donors has
-emerged that sees donors as unique actors. Different donors may have
-different motivations, intents, and goals in making a political
-contribution. Barber (2016) examines the differences in motivations
-between Political Action Committees (PACs) and individual donors,
-finding that PACs exhibit behavior inline with the access-oriented model
-and individuals appear to be motivated by political consumption/
-ideology. Heerwig (2016) drills down into individual donors by
-categorizing individual donors as either frequent or infrequent donors,
-concluding that frequent donors are more access-oriented whereas
-infrequent donors are more motivated by consumption/ ideology. Rhodes
-et. al (2018) find four types of unique individual donors:
-Party-Oriented Donors, Local-Oriented Donors, Idiosyncratic Donors, and
-Nationalized Donors, with each group having a unique set of motivations.
+The prevalence of the two theories in political science literature
+changes throughout time. In the twentieth century, the bulk of academic
+inquiry into the motivations of political donors focused on the
+access-oriented model, particularly around Political Action Committees
+(PACs) and interest groups politics (e.g., Herndon 1982; Langbein 1986).
+In the early- to mid-2000s, political scientists shifted their focus to
+and found evidence of the consumption model of donor motivations (e.g.,
+Ansolabehere, Figueiredo, and Snyder 2003). In response to the
+\emph{Citizens United} U.S. Supreme Court case in 2010, research focus
+again shifted back to the effects of the increased amount of money being
+donated to political campaigns and causes (e.g., Fouirnaies 2018; Kalla
+and Broockman 2016; McKay 2018). While much of the research history of
+political donor motivations has either pitted the two models of
+motivation against one another (Ansolabehere, Figueiredo, and Snyder
+2003; Gordon, Hafer, and Landa 2007; Welch 1980), or operated
+exclusively in the domain of one and not the other (Fellowes and Wolf
+2004; Gordon 2001; Wright 1985), recent scholarship has developed a more
+nuanced view of the motivations of political donors in that they are not
+a monolith and different donors can have different motivations.
+
+One emerging view on the motivations of political donors is that donors
+are unique actors. Different donors may have different motivations,
+intents, and goals in making a political contribution. This recent
+scholarship has divided political donors into different groups and
+studied the two models, access-oriented and consumption, within these
+different groups. One one end of the granularity spectrum, the entirety
+of political donors can be divided into PACs versus individuals, with
+PACs' behavior being inline with the access-oriented model and
+individuals broadly being found to exhibit behavior consistent with the
+consumption model (Barber 2016). Further down the granularity spectrum,
+individual donors can be divided into frequent or infrequent donors,
+with frequent donors having been found to be access-oriented where
+infrequent donors are consumption-oriented (Heerwig 2016). Even further
+down the spectrum, individual donors can be characterized into further
+specific descriptive categories with different categorizations showing
+different types of motivation for making a contribution (Rhodes,
+Schaffner, and Raja 2018).
+
 This paper continues in this direction of segmenting donors to
 understand unique motivations. Instead of making a descriptive
-distinction between donors such PACs versus individuals (Barber 2016),
+distinction between donors, such PACs versus individuals (Barber 2016),
 frequent versus infrequent donors (Heerwig 2016), or other heuristics
 (Rhodes, Schaffner, and Raja 2018), this paper clusters donors who are
 similar to one another using a network approach where donors in a
@@ -272,27 +294,17 @@ datasets to test theories of motivations in clusters of political
 donors.
 
 This network-based approach conceives of clusters of donors acting as a
-\emph{coalition} where coalition can have a distinct motivation.
+\emph{latent coalition} where coalitions can have a distinct motivation.
 Previous network studies have concluded that this type of network
 clustering has been highly predictive for other types of political
 analysis, including voting behavior in the U.S. House of Representatives
 and Senate (Wahl, Sheppard, and Shanahan 2019). Instead of focusing on
 the clusters in the campaign finance networks that legislators belong
 to, this study examines the donors themselves and their
-statistically-derived clusters. Further, I believe that this
-coalition-based approach can capture evidence of donor motivations more
-accurately. For example, a contributor may only make a single donation.
-That single donation may not have a statistically-identifiable influence
-on politicians, but if that single donor is acting in concert with other
-donors, there is a potential for identifiable results. For example,
-under an access-oriented/ influence model of donor motivations, this
-single donor could be a member of a pro-environment interest group. If
-many members of this group give individually to a candidate, the
-coalition could exhibit influence over that campaign to become more
-pro-environment. Similarly, under a consumption/ ideology model of
-motivation, a candidate could come out with a strong pro-environmental
-message and many members of the coalition could be attracted to the
-message and reward the pro-environment stance taken by the campaign.
+statistically-derived clusters. This paper's approach in using latent
+coalitions of donors continues down the granularity spectrum established
+by other political donor researchers in parsing out the motivations of
+political donors.
 
 In addition, this paper adds a dimension of policy issues. Are there
 certain policy issues that have donors who exhibit behavior inline with
@@ -321,36 +333,26 @@ contributions to gain access to politicians. Most often, access-oriented
 motivations are thought to be the reason behind contributions from
 Political Action Committees (PACs) and donors with business interest.
 The theory goes that this access can then influence legislative behavior
-(Francia et al. 2003). Milbrath (1958) centers legislative influence as
-a communicative process where those seeking to influence legislators
-must be able to ``communicate their power, as well as the facts and
-arguments supporting their position, when they confer with a
-legislator.'' Congress is operating in a ``vacuum filled with noise.''
-Political contributions can gain direct access that allows one to cut
-through all the noise of competing information that the legislator might
-be encountering (Milbrath 1958). In interviews, business groups
-themselves said that they seek ``access'' to either a member of congress
-or a member of their staff when they make a contribution. But these
-groups stated that their contribution only gains the access to make an
-argument and it is the merit of the argument that determines support for
-their cause or not (Herndon 1982). Surveys confirm that donors to U.S.
-House and Senate campaigns try to influence politics in a way that helps
-their businesses (Baker 2020a).Empirical studies of financial documents
-backup this claim that donors seek access in order to influence policy
-(Fouirnaies and Hall 2015).
+(Francia et al. 2003). The process of influencing legislation is
+fundamentally a communicative process where those seeking to influence
+legislators must be able to have direct access to legislators to whom
+they can take their arguments (Milbrath 1958).
 
-Past research has suggested that political contributors are successful
-in their goals to gain access as measured by the amount of time that
-organized interest groups spend with members of congress (Langbein
-1986). This increased access has been found not only for PACs but also
-for increased access for individual donors. A randomized experiment
-found that when it is revealed to congressional offices that prospective
-meeting attendees contributed to the member's campaign that senior
-members of the office took meetings between three to four times more
-often than when information about contributions were withheld (Kalla and
-Broockman 2016).
+Congress is an information ecology where competing facts and
+perspectives are everywhere and changing at all times. Political
+contributions can gain direct access that allows one to cut through all
+the noise of competing information that the legislator might be
+encountering (Milbrath 1958). Interviews (Herndon 1982), surveys (Baker
+2020a), empirical studies of financial documents (Fouirnaies and Hall
+2015), and contribution patterns themselves (Powell and Grimmer 2016)
+all support the conclusion that interest groups and individuals have the
+goal of gaining access to politicians through their financial
+contributions in order to influence government policies. These attempts
+to buy access have been found to be successful in gaining meetings with
+congressional offices for both special interest groups (Langbein 1986)
+and individual donors (Kalla and Broockman 2016).
 
-However, measuring the direct access that political financiers gain from
+Measuring the direct access that political financiers gain from
 political contributions is difficult to measure. Instead, researchers
 have treated the ``access'' component of contributor influence as an
 implicit assumption and instead look for evidence of ``influence'' of
@@ -358,106 +360,93 @@ political contributors on politicians. Many political science papers do
 not use the explicit term ``access-oriented donor'' and instead refer to
 their work as examining the potential ``influence'' of political donors
 on politicians. This line of influence research inherently implies a
-gain of access by political contributors. As Langbein (1986) states,
-``{[}Access{]} is a precondition for having influence over public
-policy. Contributions themselves have little meaning for a congressman,
-because they do not carry any `message.' Only access, or some other form
-of direct or indirect communication, can translate money into
-influence.''
+gain of access by political contributors. In order to have influence
+over public policy, one must first have access to politicians in order
+to communicate with them because the contribution itself does not carry
+any message in and of itself (Langbein 1986).
 
 Even though research has suggested there is a connection between
 political contributions and access. It is unclear if that access
-actually converts to \emph{influence} in the political process. Despite
-confirmation that PACs attempt to influence the legislative process
-(Grenzke 1989), past research has found PAC contributions to have a
-limited effect on roll-call voting (Wright 1985). In rare instances,
-there is an apparent connection between PAC contributions and roll-call
-votes, but that correlation is most likely due to broader support from
-larger interest groups (Grenzke 1989). These sparse correlations could
-be manifestation of the finding that legislators are responsive to
-changes in the opinions of the national individual donor class
-(Canes-Wrone and Gibson 2019). One article went so far as to conclude
-that ``evidence in the article undermines belief in the
-military-industrial complex model'' (Wayman 1985) when studying the
-effect of defense-related PACs on roll-call voting. One study using
-meta-analytic methods found over 93 studies that "corporate political
-activity only weakly impacts public policy and at best has a (direct)
-weak effect on corporate outcomes (Hadani, Bonardi, and Dahan 2017) that
-may be more of a signalling of policy preference than anything else
-(Austen-Smith 1995). This signalling is likely only effective if the
-contribution is large enough that influence the likelihood of the
-candidate being elected (Schnakenberg and Turner 2021).
-
-However, other research has found evidence that contributions from the
-financial (Hayes 2017), telecommunications (Edwards and Figueiredo
-2016), education (Constant 2006), environmental (Hogan 2020) and
-healthcare interest groups (McKay 2018) have influenced legislation
-passed. One study on the connection between campaign contributions and
-legislative voting does support the idea that moneyed interests play a
-significant role in the legislative process, particularly organized
-business interests that are within a member's district (Hall and Wayman
-1990), potentially similar to how members of congress prioritize public
-opinion of their district over national public opinion (Butler and
-Nickerson 2011). Further, there appears to be a stronger influence as a
-result of contributions from individuals with business interests,
-opposed to PACs, which many other studies focus on (Fellowes and Wolf
-2004). While it is ``nearly universal'' (Bonica 2016) that corporate
-executives of Fortune 500 firms make political contributions, and there
-is a significant increase in contributions once the business people are
-promoted to executive status (Fremeth, Richter, and Schaufele 2013),
-there is heterogeneity in their political leanings (Bonica 2016).
-
-In addition, PACs have been found to use contributions in an attempt to
-acquire access and favor, a result that suggests that they ``at least
-anticipate that the donations will influence policy'' (Powell and
-Grimmer 2016). A meta-analysis found that model specification played a
-significant role in whether significant results were found when looking
-for a connection between donations and roll-calls votes, concluding that
-studies that controlled for ``friendly giving by including a measure of
-legislators' ideology and that include more than one contributions
-variable are less likely to produce significant results'' (Roscoe and
-Jenkins 2005). Despite this variability in model specification, the
-authors conclude that one-third of roll-call votes are impacted by
-campaign contributions (Roscoe and Jenkins 2005). Research suggests that
-campaign contributions only try to influence a small number of votes
-that have an outsized impact on whether legislation actually passes or
-not (Gordon 2001) or on ideological or highly visible political issues
-(Witko 2006).
+actually converts to \emph{influence} in the political process. Past
+research has found PAC contributions to have a limited effect on
+roll-call voting (Wright 1985). Model specification is a factor in
+whether studies find a statistical relationship between donors and
+roll-call votes (Roscoe and Jenkins 2005). About one-third of roll-call
+votes are impacted by campaign contributions (Roscoe and Jenkins 2005).
+In these instances, there is an apparent connection between PAC
+contributions and roll-call votes, but that correlation is potentially
+due to broader support from larger interest groups (Grenzke 1989). These
+sparse correlations could be a manifestation of the finding that
+legislators are responsive to changes in the opinions of the national
+individual donor class (Canes-Wrone and Gibson 2019). One article went
+so far as to conclude that ``evidence in the article undermines belief
+in the military-industrial complex model'' (Wayman 1985) when studying
+the effect of defense-related PACs on roll-call voting.
 
 One consideration when assessing the impact of PAC donations on
 roll-call voting is that donations are just a piece of the broader
 lobbying effort when trying to influence legislation. Ideologically
-extreme groups and groups that are more liberal have been found to favor
-PAC contribution over other lobbying methods (McKay 2010). Legislators'
-perceptions of the power of the interest group, for example, union
-membership rates (Finger 2019) may also be a factor in whether
-contributions can acquire influence. Firms that make larger political
-contributions have been found to get more ``sweetheart'' contracts from
-the government even when controlling for lobbying, negotiation power,
-and the employment of former government employees (Ferris, Houston, and
-Javakhadze 2019).
+extreme groups and groups that are more liberal are more reliant on PAC
+contribution than other lobbying methods compared to other interest
+groups (McKay 2010). These other interest groups can alter the
+legislators' perceptions of the power of the interest group, for
+example, union membership rates (Finger 2019) which can factor into
+whether contributions can acquire influence.
+
+In addition to the narrow inquiry into roll-call voting, political
+contributions can alter the public policy process in other ways. For
+example, firms that make larger political contributions have been found
+to get more ``sweetheart'' contracts from the government even when
+controlling for lobbying, negotiation power, and the employment of
+former government employees (Ferris, Houston, and Javakhadze 2019). But
+there is still only a weak relationship between public policy outcomes
+and political contributions (Hadani, Bonardi, and Dahan 2017). This weak
+connection may be more of a signalling of policy preference than
+anything else (Austen-Smith 1995), in which case the assumption that a
+contribution itself does not carry a message (Langbein 1986) may have to
+be reassessed. In addition, this signalling is likely only effective if
+the contribution is large enough that influence the likelihood of the
+candidate being elected (Schnakenberg and Turner 2021).
+
+Instead of looking at the aggregate level of financial contributions and
+voting, other research that looks at contributions and policy outcomes
+more narrowly has found evidence that contributions from financial
+(Hayes 2017), telecommunications (Edwards and Figueiredo 2016),
+education (Constant 2006), environmental (Hogan 2020) and healthcare
+interest groups (McKay 2018) have influenced legislation passed. Any
+connection that does exist between campaign contributors and public
+policy has a stronger impact if the contributions are from organized
+business interests within a member's district (Hall and Wayman 1990),
+potentially similar to how members of congress prioritize public opinion
+of their district over national public opinion (Butler and Nickerson
+2011). Further, there appears to be a stronger influence as a result of
+contributions from individuals with business interests, opposed to PACs,
+which many other studies focus on (Fellowes and Wolf 2004). While it is
+``nearly universal'' (Bonica 2016) that corporate executives of Fortune
+500 firms make political contributions, and there is a significant
+increase in contributions once the business people are promoted to
+executive status (Fremeth, Richter, and Schaufele 2013), there is
+heterogeneity in their political leanings (Bonica 2016), meaning that
+individual executives likely have different policy perferences and goals
+when making a contribution.
 
 Potentially, the influence exerted by contributors when making a
 political contribution is so indirect that it doesn't always materialize
-in statistical patterns of legislative voting, but there is evidence of
-the influence as a result of the legislation. Interest groups have been
-found to seek direct \emph{and} indirect access to the policy making
-process (Fouirnaies 2018). One study found that firms that donated to
-winning candidates experienced an abnormal equity return of 3\% compared
-to firms that contributed to losing campaigns (Akey 2015). Another study
-found that future returns of firms is positively and significantly
-correlated with contributions in support for candidates, finding the
-strongest effect among firms that support candidates within the state
-that the firm is based (Cooper, Gulen, and Ovtchinnikov 2010). In
-addition to immediately-felt financial returns, donors may
+in statistical patterns of legislative voting or public policy, but
+there is evidence of the influence towards the benefit of the financial
+contributor. Interest groups have been found to seek direct and indirect
+access to the policy making process (Fouirnaies 2018). Firms that
+contribute to winning political campaigns have abnormal financial
+returns after the election (Akey 2015; Cooper, Gulen, and Ovtchinnikov
+2010). In addition to immediately-felt financial returns, donors may
 systematically contribute money to legislative agenda setters, such as
 chairs of financial committees, in an effort to set future legislative
-agendas (Fouirnaies 2018). Even campaign contribution from business
-executives are ``best understood as purchases of `good will' whose
-returns, while positive in expectation, are contingent and rare''
-(Gordon, Hafer, and Landa 2007). Political contributions have also been
-found to reduce the punishment for business executives who are
-sanctioned for committing fraud (Fulmer, Knill, and Yu 2017).
+agendas (Fouirnaies 2018). Even business executives understand that
+political contributions are purchases of ``good will'' which are
+positive but are not frequent nor universal (Gordon, Hafer, and Landa
+2007). For example, political contributions have also been found to
+reduce the punishment for business executives who are sanctioned for
+committing fraud (Fulmer, Knill, and Yu 2017).
 
 Instead of focusing on direct access or financial outcomes, this
 research article examines politicians' public support of policy issues.
@@ -1005,6 +994,10 @@ Legislators That Vote Against the Environment.'' \emph{Proceedings of
 the National Academy of Sciences} 117 (10): 5111--2.
 \url{https://doi.org/10.1073/pnas.1922175117}.
 
+\leavevmode\hypertarget{ref-goldmacher2020}{}%
+Goldmacher, Shane. 2020. ``The 2020 Campaign Is the Most Expensive Ever
+(by a Lot).'' \emph{The New York Times Magazine}, October.
+
 \leavevmode\hypertarget{ref-gordon2007}{}%
 Gordon, Sanford C., Catherine Hafer, and Dimitri Landa. 2007.
 ``Consumption or Investment? On Motivations for Political Giving.''
@@ -1105,7 +1098,7 @@ Motivation, and Social Networks: Social Media and Political Protest.''
 \emph{Political Psychology} 39 (February): 85--118.
 \url{https://doi.org/10.1111/pops.12478}.
 
-\leavevmode\hypertarget{ref-kalla2015}{}%
+\leavevmode\hypertarget{ref-kalla2016}{}%
 Kalla, Joshua L., and David E. Broockman. 2016. ``Campaign Contributions
 Facilitate Access to Congressional Officials: A Randomized Field
 Experiment.'' \emph{American Journal of Political Science} 60 (3):
@@ -1322,11 +1315,6 @@ Conflict Resolution} 29 (2): 225--51.
 Welch, W. P. 1980. ``The Allocation of Political Monies: Economic
 Interest Groups.'' \emph{Public Choice} 35 (1): 97--120.
 \url{https://doi.org/10.1007/BF00154752}.
-
-\leavevmode\hypertarget{ref-witko2006}{}%
-Witko, Christopher. 2006. ``PACs, Issue Context, and Congressional
-Decisionmaking.'' \emph{Political Research Quarterly} 59 (2): 283--95.
-\url{https://doi.org/10.1177/106591290605900210}.
 
 \leavevmode\hypertarget{ref-wright1985}{}%
 Wright, John R. 1985. ``PACs, Contributions, and Roll Calls: An
