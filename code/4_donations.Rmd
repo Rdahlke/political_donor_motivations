@@ -12,33 +12,38 @@ options(scipen = 9999)
 ```
 
 ```{r}
-ds <- read_csv("~/git/political_donor_motivations/data/2016_donations_w_clusters.csv")
+donations <- read_csv("~/git/political_donor_motivations/data/2016_donations.csv") %>%
+  filter(type == "Individual") %>% 
+  rename(original_source = source) %>% 
+  mutate(original_source = tolower(original_source)) %>% 
+  filter(str_detect(original_source, c("unitemized|anonymous")) == F) %>% 
+  mutate(zip_5 = str_sub(zip, 1, 5),
+         refined_source = refinr::n_gram_merge(refinr::key_collision_merge(original_source)),
+         source = paste0(refined_source," : ",zip_5)) 
+
+multi_campaign_donors <- donations %>% 
+  distinct(source, target) %>% 
+  group_by(source) %>% 
+  count() %>% 
+  filter(n > 1) %>% 
+  pull(source)
+
+donations %>% 
+  filter(source %in% multi_campaign_donors) %>% 
+  write_csv("~/git/political_donor_motivations/data/2016_donations_refined.csv")
 ```
 
 ```{r}
-total <- ds %>%
-  group_by(target, office) %>%
-  summarize(total = sum(contribution)) %>% 
-  filter(!is.na(target))
-
-donor_scores <- ds %>%
-  group_by(target, office, modularity_class) %>%
-  summarize(cluster_contributions = sum(contribution)) %>% 
-  filter(!is.na(target)) %>% 
-  left_join(total) %>%
-  mutate(candidate_cluster = (cluster_contributions/total_contributions)*100, 
-         target_cluster = case_when(
-           # Not sure where the State Assemly typo came from!
-           office == "State Assemly" ~ cluster_contributions / 57446.74 * 100,
-           office == "State Senate" ~ cluster_contributions / 336868.93 * 100
-         ),
-         cluster_score = candidate_cluster * target_cluster)
-           
+clusters <- read_csv("~/git/political_donor_motivations/data/gephi_output_all.csv") %>% 
+  select(source = Id,
+         modularity_class)
 ```
 
 ```{r}
-saveRDS(donor_scores, "~/git/political_donor_motivations/data/candidate_donor_scores.RDA")
+donations %>% 
+  left_join(clusters) %>% 
+  filter(!is.na(modularity_class)) %>% 
+  write_csv("~/git/political_donor_motivations/data/2016_donations_clusters_all.csv")
 ```
-
 
 

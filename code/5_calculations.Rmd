@@ -14,13 +14,13 @@ options(scipen = 999)
 ```
 
 ```{r}
-donations <- read_csv("~/git/political_donor_motivations/data/2016_donations_w_clusters.csv")
+donations <- read_csv("~/git/political_donor_motivations/data/2016_donations_clusters_all.csv")
 uncoded_predicted <- read_csv("~/git/political_donor_motivations/data/uncoded_predicted.csv")
 ```
 
 ```{r}
 n_clusters <- donations %>% 
-  filter(modularity_class <= 12) %>% 
+  # filter(modularity_class <= 12) %>% 
   distinct(modularity_class) %>% 
   count() %>% 
   pull(n)
@@ -30,7 +30,7 @@ n_topics <- uncoded_predicted %>%
   count() %>% 
   pull(n)
 
-p_adjustments <- n_clusters * n_topics
+p_adjustments <- n_clusters * n_topics * 2
 ```
 
 
@@ -98,7 +98,7 @@ results <- access_model %>%
   janitor::clean_names() %>% 
   mutate(modularity_class = cluster,
          topic = topic,
-         adjusted_pr_f = p.adjust(pr_f, method = "holm", n = adjustments)) %>% 
+         adjusted_pr_f = p.adjust(pr_f, method = "bonferroni", n = adjustments)) %>% 
   filter(adjusted_pr_f < .05) 
 
 if(nrow(results) == 0){
@@ -125,7 +125,9 @@ return(output)
 
 ```{r}
 topics <- uncoded_predicted %>% distinct(predicted) %>% pull()
-modularity_classes <- donations %>% filter(modularity_class <= 12) %>%  distinct(modularity_class) %>% arrange(modularity_class) %>% pull() 
+modularity_classes <- donations %>% 
+  # filter(modularity_class <= 12) %>%  
+  distinct(modularity_class) %>% arrange(modularity_class) %>% pull() 
 ```
 
 ```{r}
@@ -153,7 +155,7 @@ plot <- granger_results %>%
   mutate(result = factor(result, c("access", "consumption", "confounder", "no relationship detected"))) %>% 
   ggplot(aes(cluster, topic, fill = result)) +
   geom_raster() +
-  scale_x_continuous(breaks = seq(0, 12, 1), position = "top") +
+  scale_x_continuous(breaks = seq(0, 40, 1), position = "top") +
   scale_fill_grey() +
   labs(x = "donor coalition",
        y = "topic",
@@ -173,4 +175,36 @@ granger_results %>%
   write_csv("../data/granger_results.csv")
 ```
 
+# Contributor size
+
+```{r}
+cluster_category <- granger_results %>% 
+  group_by(cluster) %>% 
+  summarize(category = case_when(
+    any(result == "access") ~ "access",
+    any(result == "consumption") ~ "consumption",
+    any(result == "confounder") ~ "confounder",
+    TRUE ~ "0_no_relationship"
+  ))
+```
+
+
+```{r}
+donor_totals <- donations %>% 
+  group_by(source, modularity_class) %>% 
+  summarize(total_contributed = sum(contribution, na.rm = T),
+            n_contributed = n()) %>% 
+  left_join(cluster_category, by = c("modularity_class" = "cluster")) %>% 
+  filter(n_contributed > 1)
+```
+
+```{r}
+lm(total_contributed ~ category, data = donor_totals) %>% 
+  summary()
+```
+
+```{r}
+lm(n_contributed ~ category, data = donor_totals) %>% 
+  summary()
+```
 
