@@ -211,10 +211,10 @@ similar candidates.
 Method & koRpus & stringi\tabularnewline
 \midrule
 \endhead
-Word count & 5017 & 5012\tabularnewline
-Character count & 34289 & 34280\tabularnewline
+Word count & 5103 & 5113\tabularnewline
+Character count & 35040 & 35031\tabularnewline
 Sentence count & 222 & Not available\tabularnewline
-Reading time & 25.1 minutes & 25.1 minutes\tabularnewline
+Reading time & 25.5 minutes & 25.6 minutes\tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -229,72 +229,73 @@ United States continues to rise with each election cycle (Goldmacher
 the psychological reasons why political donors decide to make a
 contribution, remain divided. The predominant theories of political
 donor motivation fall into two broad categories, the access-oriented
-model or the consumption model (Ansolabehere, Figueiredo, and Snyder
-2003; Gordon, Hafer, and Landa 2007; Welch 1980). In the access-oriented
-model, contributions are given in exchange for access and political
-favors that presumably materialize in altered government policy (Welch
-1980). The consumption model of donations sees donors as participants in
-the political process who seek to alter election probabilities in a way
-that helps one's preferred campaign, similar to how voting seeks to help
-a campaign achieve election (Welch 1980).
+model or the consumption model. In the access-oriented model,
+contributions are given in exchange for access and political favors that
+presumably materialize in altered government policy. The consumption
+model of donations sees donors as participants in the political process
+who seek to alter election probabilities in a way that helps one's
+preferred campaign, similar to how voting seeks to help a campaign
+achieve election.
 
 The prevalence of the two theories in political science literature
 changes throughout time. In the twentieth century, the bulk of academic
 inquiry into the motivations of political donors focused on the
 access-oriented model, particularly around Political Action Committees
-(PACs) and interest groups politics (e.g., Herndon 1982; Langbein 1986).
-In the early- to mid-2000s, political scientists shifted their focus to
-and found evidence of the consumption model of donor motivations (e.g.,
+(PACs) and interest group politics (e.g., Herndon 1982). In the early-
+to mid-2000s, political scientists shifted their focus to and found
+evidence of the consumption model of donor motivations (e.g.,
 Ansolabehere, Figueiredo, and Snyder 2003). In response to the
 \emph{Citizens United} U.S. Supreme Court case in 2010, research focus
 again shifted back to the effects of the increased amount of money being
-donated to political campaigns and causes (e.g., Fouirnaies 2018; Kalla
-and Broockman 2016; McKay 2018). While much of the research history of
+donated to political campaigns and causes (e.g., Fouirnaies 2018). This
+study does not take a zero-sum view of the motivations of political
+donors. Instead, the two predominant models are both investigated and
+allowed to exist together. While much of the research history of
 political donor motivations has either pitted the two models of
-motivation against one another (Ansolabehere, Figueiredo, and Snyder
-2003; Gordon, Hafer, and Landa 2007; Welch 1980), or operated
-exclusively in the domain of one and not the other (Fellowes and Wolf
-2004; Gordon 2001; Wright 1985), recent scholarship has developed a more
-nuanced view of the motivations of political donors in that they are not
-a monolith and different donors can have different motivations.
+motivation against one another (Welch 1980) or operated exclusively in
+the domain of one and not the other (Fellowes and Wolf 2004), recent
+scholarship has developed a more nuanced view of the motivations of
+political donors in that they are not a monolith and different donors
+can have different motivations.
 
-One emerging view on the motivations of political donors is that donors
-are unique actors. Different donors may have different motivations,
-intents, and goals in making a political contribution. This recent
-scholarship has divided political donors into different groups and
-studied the two models, access-oriented and consumption, within these
-different groups. One one end of the granularity spectrum, the entirety
-of political donors can be divided into PACs versus individuals, with
-PACs' behavior being inline with the access-oriented model and
-individuals broadly being found to exhibit behavior consistent with the
-consumption model (Barber 2016). Further down the granularity spectrum,
-individual donors can be divided into frequent or infrequent donors,
+This emerging, more nuanced view on the motivations of political donors
+is that donors are unique actors. Different donors may have different
+motivations, intents, and goals in making a political contribution. This
+recent scholarship has divided political donors into different groups
+and studied the two models, access-oriented and consumption, within
+these different groups. On way to divide political donors is into PACs
+versus individuals, with PACs' behavior being inline with the
+access-oriented model and individuals broadly being found to exhibit
+behavior consistent with the consumption model (Barber 2016). Another
+way to group individual donors is into frequent or infrequent donors,
 with frequent donors having been found to be access-oriented where
-infrequent donors are consumption-oriented (Heerwig 2016). Even further
-down the spectrum, individual donors can be characterized into further
-specific descriptive categories with different categorizations showing
-different types of motivation for making a contribution (Rhodes,
-Schaffner, and Raja 2018).
+infrequent donors are consumption-oriented (Heerwig 2016). Even more
+granularly, individual donors can be characterized into further specific
+descriptive categories with different categorizations showing different
+types of motivation for making a contribution (Rhodes, Schaffner, and
+Raja 2018).
 
-This paper continues in this direction of segmenting donors to
-understand unique motivations. Instead of making a descriptive
-distinction between donors, such PACs versus individuals (Barber 2016),
-frequent versus infrequent donors (Heerwig 2016), or other heuristics
-(Rhodes, Schaffner, and Raja 2018), this paper clusters donors who are
-similar to one another using a network approach where donors in a
-cluster are similar to one another in who they contributed to. This
-approach is similar to that of Wahl and Sheppard (2018) who then use
-other pieces of information from the contributions themselves to
-identify the associations that connect the members of the community to
-each other. This study takes the approach another step forward by
-layering in another unique dataset, social media data from politicians,
-to identify behaviors, and potentially the underlying reasons why donors
-are in the same statistical community. This paper combines these two
-datasets to test theories of motivations in clusters of political
-donors.
+This paper employs a novel clustering approach to find statistically
+similar political donors and layers in politicians' social media data to
+advance our understanding of the distinct motivations of political
+donors, including the policy issues that may motivate them to make a
+contribution. Instead of making a descriptive distinction between
+donors, such as PACs versus individuals (Barber 2016), frequent versus
+infrequent donors (Heerwig 2016), or other heuristics (Rhodes,
+Schaffner, and Raja 2018), donors are clustered together so that they
+are grouped with other donors who are most like in the campaigns that
+they contribute to. This type network-based approach has just started to
+emerge among computer science and machine learning researchers (Wahl and
+Sheppard 2018) who just make descriptive summarizes of the groups. We
+add a theoretical political psychological component to this approach by
+layering in an additional unique dataset, social media data from
+politicians, to identify behaviors, and potentially the underlying
+reasons why donors are in the same statistical community. This paper
+combines these two datasets to test theories of motivations in clusters
+of political donors.
 
-This network-based approach conceives of clusters of donors acting as a
-\emph{latent coalition} where coalitions can have a distinct motivation.
+In a network-based approach, donor clusters act as a \emph{latent
+coalition} where different coalitions can have a distinct motivation.
 Previous network studies have concluded that this type of network
 clustering has been highly predictive for other types of political
 analysis, including voting behavior in the U.S. House of Representatives
@@ -308,22 +309,34 @@ political donors.
 
 In addition, this paper adds a dimension of policy issues. Are there
 certain policy issues that have donors who exhibit behavior inline with
-the access-oriented model or consumption model? It is possible that
-different issues are related to different coalitions of donors with
-different motivations. For example, perhaps pro-environmental donors are
-driven by the access-oriented model and anti-abortion groups are driven
-by the consumption model of politics. This paper combines donation
-records with social media data collected in Wisconsin during the 2016
-election cycle to measure whether campaigns' support of certain policy
-issues respond to donations from clusters or whether donations from
-coalitions respond to public support of policy issues. Previous studies
-have used social media posts as a proxy for public appeals in support of
-President Trump. This proxy for public appeals was used to study the
-impact of legislators' posts about President Trump on their fundraising
-(Fu and Howell 2020). Particularly with the rise of politics online,
-adding in social media data provides a valuable variable in
-understanding the information ecology that political donors experience
-and how the information ecology relates to their donation motivations.
+the access-oriented model or consumption model? Hypothesizing different
+issues are related to different groups of donors, this paper also
+considers policy-specific motivations. Most research into the
+motivations of political donors focus on ideological proximity instead
+of specific policy issues (Ensley 2009), or specific policy motivations
+are briefly discussed but not the focus of the paper (Bonica 2014). But
+when they are the focus of the paper, individual-policy preferences are
+an integral component of the campaign finance system (Bonica 2019). For
+example, perhaps pro-environmental donors are driven by the
+access-oriented model and anti-abortion groups are driven by the
+consumption model of politics. This paper combines donation records with
+social media data collected in Wisconsin during the 2016 election cycle
+to measure whether campaigns' support of certain policy issues respond
+to donations from clusters or whether donations from coalitions respond
+to public support of policy issues. Previous studies have used social
+media posts as a proxy for public appeals and the connection these
+appeals have to fundraising (Fu and Howell 2020). Particularly with the
+rise of politics online, adding in social media data provides a valuable
+variable in understanding the information ecology that political donors
+experience and how the information ecology relates to their donation
+motivations. The results of this paper suggest that that public support
+of policy issues on social media is both a valuable predictor of, and
+can be predicted by, political donations from coalitions of donors.
+
+Next, we will dig into the access-oriented and consumption model of
+political donors and explain the hypotheses for this study that can be
+derived from the two theories. Then, we will discuss the methods and
+results, followed by a discussion of the findings.
 
 \hypertarget{access-oriented-model}{%
 \section{Access-Oriented Model}\label{access-oriented-model}}
@@ -331,7 +344,7 @@ and how the information ecology relates to their donation motivations.
 Access-oriented political donors are those that attempt to use their
 contributions to gain access to politicians. Most often, access-oriented
 motivations are thought to be the reason behind contributions from
-Political Action Committees (PACs) and donors with business interest.
+Political Action Committees (PACs) and donors with business interests.
 The theory goes that this access can then influence legislative behavior
 (Francia et al. 2003). The process of influencing legislation is
 fundamentally a communicative process where those seeking to influence
@@ -353,17 +366,18 @@ congressional offices for both special interest groups (Langbein 1986)
 and individual donors (Kalla and Broockman 2016).
 
 Measuring the direct access that political financiers gain from
-political contributions is difficult to measure. Instead, researchers
-have treated the ``access'' component of contributor influence as an
-implicit assumption and instead look for evidence of ``influence'' of
-political contributors on politicians. Many political science papers do
-not use the explicit term ``access-oriented donor'' and instead refer to
-their work as examining the potential ``influence'' of political donors
-on politicians. This line of influence research inherently implies a
-gain of access by political contributors. In order to have influence
-over public policy, one must first have access to politicians in order
-to communicate with them because the contribution itself does not carry
-any message in and of itself (Langbein 1986).
+political contributions can be a challenging endeavor due to all of the
+noise in the political ecology. Instead, researchers have treated the
+``access'' component of contributor influence as an implicit assumption
+and instead look for evidence of ``influence'' of political contributors
+on politicians. Many political science papers do not use the explicit
+term ``access-oriented donor'' and instead refer to their work as
+examining the potential ``influence'' of political donors on
+politicians. This line of influence research inherently implies a gain
+of access by political contributors. In order to have influence over
+public policy, one must first have access to politicians in order to
+communicate with them because the contribution itself does not carry any
+intrinsic message (Langbein 1986).
 
 Even though research has suggested there is a connection between
 political contributions and access. It is unclear if that access
@@ -386,8 +400,8 @@ the effect of defense-related PACs on roll-call voting.
 One consideration when assessing the impact of PAC donations on
 roll-call voting is that donations are just a piece of the broader
 lobbying effort when trying to influence legislation. Ideologically
-extreme groups and groups that are more liberal are more reliant on PAC
-contribution than other lobbying methods compared to other interest
+extreme groups, particularly very liberal groups, are more reliant on
+PAC contribution than other lobbying methods compared to other interest
 groups (McKay 2010). These other interest groups can alter the
 legislators' perceptions of the power of the interest group, for
 example, union membership rates (Finger 2019) which can factor into
@@ -395,17 +409,17 @@ whether contributions can acquire influence.
 
 In addition to the narrow inquiry into roll-call voting, political
 contributions can alter the public policy process in other ways. For
-example, firms that make larger political contributions have been found
-to get more ``sweetheart'' contracts from the government even when
-controlling for lobbying, negotiation power, and the employment of
-former government employees (Ferris, Houston, and Javakhadze 2019). But
-there is still only a weak relationship between public policy outcomes
-and political contributions (Hadani, Bonardi, and Dahan 2017). This weak
-connection may be more of a signalling of policy preference than
-anything else (Austen-Smith 1995), in which case the assumption that a
-contribution itself does not carry a message (Langbein 1986) may have to
-be reassessed. In addition, this signalling is likely only effective if
-the contribution is large enough that influence the likelihood of the
+example, firms that make larger political contributions receive more
+``sweetheart'' contracts from the government even when controlling for
+lobbying, negotiation power, and the employment of former government
+employees (Ferris, Houston, and Javakhadze 2019). But there is still
+only a weak relationship between public policy outcomes and political
+contributions (Hadani, Bonardi, and Dahan 2017). This weak connection
+may be more of a signalling of policy preference than anything else
+(Austen-Smith 1995), in which case the assumption that a contribution
+itself does not carry a message (Langbein 1986) may have to be
+reassessed. In addition, this signalling is likely only effective if the
+contribution is large enough to influence the likelihood of the
 candidate being elected (Schnakenberg and Turner 2021).
 
 Instead of looking at the aggregate level of financial contributions and
@@ -427,33 +441,36 @@ which many other studies focus on (Fellowes and Wolf 2004). While it is
 increase in contributions once the business people are promoted to
 executive status (Fremeth, Richter, and Schaufele 2013), there is
 heterogeneity in their political leanings (Bonica 2016), meaning that
-individual executives likely have different policy perferences and goals
+individual executives likely have different policy preferences and goals
 when making a contribution.
 
 Potentially, the influence exerted by contributors when making a
 political contribution is so indirect that it doesn't always materialize
 in statistical patterns of legislative voting or public policy, but
 there is evidence of the influence towards the benefit of the financial
-contributor. Interest groups have been found to seek direct and indirect
-access to the policy making process (Fouirnaies 2018). Firms that
-contribute to winning political campaigns have abnormal financial
-returns after the election (Akey 2015; Cooper, Gulen, and Ovtchinnikov
-2010). In addition to immediately-felt financial returns, donors may
-systematically contribute money to legislative agenda setters, such as
-chairs of financial committees, in an effort to set future legislative
-agendas (Fouirnaies 2018). Even business executives understand that
-political contributions are purchases of ``good will'' which are
-positive but are not frequent nor universal (Gordon, Hafer, and Landa
-2007). For example, political contributions have also been found to
-reduce the punishment for business executives who are sanctioned for
-committing fraud (Fulmer, Knill, and Yu 2017).
+contributor. Interest groups seek both direct and indirect access to the
+policy making process (Fouirnaies 2018). Firms that contribute to
+winning political campaigns have abnormal financial returns after the
+election (Akey 2015; Cooper, Gulen, and Ovtchinnikov 2010). In addition
+to immediately-felt financial returns, donors may systematically
+contribute money to legislative agenda setters, such as chairs of
+financial committees, in an effort to set future legislative agendas
+(Fouirnaies 2018). Even business executives understand that political
+contributions are purchases of ``good will'' which are positive but are
+not frequent nor universal (Gordon, Hafer, and Landa 2007). For example,
+political contributions appear to reduce the punishment for business
+executives who are sanctioned for committing fraud (Fulmer, Knill, and
+Yu 2017).
 
 Instead of focusing on direct access or financial outcomes, this
 research article examines politicians' public support of policy issues.
 Under the access-oriented/ influence model of political donor
 motivations, we would expect to find politicians to be more supportive
 of certain policy issues after receiving campaign contributions from
-access-oriented donors, which leads to \(H_{1}\).
+access-oriented donors. This hypothesis will be tested using a Granger
+causality model (Granger 1969), which is an econometric methodology to
+test whether changes in one time series predict future changes in
+another time series.
 
 \textbf{\(H_{1}\): Donations from various coalitions of political donors
 will precede, or Granger cause, increased public support of certain
@@ -462,9 +479,7 @@ political issues from the politicians to whom they donate.}
 Since access-oriented donors are thought to be wealthier contributors,
 sometimes seeking access for financial gain, this paper will also
 examine the amount contributed by members of donor coalitions that are
-accepted by \(H_{1}\). \(H_{2}\) also serves as a measure of face
-validity for the theory of access-oriented motivation and this study's
-measurement.
+accepted by \(H_{1}\).
 
 \textbf{\(H_{2}\): Donors from access-oriented coalitions will on
 average be \emph{larger} contributors to political campaigns than donors
@@ -476,61 +491,64 @@ not in access-oriented coalitions.}
 While the access-oriented model is centered on donors \emph{influencing}
 the political process, the consumption model is about donors
 \emph{participating} in the political process. The consumption model of
-political donors was concludes that political contributions are
-investment but instead are acts of consumption, or in other words,
-participation (Ansolabehere, Figueiredo, and Snyder 2003). Under this
-model, individual donors are intrinsically motivated by ideology
-(Ansolabehere, Figueiredo, and Snyder 2003). People don't receive a
-direct benefit from making a political donation, but they do experience
-the indirect benefits of participating in a political campaign that
-matches their ideology and excites them. Said another way, for
-consumption motivated donors, making a contribution is just an extension
-of voting on a participatory spectrum. Under this approach to political
-donor motivations, donations are a way for individuals to participate
-and be responsive to their ``perception of the stakes in the election''
-(Hill and Huber 2017).
+political donors concludes that political contributions are not vehicles
+by which donors seek access to politicians but instead are acts of
+consumption, or in other words, participation (Ansolabehere, Figueiredo,
+and Snyder 2003). Under this model, individual donors are intrinsically
+motivated by ideology (Ansolabehere, Figueiredo, and Snyder 2003).
+People don't receive a direct benefit from making a political donation,
+but they do experience the indirect benefits of participating in a
+political campaign that matches their ideology and excites them. Said
+another way, for consumption-motivated donors, making a contribution is
+just an extension of voting on a participatory spectrum. Under this
+approach, donations are a way for individuals to participate and be
+responsive to their ``perception of the stakes in the election'' (Hill
+and Huber 2017).
 
 Ideological proximity, or the spatial distance between the ideology of
 candidates and donors, is an important component to the consumption
 model of political donors, (Ensley 2009), even more so than agreement
 between the donor and the candidate on specific policy issue positions
-(Barber, Canes-Wrone, and Thrower 2019). The similarity between a
-donor's policy preferences and a senator's roll calls is a predictor of
-whether a donor makes a contribution (Barber, Canes-Wrone, and Thrower
-2017). But this relationship between individual donors' opinions and
-senators' roll-call voting may be a recent phenomenon and has not
-existed historically (Canes-Wrone and Gibson 2019). Divergence of
-ideology among the candidates for an office, such as a more extreme
-political opponent, does not seem to impact donors' decision to make a
-contribution (Ensley 2009).
+(Barber, Canes-Wrone, and Thrower 2019), such as taxes, global warming,
+and gay rights. The similarity between a donor's policy preferences and
+a senator's roll-call votes is a predictor of whether a donor makes a
+contribution (Barber, Canes-Wrone, and Thrower 2017). It is unclear if
+this connection between contributors' policy preferences and
+legislators' votes holds historically or only recently (Canes-Wrone and
+Gibson 2019). Divergence of ideology among the candidates for an office,
+such as a more extreme political opponent, does not impact donors'
+decisions to make a contribution (Ensley 2009). Out-of-state donors
+display policy-specific motivations in an effort to acquire surrogate
+representations (Baker 2020b). The theoretical implications for this
+paper are that consumption-oriented donors will contribute to
+politicians who already show support for the policy issues, or are
+ideologically proximate, to themselves. In other words, donors reward
+for policy proximity between themselves and candidates.
 
-Out-of-state donors display policy-specific motivations for making a
-donation in an effort to acquire surrogate representation (Baker 2020b),
-but this finding didn't hold for in-district donations. PACs for
-organized labor unions have been found to exhibit behavior that is
-consistent with the consumption model of political donations where they
-reduce contributions to members of the U.S. House of Representatives
-when they supported the North American Free Trade Agreement (NAFTA)
-(Engel and Jackson 1998), showing that labor PACs responded to perceived
-changes in ideological proximity opposed to doubling-down on their
-efforts to potentially influence legislators who have become estranged
-from the PAC's priorities. While labor unions have been found to
-participate in ``punishing'' legislators for their votes (Jansa and
-Hoyman 2018), this punishment has been found to coax incumbents into
-changing their position back to being pro-labor (Jansa 2019), suggesting
-that there might actually be some influence-buying. Other PACs also show
-behavior that is inline with the consumption model of political donor
-motivations where PACs contribute to politicians who already agree with
-their policy preferences (Goldberg et al. 2020) as opposed to coercing a
-future vote on relevant policy topics (Callahan 2019). Contributions
-from PACs and individuals that exhibit consumption-oriented behavior are
-a lagging indicator of politicians' ideology and support of policy
-issues. Individuals and PACs make contributions between the politicians
-they are donating to are ideologically proximate to them or support
-similar policies. These donors reward ideologically proximate
-politicians, respond to changing ideological spatial location of the
-politicians, and do not try to necessarily influence policy stances into
-the future.
+In addition to individual donors, PACs also sometimes display behavior
+that can be defined as consumptive. For example, PACs for organized
+labor unions reduce contributions to members of the U.S. House of
+Representatives when they supported the North American Free Trade
+Agreement (NAFTA) (Engel and Jackson 1998), showing that labor PACs
+responded to perceived changes in ideological proximity of the policy
+issues they are about opposed to doubling-down on their efforts to
+potentially influence legislators who have become estranged from the
+PAC's priorities. While labor unions sometimes ``punish'' legislators
+for their votes (Jansa and Hoyman 2018), this punishment is to coax
+incumbents into changing their position back to being pro-labor (Jansa
+2019), suggesting that there might actually be some influence-buying.
+Other PACs also show behavior that is inline with the consumption model
+of political donor motivations where PACs contribute to politicians who
+already agree with their policy preferences (Goldberg et al. 2020) as
+opposed to coercing a future vote on relevant policy topics (Callahan
+2019). Contributions from PACs and individuals that exhibit
+consumption-oriented behavior are a lagging indicator of politicians'
+ideology and support of policy issues. Individuals and PACs make
+contributions between the politicians they are donating to are
+ideologically proximate to them or support similar policies. These
+donors reward ideologically proximate politicians, respond to changing
+ideological spatial location of the politicians, and do not try to
+necessarily influence policy stances into the future.
 
 All together, under the consumption model of donor motivations we would
 expect public support of policy issues to attract political donors who
@@ -541,12 +559,11 @@ issues will precede, or Granger cause, donations from various coalitions
 of political donors.}
 
 Individual donors, as opposed to PACs, continue to make up a clear
-majority of donations to political candidates (Heerwig 2016). And these
-individual donors have been found to most often exhibit behavior
-consistent with the consumption model of donations (Barber 2016; Heerwig
-2016). Further, individual donors arguably play an even more central
-role in politics more recently with the growth in small-dollar
-individual donors.
+majority of donations to political candidates (Heerwig 2016). These
+individual donors most often exhibit behavior consistent with the
+consumption model of donations (Barber 2016; Heerwig 2016). Further,
+individual donors arguably play an even more central role in politics
+more recently with the growth in small-dollar individual donors.
 
 With the rise of small-dollar donors on the internet and the assumption
 that these small-dollar donors are motivated by the consumption model of
@@ -574,10 +591,10 @@ dollar donors likely did not directly access or influence the politics
 of the Sanders or Trump campaigns. Instead, donors reacted to their
 messages and decided to move further down the participatory spectrum in
 those campaigns. Individual contributors are mostly all participants in
-politics without a an ulterior motive besides wanting to support the
+politics without an ulterior motive besides wanting to support the
 campaign they are contributing to. Individual donors are ``fickle
 financiers of elections'' whose donation habits can be disrupted by
-little changes to their worlds such moving to an area that is more or
+little changes to their worlds such as moving to an area that is more or
 less Democratic or Republican (Kettler and Lyons 2019).
 
 The Democratic Party as a whole has recently grown its proportion of
@@ -591,21 +608,21 @@ indiscriminately to incumbents, challengers, and open seat candidates
 (Culberson, McDonald, and Robbins 2019). It is conceivable that
 campaigns that rely on small donors will adopt rhetoric and tout their
 ``outsider'' status in an effort to activate these small, more
-ideologically extreme donors (Arbour 2020). In the past, extremist
-legislators have been found to be able to leverage politically divisive
-and contentious moments into increased fundraising (Oklobdzija 2017). As
-a result, some have predicted that small-dollar donors will polarize the
-nation's politics even further (Oklobdzija 2017). Although legislators
-who receive a large number of small-dollar donors aren't more polarized
-in their voting in the next legislative session, legislators taking up a
-more polarized agenda does increase the number of small-dollar donors
-they attract in the subsequent election (Keena and Knight-Finley 2019),
-providing further evidence for the consumption model of political donor
-motivations. Other studies have agreed that mass donors are the cause of
-partisan polarization (Raja and Wiltse 2012) and some do not (Harden and
-Kirkland 2016). And so, even though small-dollar donors themselves may
-not be polarizing, they may provide incentive for politicians to take
-more polarized positions.
+ideologically extreme donors (Arbour 2020). Extremist politicians can
+leverage polarizing events to raise more money for their campaigns
+(Oklobdzija 2017). As a result, some have predicted that small-dollar
+donors will polarize the nation's politics even further (Oklobdzija
+2017). Although legislators who receive a large number of small-dollar
+donors aren't more polarized in their voting in the next legislative
+session, legislators taking up a more polarized agenda does increase the
+number of small-dollar donors they attract in the subsequent election
+(Keena and Knight-Finley 2019), providing further evidence for the
+consumption model of political donor motivations. Other studies have
+agreed that mass donors are the cause of partisan polarization (Raja and
+Wiltse 2012), but this conclusion is not definitive (Harden and Kirkland
+2016). And so, even though small-dollar donors themselves may not be
+polarizing, they may provide incentive for politicians to take more
+polarized positions.
 
 The rise in small-dollar donors has been driven primarily by
 technological advancements (Albert and Raja 2020) including growing
@@ -656,29 +673,28 @@ like opinion polarization (Lee et al. 2014), political polarization
 (Hanna et al. 2013), political participation (Lawrence, Sides, and
 Farrell 2010) and political discourse (Kushin and Kitchener 2009).
 
-The bottom line is that online actions and behaviors have been found to
-reflect the offline world, and the online world is frequently
-extrapolated to explain offline actions and behaviors by prior
-researchers. This study builds upon these previous uses of online
-indicators of offline actions and beliefs by combining political
-administrative records of political donations and politicians' social
-media accounts to discern the relationship between political donations
-and public support of policy issues.
+The bottom line is that online actions and behaviors reflect the offline
+world, and the online world is frequently extrapolated to explain
+offline actions and behaviors by prior researchers. This study builds
+upon these previous uses of online indicators of offline actions and
+beliefs by combining political administrative records of political
+donations and politicians' social media accounts to discern the
+relationship between political donations and public support of policy
+issues.
 
 Using social media will allow this paper to analyze the textual and
 linguistic characteristics of the posts. Previous research has been able
 to study the connection between digital language and political behaviors
 such as protests {[}needcite{]} but not donations. This paper will be
 able to use the connections found in \(H_{1}\) and \(H_{2}\) to explore
-whether political sophistication (Benoit, Munger, and Spirling 2019),
-polarization (Goet 2019; Lauderdale and Herzog 2016) or other textual
-features of the posts that are connected to different models of donor
-motivation are unique compared to posts on other topics that are not
-found to have a relationship with coalitions of political donors.
+textual features, specifically political sophistication (Benoit, Munger,
+and Spirling 2019) and polarizing language (Goet 2019; Lauderdale and
+Herzog 2016), to see if different types of language are related to
+either preceding or lagging donations.
 
-\textbf{\(R_{1}\): Do social media posts from politicians that have been
-found to either Granger cause or be Granger caused by donations from
-coalitions of donors have unique textual characteristics?}
+\textbf{\(R_{1}\): Do social media posts from politicians that either
+Granger cause or are Granger caused by donations from coalitions of
+donors have unique textual characteristics?}
 
 \(R_{1}\) remains a work-in-progress and will not be answered in this
 working paper.
@@ -705,8 +721,8 @@ into three different topics: liberal, conservative, and bipartisan.
 
 These 12,364 posts were used to train and test a BERT deep learning
 transfer model. Of these 12,364 posts that were hand-coded, about 90\%,
-11,128 were using in the training set and about 10\%, 1,236, were used
-in the test set. This trained model achieved about 81\% accuracy in
+11,128 were used in the training set and about 10\%, 1,236, were used in
+the test set. This trained model achieved about 81\% accuracy in
 categorizing the topic of posts in the test set. This model was applied
 to the rest of uncoded corpus that were later used for aggregations and
 calculations of the topics that politicians were posting about.
@@ -719,13 +735,13 @@ pre-trained neural network (Devlin et al. 2019). BERT is currently the
 state-of-the-art model and performs at the cutting-edge of Natural
 Language Processing (Devlin et al. 2019). BERT and other transfer
 learning models have yet to be widely adopted by political scientists,
-but they have been found to be an ideal choice for political science
-text classification, especially when compared to tradition text-as-data
-methods in the discipline (Terechshenko et al. 2020). BERT has been
-applied to other social media research such as the detection of
-propaganda (Vlad et al. 2019), misinformation (Jiang et al. 2020), hate
-speech (Mozafari, Farahbakhsh, and Crespi 2020), stance (Tian et al.
-2020), and aggression (Ramiandrisoa and Mothe 2020).
+but are an ideal choice for political science text classification,
+especially when compared to traditional text-as-data methods in the
+discipline (Terechshenko et al. 2020). BERT has been applied to other
+social media research such as the detection of propaganda (Vlad et al.
+2019), misinformation (Jiang et al. 2020), hate speech (Mozafari,
+Farahbakhsh, and Crespi 2020), stance (Tian et al. 2020), and aggression
+(Ramiandrisoa and Mothe 2020).
 
 Political donation data for all candidates to the Wisconsin State
 Legislature during the 2016 election cycle were collected from the
@@ -736,55 +752,52 @@ to identify people who might be the same person (e.g., Jim Smith and
 James Smith). To ensure that people who have the same name, but are
 different people, were not counted as the same individual, their zip
 code was added to the end of their name to create a unique identifier.
-Finally, only contributions from donors who contributed more than once.
-This filtering was done for computational efficiency and also because
-the topic of this paper is donor communities and only one contribution
-likely does not given enough information on whether an individual is
-truly a part of the statistical community. These steps left 12,962
-donations.
+Finally, only contributions from donors who contributed to more than one
+campaign were used. This filtering was done for computational efficiency
+and also because there were many donors who only made a single
+contribution which resulted in unequal, and computationally unusable,
+clusters. These steps left {[}neednumber{]} donations.
 
 These donations were used to create a network of political donations
 with candidates and donors serving as nodes and donations between them
 as edges. This network was clustered into distinct communities so that
 donors in each community are most similar to one another based on which
-campaigns they contributed to. This clustering, or community detection,
-was done using the Louvain method implemented by Gephi (Bastian,
-Heymann, and Jacomy 2009). The clusters assigned to the donors was used
-in the rest of the analysis and is referred to as the coalitions,
-communities, or clusters that donors belong to. This network is
-visualized in Figure 1 using the Yifan Hu layout algorithm (Hu 2005)
-with the two political parties clearly divided with Democratic donors in
-the left large group of donors and Republicans on the right.
+campaigns they contributed to. The Louvain method as implemented by
+Gephi (Bastian, Heymann, and Jacomy 2009) did the clustering, or
+community detection. The rest of the analysis used these clusters
+assigned to the donors and are referred to as coalitions, communities,
+or clusters that donors belong to. This network is visualized in Figure
+1 using the Yifan Hu layout algorithm (Hu 2005) with the two political
+parties clearly divided with Democratic donors in the left large group
+of donors and Republicans on the right.
 
 \hypertarget{methodology}{%
 \section{Methodology}\label{methodology}}
 
 \(H_{1}\) and \(H_{3}\) test the relationships between the social media
 dataset and the political donation dataset. A Granger causality
-time-series model was used to test these two methodologies. This
-methodology has been used by other researchers to study social media
-(Freelon, McIlwain, and Clark 2018; Lukito 2020). Similar to political
-donations, this methodology has been used to study the relationship
-between social media and non-social media events such as offline
-protests (Bastos, Mercea, and Charpentier 2015) and stock prices (Park,
-Leung, and Ma 2017). Granger causality detects whether movements in one
-time series precedes, lags, has a confounding variable, or is not
-related to another time series (Granger 1969). An abbreviated version of
-how this methodology works is that one takes two time series variables X
-and Y. First, a vector autoregression (VAR) model is built to predict
-the outcome variable Y with Y being the sole predictor of the model. In
-other words, one only uses Y to predict Y. Then, a second model is built
-where both variables X and Y are used to build the VAR to predict Y.
-Effectively, if the second model, with the inclusion of X, does a better
-job of predicting Y than the first model alone, as measured by an
-\emph{F}-statistic, X is said to Granger cause Y. The two variables, X
-and Y, are also flipped and the same process is done. If the null is
-rejected in both instances, then there is likely a confounding variable
-Z. This analysis was conducted in R (R Core Team 2013) with the
-\texttt{lmtest} package (Zeileis and Hothorn 2002). Since there are
-multiple p-values being calculated (702, one for each Granger causality
-test of every social media topic and donor cluster), P-values were
-adjusted with the Benjamini--Hochberg Method (Haynes 2013a) which is
+time-series model was used to test these two methodologies. Other social
+media studies have used this methodology (Freelon, McIlwain, and Clark
+2018; Lukito 2020). Similar to political donations, this methodology has
+been used to study the relationship between social media and non-social
+media events such as offline protests (Bastos, Mercea, and Charpentier
+2015) and stock prices (Park, Leung, and Ma 2017). Granger causality
+detects whether movements in one time series precedes, lags, has a
+confounding variable, or is not related to another time series (Granger
+1969). An abbreviated version of how this methodology works is that one
+takes two time series variables X and Y. First, a vector autoregression
+(VAR) model is built to predict the outcome variable Y with Y being the
+sole predictor of the model. In other words, one only uses Y to predict
+Y. Then, a second model is built where both variables X and Y are used
+to build the VAR to predict Y. Effectively, if the second model, with
+the inclusion of X, does a better job of predicting Y than the first
+model alone, as measured by an \emph{F}-statistic, X is said to Granger
+cause Y. The two variables, X and Y, are also flipped and the same
+process is done. If the null is rejected in both instances, then there
+is likely a confounding variable Z. This analysis was conducted in R (R
+Core Team 2013) with the \texttt{lmtest} package (Zeileis and Hothorn
+2002). P-values were adjusted with the Benjamin-Hochberg method (Haynes
+2013a) since there are multiple p-values being calculated, which is
 preferable for the relatively large number of tests being calculated
 (Haynes 2013b). The optimal lag for each model was calculated using a
 Bayesian Information Criteria (Ahelegbey, Billio, and Casarin 2016)
@@ -822,15 +835,14 @@ accepted by \(H_{1}\) and \(H_{3}\) were used to test \(H_{2}\) and
 One theoretical next step for this paper is to flesh out the
 implications of observing behavior that fits under both the consumption
 and access-oriented model of political donors. Most often, the
-literature assumes that political donors have monolithic a monolithic
-psychological process that motivate them. However, the clear breakdown
-of different coalitions exhibiting behavior that falls into different
-models, and distinct behavior in relation to unique policy issues,
-suggests that latent coalitions of political donors are strategic actors
-with unique motivations. One empirical next step is to quantify
-potential confounders for donor clusters that don't fit under either
-model, such as geographic proximity or competitiveness of the races
-contributed to.
+literature assumes that political donors have a monolithic psychological
+process that motivate them. However, the clear breakdown of different
+coalitions exhibiting behavior that falls into different models, and
+distinct behavior in relation to unique policy issues, suggests that
+latent coalitions of political donors are strategic actors with unique
+motivations. One empirical next step is to quantify potential
+confounders for donor clusters that don't fit under either model, such
+as geographic proximity or competitiveness of the races contributed to.
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
@@ -925,11 +937,20 @@ and Explaining Political Sophistication Through Textual Complexity.''
 \emph{American Journal of Political Science} 63 (2): 491--508.
 \url{https://doi.org/https://doi.org/10.1111/ajps.12423}.
 
+\leavevmode\hypertarget{ref-bonica2014}{}%
+Bonica, Adam. 2014. ``Mapping the Ideological Marketplace.''
+\emph{American Journal of Political Science} 58 (2): 367--86.
+\url{http://www.jstor.org/stable/24363491}.
+
 \leavevmode\hypertarget{ref-bonica2016}{}%
-Bonica, Adam. 2016. ``Avenues of Influence: On the Political
-Expenditures of Corporations and Their Directors and Executives.''
-\emph{Business and Politics} 18 (4): 367--94.
-\url{https://doi.org/10.1515/bap-2016-0004}.
+---------. 2016. ``Avenues of Influence: On the Political Expenditures
+of Corporations and Their Directors and Executives.'' \emph{Business and
+Politics} 18 (4): 367--94. \url{https://doi.org/10.1515/bap-2016-0004}.
+
+\leavevmode\hypertarget{ref-bonica2019}{}%
+---------. 2019. ``Are Donation-Based Measures of Ideology Valid
+Predictors of Individual-Level Policy Preferences?'' \emph{The Journal
+of Politics} 81 (1): 327--33. \url{https://doi.org/10.1086/700722}.
 
 \leavevmode\hypertarget{ref-butler2011}{}%
 Butler, Daniel M., and David W. Nickerson. 2011. ``Can Learning
@@ -1109,11 +1130,6 @@ Goldmacher, Shane. 2020. ``The 2020 Campaign Is the Most Expensive Ever
 Gordon, Sanford C., Catherine Hafer, and Dimitri Landa. 2007.
 ``Consumption or Investment? On Motivations for Political Giving.''
 \emph{The Journal of Politics} 69 (4): 1057--72.
-
-\leavevmode\hypertarget{ref-gordon2001}{}%
-Gordon, Stacy B. 2001. ``All Votes Are Not Created Equal: Campaign
-Contributions and Critical Votes.'' \emph{The Journal of Politics} 63
-(1): 249--69. \url{https://doi.org/10.1111/0022-3816.00067}.
 
 \leavevmode\hypertarget{ref-granger}{}%
 Granger, C. W. J. 1969. ``Investigating Causal Relations by Econometric
