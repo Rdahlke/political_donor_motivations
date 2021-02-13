@@ -110,7 +110,7 @@ trainer.train()
 
 print("training completed")
 
-# torch.cuda.empty_cache()
+torch.cuda.empty_cache()
 
 print("starting evaluation")
 
