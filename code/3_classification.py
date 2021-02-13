@@ -110,7 +110,7 @@ trainer.train()
 
 print("training completed")
 
-torch.cuda.empty_cache()
+# torch.cuda.empty_cache()
 
 print("starting evaluation")
 
@@ -155,10 +155,10 @@ print("model successfully trained, test predictions written to data/bert_eval_pr
 ## going to run the model on all posts
 # read in data
 print("reading in uncoded data")
-uncoded_all = pd.read_csv("../data/posts_uncoded_no_encoding.csv")
+uncoded_all = pd.read_csv("data/posts_uncoded_no_encoding.csv")
 uncoded_all["text"] = uncoded_all["text"].astype(str)
 
-n_chunks = 10
+n_chunks = 10000
 predict_preds_all = []
 for i in np.arange(n_chunks):
     start_line = round(i * len(uncoded_all) / n_chunks)
@@ -169,26 +169,31 @@ for i in np.arange(n_chunks):
     print(start_line)
     print("ending with line:")
     print(end_line)
-    print()
-    uncoded = uncoded_all.iloc[[start_line, end_line], :]
+    uncoded = uncoded_all.iloc[start_line:end_line, :]
 
     # preparing prediction batch
     predict_batch = uncoded["text"].to_list()
 
     # experiencing some memory issues with the tokenizer, will work with a 1/2 subset
     predict_encoding = tokenizer(predict_batch, return_tensors='pt', padding=True, truncation=True, max_length = 40)
-
+    print("tokenizing complete")
     predict_input_ids = predict_encoding['input_ids'].to(device)
     predict_input_ids = predict_input_ids.type(dtype = torch.long)
     predict_input_ids = predict_input_ids.to(device)
 
     predict_attention_mask = predict_encoding['attention_mask'].to(device).float()
 
-
+    print("batch created")
     # apply model to make predictions on uncoded posts
     # also having a memory problem here, even with a 1/2 subset
+    print("applying model")
     predict_output = model(predict_input_ids.to(device), predict_attention_mask.to(device))
-
+    print("preditions done")
+    print("converting predictions to labels")
     predict_preds_batch = torch.max(F.softmax(predict_output[0]), dim = 1)[1]
 
     predict_preds_all.append(predict_preds_batch)
+
+uncoded_all["predicted"] = predict_preds_all
+
+uncoded_all.to_csv("data/bert_uncoded_predictions.csv")
