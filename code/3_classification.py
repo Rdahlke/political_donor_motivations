@@ -85,7 +85,7 @@ def data_collector(features):
 
 training_args = TrainingArguments(
     output_dir='./results',          # output directory
-    num_train_epochs=4,              # total # of training epochs
+    num_train_epochs=1000,              # total # of training epochs
     per_device_train_batch_size=100,  # batch size per device during training
     per_device_eval_batch_size=1,   # batch size for evaluation
     warmup_steps=500,                # number of warmup steps for learning rate scheduler
@@ -155,20 +155,19 @@ print("model successfully trained, test predictions written to data/bert_eval_pr
 ## going to run the model on all posts
 # read in data
 print("reading in uncoded data")
-uncoded_all = pd.read_csv("data/posts_uncoded_no_encoding.csv")
+uncoded_all = pd.read_csv("../data/posts_uncoded_no_encoding.csv")
 uncoded_all["text"] = uncoded_all["text"].astype(str)
 
 n_chunks = 10000
 predict_preds_all = []
 for i in np.arange(n_chunks):
     start_line = round(i * len(uncoded_all) / n_chunks)
-    end_line = round(((i + 1) * len(uncoded_all) / n_chunks) - 1)
-    print("processing batch:")
-    print(i)
-    print("starting with line:")
-    print(start_line)
-    print("ending with line:")
-    print(end_line)
+    end_line = round(((i + 1) * len(uncoded_all) / n_chunks))
+
+    if i % 1000:
+        print("percent complete:")
+        print(i / n_chunks)
+
     uncoded = uncoded_all.iloc[start_line:end_line, :]
 
     # preparing prediction batch
@@ -176,24 +175,25 @@ for i in np.arange(n_chunks):
 
     # experiencing some memory issues with the tokenizer, will work with a 1/2 subset
     predict_encoding = tokenizer(predict_batch, return_tensors='pt', padding=True, truncation=True, max_length = 40)
-    print("tokenizing complete")
     predict_input_ids = predict_encoding['input_ids'].to(device)
     predict_input_ids = predict_input_ids.type(dtype = torch.long)
     predict_input_ids = predict_input_ids.to(device)
 
     predict_attention_mask = predict_encoding['attention_mask'].to(device).float()
 
-    print("batch created")
     # apply model to make predictions on uncoded posts
     # also having a memory problem here, even with a 1/2 subset
-    print("applying model")
     predict_output = model(predict_input_ids.to(device), predict_attention_mask.to(device))
-    print("preditions done")
-    print("converting predictions to labels")
     predict_preds_batch = torch.max(F.softmax(predict_output[0]), dim = 1)[1]
 
-    predict_preds_all.append(predict_preds_batch)
+    predict_preds_all.append(predict_preds_batch.tolist())
 
-uncoded_all["predicted"] = predict_preds_all
+preds_flat = [item for sublist in predict_preds_all for item in sublist]
 
-uncoded_all.to_csv("data/bert_uncoded_predictions.csv")
+print(len(preds_flat))
+
+print(len(uncoded_all))
+
+uncoded_all["predicted"] = preds_flat
+
+uncoded_all.to_csv("../data/bert_uncoded_predictions.csv")
