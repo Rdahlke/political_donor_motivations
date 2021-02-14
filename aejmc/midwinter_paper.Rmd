@@ -1,6 +1,10 @@
 ---
 output:
-  word_document:
+  pdf_document:
+    keep_tex: true
+    fig_caption: true
+    latex_engine: pdflatex
+    template: ../svm-latex-ms.tex
 title: "Political Donor Motivations and Public Support of Policies: A Time Series-Analysis"
 thanks: ""
 author:
