@@ -139,7 +139,7 @@ in other words, a time series of donations from a donor coalition was compared t
 
 # Discussion
 
-![Donor Motivation Models](../tables_and_figures/aejmc_abstract_1.jpg)
+![Donor Motivation Models](../tables_and_figures/fig_2.jpg)
 
 One theoretical next step for this paper is to flesh out the  implications of observing behavior that fits under both the consumption and access-oriented model of political donors. Most often, the literature assumes that political donors have a monolithic psychological process that motivate them. However, the clear breakdown of different coalitions exhibiting behavior that falls into different models, and distinct behavior in relation to unique policy issues, suggests that latent coalitions of political donors are strategic actors with unique motivations. One empirical next step is to quantify potential confounders for donor clusters that don't fit under either model, such as geographic proximity or competitiveness of the races contributed to.
 
