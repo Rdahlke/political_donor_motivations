@@ -14,7 +14,7 @@ options(scipen = 999)
 ```
 
 ```{r}
-donations <- read_csv("~/git/political_donor_motivations/data/2016_donations_clusters_all.csv")
+donations <- read_csv("../data/2016_donations_clusters_all.csv")
 uncoded_predicted <- read_csv("~/git/political_donor_motivations/data/bert_uncoded_predictions.csv") %>% 
   rename(predicted = variable)
 ```
@@ -157,8 +157,8 @@ plot <- granger_results %>%
     topic == "voting.liberal" ~ "voting: liberal",
     topic == "voting.conservative" ~ "voting: conservative",
     topic == "raceissues.liberal" ~ "race issues: liberal",
-    topic == "prolife" ~ "abortion and women's health: conservative",
-    topic == "prochoice.womenshealth" ~ "abortion and women's health: liberal",
+    topic == "prolife" ~ "abortion and women's issues: conservative",
+    topic == "prochoice.womenshealth" ~ "abortion and women's issues: liberal",
     topic == "other" ~ "other",
     topic == "marijuana.pro" ~ "cannabis: liberal",
     topic == "lgbt.pro" ~ "lgbtq+ issues: liberal",
@@ -238,5 +238,87 @@ lm(total_contributed ~ category, data = donor_totals) %>%
 ```{r}
 lm(n_contributed ~ category, data = donor_totals) %>% 
   summary()
+```
+
+```{r}
+access_calcs_clusters <- donations %>% 
+  group_by(source, modularity_class) %>% 
+  summarize(total_contributed = sum(contribution, na.rm = T),
+            n_contributed = n()) %>% 
+  left_join(cluster_category, by = c("modularity_class" = "cluster")) %>% 
+  mutate(category = if_else(category == "access and consumption", "access", category)) %>% 
+  group_by(modularity_class, category) %>% 
+  summarize(n_donors = n(),
+            n_contributions = sum(n_contributed),
+            dollars_contributed = sum(total_contributed)) %>% 
+  ungroup() %>% 
+  mutate(n_donors_percent = n_donors / sum(n_donors),
+         n_contributions_percent = n_contributions / sum(n_contributions),
+         dollars_contributed_percent = dollars_contributed / sum(dollars_contributed))
+
+access_calcs_total <- donations %>% 
+  group_by(source, modularity_class) %>% 
+  summarize(total_contributed = sum(contribution, na.rm = T),
+            n_contributed = n()) %>% 
+  left_join(cluster_category, by = c("modularity_class" = "cluster")) %>% 
+  mutate(category = if_else(category == "access and consumption", "access", category)) %>% 
+  group_by(category) %>% 
+  summarize(n_donors = n(),
+            n_contributions = sum(n_contributed),
+            dollars_contributed = sum(total_contributed)) %>% 
+  ungroup() %>% 
+  mutate(n_donors_percent = n_donors / sum(n_donors),
+         n_contributions_percent = n_contributions / sum(n_contributions),
+         dollars_contributed_percent = dollars_contributed / sum(dollars_contributed))
+```
+
+```{r}
+consumption_calcs_clusters <- donations %>% 
+  group_by(source, modularity_class) %>% 
+  summarize(total_contributed = sum(contribution, na.rm = T),
+            n_contributed = n()) %>% 
+  left_join(cluster_category, by = c("modularity_class" = "cluster")) %>% 
+  mutate(category = if_else(category == "access and consumption", "consumption", category)) %>% 
+  group_by(modularity_class, category) %>% 
+  summarize(n_donors = n(),
+            n_contributions = sum(n_contributed),
+            dollars_contributed = sum(total_contributed)) %>% 
+  ungroup() %>% 
+  mutate(n_donors_percent = n_donors / sum(n_donors),
+         n_contributions_percent = n_contributions / sum(n_contributions),
+         dollars_contributed_percent = dollars_contributed / sum(dollars_contributed))
+
+access_calcs_total <- donations %>% 
+  group_by(source, modularity_class) %>% 
+  summarize(total_contributed = sum(contribution, na.rm = T),
+            n_contributed = n()) %>% 
+  left_join(cluster_category, by = c("modularity_class" = "cluster")) %>% 
+  mutate(category = if_else(category == "access and consumption", "consumption", category)) %>% 
+  group_by(category) %>% 
+  summarize(n_donors = n(),
+            n_contributions = sum(n_contributed),
+            dollars_contributed = sum(total_contributed)) %>% 
+  ungroup() %>% 
+  mutate(n_donors_percent = n_donors / sum(n_donors),
+         n_contributions_percent = n_contributions / sum(n_contributions),
+         dollars_contributed_percent = dollars_contributed / sum(dollars_contributed))
+```
+
+```{r}
+gexf <- rgexf::read.gexf("../data/gephi_output_all.gexf") 
+
+gephi_nodes <- gexf$nodes %>% 
+  cbind(gexf$nodesVizAtt$position) %>% 
+  left_join(read_csv("~/git/political_donor_motivations/data/gephi_output_all.csv") %>% rename(id = Id)) %>% 
+  left_join(cluster_category, by = c("modularity_class" = "cluster")) %>% 
+  mutate(x = x - .5,
+         x = scales::rescale(x, to = c(-1, 1)),
+         x_abs = abs(x)) 
+```
+
+```{r}
+lm(x_abs ~ category, data = gephi_nodes) %>% 
+  summary()
+
 ```
 
