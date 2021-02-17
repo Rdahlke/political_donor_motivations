@@ -817,12 +817,10 @@ and Y, are also flipped and the same process is done. If the null is
 rejected in both instances, then there is likely a confounding variable
 Z. This analysis was conducted in R (R Core Team 2013) with the
 \texttt{lmtest} package (Zeileis and Hothorn 2002). P-values were
-adjusted with the Benjamin-Hochberg method (Haynes 2013a) since there
-are multiple p-values being calculated, which is the best adjustment
-method for the relatively large number of tests being calculated (Haynes
-2013b). The optimal lag for each model was calculated using a Bayesian
-Information Criteria (Ahelegbey, Billio, and Casarin 2016) implemented
-by the \texttt{tsDyn} package (Stigler 2010).
+adjusted with the Bonferroni method (Haynes 2013). The optimal lag for
+each model was calculated using a Bayesian Information Criteria
+(Ahelegbey, Billio, and Casarin 2016) implemented by the \texttt{tsDyn}
+package (Stigler 2010).
 
 We compare time series of donations from clusters of political donors
 and time series of the number of social media posts by each topic that
@@ -836,7 +834,40 @@ Stated another way, donations from coalition 6 predict whether
 candidates will publicly support pro-women policies. The theoretical
 connection to political donor psychology is that this behavior is
 expected under the access-oriented model of political donor motivations.
-The full results of the Granger causality tests are found in Figure 2.
+Coalitions and policy topics that are accepted by either \(H_{1}\) or
+\$H\_\{3\} are in Table 1. The full results of the Granger causality
+tests are visualized in Figure 2.
+
+\begin{longtable}[]{@{}rllrrl@{}}
+\caption{H1 and H2 acceptances}\tabularnewline
+\toprule
+coalition & policy topic & model & BIC & F-statistic &
+p-value\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+coalition & policy topic & model & BIC & F-statistic &
+p-value\tabularnewline
+\midrule
+\endhead
+0 & veterans issues: bipartisan & consumption & 5 & 7.6 &
+\textless.001\tabularnewline
+1 & veterans issues: bipartisan & access & 7 & 7.1 &
+\textless.001\tabularnewline
+1 & drug abuse: bipartisan & consumption & 7 & 4.5 &
+\textless.001\tabularnewline
+3 & race issues: liberal & access & 4 & 6.7 &
+\textless.001\tabularnewline
+4 & guns: conservative & consumption & 4 & 6.5 &
+\textless.001\tabularnewline
+6 & abortion and women's issues: conservative & access & 2 & 14.2 &
+\textless.001\tabularnewline
+7 & drug abuse: bipartisan & consumption & 7 & 5.7 &
+\textless.001\tabularnewline
+11 & infrastructure: liberal & consumption & 7 & 5.8 &
+\textless.001\tabularnewline
+\bottomrule
+\end{longtable}
 
 \begin{figure}
 \centering
@@ -1167,7 +1198,7 @@ polarized.
 \section{Appendix}\label{appendix}}
 
 \begin{longtable}[t]{>{\raggedright\arraybackslash}p{.65in}|>{\raggedright\arraybackslash}p{.6in}|>{\raggedright\arraybackslash}p{.7in}|>{\raggedright\arraybackslash}p{.6in}|>{\raggedright\arraybackslash}p{3in}}
-\caption{\label{tab:unnamed-chunk-5}Social Media Examples}\\
+\caption{\label{tab:unnamed-chunk-6}Social Media Examples}\\
 \hline
 example \# & topic & campaign & social media site & post\\
 \hline
@@ -1207,11 +1238,11 @@ example \# & topic & campaign & social media site & post\\
 \hline
 Method & koRpus & stringi\\
 \hline
-Word count & 7559 & 7504\\
+Word count & 7557 & 7494\\
 \hline
-Character count & 51160 & 51149\\
+Character count & 51098 & 51087\\
 \hline
-Sentence count & 360 & Not available\\
+Sentence count & 361 & Not available\\
 \hline
 Reading time & 37.8 minutes & 37.5 minutes\\
 \hline
@@ -1563,15 +1594,9 @@ Role of Organized Interests in Shaping Policy.'' \emph{Social Science
 Research} 64: 67--78.
 \url{https://doi.org/https://doi.org/10.1016/j.ssresearch.2016.09.026}.
 
-\leavevmode\hypertarget{ref-bh}{}%
-Haynes, Winston. 2013a. ``Benjamini--Hochberg Method.'' In
-\emph{Encyclopedia of Systems Biology}, edited by Werner Dubitzky, Olaf
-Wolkenhauer, Kwang-Hyun Cho, and Hiroki Yokota, 78--78. New York, NY:
-Springer New York. \url{https://doi.org/10.1007/978-1-4419-9863-7_1215}.
-
 \leavevmode\hypertarget{ref-bonferroni}{}%
----------. 2013b. ``Bonferroni Correction.'' In \emph{Encyclopedia of
-Systems Biology}, edited by Werner Dubitzky, Olaf Wolkenhauer,
+Haynes, Winston. 2013. ``Bonferroni Correction.'' In \emph{Encyclopedia
+of Systems Biology}, edited by Werner Dubitzky, Olaf Wolkenhauer,
 Kwang-Hyun Cho, and Hiroki Yokota, 154--54. New York, NY: Springer New
 York. \url{https://doi.org/10.1007/978-1-4419-9863-7_1213}.
 

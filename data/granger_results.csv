@@ -1,352 +1,352 @@
-cluster,topic,result,lag
-0,other,no relationship,7
-0,education.liberal,no relationship,3
-0,gerrymandering.anti,no relationship,2
-0,economic.liberal,no relationship,2
-0,environment.climatechange,no relationship,3
-0,economic.conservative,no relationship,2
-0,healthcare.liberal,no relationship,2
-0,prochoice.womenshealth,no relationship,2
-0,lgbt.pro,no relationship,3
-0,raceissues.liberal,no relationship,3
-0,healthcare.conservative,no relationship,1
-0,campaignfinance.corruption.opengovernment,no relationship,3
-0,domestic.violence,no relationship,1
-0,voting.liberal,no relationship,3
-0,guncontrol.conservative,no relationship,1
-0,prolife,no relationship,1
-0,education.conservative,no relationship,3
-0,guncontrol.liberal,no relationship,1
-0,voting.conservative,no relationship,1
-0,king.veterans,consumption,5
-0,drugabuse,no relationship,5
-0,infrastructure.roads.transportation,no relationship,2
-0,marijuana.pro,no relationship,5
-0,lgbt.anti,no relationship,1
-0,crime.police,no relationship,2
-0,healthcare.bipartisan,no relationship,2
-0,criminaljusticereform,no relationship,2
-1,other,no relationship,7
-1,education.liberal,no relationship,2
-1,gerrymandering.anti,no relationship,7
-1,economic.liberal,no relationship,2
-1,environment.climatechange,no relationship,7
-1,economic.conservative,no relationship,2
-1,healthcare.liberal,no relationship,2
-1,prochoice.womenshealth,no relationship,2
-1,lgbt.pro,no relationship,2
-1,raceissues.liberal,no relationship,2
-1,healthcare.conservative,no relationship,2
-1,campaignfinance.corruption.opengovernment,no relationship,2
-1,domestic.violence,no relationship,2
-1,voting.liberal,no relationship,7
-1,guncontrol.conservative,no relationship,2
-1,prolife,no relationship,2
-1,education.conservative,no relationship,2
-1,guncontrol.liberal,no relationship,3
-1,voting.conservative,no relationship,8
-1,king.veterans,access,7
-1,drugabuse,consumption,7
-1,infrastructure.roads.transportation,no relationship,7
-1,marijuana.pro,no relationship,2
-1,lgbt.anti,no relationship,1
-1,crime.police,no relationship,2
-1,healthcare.bipartisan,no relationship,2
-1,criminaljusticereform,no relationship,2
-2,other,no relationship,7
-2,education.liberal,no relationship,7
-2,gerrymandering.anti,no relationship,7
-2,economic.liberal,no relationship,7
-2,environment.climatechange,no relationship,7
-2,economic.conservative,no relationship,7
-2,healthcare.liberal,no relationship,7
-2,prochoice.womenshealth,no relationship,7
-2,lgbt.pro,no relationship,4
-2,raceissues.liberal,no relationship,7
-2,healthcare.conservative,no relationship,7
-2,campaignfinance.corruption.opengovernment,no relationship,7
-2,domestic.violence,no relationship,7
-2,voting.liberal,no relationship,7
-2,guncontrol.conservative,no relationship,7
-2,prolife,no relationship,7
-2,education.conservative,no relationship,7
-2,guncontrol.liberal,no relationship,7
-2,voting.conservative,no relationship,7
-2,king.veterans,no relationship,7
-2,drugabuse,no relationship,7
-2,infrastructure.roads.transportation,no relationship,7
-2,marijuana.pro,no relationship,4
-2,lgbt.anti,no relationship,1
-2,crime.police,no relationship,7
-2,healthcare.bipartisan,no relationship,7
-2,criminaljusticereform,no relationship,8
-3,other,no relationship,7
-3,education.liberal,no relationship,3
-3,gerrymandering.anti,no relationship,3
-3,economic.liberal,no relationship,3
-3,environment.climatechange,no relationship,3
-3,economic.conservative,no relationship,4
-3,healthcare.liberal,no relationship,4
-3,prochoice.womenshealth,no relationship,3
-3,lgbt.pro,no relationship,4
-3,raceissues.liberal,access,4
-3,healthcare.conservative,no relationship,4
-3,campaignfinance.corruption.opengovernment,no relationship,3
-3,domestic.violence,no relationship,3
-3,voting.liberal,no relationship,3
-3,guncontrol.conservative,no relationship,3
-3,prolife,no relationship,3
-3,education.conservative,no relationship,3
-3,guncontrol.liberal,no relationship,4
-3,voting.conservative,no relationship,3
-3,king.veterans,no relationship,3
-3,drugabuse,no relationship,3
-3,infrastructure.roads.transportation,no relationship,3
-3,marijuana.pro,no relationship,3
-3,lgbt.anti,no relationship,3
-3,crime.police,no relationship,3
-3,healthcare.bipartisan,no relationship,3
-3,criminaljusticereform,no relationship,3
-4,other,no relationship,7
-4,education.liberal,no relationship,1
-4,gerrymandering.anti,no relationship,3
-4,economic.liberal,no relationship,7
-4,environment.climatechange,no relationship,1
-4,economic.conservative,no relationship,7
-4,healthcare.liberal,no relationship,1
-4,prochoice.womenshealth,no relationship,1
-4,lgbt.pro,no relationship,1
-4,raceissues.liberal,no relationship,1
-4,healthcare.conservative,no relationship,1
-4,campaignfinance.corruption.opengovernment,no relationship,3
-4,domestic.violence,no relationship,1
-4,voting.liberal,no relationship,7
-4,guncontrol.conservative,consumption,4
-4,prolife,no relationship,2
-4,education.conservative,no relationship,1
-4,guncontrol.liberal,no relationship,7
-4,voting.conservative,no relationship,1
-4,king.veterans,no relationship,1
-4,drugabuse,no relationship,1
-4,infrastructure.roads.transportation,no relationship,1
-4,marijuana.pro,no relationship,1
-4,lgbt.anti,no relationship,1
-4,crime.police,no relationship,3
-4,healthcare.bipartisan,no relationship,1
-4,criminaljusticereform,no relationship,1
-5,other,no relationship,7
-5,education.liberal,no relationship,7
-5,gerrymandering.anti,no relationship,1
-5,economic.liberal,no relationship,7
-5,environment.climatechange,no relationship,4
-5,economic.conservative,no relationship,7
-5,healthcare.liberal,no relationship,4
-5,prochoice.womenshealth,no relationship,4
-5,lgbt.pro,no relationship,4
-5,raceissues.liberal,no relationship,7
-5,healthcare.conservative,no relationship,4
-5,campaignfinance.corruption.opengovernment,no relationship,7
-5,domestic.violence,no relationship,7
-5,voting.liberal,no relationship,4
-5,guncontrol.conservative,no relationship,4
-5,prolife,no relationship,4
-5,education.conservative,no relationship,7
-5,guncontrol.liberal,no relationship,7
-5,voting.conservative,no relationship,4
-5,king.veterans,no relationship,4
-5,drugabuse,no relationship,7
-5,infrastructure.roads.transportation,no relationship,7
-5,marijuana.pro,no relationship,1
-5,lgbt.anti,no relationship,1
-5,crime.police,no relationship,4
-5,healthcare.bipartisan,no relationship,4
-5,criminaljusticereform,no relationship,4
-6,other,no relationship,1
-6,education.liberal,no relationship,1
-6,gerrymandering.anti,no relationship,1
-6,economic.liberal,no relationship,1
-6,environment.climatechange,no relationship,1
-6,economic.conservative,no relationship,1
-6,healthcare.liberal,no relationship,1
-6,prochoice.womenshealth,no relationship,1
-6,lgbt.pro,no relationship,1
-6,raceissues.liberal,no relationship,1
-6,healthcare.conservative,no relationship,1
-6,campaignfinance.corruption.opengovernment,no relationship,1
-6,domestic.violence,no relationship,1
-6,voting.liberal,no relationship,1
-6,guncontrol.conservative,no relationship,1
-6,prolife,access,2
-6,education.conservative,no relationship,1
-6,guncontrol.liberal,no relationship,1
-6,voting.conservative,no relationship,1
-6,king.veterans,no relationship,1
-6,drugabuse,no relationship,1
-6,infrastructure.roads.transportation,no relationship,1
-6,marijuana.pro,no relationship,1
-6,lgbt.anti,no relationship,1
-6,crime.police,no relationship,1
-6,healthcare.bipartisan,no relationship,1
-6,criminaljusticereform,no relationship,1
-7,other,no relationship,7
-7,education.liberal,no relationship,1
-7,gerrymandering.anti,no relationship,7
-7,economic.liberal,no relationship,7
-7,environment.climatechange,no relationship,1
-7,economic.conservative,no relationship,1
-7,healthcare.liberal,no relationship,6
-7,prochoice.womenshealth,no relationship,1
-7,lgbt.pro,no relationship,3
-7,raceissues.liberal,no relationship,1
-7,healthcare.conservative,no relationship,1
-7,campaignfinance.corruption.opengovernment,no relationship,6
-7,domestic.violence,no relationship,1
-7,voting.liberal,no relationship,7
-7,guncontrol.conservative,no relationship,2
-7,prolife,no relationship,1
-7,education.conservative,no relationship,1
-7,guncontrol.liberal,no relationship,1
-7,voting.conservative,no relationship,1
-7,king.veterans,no relationship,1
-7,drugabuse,consumption,7
-7,infrastructure.roads.transportation,no relationship,1
-7,marijuana.pro,no relationship,1
-7,lgbt.anti,no relationship,1
-7,crime.police,no relationship,1
-7,healthcare.bipartisan,no relationship,1
-7,criminaljusticereform,no relationship,3
-8,other,no relationship,7
-8,education.liberal,no relationship,7
-8,gerrymandering.anti,no relationship,1
-8,economic.liberal,no relationship,1
-8,environment.climatechange,no relationship,1
-8,economic.conservative,no relationship,1
-8,healthcare.liberal,no relationship,1
-8,prochoice.womenshealth,no relationship,1
-8,lgbt.pro,no relationship,7
-8,raceissues.liberal,no relationship,1
-8,healthcare.conservative,no relationship,1
-8,campaignfinance.corruption.opengovernment,no relationship,7
-8,domestic.violence,no relationship,1
-8,voting.liberal,no relationship,7
-8,guncontrol.conservative,no relationship,1
-8,prolife,no relationship,1
-8,education.conservative,no relationship,1
-8,guncontrol.liberal,no relationship,1
-8,voting.conservative,no relationship,2
-8,king.veterans,no relationship,7
-8,drugabuse,no relationship,1
-8,infrastructure.roads.transportation,no relationship,1
-8,marijuana.pro,no relationship,1
-8,lgbt.anti,no relationship,1
-8,crime.police,no relationship,1
-8,healthcare.bipartisan,no relationship,1
-8,criminaljusticereform,no relationship,1
-9,other,no relationship,7
-9,education.liberal,no relationship,1
-9,gerrymandering.anti,no relationship,3
-9,economic.liberal,no relationship,1
-9,environment.climatechange,no relationship,1
-9,economic.conservative,no relationship,3
-9,healthcare.liberal,no relationship,1
-9,prochoice.womenshealth,no relationship,1
-9,lgbt.pro,no relationship,1
-9,raceissues.liberal,no relationship,1
-9,healthcare.conservative,no relationship,1
-9,campaignfinance.corruption.opengovernment,no relationship,6
-9,domestic.violence,no relationship,1
-9,voting.liberal,no relationship,1
-9,guncontrol.conservative,no relationship,1
-9,prolife,no relationship,1
-9,education.conservative,no relationship,1
-9,guncontrol.liberal,no relationship,1
-9,voting.conservative,no relationship,1
-9,king.veterans,no relationship,1
-9,drugabuse,no relationship,1
-9,infrastructure.roads.transportation,no relationship,1
-9,marijuana.pro,no relationship,1
-9,lgbt.anti,no relationship,1
-9,crime.police,no relationship,1
-9,healthcare.bipartisan,no relationship,1
-9,criminaljusticereform,no relationship,1
-10,other,no relationship,7
-10,education.liberal,no relationship,7
-10,gerrymandering.anti,no relationship,2
-10,economic.liberal,no relationship,7
-10,environment.climatechange,no relationship,7
-10,economic.conservative,no relationship,7
-10,healthcare.liberal,no relationship,7
-10,prochoice.womenshealth,no relationship,2
-10,lgbt.pro,no relationship,3
-10,raceissues.liberal,no relationship,2
-10,healthcare.conservative,no relationship,7
-10,campaignfinance.corruption.opengovernment,no relationship,7
-10,domestic.violence,no relationship,2
-10,voting.liberal,no relationship,2
-10,guncontrol.conservative,no relationship,2
-10,prolife,no relationship,7
-10,education.conservative,no relationship,3
-10,guncontrol.liberal,no relationship,2
-10,voting.conservative,no relationship,2
-10,king.veterans,no relationship,7
-10,drugabuse,no relationship,7
-10,infrastructure.roads.transportation,no relationship,7
-10,marijuana.pro,no relationship,2
-10,lgbt.anti,no relationship,1
-10,crime.police,no relationship,7
-10,healthcare.bipartisan,no relationship,7
-10,criminaljusticereform,no relationship,8
-11,other,no relationship,7
-11,education.liberal,no relationship,7
-11,gerrymandering.anti,no relationship,7
-11,economic.liberal,no relationship,7
-11,environment.climatechange,no relationship,7
-11,economic.conservative,no relationship,7
-11,healthcare.liberal,no relationship,7
-11,prochoice.womenshealth,no relationship,7
-11,lgbt.pro,no relationship,7
-11,raceissues.liberal,no relationship,7
-11,healthcare.conservative,no relationship,7
-11,campaignfinance.corruption.opengovernment,no relationship,7
-11,domestic.violence,no relationship,7
-11,voting.liberal,no relationship,7
-11,guncontrol.conservative,no relationship,8
-11,prolife,no relationship,1
-11,education.conservative,no relationship,7
-11,guncontrol.liberal,no relationship,7
-11,voting.conservative,no relationship,1
-11,king.veterans,no relationship,7
-11,drugabuse,no relationship,7
-11,infrastructure.roads.transportation,consumption,7
-11,marijuana.pro,no relationship,7
-11,lgbt.anti,no relationship,1
-11,crime.police,no relationship,7
-11,healthcare.bipartisan,no relationship,7
-11,criminaljusticereform,no relationship,7
-12,other,no relationship,7
-12,education.liberal,no relationship,7
-12,gerrymandering.anti,no relationship,7
-12,economic.liberal,no relationship,7
-12,environment.climatechange,no relationship,7
-12,economic.conservative,no relationship,7
-12,healthcare.liberal,no relationship,7
-12,prochoice.womenshealth,no relationship,7
-12,lgbt.pro,no relationship,7
-12,raceissues.liberal,no relationship,7
-12,healthcare.conservative,no relationship,7
-12,campaignfinance.corruption.opengovernment,no relationship,7
-12,domestic.violence,no relationship,7
-12,voting.liberal,no relationship,7
-12,guncontrol.conservative,no relationship,7
-12,prolife,no relationship,7
-12,education.conservative,no relationship,7
-12,guncontrol.liberal,no relationship,7
-12,voting.conservative,no relationship,7
-12,king.veterans,no relationship,7
-12,drugabuse,no relationship,7
-12,infrastructure.roads.transportation,no relationship,7
-12,marijuana.pro,no relationship,7
-12,lgbt.anti,no relationship,1
-12,crime.police,no relationship,7
-12,healthcare.bipartisan,no relationship,7
-12,criminaljusticereform,no relationship,7
+cluster,topic,result,lag,f_statistic,p_value
+0,other,no relationship,7,NA,NA
+0,education: liberal,no relationship,3,NA,NA
+0,gerrymandering: liberal,no relationship,2,NA,NA
+0,economy: liberal,no relationship,2,NA,NA
+0,environment: liberal,no relationship,3,NA,NA
+0,economy: conservative,no relationship,2,NA,NA
+0,healthcare: liberal,no relationship,2,NA,NA
+0,abortion and women's issues: liberal,no relationship,2,NA,NA
+0,lgbtq+ issues: liberal,no relationship,3,NA,NA
+0,race issues: liberal,no relationship,3,NA,NA
+0,healthcare: conservative,no relationship,1,NA,NA
+0,governance: liberal,no relationship,3,NA,NA
+0,domestic violence: bipartisan,no relationship,1,NA,NA
+0,voting: liberal,no relationship,3,NA,NA
+0,guns: conservative,no relationship,1,NA,NA
+0,abortion and women's issues: conservative,no relationship,1,NA,NA
+0,education: conservative,no relationship,3,NA,NA
+0,guns: liberal,no relationship,1,NA,NA
+0,voting: conservative,no relationship,1,NA,NA
+0,veterans issues: bipartisan,consumption,5,7.556991964477419,6.4944871786005e-7
+0,drug abuse: bipartisan,no relationship,5,NA,NA
+0,infrastructure: liberal,no relationship,2,NA,NA
+0,cannabis: liberal,no relationship,5,NA,NA
+0,lgbtq+ issues: conservative,no relationship,1,NA,NA
+0,crime and police: conservative,no relationship,2,NA,NA
+0,healthcare: bipartisan,no relationship,2,NA,NA
+0,criminal justice reform: liberal,no relationship,2,NA,NA
+1,other,no relationship,7,NA,NA
+1,education: liberal,no relationship,2,NA,NA
+1,gerrymandering: liberal,no relationship,7,NA,NA
+1,economy: liberal,no relationship,2,NA,NA
+1,environment: liberal,no relationship,7,NA,NA
+1,economy: conservative,no relationship,2,NA,NA
+1,healthcare: liberal,no relationship,2,NA,NA
+1,abortion and women's issues: liberal,no relationship,2,NA,NA
+1,lgbtq+ issues: liberal,no relationship,2,NA,NA
+1,race issues: liberal,no relationship,2,NA,NA
+1,healthcare: conservative,no relationship,2,NA,NA
+1,governance: liberal,no relationship,2,NA,NA
+1,domestic violence: bipartisan,no relationship,2,NA,NA
+1,voting: liberal,no relationship,7,NA,NA
+1,guns: conservative,no relationship,2,NA,NA
+1,abortion and women's issues: conservative,no relationship,2,NA,NA
+1,education: conservative,no relationship,2,NA,NA
+1,guns: liberal,no relationship,3,NA,NA
+1,voting: conservative,no relationship,8,NA,NA
+1,veterans issues: bipartisan,access,7,7.115907705404077,3.275507665142349e-8
+1,drug abuse: bipartisan,consumption,7,4.526389444865939,6.066429575559319e-5
+1,infrastructure: liberal,no relationship,7,NA,NA
+1,cannabis: liberal,no relationship,2,NA,NA
+1,lgbtq+ issues: conservative,no relationship,1,NA,NA
+1,crime and police: conservative,no relationship,2,NA,NA
+1,healthcare: bipartisan,no relationship,2,NA,NA
+1,criminal justice reform: liberal,no relationship,2,NA,NA
+2,other,no relationship,7,NA,NA
+2,education: liberal,no relationship,7,NA,NA
+2,gerrymandering: liberal,no relationship,7,NA,NA
+2,economy: liberal,no relationship,7,NA,NA
+2,environment: liberal,no relationship,7,NA,NA
+2,economy: conservative,no relationship,7,NA,NA
+2,healthcare: liberal,no relationship,7,NA,NA
+2,abortion and women's issues: liberal,no relationship,7,NA,NA
+2,lgbtq+ issues: liberal,no relationship,4,NA,NA
+2,race issues: liberal,no relationship,7,NA,NA
+2,healthcare: conservative,no relationship,7,NA,NA
+2,governance: liberal,no relationship,7,NA,NA
+2,domestic violence: bipartisan,no relationship,7,NA,NA
+2,voting: liberal,no relationship,7,NA,NA
+2,guns: conservative,no relationship,7,NA,NA
+2,abortion and women's issues: conservative,no relationship,7,NA,NA
+2,education: conservative,no relationship,7,NA,NA
+2,guns: liberal,no relationship,7,NA,NA
+2,voting: conservative,no relationship,7,NA,NA
+2,veterans issues: bipartisan,no relationship,7,NA,NA
+2,drug abuse: bipartisan,no relationship,7,NA,NA
+2,infrastructure: liberal,no relationship,7,NA,NA
+2,cannabis: liberal,no relationship,4,NA,NA
+2,lgbtq+ issues: conservative,no relationship,1,NA,NA
+2,crime and police: conservative,no relationship,7,NA,NA
+2,healthcare: bipartisan,no relationship,7,NA,NA
+2,criminal justice reform: liberal,no relationship,8,NA,NA
+3,other,no relationship,7,NA,NA
+3,education: liberal,no relationship,3,NA,NA
+3,gerrymandering: liberal,no relationship,3,NA,NA
+3,economy: liberal,no relationship,3,NA,NA
+3,environment: liberal,no relationship,3,NA,NA
+3,economy: conservative,no relationship,4,NA,NA
+3,healthcare: liberal,no relationship,4,NA,NA
+3,abortion and women's issues: liberal,no relationship,3,NA,NA
+3,lgbtq+ issues: liberal,no relationship,4,NA,NA
+3,race issues: liberal,access,4,6.677643515408535,2.8502438548858557e-5
+3,healthcare: conservative,no relationship,4,NA,NA
+3,governance: liberal,no relationship,3,NA,NA
+3,domestic violence: bipartisan,no relationship,3,NA,NA
+3,voting: liberal,no relationship,3,NA,NA
+3,guns: conservative,no relationship,3,NA,NA
+3,abortion and women's issues: conservative,no relationship,3,NA,NA
+3,education: conservative,no relationship,3,NA,NA
+3,guns: liberal,no relationship,4,NA,NA
+3,voting: conservative,no relationship,3,NA,NA
+3,veterans issues: bipartisan,no relationship,3,NA,NA
+3,drug abuse: bipartisan,no relationship,3,NA,NA
+3,infrastructure: liberal,no relationship,3,NA,NA
+3,cannabis: liberal,no relationship,3,NA,NA
+3,lgbtq+ issues: conservative,no relationship,3,NA,NA
+3,crime and police: conservative,no relationship,3,NA,NA
+3,healthcare: bipartisan,no relationship,3,NA,NA
+3,criminal justice reform: liberal,no relationship,3,NA,NA
+4,other,no relationship,7,NA,NA
+4,education: liberal,no relationship,1,NA,NA
+4,gerrymandering: liberal,no relationship,3,NA,NA
+4,economy: liberal,no relationship,7,NA,NA
+4,environment: liberal,no relationship,1,NA,NA
+4,economy: conservative,no relationship,7,NA,NA
+4,healthcare: liberal,no relationship,1,NA,NA
+4,abortion and women's issues: liberal,no relationship,1,NA,NA
+4,lgbtq+ issues: liberal,no relationship,1,NA,NA
+4,race issues: liberal,no relationship,1,NA,NA
+4,healthcare: conservative,no relationship,1,NA,NA
+4,governance: liberal,no relationship,3,NA,NA
+4,domestic violence: bipartisan,no relationship,1,NA,NA
+4,voting: liberal,no relationship,7,NA,NA
+4,guns: conservative,consumption,4,6.51429910719909,3.817120053514762e-5
+4,abortion and women's issues: conservative,no relationship,2,NA,NA
+4,education: conservative,no relationship,1,NA,NA
+4,guns: liberal,no relationship,7,NA,NA
+4,voting: conservative,no relationship,1,NA,NA
+4,veterans issues: bipartisan,no relationship,1,NA,NA
+4,drug abuse: bipartisan,no relationship,1,NA,NA
+4,infrastructure: liberal,no relationship,1,NA,NA
+4,cannabis: liberal,no relationship,1,NA,NA
+4,lgbtq+ issues: conservative,no relationship,1,NA,NA
+4,crime and police: conservative,no relationship,3,NA,NA
+4,healthcare: bipartisan,no relationship,1,NA,NA
+4,criminal justice reform: liberal,no relationship,1,NA,NA
+5,other,no relationship,7,NA,NA
+5,education: liberal,no relationship,7,NA,NA
+5,gerrymandering: liberal,no relationship,1,NA,NA
+5,economy: liberal,no relationship,7,NA,NA
+5,environment: liberal,no relationship,4,NA,NA
+5,economy: conservative,no relationship,7,NA,NA
+5,healthcare: liberal,no relationship,4,NA,NA
+5,abortion and women's issues: liberal,no relationship,4,NA,NA
+5,lgbtq+ issues: liberal,no relationship,4,NA,NA
+5,race issues: liberal,no relationship,7,NA,NA
+5,healthcare: conservative,no relationship,4,NA,NA
+5,governance: liberal,no relationship,7,NA,NA
+5,domestic violence: bipartisan,no relationship,7,NA,NA
+5,voting: liberal,no relationship,4,NA,NA
+5,guns: conservative,no relationship,4,NA,NA
+5,abortion and women's issues: conservative,no relationship,4,NA,NA
+5,education: conservative,no relationship,7,NA,NA
+5,guns: liberal,no relationship,7,NA,NA
+5,voting: conservative,no relationship,4,NA,NA
+5,veterans issues: bipartisan,no relationship,4,NA,NA
+5,drug abuse: bipartisan,no relationship,7,NA,NA
+5,infrastructure: liberal,no relationship,7,NA,NA
+5,cannabis: liberal,no relationship,1,NA,NA
+5,lgbtq+ issues: conservative,no relationship,1,NA,NA
+5,crime and police: conservative,no relationship,4,NA,NA
+5,healthcare: bipartisan,no relationship,4,NA,NA
+5,criminal justice reform: liberal,no relationship,4,NA,NA
+6,other,no relationship,1,NA,NA
+6,education: liberal,no relationship,1,NA,NA
+6,gerrymandering: liberal,no relationship,1,NA,NA
+6,economy: liberal,no relationship,1,NA,NA
+6,environment: liberal,no relationship,1,NA,NA
+6,economy: conservative,no relationship,1,NA,NA
+6,healthcare: liberal,no relationship,1,NA,NA
+6,abortion and women's issues: liberal,no relationship,1,NA,NA
+6,lgbtq+ issues: liberal,no relationship,1,NA,NA
+6,race issues: liberal,no relationship,1,NA,NA
+6,healthcare: conservative,no relationship,1,NA,NA
+6,governance: liberal,no relationship,1,NA,NA
+6,domestic violence: bipartisan,no relationship,1,NA,NA
+6,voting: liberal,no relationship,1,NA,NA
+6,guns: conservative,no relationship,1,NA,NA
+6,abortion and women's issues: conservative,access,2,14.182867967160027,9.282156938812116e-7
+6,education: conservative,no relationship,1,NA,NA
+6,guns: liberal,no relationship,1,NA,NA
+6,voting: conservative,no relationship,1,NA,NA
+6,veterans issues: bipartisan,no relationship,1,NA,NA
+6,drug abuse: bipartisan,no relationship,1,NA,NA
+6,infrastructure: liberal,no relationship,1,NA,NA
+6,cannabis: liberal,no relationship,1,NA,NA
+6,lgbtq+ issues: conservative,no relationship,1,NA,NA
+6,crime and police: conservative,no relationship,1,NA,NA
+6,healthcare: bipartisan,no relationship,1,NA,NA
+6,criminal justice reform: liberal,no relationship,1,NA,NA
+7,other,no relationship,7,NA,NA
+7,education: liberal,no relationship,1,NA,NA
+7,gerrymandering: liberal,no relationship,7,NA,NA
+7,economy: liberal,no relationship,7,NA,NA
+7,environment: liberal,no relationship,1,NA,NA
+7,economy: conservative,no relationship,1,NA,NA
+7,healthcare: liberal,no relationship,6,NA,NA
+7,abortion and women's issues: liberal,no relationship,1,NA,NA
+7,lgbtq+ issues: liberal,no relationship,3,NA,NA
+7,race issues: liberal,no relationship,1,NA,NA
+7,healthcare: conservative,no relationship,1,NA,NA
+7,governance: liberal,no relationship,6,NA,NA
+7,domestic violence: bipartisan,no relationship,1,NA,NA
+7,voting: liberal,no relationship,7,NA,NA
+7,guns: conservative,no relationship,2,NA,NA
+7,abortion and women's issues: conservative,no relationship,1,NA,NA
+7,education: conservative,no relationship,1,NA,NA
+7,guns: liberal,no relationship,1,NA,NA
+7,voting: conservative,no relationship,1,NA,NA
+7,veterans issues: bipartisan,no relationship,1,NA,NA
+7,drug abuse: bipartisan,consumption,7,5.682499996694179,2.171706369725666e-6
+7,infrastructure: liberal,no relationship,1,NA,NA
+7,cannabis: liberal,no relationship,1,NA,NA
+7,lgbtq+ issues: conservative,no relationship,1,NA,NA
+7,crime and police: conservative,no relationship,1,NA,NA
+7,healthcare: bipartisan,no relationship,1,NA,NA
+7,criminal justice reform: liberal,no relationship,3,NA,NA
+8,other,no relationship,7,NA,NA
+8,education: liberal,no relationship,7,NA,NA
+8,gerrymandering: liberal,no relationship,1,NA,NA
+8,economy: liberal,no relationship,1,NA,NA
+8,environment: liberal,no relationship,1,NA,NA
+8,economy: conservative,no relationship,1,NA,NA
+8,healthcare: liberal,no relationship,1,NA,NA
+8,abortion and women's issues: liberal,no relationship,1,NA,NA
+8,lgbtq+ issues: liberal,no relationship,7,NA,NA
+8,race issues: liberal,no relationship,1,NA,NA
+8,healthcare: conservative,no relationship,1,NA,NA
+8,governance: liberal,no relationship,7,NA,NA
+8,domestic violence: bipartisan,no relationship,1,NA,NA
+8,voting: liberal,no relationship,7,NA,NA
+8,guns: conservative,no relationship,1,NA,NA
+8,abortion and women's issues: conservative,no relationship,1,NA,NA
+8,education: conservative,no relationship,1,NA,NA
+8,guns: liberal,no relationship,1,NA,NA
+8,voting: conservative,no relationship,2,NA,NA
+8,veterans issues: bipartisan,no relationship,7,NA,NA
+8,drug abuse: bipartisan,no relationship,1,NA,NA
+8,infrastructure: liberal,no relationship,1,NA,NA
+8,cannabis: liberal,no relationship,1,NA,NA
+8,lgbtq+ issues: conservative,no relationship,1,NA,NA
+8,crime and police: conservative,no relationship,1,NA,NA
+8,healthcare: bipartisan,no relationship,1,NA,NA
+8,criminal justice reform: liberal,no relationship,1,NA,NA
+9,other,no relationship,7,NA,NA
+9,education: liberal,no relationship,1,NA,NA
+9,gerrymandering: liberal,no relationship,3,NA,NA
+9,economy: liberal,no relationship,1,NA,NA
+9,environment: liberal,no relationship,1,NA,NA
+9,economy: conservative,no relationship,3,NA,NA
+9,healthcare: liberal,no relationship,1,NA,NA
+9,abortion and women's issues: liberal,no relationship,1,NA,NA
+9,lgbtq+ issues: liberal,no relationship,1,NA,NA
+9,race issues: liberal,no relationship,1,NA,NA
+9,healthcare: conservative,no relationship,1,NA,NA
+9,governance: liberal,no relationship,6,NA,NA
+9,domestic violence: bipartisan,no relationship,1,NA,NA
+9,voting: liberal,no relationship,1,NA,NA
+9,guns: conservative,no relationship,1,NA,NA
+9,abortion and women's issues: conservative,no relationship,1,NA,NA
+9,education: conservative,no relationship,1,NA,NA
+9,guns: liberal,no relationship,1,NA,NA
+9,voting: conservative,no relationship,1,NA,NA
+9,veterans issues: bipartisan,no relationship,1,NA,NA
+9,drug abuse: bipartisan,no relationship,1,NA,NA
+9,infrastructure: liberal,no relationship,1,NA,NA
+9,cannabis: liberal,no relationship,1,NA,NA
+9,lgbtq+ issues: conservative,no relationship,1,NA,NA
+9,crime and police: conservative,no relationship,1,NA,NA
+9,healthcare: bipartisan,no relationship,1,NA,NA
+9,criminal justice reform: liberal,no relationship,1,NA,NA
+10,other,no relationship,7,NA,NA
+10,education: liberal,no relationship,7,NA,NA
+10,gerrymandering: liberal,no relationship,2,NA,NA
+10,economy: liberal,no relationship,7,NA,NA
+10,environment: liberal,no relationship,7,NA,NA
+10,economy: conservative,no relationship,7,NA,NA
+10,healthcare: liberal,no relationship,7,NA,NA
+10,abortion and women's issues: liberal,no relationship,2,NA,NA
+10,lgbtq+ issues: liberal,no relationship,3,NA,NA
+10,race issues: liberal,no relationship,2,NA,NA
+10,healthcare: conservative,no relationship,7,NA,NA
+10,governance: liberal,no relationship,7,NA,NA
+10,domestic violence: bipartisan,no relationship,2,NA,NA
+10,voting: liberal,no relationship,2,NA,NA
+10,guns: conservative,no relationship,2,NA,NA
+10,abortion and women's issues: conservative,no relationship,7,NA,NA
+10,education: conservative,no relationship,3,NA,NA
+10,guns: liberal,no relationship,2,NA,NA
+10,voting: conservative,no relationship,2,NA,NA
+10,veterans issues: bipartisan,no relationship,7,NA,NA
+10,drug abuse: bipartisan,no relationship,7,NA,NA
+10,infrastructure: liberal,no relationship,7,NA,NA
+10,cannabis: liberal,no relationship,2,NA,NA
+10,lgbtq+ issues: conservative,no relationship,1,NA,NA
+10,crime and police: conservative,no relationship,7,NA,NA
+10,healthcare: bipartisan,no relationship,7,NA,NA
+10,criminal justice reform: liberal,no relationship,8,NA,NA
+11,other,no relationship,7,NA,NA
+11,education: liberal,no relationship,7,NA,NA
+11,gerrymandering: liberal,no relationship,7,NA,NA
+11,economy: liberal,no relationship,7,NA,NA
+11,environment: liberal,no relationship,7,NA,NA
+11,economy: conservative,no relationship,7,NA,NA
+11,healthcare: liberal,no relationship,7,NA,NA
+11,abortion and women's issues: liberal,no relationship,7,NA,NA
+11,lgbtq+ issues: liberal,no relationship,7,NA,NA
+11,race issues: liberal,no relationship,7,NA,NA
+11,healthcare: conservative,no relationship,7,NA,NA
+11,governance: liberal,no relationship,7,NA,NA
+11,domestic violence: bipartisan,no relationship,7,NA,NA
+11,voting: liberal,no relationship,7,NA,NA
+11,guns: conservative,no relationship,8,NA,NA
+11,abortion and women's issues: conservative,no relationship,1,NA,NA
+11,education: conservative,no relationship,7,NA,NA
+11,guns: liberal,no relationship,7,NA,NA
+11,voting: conservative,no relationship,1,NA,NA
+11,veterans issues: bipartisan,no relationship,7,NA,NA
+11,drug abuse: bipartisan,no relationship,7,NA,NA
+11,infrastructure: liberal,consumption,7,5.819204153234457,1.4590934761230809e-6
+11,cannabis: liberal,no relationship,7,NA,NA
+11,lgbtq+ issues: conservative,no relationship,1,NA,NA
+11,crime and police: conservative,no relationship,7,NA,NA
+11,healthcare: bipartisan,no relationship,7,NA,NA
+11,criminal justice reform: liberal,no relationship,7,NA,NA
+12,other,no relationship,7,NA,NA
+12,education: liberal,no relationship,7,NA,NA
+12,gerrymandering: liberal,no relationship,7,NA,NA
+12,economy: liberal,no relationship,7,NA,NA
+12,environment: liberal,no relationship,7,NA,NA
+12,economy: conservative,no relationship,7,NA,NA
+12,healthcare: liberal,no relationship,7,NA,NA
+12,abortion and women's issues: liberal,no relationship,7,NA,NA
+12,lgbtq+ issues: liberal,no relationship,7,NA,NA
+12,race issues: liberal,no relationship,7,NA,NA
+12,healthcare: conservative,no relationship,7,NA,NA
+12,governance: liberal,no relationship,7,NA,NA
+12,domestic violence: bipartisan,no relationship,7,NA,NA
+12,voting: liberal,no relationship,7,NA,NA
+12,guns: conservative,no relationship,7,NA,NA
+12,abortion and women's issues: conservative,no relationship,7,NA,NA
+12,education: conservative,no relationship,7,NA,NA
+12,guns: liberal,no relationship,7,NA,NA
+12,voting: conservative,no relationship,7,NA,NA
+12,veterans issues: bipartisan,no relationship,7,NA,NA
+12,drug abuse: bipartisan,no relationship,7,NA,NA
+12,infrastructure: liberal,no relationship,7,NA,NA
+12,cannabis: liberal,no relationship,7,NA,NA
+12,lgbtq+ issues: conservative,no relationship,1,NA,NA
+12,crime and police: conservative,no relationship,7,NA,NA
+12,healthcare: bipartisan,no relationship,7,NA,NA
+12,criminal justice reform: liberal,no relationship,7,NA,NA

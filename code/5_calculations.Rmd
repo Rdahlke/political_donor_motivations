@@ -80,7 +80,9 @@ if(sum(granger_data$topic_count) == 0 | sum(granger_data$donation_count) == 0){
   output <- tibble(cluster = cluster,
        topic = topic,
        result = "no relationship",
-       lag = c(order))
+       lag = c(order),
+       f_statistic = NA,
+       p_value = NA)
   
   return(output)
 }
@@ -105,20 +107,28 @@ results <- access_model %>%
 
 if(nrow(results) == 0){
   result <- "no relationship"
+  f_statistic <- NA
+  p_value <- NA
 }
 
 if(nrow(results) == 1){
   result <- results %>% pull(model)
+  f_statistic <- results %>% pull(f)
+  p_value <- results %>% pull(pr_f)
 }
 
 if(nrow(results) == 2){
   result <- "confounder"
+  f_statistic <- NA
+  p_value <- NA
 }
 
 output <- tibble(cluster = c(cluster),
        topic = c(topic),
        result = c(result),
-       lag = c(order))
+       lag = c(order),
+       f_statistic = c(f_statistic),
+       p_value = c(p_value))
   
 return(output)
 
@@ -191,7 +201,7 @@ plot <- granger_results %>%
   labs(x = "donor coalition",
        y = "topic",
        fill = "donor motivation model",
-       caption = "p-values adjusted with Holm's method") +
+       caption = "p-values adjusted with Bonferroni's method") +
   theme_bw() +
   theme(legend.position = "bottom") +
   guides(fill = guide_legend(nrow = 1))
@@ -203,6 +213,35 @@ ggsave("../tables_and_figures/fig_2.jpg", plot, height = 6.9, width = 7.3)
 
 ```{r}
 granger_results %>% 
+  mutate(topic = case_when(
+    topic == "voting.liberal" ~ "voting: liberal",
+    topic == "voting.conservative" ~ "voting: conservative",
+    topic == "raceissues.liberal" ~ "race issues: liberal",
+    topic == "prolife" ~ "abortion and women's issues: conservative",
+    topic == "prochoice.womenshealth" ~ "abortion and women's issues: liberal",
+    topic == "other" ~ "other",
+    topic == "marijuana.pro" ~ "cannabis: liberal",
+    topic == "lgbt.pro" ~ "lgbtq+ issues: liberal",
+    topic == "lgbt.anti" ~ "lgbtq+ issues: conservative",
+    topic == "king.veterans" ~ "veterans issues: bipartisan",
+    topic == "infrastructure.roads.transportation" ~ "infrastructure: liberal",
+    topic == "healthcare.liberal" ~ "healthcare: liberal",
+    topic == "healthcare.conservative" ~ "healthcare: conservative",
+    topic == "healthcare.bipartisan" ~ "healthcare: bipartisan",
+    topic == "guncontrol.liberal" ~ "guns: liberal",
+    topic == "guncontrol.conservative" ~ "guns: conservative",
+    topic == "gerrymandering.anti" ~ "gerrymandering: liberal",
+    topic == "environment.climatechange" ~ "environment: liberal",
+    topic == "education.liberal" ~ "education: liberal",
+    topic == "education.conservative" ~ "education: conservative",
+    topic == "economic.liberal" ~ "economy: liberal",
+    topic == "economic.conservative" ~ "economy: conservative",
+    topic == "drugabuse" ~ "drug abuse: bipartisan",
+    topic == "domestic.violence" ~ "domestic violence: bipartisan",
+    topic == "criminaljusticereform" ~ "criminal justice reform: liberal",
+    topic == "crime.police" ~ "crime and police: conservative",
+    topic == "campaignfinance.corruption.opengovernment" ~ "governance: liberal"
+  )) %>%
   write_csv("../data/granger_results.csv")
 ```
 
