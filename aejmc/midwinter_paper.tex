@@ -39,6 +39,7 @@
 
 \setcounter{secnumdepth}{0}
 
+\usepackage{longtable,booktabs}
 
 \usepackage{graphicx,grffile}
 \makeatletter
@@ -621,13 +622,19 @@ polarized positions.
 This research paper will also examine the polarization of political
 donor coalitions and whether consumption-oriented donors and
 access-oriented donors are in polarized positions in the donor network
-graph..
+graph.
 
 \textbf{\(H_{5}\): Consumption-motivated donors will be more polarized
 in the political donor network than non-consumption donors.}
 
 \textbf{\(H_{6}\): Access-oriented donors will be less polarized in the
 political donor network than non-consumption donors.}
+
+This inquiry is not at all meant to make causal claims, as much of the
+literature does. These two hypothesis will address whether donors are
+\emph{causal} or \emph{reactive} to polarization. Instead, this research
+hopes to add data as to whether this line of thinking is validated in
+descriptive data.
 
 The rise in small-dollar donors has been driven primarily by
 technological advancements (Albert and Raja 2020) including growing
@@ -819,15 +826,14 @@ by the \texttt{tsDyn} package (Stigler 2010).
 
 We compare time series of donations from clusters of political donors
 and time series of the number of social media posts by each topic that
-were made by campaigns that each donor cluster contributed to.
-
-in other words, a time series of donations from a donor coalition was
-compared to the aggregate count of posts about a given topic made by
-candidates that the donor cluster contributed to. For example, donations
-from donor coalition 7 Granger caused politicians that received
-donations from the coalition to publicly support gun control measures.
-Stated another way, donations from coalition 7 predict whether
-candidates will publicly support gun control policies. The theoretical
+were made by campaigns that each donor cluster contributed to. In other
+words, a time series of donations from a donor coalition was compared to
+the aggregate count of posts about a given topic made by candidates that
+the donor cluster contributed to. For example, donations from donor
+coalition 6 Granger caused politicians that received donations from the
+coalition to publicly support women's issue and pro-choice policies.
+Stated another way, donations from coalition 6 predict whether
+candidates will publicly support pro-women policies. The theoretical
 connection to political donor psychology is that this behavior is
 expected under the access-oriented model of political donor motivations.
 The full results of the Granger causality tests are found in Figure 2.
@@ -841,21 +847,24 @@ The full results of the Granger causality tests are found in Figure 2.
 These results were used to test \(H_{1}\) and \(H_{3}\). Donor
 coalitions and the topic of social media posts that were accepted by
 \(H_{1}\) and \(H_{3}\) are listed in Table 1. Coalitions of donors that
-were accepted by \(H_{1}\) and \(H_{3}\) were used to test \(H_{2}\) and
-\(H_{4}\) with an OLS regression. Results to \(H_{2}\) and \(H_{4}\) are
-in Table 2.
+were accepted by only \(H_{1}\) or \(H_{3}\) were used to test \(H_{2}\)
+and \(H_{4}\) with a difference-in-means permutation test since the
+statistical assumptions were not met for an OLS regression. Results to
+\(H_{2}\) and \(H_{4}\) are in Table 2.
 
 To study the polarization of consumption-motivated donors, we extract
 the x-coordinate position from the donor network (Figure 1). We then
 rescale the coordinate position to be -1 to 1 with -1 representing the
 left-most, or most Democratic, node and 1 representing the right-most,
-or most Republican, node. To test \(H_{5}\) and \(H_{6}\), we use an OLS
-regression on the absolute value of the rescaled x-coordinate with the
-coalition category as a variable. This absolute value effectively is the
-level of polarization in the graph, with the nodes that are on the
-extremes of the graph being closer to 1 and the central-most nodes,
-representing bipartisan donors, being closer to 0. Results for \(H_{5}\)
-and \(H_{6}\) are in Table 4.
+or most Republican, node. To test \(H_{5}\) and \(H_{6}\), a
+difference-in-means permutation test on the absolute value of the
+rescaled x-coordinate with the coalition category as a variable. A
+non-parametric permutation test was used since the statistical
+assumptions for an OLS regression were not met. This absolute value
+effectively is the level of polarization in the graph, with the nodes
+that are on the extremes of the graph being closer to 1 and the
+central-most nodes, representing bipartisan donors, being closer to 0.
+Results for \(H_{5}\) and \(H_{6}\) are in Table 3.
 
 \hypertarget{results}{%
 \section{Results}\label{results}}
@@ -867,7 +876,7 @@ supports this line of thinking. Different donor coalitions exhibited
 behavior that is inline with both the access-oriented and consumption
 model of political donations with policy issues across the ideological
 spectrum of liberal, conservative, and bipartisan. Example social media
-posts of the various topics can be found in Table 1.
+posts of the various topics can be found in the appendix.
 
 Three donor coalitions have a policy issue accepted by \(H_{1}\) show
 behavior that is consistent with the access-oriented model. In other
@@ -882,11 +891,11 @@ unique policy and even ideological positions that they support.
 One coalition's donations predicts politicians' support for conservative
 policies as it relates to abortion and women's health, pro-life
 policies. Some posts explicitly talk about pro-life organizations and
-the politicians' support of those organizations (example 1 in Table 1),
+the politicians' support of those organizations (appendix example 1),
 other posts talk about specific policies and where the legislative
-process (example 2 in Table 2), and others still are campaign-oriented
+process (appendix example 2), and others still are campaign-oriented
 appeals that use more less explicit language that the BERT model was
-still able to pickup on (example 3 in Table 1). This donor coalition is
+still able to pickup on (appendix example 3). This donor coalition is
 one of the smaller clusters of donors with only 252 donors or 3.5\% of
 donors. However, these results do not suggest that there are only 252
 donors in this dataset who care about this issue. Instead, this group's
@@ -897,9 +906,9 @@ publicly support pro-life policies.
 Another coalition who fit the access-oriented model make contributions
 that precede politicians who they donate to publicly supporting liberal
 policies on race issues. Some social media posts talk about broader
-cultural issues as they relate to race (example 4 Table 1) and others
-discuss evidence and propose policies to address racial issues (example
-5 Table 1). This coalition contains 423 donors or 3.4\% of all donors in
+cultural issues as they relate to race (appendix example 4) and others
+discuss evidence and propose policies to address racial issues (appendix
+example 5). This coalition contains 423 donors or 3.4\% of all donors in
 this dataset.
 
 The final access-oriented coalition of donors show a connection to
@@ -908,8 +917,8 @@ were particularly salient during the 2016 election in Wisconsin with
 Veteran's Affairs hospitals, specific the Tomah, Wisconsin VA Hospital
 and one Wisconsin-run housing complex, Wisconsin Veteran's Home At King,
 receiving a lot of public attention for poor management and other
-issues. Both Republicans (example 6 Table 1) and Democrats (example 7
-Table 1) publicly supported various policies and initiatives aimed to
+issues. Both Republicans (appendix example 6) and Democrats (appendix
+example 7) publicly supported various policies and initiatives aimed to
 assist veterans. This coalition contains the second most donors, 897, or
 12.1\% of all donors.
 
@@ -929,17 +938,17 @@ conservative gun-related policies. In other words, donations from this
 coalition of donor lag politicians publicly supporting conservative
 gun-related policies. Social media posts that are categorized as being
 supportive of conservative policies on gun-related issues range from
-talking about their relationship to pro-gun interest groups (example 8
-Table 1) as well as specific policies (example 9 Table 1). This
+talking about their relationship to pro-gun interest groups (appendix
+example 8) as well as specific policies (appendix example 9). This
 coalition is medium-sized with 605 donors or 8.2\% of the total donors.
 
 In addition to a conservative consumption-oriented group, there is a
 group of donors consumptive group of donors whose donations can be
 predicted by politicians publicly supporting liberal measure on public
 infrastructure and roads. Most of these posts are either general support
-of public infrastructure improvements (example 10 Table 1) or targeted
+of public infrastructure improvements (appendix example 10) or targeted
 Republican Governor Scott Walker and Republicans over roads containing a
-large number of pot holes (example 11 Table 1). There are 395 donors in
+large number of pot holes (appendix example 11). There are 395 donors in
 the coalition or 5.4\% of donors.
 
 There are two different issues that have a significant
@@ -959,34 +968,65 @@ for example, they can be access-oriented on veterans issues and
 consumption-oriented on drug abuse issues. Another coalition of 428
 donors, representing 5.8\% of donors, also had a significant consumptive
 relationship with drug abuse. Most posts about drug abuse focused on the
-opioid and heroine epidemic across Wisconsin (example 12 Table 1). The
+opioid and heroine epidemic across Wisconsin (appendix example 12). The
 implications of these statistical patterns are addressed further in the
 discussion section.
 
-The output of the OLS regression to test \(H_{2}\), that access-oriented
+The output of the bootstrap used to test \(H_{2}\), that access-oriented
 donors are on-average larger donors, and \(H_{4}\), that
 consumption-oriented donors are on-average smaller donors, is in Table
-3. The donor cluster that showed access-oriented and
-consumption-oriented behavior and donated to bipartisan issues were
-treated as a unique group. Neither the access-oriented donors nor the
-consumption-oriented donors contributed statistically significantly
-different amounts than donors that did not display any relationship.
-Therefore, \(H_{2}\) and \(H_{4}\) are not accepted. Interestingly, the
-coalition that was both access-oriented and consumption-oriented did
-have a significantly lower average contribution amount. This finding is
-discussed in the next section of the paper.
+2. Neither the access-oriented donors nor the consumption-oriented
+donors contributed statistically significantly different amounts of
+money than donors that were donors that were not only access-oriented
+and not only consumption-oriented. Therefore, \(H_{2}\) and \(H_{4}\)
+are not accepted. This finding is discussed in the next section of the
+paper.
 
-Table 4 shows the output for \(H_{5}\), that consumption-oriented donors
+\begin{longtable}[]{@{}llrlr@{}}
+\caption{Difference in Average Donor Size}\tabularnewline
+\toprule
+Hypothesis & Model & T & 95\% CI & p-value\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Hypothesis & Model & T & 95\% CI & p-value\tabularnewline
+\midrule
+\endhead
+H2 & access & -48.62 & -115.4-21.47 & 0.144\tabularnewline
+H4 & consumption & 34.60 & -29.21-118.39 & 0.310\tabularnewline
+\bottomrule
+\end{longtable}
+
+Table 3 shows the output for \(H_{5}\), that consumption-oriented donors
 are more polarized in the network graph, and \(H_{6}\), that
-access-oriented donors are less polarized in the network graph.
-Consumption-oriented donors are directionally slightly more polarized in
-the network graph, but the results are not statistically significant.
-This result does not accept \(H_{5}\). Access-oriented donors are less
-statistically significantly less polarized. And thus, \(H_{6}\) is
-accepted.
+access-oriented donors are less polarized in the network graph. Both of
+these hypotheses are accepted. In other words, consumption-motivated
+donors are on average in more polarized positions (further to the left
+and right of the graph) than non-consumption-oriented donors. Similarly,
+access-oriented donors are on average in less polarized positions
+(closer to the middle of the graph) than non-access-oriented donors.
+These results are discussed further in the next section.
+
+\begin{longtable}[]{@{}llrll@{}}
+\caption{Difference in Average Donor Size}\tabularnewline
+\toprule
+Hypothesis & Model & T & 95\% CI & p-value\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Hypothesis & Model & T & 95\% CI & p-value\tabularnewline
+\midrule
+\endhead
+H5 & consumption & 0.01 & 0-0.02 & 0.014\tabularnewline
+H6 & access & -0.05 & -0.06--0.03 & \textless.001\tabularnewline
+\bottomrule
+\end{longtable}
+
+\hypertarget{appendix}{%
+\section{Appendix}\label{appendix}}
 
 \begin{longtable}[t]{>{\raggedright\arraybackslash}p{.65in}|>{\raggedright\arraybackslash}p{.6in}|>{\raggedright\arraybackslash}p{.7in}|>{\raggedright\arraybackslash}p{.6in}|>{\raggedright\arraybackslash}p{3in}}
-\caption{\label{tab:unnamed-chunk-3}Social Media Examples}\\
+\caption{\label{tab:unnamed-chunk-5}Social Media Examples}\\
 \hline
 example \# & topic & campaign & social media site & post\\
 \hline
@@ -1004,7 +1044,7 @@ example \# & topic & campaign & social media site & post\\
 \hline
 4 & race issues: liberal & Bowen 4 Action & Twitter & @JoyAnnReid: \#OscarsSoWhite black people can't even get nominated for the movies about black people...\\
 \hline
-5 & race issues: liberal & Citizens of the 81st for Dave Considine & Twitter & Citizens of the 81st for Dave Considine\\
+5 & race issues: liberal & Citizens of the 81st for Dave Considine & Twitter & 1 in every 9 African-Americans are disenfranchised because of felony convictions in Wisconsin\\
 \hline
 6 & veterans issues: bipartisan & Sanfelippo for Assembly & Twitter & Welcome Home Veterans Initiative seeks to solve veteran homelessness in state:\\
 \hline
@@ -1026,13 +1066,13 @@ example \# & topic & campaign & social media site & post\\
 \hline
 Method & koRpus & stringi\\
 \hline
-Word count & 6292 & 6205\\
+Word count & 6345 & 6286\\
 \hline
-Character count & 42680 & 42671\\
+Character count & 43121 & 43112\\
 \hline
-Sentence count & 302 & Not available\\
+Sentence count & 305 & Not available\\
 \hline
-Reading time & 31.5 minutes & 31 minutes\\
+Reading time & 31.7 minutes & 31.4 minutes\\
 \hline
 \end{tabular}
 

@@ -10,6 +10,7 @@ knitr::opts_chunk$set(echo = TRUE)
 library(tidyverse)
 library(parallel)
 library(doParallel)
+library(infer)
 options(scipen = 999)
 ```
 
@@ -231,6 +232,46 @@ donor_totals <- donations %>%
 ```
 
 ```{r}
+access_bootstrap <- donor_totals %>% 
+  mutate(category = if_else(category != "access", "not access", "access")) %>% 
+  specify(total_contributed ~ category) %>% 
+    generate(reps = 1000, type = "bootstrap") %>% 
+    calculate(stat = "diff in means", order = c("access", "not access")) 
+
+access_output <- access_bootstrap %>% 
+  get_ci() %>% 
+  cbind(access_bootstrap %>% 
+          summarize(mean_diff = mean(stat))) %>% 
+  cbind(access_bootstrap %>% 
+          get_p_value(obs_stat = 0, direction = "two_sided")) %>% 
+  mutate(model = "access")
+
+```
+
+```{r}
+consumption_bootstrap <- donor_totals %>% 
+  mutate(category = if_else(category != "consumption", "not consumption", "consumption")) %>% 
+  specify(total_contributed ~ category) %>% 
+    generate(reps = 1000, type = "bootstrap") %>% 
+    calculate(stat = "diff in means", order = c("consumption", "not consumption")) 
+
+consumption_output <- consumption_bootstrap %>% 
+  get_ci() %>% 
+  cbind(consumption_bootstrap %>% 
+          summarize(mean_diff = mean(stat))) %>% 
+  cbind(consumption_bootstrap %>% 
+          get_p_value(obs_stat = 0, direction = "two_sided")) %>% 
+  mutate(model = "consumption")
+```
+
+```{r}
+access_output %>% 
+  rbind(consumption_output) %>% 
+  write_csv("../data/contribution_size_permutation.csv")
+```
+
+
+```{r}
 lm(total_contributed ~ category, data = donor_totals) %>% 
   summary()
 ```
@@ -317,8 +358,57 @@ gephi_nodes <- gexf$nodes %>%
 ```
 
 ```{r}
+access_bootstrap <- gephi_nodes %>% 
+  mutate(category = if_else(category != "access", "not access", "access")) %>% 
+  specify(x_abs ~ category) %>% 
+    generate(reps = 1000, type = "bootstrap") %>% 
+    calculate(stat = "diff in means", order = c("access", "not access")) 
+
+access_output <- access_bootstrap %>% 
+  get_ci() %>% 
+  cbind(access_bootstrap %>% 
+          summarize(mean_diff = mean(stat))) %>% 
+  cbind(access_bootstrap %>% 
+          get_p_value(obs_stat = 0, direction = "two_sided")) %>% 
+  mutate(model = "access")
+
+```
+
+```{r}
+consumption_bootstrap <- gephi_nodes %>% 
+  mutate(category = if_else(category != "consumption", "not consumption", "consumption")) %>% 
+  specify(x_abs ~ category) %>% 
+    generate(reps = 1000, type = "bootstrap") %>% 
+    calculate(stat = "diff in means", order = c("consumption", "not consumption")) 
+
+consumption_output <- consumption_bootstrap %>% 
+  get_ci() %>% 
+  cbind(consumption_bootstrap %>% 
+          summarize(mean_diff = mean(stat))) %>% 
+  cbind(consumption_bootstrap %>% 
+          get_p_value(obs_stat = 0, direction = "two_sided")) %>% 
+  mutate(model = "consumption")
+```
+
+```{r}
+access_output %>% 
+  rbind(consumption_output) %>% 
+  write_csv("../data/contribution_polarization_permutation.csv")
+```
+
+
+```{r}
 lm(x_abs ~ category, data = gephi_nodes) %>% 
   summary()
+```
 
+```{r}
+ggplot(gephi_nodes, aes(x_abs, fill = as.factor(category), group = category)) +
+  geom_density(alpha = .5)
+```
+
+```{r}
+ggplot(gephi_nodes, aes(x, fill = as.factor(category), group = category)) +
+  geom_density(alpha = .5)
 ```
 
