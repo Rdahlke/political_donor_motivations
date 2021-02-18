@@ -695,13 +695,14 @@ issues.
 Using social media will allow this paper to analyze the textual and
 linguistic characteristics of the posts. Previous research has been able
 to study the connection between digital language and political behaviors
-such as protests {[}needcite{]} but not donations. This paper will be
-able to use the connections found in \(H_{1}\) and \(H_{2}\) to explore
-textual features, specifically political sophistication (Benoit, Munger,
-and Spirling 2019) and polarizing language (Goet 2019; Lauderdale and
-Herzog 2016), to see if different types of language are related to
-either being influenced by donors in the access-oriented model or
-attracting donors in the consumption model.
+such as protests (Harlow et al. 2020; Wilson 2017; Zhang and Pan 2019)
+but not donations. This paper will be able to use the connections found
+in \(H_{1}\) and \(H_{2}\) to explore textual features, specifically
+political sophistication (Benoit, Munger, and Spirling 2019) and
+polarizing language (Goet 2019; Lauderdale and Herzog 2016), to see if
+different types of language are related to either being influenced by
+donors in the access-oriented model or attracting donors in the
+consumption model.
 
 \textbf{\(R_{1}\): Do social media posts from politicians that either
 Granger cause or are Granger caused by donations from coalitions of
@@ -733,7 +734,7 @@ into three different topics: liberal, conservative, and bipartisan.
 These 12,364 posts were used to train and test a BERT deep learning
 transfer model. Of these 12,364 posts that were hand-coded, about 90\%,
 11,128 were used in the training set and about 10\%, 1,236, were used in
-the test set. This trained model achieved about 82.9\% accuracy in
+the test set. This trained model achieved 82.9\% accuracy in
 categorizing the topic of posts in the test set. This model was applied
 to the rest of the uncoded corpus that were later used for aggregations
 and calculations of the topics that politicians were posting about.
@@ -754,8 +755,8 @@ social media research such as the detection of propaganda (Vlad et al.
 Farahbakhsh, and Crespi 2020), stance (Tian et al. 2020), and aggression
 (Ramiandrisoa and Mothe 2020).
 
-Political donation data for all candidates to the Wisconsin State
-Legislature during the 2016 election cycle were collected from the
+Individual political donation data for all candidates to the Wisconsin
+State Legislature during the 2016 election cycle were collected from the
 Wisconsin Campaign Information System (CFIS). Anonymous contributions
 were removed, names were made uniform (removed punctuation, made all
 names lowercase, etc.), and OpenRefine (Ham 2013) was used to stem names
@@ -767,7 +768,7 @@ Finally, only contributions from donors who contributed to more than one
 campaign were used. This filtering was done for computational efficiency
 and also because there were many donors who only made a single
 contribution which resulted in unequal, and computationally unusable,
-clusters. These steps left {[}neednumber{]} donations.
+clusters. These steps left 28,858 from donations from 7,567 donors.
 
 These donations were used to create a network of political donations
 with candidates and donors serving as nodes and donations between them
@@ -1247,15 +1248,15 @@ example \# & topic & campaign & social media site & post\\
 example \# & topic & campaign & social media site & post\\
 \hline
 \endhead
-1 & abortion and women's issues: conservative & Ken Skowronski for Assembly & Facebook & Last night I had a great time at the Wisconsin Right to Life Dinner with my fellow colleagues. I am proud to have supported the bold Pro-Life reforms we have put in place and I will continue to defend the rights of those who cannot defend themselves.\\
+1 & race issues: liberal & Bowen 4 Action & Twitter & @ JoyAnnReid: \#OscarsSoWhite black people can't even get nominated for the movies about black people...\\
 \hline
-2 & abortion and women's issues: conservative & Friends \& Neighbors of Robin Vos & Twitter & An Assembly committee will vote on a bill to ban the sale of aborted children's body parts on Wednesday.\\
+2 & race issues: liberal & Citizens of the 81st for Dave Considine & Twitter & 1 in every 9 African-Americans are disenfranchised because of felony convictions in Wisconsin\\
 \hline
-3 & abortion and women's issues: conservative & Friends of Chuck Wichgers & Facebook & 'I'm glad to know Chuck, who is a solid conservative. He's shown that he understands the principles that secure our freedom and that he will work for them in office. But more than that, I've seen that he is passionate about the God-given dignity of every human life. He knows that every person's right to live and to live freely comes from a much higher source than government.'PATRICK MCILHERAN, FORMER EDITORIAL WRITER, MILWAUKEE JOURNAL SENTINEL\\
+3 & abortion and women's issues: conservative & Ken Skowronski for Assembly & Facebook & Last night I had a great time at the Wisconsin Right to Life Dinner with my fellow colleagues. I am proud to have supported the bold Pro-Life reforms we have put in place and I will continue to defend the rights of those who cannot defend themselves.\\
 \hline
-4 & race issues: liberal & Bowen 4 Action & Twitter & @ JoyAnnReid: \#OscarsSoWhite black people can't even get nominated for the movies about black people...\\
+4 & abortion and women's issues: conservative & Friends \& Neighbors of Robin Vos & Twitter & An Assembly committee will vote on a bill to ban the sale of aborted children's body parts on Wednesday.\\
 \hline
-5 & race issues: liberal & Citizens of the 81st for Dave Considine & Twitter & 1 in every 9 African-Americans are disenfranchised because of felony convictions in Wisconsin\\
+5 & abortion and women's issues: conservative & Friends of Chuck Wichgers & Facebook & 'I'm glad to know Chuck, who is a solid conservative. He's shown that he understands the principles that secure our freedom and that he will work for them in office. But more than that, I've seen that he is passionate about the God-given dignity of every human life. He knows that every person's right to live and to live freely comes from a much higher source than government.'PATRICK MCILHERAN, FORMER EDITORIAL WRITER, MILWAUKEE JOURNAL SENTINEL\\
 \hline
 6 & veterans issues: bipartisan & Sanfelippo for Assembly & Twitter & Welcome Home Veterans Initiative seeks to solve veteran homelessness in state:\\
 \hline
@@ -1277,11 +1278,11 @@ example \# & topic & campaign & social media site & post\\
 \hline
 Method & koRpus & stringi\\
 \hline
-Word count & 7673 & 7606\\
+Word count & 7681 & 7610\\
 \hline
-Character count & 51849 & 51838\\
+Character count & 51899 & 51888\\
 \hline
-Sentence count & 365 & Not available\\
+Sentence count & 367 & Not available\\
 \hline
 Reading time & 38.4 minutes & 38 minutes\\
 \hline
@@ -1627,6 +1628,13 @@ Hardina, Donna. 2005. ``Using the Web to Teach Power Analysis.''
 \emph{The Social Policy Journal} 4 (2): 51--68.
 \url{https://doi.org/10.1300/J185v04n02/_05}.
 
+\leavevmode\hypertarget{ref-harlow2020}{}%
+Harlow, Summer, Danielle K. Kilgo, Ramón Salaverría, and Víctor
+García-Perdomo. 2020. ``Is the Whole World Watching? Building a Typology
+of Protest Coverage on Social Media from Around the World.''
+\emph{Journalism Studies} 21 (11): 1590--1608.
+\url{https://doi.org/10.1080/1461670X.2020.1776144}.
+
 \leavevmode\hypertarget{ref-hayes2017}{}%
 Hayes, Thomas J. 2017. ``Bankruptcy Reform and Congressional Action: The
 Role of Organized Interests in Shaping Policy.'' \emph{Social Science
@@ -1964,6 +1972,10 @@ Welch, W. P. 1980. ``The Allocation of Political Monies: Economic
 Interest Groups.'' \emph{Public Choice} 35 (1): 97--120.
 \url{https://doi.org/10.1007/BF00154752}.
 
+\leavevmode\hypertarget{ref-wilson2017}{}%
+Wilson, Steven. 2017. ``Detecting Mass Protest Through Social Media.''
+\emph{The Journal of Social Media in Society} 6 (2).
+
 \leavevmode\hypertarget{ref-wright1985}{}%
 Wright, John R. 1985. ``PACs, Contributions, and Roll Calls: An
 Organizational Perspective.'' \emph{American Political Science Review}
@@ -1973,6 +1985,12 @@ Organizational Perspective.'' \emph{American Political Science Review}
 Zeileis, Achim, and Torsten Hothorn. 2002. ``Diagnostic Checking in
 Regression Relationships.'' \emph{R News} 2 (3): 7--10.
 \url{https://CRAN.R-project.org/doc/Rnews/}.
+
+\leavevmode\hypertarget{ref-zhang2019}{}%
+Zhang, Han, and Jennifer Pan. 2019. ``CASM: A Deep-Learning Approach for
+Identifying Collective Action Events with Text and Image Data from
+Social Media.'' \emph{Sociological Methodology} 49 (1): 1--57.
+\url{https://doi.org/10.1177/0081175019860244}.
 
 \leavevmode\hypertarget{ref-dezuniga2009}{}%
 Zúñiga, Homero Gil De, Eulàlia Puig-I-Abril, and Hernando Rojas. 2009.
