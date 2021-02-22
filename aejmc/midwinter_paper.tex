@@ -744,8 +744,12 @@ and candidates are in.
 \caption{Donor Motivation Models}
 \end{figure}
 
-\hypertarget{methodology}{%
-\section{Methodology}\label{methodology}}
+\hypertarget{methodology-results}{%
+\section{Methodology \& Results}\label{methodology-results}}
+
+\hypertarget{access-oriented-and-consumption-models}{%
+\subsection{Access-Oriented and Consumption
+Models}\label{access-oriented-and-consumption-models}}
 
 \(H_{1}\) and \(H_{3}\) test the relationships between the social media
 dataset and the political donation dataset. A Granger causality
@@ -828,43 +832,6 @@ p-value\tabularnewline
 \caption{Donor Motivation Models}
 \end{figure}
 
-These results were used to test \(H_{1}\) and \(H_{3}\). Donor
-coalitions and the topic of social media posts that were accepted by
-\(H_{1}\) and \(H_{3}\) are listed in Table 1. Coalitions of donors that
-were accepted by only \(H_{1}\) or \(H_{3}\) were used to test \(H_{2}\)
-and \(H_{4}\) with a difference-in-means permutation test since the
-statistical assumptions were not met for an OLS regression. Results to
-\(H_{2}\) and \(H_{4}\) are in Table 2.
-
-To study the polarization of consumption-motivated donors, we extract
-the x-coordinate position from the donor network (Figure 1). We then
-rescale the coordinate position to be -1 to 1 with -1 representing the
-left-most, or most Democratic, node and 1 representing the right-most,
-or most Republican, node. To test \(H_{5}\) and \(H_{6}\), a
-difference-in-means permutation test on the absolute value of the
-rescaled x-coordinate with the coalition category as a variable. A
-non-parametric permutation test was used since the statistical
-assumptions for an OLS regression were not met. This absolute value
-effectively is the level of polarization in the graph, with the nodes
-that are on the extremes of the graph being closer to 1 and the
-central-most nodes, representing bipartisan donors, being closer to 0.
-Results for \(H_{5}\) and \(H_{6}\) are in Table 3.
-
-\hypertarget{results}{%
-\section{Results}\label{results}}
-
-We find evidence that supports the recent scholarship into the
-motivations of political donors that maintains a nuanced view into the
-psychology of political contributors: different donors hold different
-motivations. Different donor coalitions exhibited behavior that is
-inline with both the access-oriented and consumption model of political
-donations with policy issues across the ideological spectrum of liberal,
-conservative, and bipartisan. Example social media posts of the various
-topics can be found in the appendix.
-
-\hypertarget{access-oriented-coaltiions}{%
-\section{Access-oriented Coaltiions}\label{access-oriented-coaltiions}}
-
 For three donor coalitions show behavior consistent with the
 access-oriented model where we can predict politicians' public support
 of policy issues after they receive contributions from these donor
@@ -874,50 +841,6 @@ These access-oriented coalitions represent 1,572 individual donors or
 22.4\% of donations; and \$654,577.60 or 16.5\% of dollars contributed.
 Each of these three coalitions appear to have unique policy and even
 ideological positions that they support.
-
-\hypertarget{race-issues}{%
-\subsection{Race Issues}\label{race-issues}}
-
-Donations from donor coalition 3 Granger caused politicians they
-contributed to to talk about liberal policies on race. Some social media
-posts talk about broader cultural issues as they relate to race
-(appendix example 1) and others discuss evidence and propose policies to
-address racial issues (appendix example 2). Race was a big part of the
-2016 presidential campaign, and racial issues were also a topic in this
-dataset. This coalition contains 423 donors or 5.7\% of all donors in
-this dataset.
-
-\hypertarget{pro-life}{%
-\subsection{Pro-life}\label{pro-life}}
-
-Coalition 6's donations predicts politicians' support for conservative
-policies on abortion and women's health, pro-life policies. Some posts
-explicitly talk about pro-life organizations and the politicians'
-support of those organizations, other posts talk about specific policies
-and where the legislative process, and others still are
-campaign-oriented appeals that use more coded language that the BERT
-model was still able to pickup on (appendix examples 3, 4, and 5,
-respectively). Pro-life policies are a perennial topic in Wisconsin
-elections. This donor coalition is one of the smaller clusters of donors
-with only 252 donors or 3.4\% of donors.
-
-\hypertarget{veterans-issues}{%
-\subsection{Veteran's Issues}\label{veterans-issues}}
-
-The final access-oriented group of donors, coalition 1, have donations
-that precede politicians posting about bipartisan veteran's issues.
-Veteran's issues were particularly salient during the 2016 election in
-Wisconsin with Veteran's Affairs hospitals, specifically the Tomah,
-Wisconsin VA Hospital and one Wisconsin-run housing complex, Wisconsin
-Veteran's Home At King, receiving a lot of public attention for poor
-management and other issues. Both Republicans (appendix example 6) and
-Democrats (appendix example 7) publicly supported various policies and
-initiatives aimed to assist veterans. This coalition contains the second
-most donors, 897, or 12.1\% of all donors.
-
-\hypertarget{consumption-oriented-coalitions}{%
-\section{Consumption-oriented
-Coalitions}\label{consumption-oriented-coalitions}}
 
 In addition to these three access-oriented clusters of donors, five
 coalitions of donors exhibit behavior that one would expect under the
@@ -930,66 +853,23 @@ contributed. Similar to access-oriented clusters, consumption-oriented
 coalitions show significant relationships to policy issues across the
 ideological spectrum.
 
-\hypertarget{pro-gun}{%
-\subsection{Pro-gun}\label{pro-gun}}
-
-One consumption-oriented group, coalition4, shows a relationship with
-conservative gun-related policies where pro-gun public support Granger
-causes donations from this group. In other words, donations from this
-coalition of donor can be predicted by politicians publicly supporting
-conservative gun-related policies. Social media posts that are
-categorized as being supportive of conservative policies on gun-related
-issues range from talking about their relationship to pro-gun interest
-groups (appendix example 8) as well as specific policies (appendix
-example 9). This coalition is medium-sized with 605 donors or 8.2\% of
-the total donors.
-
-\hypertarget{infrastructure-and-roads}{%
-\subsection{Infrastructure and roads}\label{infrastructure-and-roads}}
-
-In addition to a conservative consumption-oriented group, coalition 11
-is a group of donors consumptive group of donors whose donations can be
-predicted by politicians publicly supporting liberal measure on public
-infrastructure and roads. Most of these posts are either general support
-of public infrastructure improvements (appendix example 10) or targeted
-Republican Governor Scott Walker and Republicans over roads containing a
-large number of pot holes (appendix example 11). There are 395 donors in
-the coalition or 5.4\% of donors.
-
-\hypertarget{veterans-issues-drug-abuse}{%
-\subsection{Veteran's Issues \& Drug
-Abuse}\label{veterans-issues-drug-abuse}}
-
-Two different bipartisan policy issues Granger cause donations from two
-different coalitions. Coalition 0 (377 donors, 5.1\% of donors) has a
-consumption-oriented relationship with politicians' support of veteran's
-issues. This topic, veterans issue, had a different coalition of donors
-that display an access-oriented relationship with the topic. Both a
-consumption-oriented and an access-oriented group displaying a
-relationship to the same topic is noteworthy. In addition, the donor
-coalition that showed the access-oriented relationship to veterans
-issues, coalition 1, also exhibited a consumption-oriented relationship
-to another bipartisan issue, drug abuse. While it is just a singular
-example, this datum suggests that political donors can have different
-motivations with different policies, for example, they can be
-access-oriented on veterans issues and consumption-oriented on drug
-abuse issues. Another coalition of 428 donors, representing 5.8\% of
-donors, also had a significant consumptive relationship with drug abuse.
-Most posts about drug abuse focused on the opioid and heroin epidemic
-across Wisconsin (appendix example 12). The implications of these
-statistical patterns are addressed further in the discussion section.
+These results were used to test \(H_{1}\) and \(H_{3}\). Donor
+coalitions and the topic of social media posts that were accepted by
+\(H_{1}\) and \(H_{3}\) are listed in Table 1.
 
 \hypertarget{donor-sizes}{%
-\section{Donor Sizes}\label{donor-sizes}}
+\subsection{Donor Sizes}\label{donor-sizes}}
 
-Neither the access-oriented donors nor the consumption-oriented donors
-contributed statistically significantly different amounts of money than
-donors that were donors that were not only access-oriented and not only
-consumption-oriented. The outputs of the bootstrap used to test
-\(H_{2}\), that access-oriented donors are on-average larger donors, and
-\(H_{4}\), that consumption-oriented donors are on-average smaller
-donors, are in Table 2. Both \(H_{2}\) and \(H_{4}\) are not accepted.
-This finding is discussed in the next section of the paper.
+Coalitions of donors that were accepted by only \(H_{1}\) or \(H_{3}\)
+were used to test \(H_{2}\), that access-oriented donors are on-average
+larger donors, and \(H_{4}\), that consumption-oriented donors are
+on-average smaller donors, with a difference-in-means permutation test
+since the statistical assumptions were not met for an OLS regression.
+Results to \(H_{2}\) and \(H_{4}\) are in Table 2. Neither the
+access-oriented donors nor the consumption-oriented donors contributed
+statistically significantly different amounts of money than donors that
+were donors that were not only access-oriented and not only
+consumption-oriented.
 
 \begin{longtable}[]{@{}llrlr@{}}
 \caption{Difference in Average Donor Size}\tabularnewline
@@ -1001,23 +881,52 @@ Hypothesis & Model & T & 95\% CI & p-value\tabularnewline
 Hypothesis & Model & T & 95\% CI & p-value\tabularnewline
 \midrule
 \endhead
-H2 & access & -48.62 & -115.4-21.47 & 0.144\tabularnewline
-H4 & consumption & 34.60 & -29.21-118.39 & 0.310\tabularnewline
+H2 & access & -48.62 & -115.4, 21.47 & 0.144\tabularnewline
+H4 & consumption & 34.60 & -29.21, 118.39 & 0.310\tabularnewline
 \bottomrule
 \end{longtable}
 
-\hypertarget{donor-spatial-positions}{%
-\section{Donor Spatial Positions}\label{donor-spatial-positions}}
+A histogram showing the total contributions of donors by motivational
+model are in Figure 3.
 
+\begin{figure}
+\centering
+\includegraphics{../tables_and_figures/fig_donor_sizes.jpg}
+\caption{Donor Motivation Models}
+\end{figure}
+
+\hypertarget{donor-spatial-positions}{%
+\subsection{Donor Spatial Positions}\label{donor-spatial-positions}}
+
+To study the polarization of consumption-motivated donors, we extract
+the x-coordinate position from the donor network (Figure 1). The
+positions of all the donors grouped by motivational model is shown in
+Figure 4.
+
+\begin{figure}
+\centering
+\includegraphics{../tables_and_figures/fig_node_position.jpg}
+\caption{Donor Motivation Models}
+\end{figure}
+
+We then rescale the coordinate position to be -1 to 1 with -1
+representing the left-most, or most Democratic, node and 1 representing
+the right-most, or most Republican, node. To test \(H_{5}\), that
+consumption-oriented donors are more polarized in the network graph, and
+\(H_{6}\), that access-oriented donors are less polarized in the network
+graph, a difference-in-means permutation test on the absolute value of
+the rescaled x-coordinate with the coalition category as a variable. A
+non-parametric permutation test was used since the statistical
+assumptions for an OLS regression were not met. This absolute value
+effectively is the level of polarization in the graph, with the nodes
+that are on the extremes of the graph being closer to 1 and the
+central-most nodes, representing bipartisan donors, being closer to 0.
+Results for \(H_{5}\) and \(H_{6}\) are in Table 3.
 Consumption-motivated donors are on average in more polarized positions
 (further to the left and right of the graph) than
 non-consumption-oriented donors, and access-oriented donors are on
 average in less polarized positions (closer to the middle of the graph)
-than non-access-oriented donors. Table 3 shows the output for \(H_{5}\),
-that consumption-oriented donors are more polarized in the network
-graph, and \(H_{6}\), that access-oriented donors are less polarized in
-the network graph. Both of these hypotheses are accepted. These results
-are discussed further in the next section.
+than non-access-oriented donors.
 
 \begin{longtable}[]{@{}llrll@{}}
 \caption{Difference in Average Donor Position
@@ -1030,13 +939,31 @@ Hypothesis & Model & T & 95\% CI & p-value\tabularnewline
 Hypothesis & Model & T & 95\% CI & p-value\tabularnewline
 \midrule
 \endhead
-H5 & consumption & 0.01 & 0-0.02 & 0.014\tabularnewline
-H6 & access & -0.05 & -0.06--0.03 & \textless.001\tabularnewline
+H5 & consumption & 0.01 & 0, 0.02 & 0.014\tabularnewline
+H6 & access & -0.05 & -0.06, -0.03 & \textless.001\tabularnewline
 \bottomrule
 \end{longtable}
 
+The polarized positions of all the donors are shown by group in Figure
+5.
+
+\begin{figure}
+\centering
+\includegraphics{../tables_and_figures/fig_node_position_absolute.jpg}
+\caption{Donor Motivation Models}
+\end{figure}
+
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
+
+We find evidence that supports the recent scholarship into the
+motivations of political donors that maintains a nuanced view into the
+psychology of political contributors: different donors hold different
+motivations. Different donor coalitions exhibited behavior that is
+inline with both the access-oriented and consumption model of political
+donations with policy issues across the ideological spectrum of liberal,
+conservative, and bipartisan. Example social media posts of the various
+topics can be found in the appendix.
 
 The analyses conducted in this paper show that multiple models of
 political donor motivations can exist within different coalitions of
@@ -1132,6 +1059,34 @@ roles to different groups of political donors. One group of donors can
 seek access in order to influence that policy, and another group can
 display consumptive behavior and reward politicians who already publicly
 support policy issues.
+
+Finally, there has been a debate among campaign-finance scholars whether
+donation motivations are driven by only ideological proximity or
+specific policy issues. We find that policy issues are a factor in
+contribution motivations, at least for the specific groups that exhibit
+access-oriented or consumptive behavior. The policy issues that are
+connected to donor clusters in this study range the political spectrum,
+including liberal policies (race issues, public infrastructure),
+conservative policies (pro-life, pro-gun), and bipartisan issues (drug
+abuse, veteran's issues). Further, some of the topics are perennial
+focuses of campaigns, such as pro-life politics. Other issues were
+particularly salient during this election cycle, such as veterans issues
+with the Tomah Veteran's Affair hospital scandal (Honl 2016) and King
+Veteran's Home scandal. These two scandals created an electoral
+environment in which veteran's issues were in the public focus, and
+results from this paper suggest that some political donors both sought
+to influence campaigns to address these issues as well as reward
+politicians for their focus on the topic.
+
+Six of the thirteen coalitions of donors did not display access-oriented
+or consumptive behavior with the policy topics tested. The motivations
+behind these clusters of donors remain unclear. It is possible that they
+are motivated by ideological proximity in a way that is not adequately
+tested using the methods in this paper. Future studies should test other
+potential reasons that people make political contributions, such as
+individuals contributing to ideologically proximate campaign,
+geographically local campaigns, competitive campaigns, or other
+potential motivations.
 
 \hypertarget{limitations}{%
 \section{Limitations}\label{limitations}}
@@ -1230,13 +1185,13 @@ example \# & topic & campaign & social media site & post\\
 \hline
 Method & koRpus & stringi\\
 \hline
-Word count & 7312 & 7250\\
+Word count & 6888 & 6865\\
 \hline
-Character count & 49416 & 49405\\
+Character count & 46691 & 46680\\
 \hline
-Sentence count & 351 & Not available\\
+Sentence count & 323 & Not available\\
 \hline
-Reading time & 36.6 minutes & 36.2 minutes\\
+Reading time & 34.4 minutes & 34.3 minutes\\
 \hline
 \end{tabular}
 
@@ -1608,6 +1563,10 @@ Administrative Records.'' \emph{Political Behavior} 39 (1): 3--29.
 Hogan, Robert E. 2020. ``Legislative Voting and Environmental
 Policymaking in the American States.'' \emph{Environmental Politics} 0
 (0): 1--20. \url{https://doi.org/10.1080/09644016.2020.1788897}.
+
+\leavevmode\hypertarget{ref-honl2016}{}%
+Honl, Ryan. 2016. ``Here Are the Facts About the Tomah Va Scandal.''
+\emph{The Cap Times}, May.
 
 \leavevmode\hypertarget{ref-yifanhu}{}%
 Hu, Yifan. 2005. ``Efficient, High-Quality Force-Directed Graph

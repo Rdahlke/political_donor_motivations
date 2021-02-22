@@ -441,13 +441,99 @@ lm(x_abs ~ category, data = gephi_nodes) %>%
   summary()
 ```
 
+# Graphs
+
 ```{r}
-ggplot(gephi_nodes, aes(x_abs, fill = as.factor(category), group = category)) +
-  geom_density(alpha = .5)
+donor_size_histogram <- gephi_nodes %>% 
+  filter(category == "consumption" | category == "access and consumption") %>% 
+  mutate(category = "Consumption-Oriented") %>% 
+  rbind(gephi_nodes %>% 
+    filter(category == "access" | category == "access and consumption") %>% 
+    mutate(category = "Access-Oriented")) %>% 
+  rbind(gephi_nodes %>% 
+    filter(str_detect("0_no_relationship", category)) %>% 
+    mutate(category = "No Relationship")) %>% 
+  left_join(donor_totals %>% select(-category), by = c("id" = "source")) %>% 
+  group_by(category) %>% 
+  mutate(mean = mean(total_contributed, na.rm = T),
+         low_quantile = quantile(total_contributed, .025, na.rm = T),
+         high_quantile = quantile(total_contributed, .975, na.rm = T)) %>% 
+  ggplot(aes(total_contributed, fill = category)) +
+  geom_histogram(bins = 25) +
+  geom_vline(aes(xintercept = mean), linetype = "dashed") +
+  # geom_rect(aes(xmin = low_quantile, xmax = high_quantile, ymin = -Inf, ymax = .1), alpha = .2, fill = "darkblue") +
+  scale_x_log10(labels = scales::dollar_format()) +
+  scale_fill_grey() +
+  facet_wrap(.~category, ncol = 1, scale = "free_y") +
+  labs(title = "Distribution of Total Contribution Amounts by Motivational Model",
+       subtitle = "dashed line = mean for each group",
+       x = "total dollars contributed",
+       y = "count",
+       fill = "donor motivational model",
+       caption = "x-axis is on a log scale") +
+  theme_bw()
+
+
 ```
 
 ```{r}
-ggplot(gephi_nodes, aes(x, fill = as.factor(category), group = category)) +
-  geom_density(alpha = .5)
+ggsave("../tables_and_figures/fig_donor_sizes.jpg", donor_size_histogram, height = 6.9, width = 7.3)
 ```
 
+```{r}
+node_position <- gephi_nodes %>% 
+  filter(category == "consumption" | category == "access and consumption") %>% 
+  mutate(category = "Consumption-Oriented") %>% 
+  rbind(gephi_nodes %>% 
+    filter(category == "access" | category == "access and consumption") %>% 
+    mutate(category = "Access-Oriented")) %>% 
+  rbind(gephi_nodes %>% 
+    filter(str_detect("0_no_relationship", category)) %>% 
+    mutate(category = "No Relationship")) %>% 
+  ggplot(aes(x, fill = category)) +
+    geom_histogram(bins = 25) +
+    scale_fill_grey() +
+    facet_wrap(.~category, ncol = 1, scale = "free_y") +
+    labs(title = "Distribution of Ideological Positions of Donors",
+         subtitle = "-1 = most liberal; 1 = most conservative",
+         x = "Ideological Position",
+         y = "count",
+         fill = "donor motivational model") +
+    theme_bw()
+```
+
+```{r}
+ggsave("../tables_and_figures/fig_node_position.jpg", node_position, height = 6.9, width = 7.3)
+```
+
+```{r}
+node_position_absolute <- gephi_nodes %>% 
+  filter(category == "consumption" | category == "access and consumption") %>% 
+  mutate(category = "Consumption-Oriented") %>% 
+  rbind(gephi_nodes %>% 
+    filter(category == "access" | category == "access and consumption") %>% 
+    mutate(category = "Access-Oriented")) %>% 
+  rbind(gephi_nodes %>% 
+    filter(str_detect("0_no_relationship", category)) %>% 
+    mutate(category = "No Relationship")) %>% 
+  group_by(category) %>% 
+  mutate(mean = mean(x_abs, na.rm = T),
+         low_quantile = quantile(x_abs, .025, na.rm = T),
+         high_quantile = quantile(x_abs, .975, na.rm = T)) %>% 
+  ggplot(aes(x_abs, fill = category)) +
+    geom_histogram(bins = 25) +
+    geom_vline(aes(xintercept = mean), linetype = "dashed") +
+    # geom_rect(aes(xmin = low_quantile, xmax = high_quantile, ymin = -Inf, ymax = .1), alpha = .2, fill = "darkblue") +
+    scale_fill_grey() +
+    facet_wrap(.~category, ncol = 1, scale = "free_y") +
+    labs(title = "Distribution of the Absolute Ideological Positions of Donors",
+         subtitle = "0 = least polarized; 1 = most polarized",
+         x = "Absolute Value of Ideological Position",
+         y = "count",
+         fill = "donor motivational model") +
+    theme_bw()
+```
+
+```{r}
+ggsave("../tables_and_figures/fig_node_position_absolute.jpg", node_position_absolute, height = 6.9, width = 7.3)
+```
