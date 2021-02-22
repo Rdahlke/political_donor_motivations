@@ -445,10 +445,10 @@ lm(x_abs ~ category, data = gephi_nodes) %>%
 
 ```{r}
 donor_size_histogram <- gephi_nodes %>% 
-  filter(category == "consumption" | category == "access and consumption") %>% 
+  filter(category == "consumption") %>% 
   mutate(category = "Consumption-Oriented") %>% 
   rbind(gephi_nodes %>% 
-    filter(category == "access" | category == "access and consumption") %>% 
+    filter(category == "access") %>% 
     mutate(category = "Access-Oriented")) %>% 
   rbind(gephi_nodes %>% 
     filter(str_detect("0_no_relationship", category)) %>% 
@@ -482,10 +482,10 @@ ggsave("../tables_and_figures/fig_donor_sizes.jpg", donor_size_histogram, height
 
 ```{r}
 node_position <- gephi_nodes %>% 
-  filter(category == "consumption" | category == "access and consumption") %>% 
+  filter(category == "consumption") %>% 
   mutate(category = "Consumption-Oriented") %>% 
   rbind(gephi_nodes %>% 
-    filter(category == "access" | category == "access and consumption") %>% 
+    filter(category == "access") %>% 
     mutate(category = "Access-Oriented")) %>% 
   rbind(gephi_nodes %>% 
     filter(str_detect("0_no_relationship", category)) %>% 
@@ -508,10 +508,10 @@ ggsave("../tables_and_figures/fig_node_position.jpg", node_position, height = 6.
 
 ```{r}
 node_position_absolute <- gephi_nodes %>% 
-  filter(category == "consumption" | category == "access and consumption") %>% 
+  filter(category == "consumption") %>% 
   mutate(category = "Consumption-Oriented") %>% 
   rbind(gephi_nodes %>% 
-    filter(category == "access" | category == "access and consumption") %>% 
+    filter(category == "access") %>% 
     mutate(category = "Access-Oriented")) %>% 
   rbind(gephi_nodes %>% 
     filter(str_detect("0_no_relationship", category)) %>% 
