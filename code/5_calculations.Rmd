@@ -537,3 +537,26 @@ node_position_absolute <- gephi_nodes %>%
 ```{r}
 ggsave("../tables_and_figures/fig_node_position_absolute.jpg", node_position_absolute, height = 6.9, width = 7.3)
 ```
+
+```{r}
+donations %>% 
+  filter(party != "Ind") %>% 
+  left_join(gephi_nodes %>% select(id, category), by = c("source" = "id")) %>% 
+  group_by(source, category, party) %>% 
+    summarize(total_donated = sum(contribution)) %>% 
+  pivot_wider(id_cols = c("source", "category"), names_from = "party", values_from = "total_donated") %>% 
+  mutate(Rep = replace_na(Rep, 0),
+         Dem = replace_na(Dem, 0),
+         per_rep = Rep / sum(Rep + Dem),
+         rep = if_else(per_rep > .5, 1, 0),
+         dem = if_else(per_rep < .5, 1, 0)) %>% 
+  group_by(category) %>% 
+  summarize(rep = sum(rep),
+            dem = sum(dem),
+            n = n()) %>% 
+  mutate(per_rep = rep / n,
+         per_dem = dem / n) %>% 
+  filter(category != "access and consumption") %>% 
+  write_csv("../tables_and_figures/party_category_breakdown.csv")
+```
+
