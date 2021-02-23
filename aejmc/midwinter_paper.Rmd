@@ -103,7 +103,7 @@ This research paper will also examine the polarization of political donor coalit
 
 **$H_{5}$: Consumption-motivated donors will be more polarized in the political donor network than non-consumption donors.**
 
-**$H_{6}$: Access-oriented donors will be less polarized in the political donor network than non-consumption donors.**
+**$H_{6}$: Access-oriented donors will be less polarized in the political donor network than non-access donors.**
 
 ```{r}
 # The rise in small-dollar donors has been driven primarily by technological advancements [@albert2020] including growing sophistication with big data analytics [@walker2018], particularly in modeling political behaviors of individuals [@nickerson2014]. Digital firms, including Facebook, Twitter, and Google embed themselves into political campaigns and serve as "quasi-digital consultants" to the campaigns that shape the "digital strategy, content, and execution" of campaigns [@kreiss2018].  Along with virtually every other component of political campaigns, fundraising, especially from small-dollar donors, is moving online [@chester2017]. While scholars remain skeptical of the power of data analytics on political campaigns, firms have successfully cultivated their images and businesses around the role of advanced data methods on political campaigns [@simon2019].
