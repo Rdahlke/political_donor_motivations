@@ -52,12 +52,12 @@
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 
-\title{Political Donor Motivations and Public Support of Policies: A Time
-Series Analysis  }
+\title{Political Donor Motivations and Public Support of Policies: A
+Time-Series Analysis \thanks{Code and data available at: github.com/rossdahlke}  }
 
 
 
-\author{\Large \vspace{0.05in} \newline\normalsize\emph{}  }
+\author{\Large Ross Dahlke\vspace{0.05in} \newline\normalsize\emph{}  }
 
 
 \date{}
@@ -120,10 +120,10 @@ Series Analysis  }
 \makeatother
 \hypersetup{breaklinks=true,
             bookmarks=true,
-            pdfauthor={ ()},
+            pdfauthor={Ross Dahlke ()},
              pdfkeywords = {},  
-            pdftitle={Political Donor Motivations and Public Support of Policies: A Time
-Series Analysis},
+            pdftitle={Political Donor Motivations and Public Support of Policies: A
+Time-Series Analysis},
             colorlinks=true,
             citecolor=blue,
             urlcolor=blue,
@@ -162,7 +162,7 @@ Series Analysis},
 
 {
    \vskip 13.5pt\relax \normalsize\fontsize{11}{12} 
-\textbf{\authorfont } \hskip 15pt \emph{\small }   
+\textbf{\authorfont Ross Dahlke} \hskip 15pt \emph{\small }   
 
 }
 
@@ -217,8 +217,6 @@ that both models are observed in real-life data.
  % removetitleabstract
 
 \noindent \doublespacing 
-
-\newpage
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -741,7 +739,12 @@ and candidates are in.
 \begin{figure}
 \centering
 \includegraphics{../tables_and_figures/fig_1_white.png}
-\caption{Political Donors in Wisconsin in 2016}
+\caption{Network of political donors in Wisconsin in 2016. Each node
+(dot) is a donor or a campaign. Each edge (line connecting two nodes)
+represent a contribution. Nodes are sized by their in-degree, the number
+of contributions the node received. Nodes are colored by their assigned
+statistical cluster. The large bunch on the left are Democrats. The
+group on the right are Republicans.}
 \end{figure}
 
 \hypertarget{methodology-results}{%
@@ -762,13 +765,13 @@ protests (Bastos, Mercea, and Charpentier 2015) and stock prices (Park,
 Leung, and Ma 2017). Granger causality detects whether movements in one
 time series precedes, lags, has a confounding variable, or is not
 related to another time series (Granger 1969). An abbreviated version of
-how this methodology works is that one takes two time series variables X
-and Y. First, a vector autoregression (VAR) model is built to predict
-the outcome variable Y with Y being the sole predictor of the model. In
-other words, one only uses Y to predict Y. Then, a second model is built
-where both variables X and Y are used to build the VAR to predict Y.
-Effectively, if the second model, with the inclusion of X, does a better
-job of predicting Y than the first model alone, as measured by an
+this methodology takes two time series variables X and Y. First, a
+vector autoregression (VAR) model is built to predict the outcome
+variable Y with Y being the sole predictor of the model. In other words,
+one only uses Y to predict Y. Then, a second model is built where both
+variables X and Y are used to build the VAR to predict Y. Effectively,
+if the second model, with the inclusion of X, does a better job of
+predicting Y than the first model alone, as measured by an
 \emph{F}-statistic, X is said to Granger cause Y. The two variables, X
 and Y, are also flipped and the same process is done. If the null is
 rejected in both instances, then there is likely a confounding variable
@@ -779,21 +782,22 @@ each model was calculated using a Bayesian Information Criteria
 (Ahelegbey, Billio, and Casarin 2016) implemented by the \texttt{tsDyn}
 package (Stigler 2010).
 
-We compare time series of donations from clusters of political donors
-and time series of the number of social media posts by each topic that
-were made by campaigns that each donor cluster contributed to. In other
-words, a time series of donations from a donor coalition was compared to
-the aggregate count of posts about a given topic made by candidates that
-the donor cluster contributed to. For example, donations from donor
-coalition 6 Granger caused politicians that received donations from the
-coalition to publicly support women's issue and pro-choice policies.
-Stated another way, donations from coalition 6 predict whether
-candidates will publicly support pro-women policies. The theoretical
-connection to political donor psychology is that this behavior is
-expected under the access-oriented model of political donor motivations.
-Coalitions and policy topics that are accepted by either \(H_{1}\) or
-\(H_{3}\) are in Table 1. The full results of the Granger causality
-tests are visualized in Figure 2.
+We compare two time series, one of political contributions from clusters
+of donors and one of social media posts. The time series is of the
+number of social media posts by each topic that were made by campaigns
+that each donor cluster contributed to. In other words, a time series of
+donations from a donor coalition was compared to the aggregate count of
+posts about a given topic made by candidates that the donor cluster
+contributed to. For example, donations from donor coalition 6 Granger
+caused politicians that received donations from the coalition to
+publicly support women's issue and pro-choice policies. Stated another
+way, donations from coalition 6 predict whether candidates will publicly
+support pro-women policies. The theoretical connection to political
+donor psychology is that this behavior is expected under the
+access-oriented model of political donor motivations. Coalitions and
+policy topics that are accepted by either \(H_{1}\) or \(H_{3}\) are in
+Table 1. The full results of the Granger causality tests are visualized
+in Figure 2.
 
 \begin{longtable}[]{@{}rllrrl@{}}
 \caption{H1 and H3 acceptances}\tabularnewline
@@ -832,15 +836,13 @@ p-value\tabularnewline
 \caption{Donor Motivation Models}
 \end{figure}
 
-For three donor coalitions show behavior consistent with the
-access-oriented model where we can predict politicians' public support
-of policy issues after they receive contributions from these donor
-groups. For these three groups and policy issues \(H_{1}\) is accepted.
-These access-oriented coalitions represent 1,572 individual donors or
-21.3\% of all donors in the dataset; 6,489 individual donations or
-22.4\% of donations; and \$654,577.60 or 16.5\% of dollars contributed.
-Each of these three coalitions appear to have unique policy and even
-ideological positions that they support.
+There are three donor coalitions that show behavior consistent with the
+access-oriented model. For these three groups and policy issues,
+\(H_{1}\) is accepted. These access-oriented coalitions represent 1,572
+individual donors or 21.3\% of all donors in the dataset; 6,489
+individual donations or 22.4\% of donations; and \$654,577.60 or 16.5\%
+of dollars contributed. Each of these three coalitions appear to have
+unique policy and even ideological positions that they support.
 
 In addition to these three access-oriented clusters of donors, five
 coalitions of donors exhibit behavior that one would expect under the
@@ -863,13 +865,13 @@ coalitions and the topic of social media posts that were accepted by
 Coalitions of donors that were accepted by only \(H_{1}\) or \(H_{3}\)
 were used to test \(H_{2}\), that access-oriented donors are on-average
 larger donors, and \(H_{4}\), that consumption-oriented donors are
-on-average smaller donors, with a difference-in-means permutation test
-since the statistical assumptions were not met for an OLS regression.
-Results to \(H_{2}\) and \(H_{4}\) are in Table 2. Neither the
-access-oriented donors nor the consumption-oriented donors contributed
-statistically significantly different amounts of money than donors that
-were donors that were not only access-oriented and not only
-consumption-oriented.
+on-average smaller donors, with a difference-in-means permutation test.
+A non-parametric bootstrap was used since the statistical assumptions
+were not met for an OLS regression. Results to \(H_{2}\) and \(H_{4}\)
+are in Table 2. Neither the access-oriented donors nor the
+consumption-oriented donors contributed statistically significantly
+different amounts of money than donors that were not only
+access-oriented and not only consumption-oriented.
 
 \begin{longtable}[]{@{}llrlr@{}}
 \caption{Difference in Average Donor Size}\tabularnewline
@@ -889,7 +891,12 @@ H4 & consumption & 34.60 & -29.21, 118.39 & 0.310\tabularnewline
 A histogram showing the total contributions of donors by motivational
 model are in Figure 3.
 
+\begin{figure}
+\centering
 \includegraphics{../tables_and_figures/fig_donor_sizes.jpg}
+\caption{Amount contributed by each donor in the dataset by motivational
+model.}
+\end{figure}
 
 \hypertarget{donor-spatial-positions}{%
 \subsection{Donor Spatial Positions}\label{donor-spatial-positions}}
@@ -899,7 +906,32 @@ the x-coordinate position from the donor network (Figure 1). The
 positions of all the donors grouped by motivational model is shown in
 Figure 4.
 
+\begin{figure}
+\centering
 \includegraphics{../tables_and_figures/fig_node_position.jpg}
+\caption{Spatial position along the ideological x-axis of each donor.}
+\end{figure}
+
+Table 3 shows the breakdown of donors who contribute a majority of their
+money to Democrats and Republicans by motivational model.
+
+\begin{longtable}[]{@{}lll@{}}
+\caption{Percent of donors categorized as each motivational model who
+contributed a majority of their money to Republicans and
+Democrats}\tabularnewline
+\toprule
+Motivational Model & \% Republican & \% Democrat\tabularnewline
+\midrule
+\endfirsthead
+\toprule
+Motivational Model & \% Republican & \% Democrat\tabularnewline
+\midrule
+\endhead
+Access-Oriented only & 63.9\% & 36.1\%\tabularnewline
+Consumption-Oriented only & 34.7\% & 65.3\%\tabularnewline
+No Relationship & 74.7\% & 25.3\%\tabularnewline
+\bottomrule
+\end{longtable}
 
 We then rescale the coordinate position to be -1 to 1 with -1
 representing the left-most, or most Democratic, node and 1 representing
@@ -913,7 +945,7 @@ assumptions for an OLS regression were not met. This absolute value
 effectively is the level of polarization in the graph, with the nodes
 that are on the extremes of the graph being closer to 1 and the
 central-most nodes, representing bipartisan donors, being closer to 0.
-Results for \(H_{5}\) and \(H_{6}\) are in Table 3.
+Results for \(H_{5}\) and \(H_{6}\) are in Table 4.
 Consumption-motivated donors are on average in more polarized positions
 (further to the left and right of the graph) than
 non-consumption-oriented donors, and access-oriented donors are on
@@ -939,7 +971,11 @@ H6 & access & -0.05 & -0.06, -0.03 & \textless.001\tabularnewline
 The polarized positions of all the donors are shown by group in Figure
 5.
 
+\begin{figure}
+\centering
 \includegraphics{../tables_and_figures/fig_node_position_absolute.jpg}
+\caption{Polarized spatial position of each donor.}
+\end{figure}
 
 \hypertarget{discussion}{%
 \section{Discussion}\label{discussion}}
@@ -953,22 +989,12 @@ donations with policy issues across the ideological spectrum of liberal,
 conservative, and bipartisan. Example social media posts of the various
 topics can be found in the appendix.
 
-The analyses conducted in this paper show that multiple models of
-political donor motivations can exist within different coalitions of
-political donors. Historical studies on the motivations of political
-donors have explicitly reasoned or implicitly assumed that donors hold
-monolithic motivations--all donors are motivated by the same
-psychological processes. The results of this paper contrast this
-historical principle and instead is in agreement with the recent line of
-donor studies which take a more nuanced approach to political donors.
-
 While much of the popular concern over money in politics is around
 access-oriented donors manipulating the political system, we find that
 there are more consumption-oriented donors than access-oriented donors.
-There are more consumption-motivated groups of donors than
-access-oriented donors, five groups compared to three, respectively.
-These consumptive groups also represent more people (2,702 versus
-1,572), donations (11,080 versus 6,489), and total amount contributed
+Out number the amount of access-oriented groups five to three, these
+consumptive groups also represent more people (2,702 versus 1,572),
+donations (11,080 versus 6,489), and total amount contributed
 (\$1,341,129.70 versus \$654,577.60). While any number of
 access-oriented donors may remain concerning to some in the public,
 these results suggest that more people use political donations as a
@@ -977,43 +1003,33 @@ political process.
 
 The folk theory of political donors is that of access-oriented donors
 with financial interests donating large sums of money to politicians,
-but the results of \(H_{2}\) reject this idea. Donors in access-oriented
-coalitions do not contribute statistically significantly more money on
-average than other donors. Just because a donor is not contributing a
-large sum of money themselves does not mean that they are not seeking to
-coax a politician into supporting specific policies. This effect can be
+but the results of \(H_{2}\) reject this idea in the context of the 2016
+elections in Wisconsin. Donors in access-oriented coalitions do not
+contribute statistically significantly more money on average than other
+donors. Just because a donor is not contributing a large sum of money
+themselves does not mean that they are not seeking to coax a politician
+into supporting specific policies. This attempt at influence can be
 amplified when coalitions of donors operate in conjunction with one
 another. For example, members of an interest group could each contribute
 a relatively small amount of money, but in aggregate, the unified
 donations could potentially gain that interest group access to a
-politician. If anything, donors that are labeled in this study as being
-in an access-oriented cluster potentially donate less money than other
-donors, but this non-statistically significant result with a relatively
-large confidence interval is not conclusive. A future study could
-replicate this analysis with multiple election cycles or study multiple
-states or federal elections to achieve higher statistical power. The
-converse is found for consumption-oriented donors.
+politician. A future study could replicate this analysis with multiple
+election cycles or study multiple states or federal elections to achieve
+higher statistical power.
 
 The folk theory of consumption-motivated donors is of small-dollar
-donors whose contributions can be harnessed online. Similar to
+donors whose contributions are harnessed online. Similar to
 access-oriented donors, \(H_{4}\) is rejected and consumption-motivated
 donors are not on average smaller donors than other contributors. Again,
-these results suggest a disaggregation between the notion that the
-amount of money one contributes is indicative of one's motivations. If
-someone is able to contribute a large sum of money and they care about a
-certain issue, it stands to reason that they may just support campaigns
-who already care about that issue. If contributions to campaigns are
-similar to financial investments, the equivalent is someone investing in
-a company because they believe the company will do well in the future,
-not because every time someone invests in a company they expect to be
-able to tangibly alter the direction of the company. While there are
-certainly activist investors, they are well outnumbered by the amount of
-people who are not activist investors, even among wealthy individuals.
-This paper challenges conventional beliefs on the size of
-access-oriented versus consumptive donors, but it does concur with the
-literature on the levels of polarization among donors.
+these results suggest a rethinking of the notion that the amount of
+money one contributes is indicative of one's motivations. If someone is
+able to contribute a large sum of money and they care about a certain
+issue, it stands to reason that they may just support politicians who
+already care about that issue. This paper challenges conventional
+beliefs on the size of access-oriented versus consumptive donors.
 
-Consumption-motivated donors are in more polarized spatial positions
+In contrast, this paper concurs with the literature that
+consumption-motivated donors are in more polarized spatial positions
 within the donor graph than non-consumptive donors, and access-oriented
 donors are more centrally located. The acceptances of \(H_{5}\) and
 \(H_{6}\) are in agreement with past literature. These results provide
@@ -1028,25 +1044,25 @@ office? Do access-oriented donors seek out campaigns that are more
 moderate? Or can access-oriented donors influence the ideological
 extremity of candidates?
 
-In addition to the finding that both the access-oriented and consumption
-motivational models can exist in different donor coalitions, one of the
-thirteen donor clusters, coalition 1, revealed a duality where they were
-access-oriented in relation to one policy issue and consumption-oriented
-to another. While it is possible that this finding is spurious, there is
-additional face validity in this finding because the two issues the
-donor coalition had a relationship with were both bipartisan
-issues--veterans issues and drug abuse. Not many studies have come to
-the conclusion that donors can operate with both motivational models.
-While this study finds this behavior to be relatively rare, in only one
-donor cluster, it does open up the possibilities to an even more complex
-view as to why donors make a political contribution. Further, public
-support of one policy issue, veteran's issues, is both Granger caused by
-donations from a coalition and Granger causes another coalition to make
-a contribution. This result suggests that issues can play different
-roles to different groups of political donors. One group of donors can
-seek access in order to influence that policy, and another group can
-display consumptive behavior and reward politicians who already publicly
-support policy issues.
+In addition to the finding that both models can exist in different donor
+coalitions, it is also possible that the same cluster can operate under
+both models. One of the thirteen donor clusters, coalition 1, revealed a
+duality where they were access-oriented in relation to one policy issue
+and consumption-oriented to another. While it is possible that this
+finding is spurious due to expected statistical chance given, there is
+additional face validity because the two issues the donor coalition had
+a relationship with were both bipartisan issues--veterans issues and
+drug abuse. Few studies have come to the conclusion that donors can
+operate with both motivational models. While this study finds this
+behavior to be relatively rare, in only one donor cluster, it evokes the
+possibilities to an even more complex view as to why donors make a
+political contribution. Further, public support of one policy issue,
+veteran's issues, is both Granger caused by donations from a coalition
+and Granger causes another coalition to make a contribution. This result
+suggests that issues can play different roles to different groups of
+political donors. One group of donors can seek access to influence that
+policy, and another group can display consumptive behavior and reward
+politicians who already publicly support policy issues.
 
 Finally, there has been a debate among campaign-finance scholars whether
 donation motivations are driven by only ideological proximity or
@@ -1067,14 +1083,14 @@ to influence campaigns to address these issues as well as reward
 politicians for their focus on the topic.
 
 Six of the thirteen coalitions of donors did not display access-oriented
-or consumptive behavior with the policy topics tested. The motivations
-behind these clusters of donors remain unclear. It is possible that they
-are motivated by ideological proximity in a way that is not adequately
-tested using the methods in this paper. Future studies should test other
-potential reasons that people make political contributions, such as
-individuals contributing to ideologically proximate campaign,
-geographically local campaigns, competitive campaigns, or other
-potential motivations.
+or consumption-oriented behavior with the policy topics tested. The
+motivations behind these clusters of donors remain unclear. It is
+possible that they are motivated by ideological proximity in a way that
+is not adequately tested using the methods in this paper. Future studies
+should test other potential reasons that people make political
+contributions, such as individuals contributing to ideologically
+proximate campaigns, geographically local campaigns, competitive
+campaigns, or other potential motivations.
 
 \hypertarget{limitations}{%
 \section{Limitations}\label{limitations}}
@@ -1129,11 +1145,13 @@ other donors. However, access-oriented donors are found to be more
 spatially central within donor networks, and consumptive donors are more
 polarized.
 
+\newpage
+
 \hypertarget{appendix}{%
 \section{Appendix}\label{appendix}}
 
 \begin{longtable}[t]{>{\raggedright\arraybackslash}p{.65in}|>{\raggedright\arraybackslash}p{.6in}|>{\raggedright\arraybackslash}p{.7in}|>{\raggedright\arraybackslash}p{.6in}|>{\raggedright\arraybackslash}p{3in}}
-\caption{\label{tab:unnamed-chunk-8}Social Media Examples}\\
+\caption{\label{tab:unnamed-chunk-9}Social Media Examples}\\
 \hline
 example \# & topic & campaign & social media site & post\\
 \hline
@@ -1173,13 +1191,13 @@ example \# & topic & campaign & social media site & post\\
 \hline
 Method & koRpus & stringi\\
 \hline
-Word count & 6888 & 6865\\
+Word count & 6759 & 6736\\
 \hline
-Character count & 46691 & 46680\\
+Character count & 45762 & 45792\\
 \hline
-Sentence count & 323 & Not available\\
+Sentence count & 324 & Not available\\
 \hline
-Reading time & 34.4 minutes & 34.3 minutes\\
+Reading time & 33.8 minutes & 33.7 minutes\\
 \hline
 \end{tabular}
 

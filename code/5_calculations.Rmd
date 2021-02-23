@@ -496,7 +496,7 @@ node_position <- gephi_nodes %>%
     facet_wrap(.~category, ncol = 1, scale = "free_y") +
     labs(title = "Distribution of Ideological Positions of Donors",
          subtitle = "-1 = most liberal; 1 = most conservative",
-         x = "Ideological Position",
+         x = "Ideological Position from Liberal to Conservative",
          y = "count",
          fill = "donor motivational model") +
     theme_bw()
@@ -552,9 +552,9 @@ donations %>%
          dem = if_else(per_rep < .5, 1, 0)) %>% 
   group_by(category) %>% 
   summarize(rep = sum(rep),
-            dem = sum(dem),
-            n = n()) %>% 
-  mutate(per_rep = rep / n,
+            dem = sum(dem)) %>% 
+  mutate(n = rep + dem,
+         per_rep = rep / n,
          per_dem = dem / n) %>% 
   filter(category != "access and consumption") %>% 
   write_csv("../tables_and_figures/party_category_breakdown.csv")
