@@ -560,3 +560,54 @@ donations %>%
   write_csv("../tables_and_figures/party_category_breakdown.csv")
 ```
 
+# Example time series
+
+Access-oriented
+
+```{r}
+access_sim <- tibble(day = seq(1, 30, 1),
+       donations = rnorm(30, 1, .1),
+       posts = rnorm(30, 1, .1)) %>% 
+  mutate(donations = if_else(row_number() %% 7 == 0, donations + 1, donations),
+         posts = if_else(lag(donations, n = 2)  > 1.4, posts + 1, posts),
+         posts = replace_na(posts, 1)) %>% 
+  pivot_longer(cols = c("donations", "posts")) %>% 
+  ggplot(aes(day, value)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(1, 30, 2)) +
+  facet_wrap(.~name, ncol = 1) + 
+  labs(title = "Simulated Access-Oriented Model",
+       subtitle = "A spike in donations predicts a spike in posts 2 days later",
+       x = "Day",
+       y = "Value") +
+  theme_bw() + 
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+
+ggsave("../tables_and_figures/simulated_access_time_series.jpg", access_sim, height = 4, width = 7.3)
+```
+
+Consumption Oriented 
+
+```{r}
+consumption_sim <- tibble(day = seq(1, 30, 1),
+       donations = rnorm(30, 1, .1),
+       posts = rnorm(30, 1, .1)) %>% 
+  mutate(posts = if_else(row_number() %% 7 == 0, posts + 1, posts),
+         donations = if_else(lag(posts, n = 1)  > 1.4, donations + 1, donations),
+         donations = replace_na(donations, 1)) %>% 
+  pivot_longer(cols = c("donations", "posts")) %>% 
+  ggplot(aes(day, value)) +
+  geom_line() +
+  scale_x_continuous(breaks = seq(1, 30, 2)) +
+  facet_wrap(.~name, ncol = 1) + 
+  labs(title = "Simulated Consumption-Oriented Model",
+       subtitle = "A spike in posts predicts a spike in donations 1 day later",
+       x = "Day",
+       y = "Value") +
+  theme_bw() + 
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+
+ggsave("../tables_and_figures/simulated_consumption_time_series.jpg", consumption_sim, height = 4, width = 7.3)
+```
