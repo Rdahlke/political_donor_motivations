@@ -565,7 +565,7 @@ donations %>%
 Access-oriented
 
 ```{r}
-tibble(day = seq(1, 30, 1),
+access_sim <- tibble(day = seq(1, 30, 1),
        donations = rnorm(30, 1, .1),
        posts = rnorm(30, 1, .1)) %>% 
   mutate(donations = if_else(row_number() %% 7 == 0, donations + 1, donations),
@@ -583,12 +583,14 @@ tibble(day = seq(1, 30, 1),
   theme_bw() + 
   theme(axis.text.y=element_blank(),
         axis.ticks.y=element_blank())
+
+ggsave("../tables_and_figures/simulated_access_time_series.jpg", access_sim, height = 4, width = 7.3)
 ```
 
 Consumption Oriented 
 
 ```{r}
-tibble(day = seq(1, 30, 1),
+consumption_sim <- tibble(day = seq(1, 30, 1),
        donations = rnorm(30, 1, .1),
        posts = rnorm(30, 1, .1)) %>% 
   mutate(posts = if_else(row_number() %% 7 == 0, posts + 1, posts),
@@ -606,4 +608,6 @@ tibble(day = seq(1, 30, 1),
   theme_bw() + 
   theme(axis.text.y=element_blank(),
         axis.ticks.y=element_blank())
+
+ggsave("../tables_and_figures/simulated_consumption_time_series.jpg", consumption_sim, height = 4, width = 7.3)
 ```
