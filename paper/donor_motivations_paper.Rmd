@@ -8,11 +8,7 @@ output:
 #  word_document:
 #always_allow_html: yes
 title: "Political Donor Motivations and Public Support of Policies: A Time-Series Analysis"
-thanks: "Code and data available at: github.com/rossdahlke"
-author:
-- name: Ross Dahlke
-affiliation: Stanford University
-abstract: "The two predominant theories of political donor motivations are the access-oriented model and the consumption model. This paper combines political donation records and social media posts from politicians to examine behaviors predicted by these two theories using a time-series methodology. The access-oriented model of donors predicts that donations from specific groups of donors will precede public support of certain policies. The consumption model predicts that donations from various groups of donors will lag in response to public support of certain policy issues. This paper statistically derives coalitions of similar donors and tests the competing models of political donor motivations. While post research has treated each model monolithically, presuming that all donors operate under one model or the other, I find evidence of both motivational models in different donors."
+abstract: "The two predominant theories of political donor motivations are the access-oriented model and the consumption model. This paper combines political donation records and social media posts from politicians to examine behaviors predicted by these two theories using a time-series methodology. The access-oriented model of donors predicts that donations from specific groups of donors will precede public support of certain policies. The consumption model predicts that donations from various groups of donors will lag in response to public support of certain policy issues. This paper statistically derives coalitions of similar donors and tests the competing models of political donor motivations. While post research has treated each model monolithically, presuming that all donors operate under one model or the other, I find evidence of both motivational models in different donors. (Word Count: ...)"
 keywords: ""
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 geometry: margin=1in
@@ -29,6 +25,8 @@ header-includes: \usepackage{graphicx}
 knitr::opts_chunk$set(include = F, echo = F, warning = F, message = F)
 library(tidyverse)
 ```
+
+\newpage
 
 # Introduction
 
@@ -223,7 +221,6 @@ Finally, this study was not meant to find nor did it find exhaustive evidence as
 # Conclusion
 
 Campaign finance scholars are divided on the motivations of political donors. Do political donors seek to buy access, to participate more in politics, or some combination of both? This study finds that different coalitions of donors, and in one instance, a singular coalition, exhibit behavior that is consistent with different motivational models. Overall, there are more consumptive donors compared to access-oriented donors. In addition, there is no statistical difference in the average contributor size of access-oriented and consumption-oriented donors compared to other donors. However, access-oriented donors are found to be more spatially central within donor networks, and consumptive donors are more polarized. While past research has largely treated political donors as a monolith, with the possibility of operating under a single, I find that different donors can have different motivational models.
-
 
 \newpage
 
