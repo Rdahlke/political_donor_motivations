@@ -15,8 +15,8 @@ geometry: margin=1in
 fontfamily: mathpazo
 fontsize: 12pt
 spacing: double
+csl: ../american-journal-of-political-science.csl
 bibliography: ./bibliography.bib
-biblio-style: apsr
 header-includes: \usepackage{graphicx} 
 ---
 

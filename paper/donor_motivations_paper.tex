@@ -3,10 +3,15 @@
 \newcommand*{\authorfont}{\fontfamily{phv}\selectfont}
 \usepackage[]{mathpazo}
 
-
   \usepackage[T1]{fontenc}
   \usepackage[utf8]{inputenc}
 
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+    {\setlength{\parindent}{0pt}%
+    \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+    {\par}
 
 
 
@@ -53,8 +58,7 @@
 
 
 \title{Political Donor Motivations and Public Support of Policies: A
-Time-Series Analysis \thanks{Code and data available at:
-github.com/rossdahlke}  }
+Time-Series Analysis  }
  
 
 
@@ -65,14 +69,11 @@ github.com/rossdahlke}  }
 \date{}
 
 \usepackage{titlesec}
-
 \titleformat*{\section}{\normalsize\bfseries}
 \titleformat*{\subsection}{\normalsize\itshape}
 \titleformat*{\subsubsection}{\normalsize\itshape}
 \titleformat*{\paragraph}{\normalsize\itshape}
 \titleformat*{\subparagraph}{\normalsize\itshape}
-
-
 
 
 
@@ -149,7 +150,6 @@ Policies: A Time-Series Analysis},
 
 
 \begin{document}
-	
 % \pagenumbering{arabic}% resets `page` counter to 1 
 %    
 
@@ -197,6 +197,7 @@ coalitions of similar donors and tests the competing models of political
 donor motivations. While post research has treated each model
 monolithically, presuming that all donors operate under one model or the
 other, I find evidence of both motivational models in different donors.
+(Word Count: 5272)
 
 
     \hbox{\vrule height .2pt width 39.14pc}
@@ -242,24 +243,16 @@ political donors. Instead, the two predominant models are both
 investigated under assumptions that allow them to co-exist by looking
 for both motivational models among different groups of donors.
 Researchers readily operate under the idea that individuals can have
-differing reasons for why and how they vote (e.g. (Arceneaux and
-Nickerson 2009; Feldman 1982; Lau 1985; Rahn, Krosnick, and Breuning
-1994; Yiannakis 1981)). Then why has so much of past research on donors
-either pitted the two models of donor motivations against one another
-<<<<<<< HEAD
-(e.g.~(Welch 1980)) or operated exclusively in the domain of either the
-access-oriented model (e.g.~Baker (2020); Fellowes and Wolf (2004);
-Fouirnaies and Hall (2015); Francia et al. (2003); Herndon (1982); Kalla
-and Broockman (2016); Langbein (1986); Powell and Grimmer (2016)) or
-consumption model (e.g.~Ansolabehere, Figueiredo, and Snyder (2003))?
-=======
-(e.g. (Welch 1980)) or operated exclusively in the domain of either the
-access-oriented model (e.g. (Baker 2020; Fellowes and Wolf 2004;
-Fouirnaies and Hall 2015; Francia, Green, Herrnson, Powell, and Clyde
-Wilcox 2003; Herndon 1982; Kalla and Broockman 2016; Langbein 1986;
-Powell and Grimmer 2016)) or consumption model (e.g. Ansolabehere,
-Figueiredo, and Snyder (2003){]})?
->>>>>>> 17a1f043c36766253d4319fb027ef1c337158f0f
+differing reasons for why and how they vote (e.g. Arceneaux and
+Nickerson (2009); Feldman (1982); Lau (1985); Rahn, Krosnick, and
+Breuning (1994); Yiannakis (1981)). Then why has so much of past
+research on donors either pitted the two models of donor motivations
+against one another (e.g. Welch (1980)) or operated exclusively in the
+domain of either the access-oriented model (e.g. Baker (2020); Fellowes
+and Wolf (2004); Fouirnaies and Hall (2015); Francia, Green, Herrnson,
+Powell, and Clyde Wilcox (2003); Herndon (1982); Kalla and Broockman
+(2016); Langbein (1986); Powell and Grimmer (2016)) or consumption model
+(e.g. Ansolabehere, Figueiredo, and Snyder (2003))?
 
 This paper makes three main contributions to the literature on political
 donors. First, it tests the two models of political donors in a way that
@@ -289,75 +282,59 @@ perspectives are everywhere and ever-changing. Providing political
 contributions can allow political contributors to gain direct access by
 cutting through all the noise of competing information that the
 legislator might be encountering (Milbrath 1958). Interest groups and
-individuals have the goal of gaining access to politicians through their
-financial contributions in order to influence government policies (Baker
-2020; Fouirnaies and Hall 2015; Herndon 1982; Powell and Grimmer 2016).
-These attempts to buy access are successful in gaining meetings with
+individuals hope to gain access to politicians through their financial
+contributions in order to influence government policies (Baker 2020;
+Fouirnaies and Hall 2015; Herndon 1982; Powell and Grimmer 2016). These
+attempts to buy access are successful in gaining meetings with
 congressional offices for both special interest groups (Langbein 1986)
 and individual donors (Kalla and Broockman 2016).
-
-Measuring the direct access that political financiers gain from
-political contributions can be a challenging endeavor due to all of the
-noise in the political ecology. Instead, researchers have treated the
-``access'' component of contributor influence as an implicit assumption
-and instead look for evidence of ``influence'' of political contributors
-on politicians. Many political science papers do not use the explicit
-term ``access-oriented donor'' and instead refer to their work as
-examining the potential ``influence'' of political donors on
-politicians. This line of influence research inherently implies a gain
-of access by political contributors. In order to influence public
-policy, one must first have access to politicians in order to
-communicate with them because the contribution itself does not carry any
-intrinsic message (Langbein 1986). In other words, studies that examine
-the influence of political donors make the assumption of the
-access-oriented model because influence requires access.
 
 Contributions from financial (Hayes 2017), telecommunications (Edwards
 and Figueiredo 2016), education (Constant 2006), environmental (Hogan
 2020) and healthcare interest groups (McKay 2018) have all influenced
-legislation. Any connection that does exist between campaign
+legislation. Whatever connection does exist between campaign
 contributors and public policy has a stronger impact if the
 contributions are from organized business interests within a member's
-district (Hall and Wayman 1990), similar to how members of congress
-prioritize public opinion of their district over national public opinion
-(Butler and Nickerson 2011). Further, there is a stronger influence as a
-result of contributions from individuals with business interests,
-opposed to PACs, which many other studies focus on (Fellowes and Wolf
-2004). While it is ``nearly universal'' (Bonica 2016) that corporate
-executives of Fortune 500 firms make political contributions (Fremeth,
-Richter, and Schaufele 2013), there is heterogeneity in their political
-leanings (Bonica 2016).
+district (Hall and Wayman 1990). While it is ``nearly universal''
+(Bonica 2016) that corporate executives of Fortune 500 firms make
+political contributions (Fremeth, Richter, and Schaufele 2013), there is
+heterogeneity in their political leanings (Bonica 2016).
 
 Potentially, the influence exerted by contributors when making a
-political contribution is so indirect that it does not always
-materialize in statistical patterns of legislative voting or public
-policy. Yet there is evidence of the influence towards the benefit of
-the financial contributor. Interest groups seek both direct and indirect
-access to the policy making process (Fouirnaies and Hall 2018). Firms
-that contribute to winning political campaigns have abnormal financial
-returns after the election (Akey 2015; Cooper, Gulen, and Ovtchinnikov
-2010). In addition to immediately-felt financial returns, donors may
-systematically contribute money to legislative agenda setters, such as
-chairs of financial committees, in an effort to set future legislative
-agendas (Fouirnaies and Hall 2018). Even business executives understand
-that political contributions are purchases of ``good will'' which are
-positive in return but are not frequent nor universal (Gordon, Hafer,
-and Landa 2007). For example, political contributions reduce the
-punishment for business executives who are sanctioned for committing
-fraud (Fulmer, Knill, and Yu 2017); increase the number of
-``sweetheart'' contracts awarded from the government (Ferris, Houston,
-and Javakhadze 2019); and increase the premium and survivability of
-Initial Public Offerings (IPOs) (Gounopoulos, Mazouz, and Wood 2021).
+contribution is so indirect that it does not always materialize in
+statistical patterns of legislative voting or public policy. Yet there
+is evidence of the influence towards the benefit of the financial
+contributor. Firms that contribute to winning political campaigns have
+abnormal financial returns after the election (Akey 2015; Cooper, Gulen,
+and Ovtchinnikov 2010x). In addition to immediately-felt financial
+returns, donors may systematically contribute money to legislative
+agenda setters, such as chairs of financial committees, in an effort to
+set future legislative agendas (Fouirnaies and Hall 2018). Even business
+executives understand that political contributions are purchases of
+``good will'' which are positive in return but are not frequent nor
+universal (Gordon, Hafer, and Landa 2007). For example, political
+contributions reduce the punishment for business executives who are
+sanctioned for committing fraud (Fulmer, Knill, and Yu 2017); increase
+the number of ``sweetheart'' contracts awarded from the government
+(Ferris, Houston, and Javakhadze 2019); and increase the premium and
+survivability of Initial Public Offerings (IPOs) (Gounopoulos, Mazouz,
+and Wood 2021).
 
-Instead of focusing on direct access or financial outcomes, this
-research article examines politicians' public support of policy issues.
-Under the access-oriented model of political donor motivations, one
-would expect to find politicians to be more supportive of certain policy
-issues after receiving campaign contributions from access-oriented
-donors. This hypothesis will be tested using a Granger causality model
-(Granger 1969), which is an econometric methodology to test whether
-changes in one time series predict future changes in another time
-series.
+As this review makes clear, most of the existing work examines the
+effect of donations on legislative behaviors. However, this paper
+instead examines a similar but distinct topic: whether political
+donations impact position-taking by politicians. The literature in this
+area is far more sparse, and so my hypotheses are guided by the body of
+research on legislative behavior.
+
+Specifically, I focus on how the timing of political donations reveals
+information about donor motivations. Under the access-oriented model of
+political donor motivations, one would expect to find politicians to be
+more supportive of certain policy issues after receiving campaign
+contributions from access-oriented donors. This hypothesis will be
+tested using a Granger causality model (Granger 1969), which is an
+econometric methodology to test whether changes in one time series
+predict future changes in another time series.
 
 \textbf{\(H_{1a}\): Donations from coalitions of political donors will
 precede, or Granger cause, increased public support of certain political
@@ -385,7 +362,7 @@ and Snyder 2003). Under this model, individual donors are intrinsically
 motivated by ideology (Ansolabehere, Figueiredo, and Snyder 2003).
 People do not receive a direct benefit by making a political donation,
 but they do experience the indirect benefits of participating in a
-political campaign that matches their ideology. Said another way, for
+political campaign that matches their ideology. Put otherwise, for
 consumption-motivated donors, making a contribution is just an extension
 of voting on a participatory spectrum. Under this approach, donations
 are a way for individuals to participate and be responsive to their
@@ -453,32 +430,32 @@ whose donation habits can be disrupted by little changes to their worlds
 such as moving to an area that is more or less Democratic or Republican
 (Kettler and Lyons 2019).
 
-The Democratic Party as a whole has recently grown its proportion of
-funding from small-dollar donors (Albert and Raja 2020). Moreover,
-incumbents have been able to sustain their small-dollar fundraising
-programs (Heberlig and Larson 2020)--suggesting that this trend is not
-going to go away. This growth in small-dollar donors has created a
-donorate that is more demographically representative of America but is
-more ideologically extreme (Albert and Raja 2020) and one that gives
-indiscriminately to incumbents, challengers, and open seat candidates
-(Culberson, McDonald, and Robbins 2019). It is conceivable that
-campaigns that rely on small donors will adopt rhetoric and tout their
-``outsider'' status in an effort to activate these small, more
+The Democratic Party as a whole has expanded the proportion of its
+funding that comes from small-dollar donors (Albert and Raja 2020).
+Moreover, incumbents have been able to sustain their small-dollar
+fundraising programs (Heberlig and Larson 2020)--suggesting that this
+trend is not going to go away. This growth in small-dollar donors has
+created a donorate that is more demographically representative of
+America but is more ideologically extreme (Albert and Raja 2020) and one
+that gives indiscriminately to incumbents, challengers, and open seat
+candidates (Culberson, McDonald, and Robbins 2019). It is conceivable
+that campaigns that rely on small donors will adopt rhetoric and tout
+their ``outsider'' status in an effort to activate these small, more
 ideologically extreme donors (Arbour 2020). For instance, extremist
 politicians can leverage polarizing events to raise more money for their
 campaigns (Oklobdzija 2017). As a result, some have predicted that
 small-dollar donors will polarize the nation's politics even further
-(Oklobdzija 2017). Although legislators who receive a large number of
-small-dollar donors are not more polarized in their voting in the next
-legislative session, legislators taking up a more polarized agenda does
-increase the number of small-dollar donors they attract in the
-subsequent election (Keena and Knight-Finley 2019). This provides
-further evidence for the consumption model of political donor
-motivations. Other studies have agreed that mass donors are the cause of
-partisan polarization (Raja and Wiltse 2012), but this conclusion is not
-definitive (Harden and Kirkland 2016). Therefore, even though
-small-dollar donors themselves may not be polarizing, they may provide
-incentive for politicians to take more polarized positions.
+(Oklobdzija 2017). Although legislators who receive a large proportion
+of their funds from small-dollar donors are not more polarized in their
+legislative votes when they take up a more polarized agenda, they
+attract an increased number of small-dollar donors in the subsequent
+election (Keena and Knight-Finley 2019). This provides further evidence
+for the consumption model of political donor motivations. Other studies
+have agreed that mass donors are the cause of partisan polarization
+(Raja and Wiltse 2012), but this conclusion is not definitive (Harden
+and Kirkland 2016). Therefore, even though small-dollar donors
+themselves may not be polarizing, they may provide incentive for
+politicians to take more polarized positions.
 
 This research paper will also examine the polarization of political
 donor coalitions and whether consumption-oriented donors and
@@ -991,7 +968,7 @@ different donors can have different motivational models.
 \hypertarget{appendix}{%
 \section{Appendix}\label{appendix}}
 
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{.65in}|>{\raggedright\arraybackslash}p{.6in}|>{\raggedright\arraybackslash}p{.7in}|>{\raggedright\arraybackslash}p{.6in}|>{\raggedright\arraybackslash}p{3in}}
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{.65in}|>{\raggedright\arraybackslash}p{1in}|>{\raggedright\arraybackslash}p{1in}|>{\raggedright\arraybackslash}p{.7in}|>{\raggedright\arraybackslash}p{2.5in}}
 \caption{\label{tab:unnamed-chunk-6}Social Media Examples}\\
 \hline
 example \# & topic & campaign & social media site & post\\
@@ -1032,21 +1009,17 @@ example \# & topic & campaign & social media site & post\\
 \hline
 Method & koRpus & stringi\\
 \hline
-<<<<<<< HEAD
-Word count & 5423 & 5402\\
+Word count & 5272 & 5248\\
 \hline
-Character count & 36383 & 36413\\
-=======
-Word count & 5445 & 5423\\
+Character count & 35323 & 35337\\
 \hline
-Character count & 36476 & 36498\\
->>>>>>> 17a1f043c36766253d4319fb027ef1c337158f0f
+Sentence count & 276 & Not available\\
 \hline
-Sentence count & 280 & Not available\\
-\hline
-Reading time & 27.1 minutes & 27 minutes\\
+Reading time & 26.4 minutes & 26.2 minutes\\
 \hline
 \end{tabular}
+
+\newpage
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
@@ -1058,57 +1031,59 @@ Reading time & 27.1 minutes & 27 minutes\\
 Ahelegbey, Daniel Felix, Monica Billio, and Roberto Casarin. 2016.
 {``Bayesian graphical models for STructural vector autoregressive
 processes.''} \emph{Journal of Applied Econometrics} 31(2): 357--386.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.1002/jae.2443}.
+doi: \href{https://doi.org/10.1002/jae.2443}{10.1002/jae.2443}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-akey2015}{}}%
 Akey, Pat. 2015. {``{Valuing Changes in Political Networks: Evidence
 from Campaign Contributions to Close Congressional Elections}.''}
-\emph{The Review of Financial Studies} 28(11): 3188--3223.
-\url{https://doi.org/10.1093/rfs/hhv035}.
+\emph{The Review of Financial Studies} 28(11): 3188--3223. doi:
+\href{https://doi.org/10.1093/rfs/hhv035}{10.1093/rfs/hhv035}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-albert2020}{}}%
 Albert, Zachary, and Raymond La Raja. 2020. {``Small dollar donors and
-the evolving democratic party.''} \emph{APSA Preprints}.
+the evolving democratic party.''} \emph{APSA Preprints}. doi:
+\href{https://doi.org/10.33774/apsa-2020-9rnkd}{10.33774/apsa-2020-9rnkd}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ansolabehere2003}{}}%
 Ansolabehere, Stephen, John M. de Figueiredo, and James M. Snyder. 2003.
 {``Why is there so little money in u.s. politics.''} \emph{Journal of
-Economic Perspectives} 17(1): 105--130.
+Economic Perspectives} 17(1): 105--130. www.jstor.org/stable/3216842.
 
 \leavevmode\vadjust pre{\hypertarget{ref-arbour2020}{}}%
 Arbour, Brian. 2020. {``Tiny donations, big impact: How small-dollar
 donors are eroding the power of party insiders.''} \emph{Society} 57:
-496--506.
+496--506. doi:
+\href{https://doi.org/0.1007/s12115-020-00520-4}{0.1007/s12115-020-00520-4}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-arceneaux2009}{}}%
 Arceneaux, Kevin, and David W. Nickerson. 2009. {``Who is mobilized to
 vote? A re-analysis of 11 field experiments.''} \emph{American Journal
-of Political Science} 53(1): 1--16.
-\url{http://www.jstor.org/stable/25193864}.
+of Political Science} 53(1): 1--16. doi:
+\href{https://doi.org/10.2307/25193864}{10.2307/25193864}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-baker2020a}{}}%
 Baker, Anne. 2020. {``Policies, profits, networks, or duty?: Donors'
 motivations for contributing to parties and interest groups.''}
-\emph{The Social Science Journal} 0(0): 1--16.
-\url{https://doi.org/10.1080/03623319.2020.1727224}.
+\emph{The Social Science Journal} 0(0): 1--16. doi:
+\href{https://doi.org/10.1080/03623319.2020.1727224}{10.1080/03623319.2020.1727224}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-barber2016a}{}}%
 Barber, Michael. 2016. {``Donation motivations: Testing theories of
 access and ideology.''} \emph{Political Research Quarterly} 69(1):
-148--159.
+148--159. 10.1177/1065912915624164.
 
 \leavevmode\vadjust pre{\hypertarget{ref-barber2017}{}}%
 Barber, Michael J., Brandice Canes-Wrone, and Sharece Thrower. 2017.
 {``Ideologically sophisticated donors: Which candidates do individual
 contributors finance?''} \emph{American Journal of Political Science}
-61(2): 271--288.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12275}.
+61(2): 271--288. doi:
+\href{https://doi.org/10.1111/ajps.12275}{10.1111/ajps.12275}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-barber2019}{}}%
 Barber, Michael, Brandice Canes-Wrone, and Sharece Thrower. 2019.
 {``Campaign contributions and donors' policy agreement with presidential
 candidates.''} \emph{Presidential Studies Quarterly} 49(4): 770--797.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/psq.12609}.
+doi: \href{https://doi.org/10.1111/psq.12609}{10.1111/psq.12609}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-rfacebook}{}}%
 Barbera, Pablo, Andrew Geisler, and Wouter van Atteveldt. 2017.
@@ -1123,59 +1098,60 @@ An open source software for exploring and manipulating networks.''}
 \leavevmode\vadjust pre{\hypertarget{ref-bastos2015}{}}%
 Bastos, Marco T., Dan Mercea, and Arthur Charpentier. 2015. {``{Tents,
 Tweets, and Events: The Interplay Between Ongoing Protests and Social
-Media}.''} \emph{Journal of Communication} 65(2): 320--350.
-\url{https://doi.org/10.1111/jcom.12145}.
+Media}.''} \emph{Journal of Communication} 65(2): 320--350. doi:
+\href{https://doi.org/10.1111/jcom.12145}{10.1111/jcom.12145}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-bonica2016}{}}%
 Bonica, Adam. 2016. {``Avenues of influence: On the political
 expenditures of corporations and their directors and executives.''}
-\emph{Business and Politics} 18(4): 367--394.
-
-\leavevmode\vadjust pre{\hypertarget{ref-butler2011}{}}%
-Butler, Daniel M., and David W. Nickerson. 2011. {``Can learning
-constituency opinion affect how legislators vote? Results from a field
-experiment.''} \emph{Quarterly Journal of Political Science} 6: 55--83.
+\emph{Business and Politics} 18(4): 367--394. doi:
+\href{https://doi.org/10.1515/bap-2016-0004}{10.1515/bap-2016-0004}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-caneswrone2019}{}}%
 Canes-Wrone, Brandice, and Nathan Gibson. 2019. {``Developments in
 congressional responsiveness to donor opinion.''} In \emph{Can america
 govern itself?}, SSRC anxieties of democracy, eds. Frances E. Lee and
-NolanEditors McCarty. Cambridge University Press, p. 69--92.
+NolanEditors McCarty. Cambridge University Press, p. 69--92. doi:
+\href{https://doi.org/10.1017/9781108667357.004}{10.1017/9781108667357.004}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-choma2020}{}}%
 Choma, Russ, and Kara Voght. 2020. {``Small-dollar donors powered the
 2020 race. Then the pandemic happened.''} \emph{Mother Jones}.
+\url{https://www.motherjones.com/politics/2020/04/small-dollar-donors-powered-the-2020-race-then-the-pandemic-happened/}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-constant2006}{}}%
 Constant, Louay M. 2006. {``When money matters: Campaign contributions,
 roll call votes, and school choice in florida.''} \emph{State Politics
-\& Policy Quarterly} 6(2): 195--219.
+\& Policy Quarterly} 6(2): 195--219. doi:
+\href{https://doi.org/10.1177/153244000600600204}{10.1177/153244000600600204}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cooper2010}{}}%
-Cooper, Michael J., Huseyin Gulen, and Alexei V. Ovtchinnikov. 2010.
+Cooper, Michael J., Huseyin Gulen, and Alexei V. Ovtchinnikov. 2010x.
 {``Corporate political contributions and stock returns.''} \emph{The
-Journal of Finance} 65(2): 687--724.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1540-6261.2009.01548.x}.
+Journal of Finance} 65(2): 687--724. doi:
+\href{https://doi.org/10.1111/j.1540-6261.2009.01548.x}{10.1111/j.1540-6261.2009.01548.x}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-cranshaw2010}{}}%
-Cranshaw, Justin et al. 2010. {``Bridging the gap between physical
-location and online social networks.''} \emph{Proceedings of the 12th
-ACM international conference on Ubiquitous computing}.
+Cranshaw, Justin, Eran Toch, J. Hong, A. Kittur, and N. Sadeh. 2010.
+{``Bridging the gap between physical location and online social
+networks.''} \emph{Proceedings of the 12th ACM international conference
+on Ubiquitous computing}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-culberson2019}{}}%
 Culberson, Tyler, Michael P. McDonald, and Suzanne M. Robbins. 2019.
 {``Small donors in congressional elections.''} \emph{American Politics
-Research} 47(5): 970--999.
-\url{https://doi.org/10.1177/1532673X18763918}.
+Research} 47(5): 970--999. doi:
+\href{https://doi.org/10.1177/1532673X18763918}{10.1177/1532673X18763918}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-bert}{}}%
-Devlin, Jacob et al. 2019. {``BERT: Pre-training of deep bidirectional
-transformers for language understanding.''}
-\url{https://arxiv.org/abs/1810.04805}.
+Devlin, Jacob, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019.
+{``BERT: Pre-training of deep bidirectional transformers for language
+understanding.''} \url{https://arxiv.org/abs/1810.04805}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-edwards2016}{}}%
 Edwards, Geoff, and Rui de Figueiredo. 2016. {``The market for
-legislative influence over regulatory policy.''} 34.
+legislative influence over regulatory policy.''} 34. doi:
+\href{https://doi.org/10.1108/S0742-332220160000034007}{10.1108/S0742-332220160000034007}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ellison2006}{}}%
 Ellison, Nicole, and Charles Steinfield. 2006. {``Spatially bounded
@@ -1190,45 +1166,49 @@ candidate ideology.''} \emph{Public Choice} 138(1/2): 221--238.
 \leavevmode\vadjust pre{\hypertarget{ref-feldman1982}{}}%
 Feldman, Stanley. 1982. {``Economic self-interest and political
 behavior.''} \emph{American Journal of Political Science} 26(3):
-446--466. \url{http://www.jstor.org/stable/2110937}.
+446--466. doi: \href{https://doi.org/10.2307/2110937}{10.2307/2110937}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fellowes2004}{}}%
 Fellowes, Matthew C., and Patrick J. Wolf. 2004. {``Funding mechanisms
 and policy instruments: How business campaign contributions influence
 congressional votes.''} \emph{Political Research Quarterly} 57(2):
 315--324.
+https://sites.temple.edu/nickerson/files/2017/07/Butler\_Nickerson.QJPS11.pdf.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ferris2019}{}}%
 Ferris, Stephen P., Reza Houston, and David Javakhadze. 2019. {``It is a
 sweetheart of a deal: Political connections and corporate-federal
-contracting.''} \emph{Financial Review} 54(1): 57--84.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/fire.12181}.
+contracting.''} \emph{Financial Review} 54(1): 57--84. doi:
+\href{https://doi.org/10.1111/fire.12181}{10.1111/fire.12181}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fouirnaies2015}{}}%
 Fouirnaies, Alexander, and Andrew Hall. 2015. {``The exposure theory of
 access: Why some firms seek more access to incumbents than others.''}
-\emph{SSRN Electronic Journal}.
+\emph{SSRN Electronic Journal}. doi:
+\href{https://doi.org/10.2139/ssrn.2652361}{10.2139/ssrn.2652361}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fouirnaies2018}{}}%
 Fouirnaies, Alexander, and Andrew B. Hall. 2018. {``How do interest
 groups seek access to committees?''} \emph{American Journal of Political
-Science} 62(1): 132--147.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12323}.
+Science} 62(1): 132--147. doi:
+\href{https://doi.org/10.1111/ajps.12323}{10.1111/ajps.12323}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-francia2003}{}}%
-Francia, Peter L. et al. 2003. \emph{The financiers of congressional
+Francia, Peter L., John C. Green, Paul S. Herrnson, Lynda W. Powell, and
+and Clyde Wilcox. 2003. \emph{The financiers of congressional
 elections}. New York, NY: Columbia University Press.
 
 \leavevmode\vadjust pre{\hypertarget{ref-freelon2018}{}}%
 Freelon, D, C McIlwain, and M Clark. 2018. {``Quantifying the power and
 consequences of social media protest.''} \emph{New Media \& Society}
-20(3): 990--1011.
+20(3): 990--1011. doi:
+\href{https://doi.org/10.1177/1461444816676646}{10.1177/1461444816676646}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fremeth2013}{}}%
 Fremeth, Adam, Brian Kelleher Richter, and Brandon Schaufele. 2013.
 {``Campaign contributions over CEOs' careers.''} \emph{American Economic
-Journal: Applied Economics} 5(3): 170--88.
-\url{https://www.aeaweb.org/articles?id=10.1257/app.5.3.170}.
+Journal: Applied Economics} 5(3): 170--88. doi:
+\href{https://doi.org/10.1257/app.5.3.170}{10.1257/app.5.3.170}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-fulmer2017}{}}%
 Fulmer, Sarah, A. Knill, and X. Yu. 2017. {``Negation of sanctions: The
@@ -1238,6 +1218,7 @@ eJournal}.
 \leavevmode\vadjust pre{\hypertarget{ref-goldmacher2020}{}}%
 Goldmacher, Shane. 2020. {``The 2020 campaign is the most expensive ever
 (by a lot).''} \emph{The New York Times Magazine}.
+https://www.nytimes.com/2020/10/28/us/politics/2020-race-money.html.
 
 \leavevmode\vadjust pre{\hypertarget{ref-gordon2007}{}}%
 Gordon, Sanford C., Catherine Hafer, and Dimitri Landa. 2007.
@@ -1247,8 +1228,8 @@ Gordon, Sanford C., Catherine Hafer, and Dimitri Landa. 2007.
 \leavevmode\vadjust pre{\hypertarget{ref-gounopoulos2021}{}}%
 Gounopoulos, Dimitrios, Khelifa Mazouz, and Geoffrey Wood. 2021. {``The
 consequences of political donations for IPO premium and performance.''}
-\emph{Journal of Corporate Finance} 67: 101888.
-\url{https://www.sciencedirect.com/science/article/pii/S0929119921000080}.
+\emph{Journal of Corporate Finance} 67: 101888. doi:
+\href{https://doi.org/10.1016/j.jcorpfin.2021.101888}{10.1016/j.jcorpfin.2021.101888}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-granger}{}}%
 Granger, C. W. J. 1969. {``Investigating causal relations by econometric
@@ -1258,50 +1239,54 @@ models and cross-spectral methods.''} \emph{Econometrica} 37(3):
 \leavevmode\vadjust pre{\hypertarget{ref-hall1990}{}}%
 Hall, Richard L., and Frank W. Wayman. 1990. {``Buying time: Moneyed
 interests and the mobilization of bias in congressional committees.''}
-\emph{American Political Science Review} 84(3): 797--820.
+\emph{American Political Science Review} 84(3): 797--820. doi:
+\href{https://doi.org/10.2307/1962767}{10.2307/1962767}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-openrefine}{}}%
 Ham, Kelli. 2013. {``OpenRefine (version 2.5). Http://openrefine.org.
 Free, open-source tool for cleaning and transforming data.''}
-\emph{Journal of the Medical Library} 101(3): 233--234.
+\emph{Journal of the Medical Library} 101(3): 233--234. doi:
+\href{https://doi.org/10.3163/1536-5050.101.3.020}{10.3163/1536-5050.101.3.020}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-hanna2013}{}}%
-Hanna, Alex et al. 2013. {``Partisan alignments and political
-polarization online: A computational approach to understanding the
-french and US presidential elections.''} In \emph{Proceedings of the 2nd
-workshop on politics, elections and data}, PLEAD '13, New York, NY, USA:
-Association for Computing Machinery, p. 15--22.
-\url{https://doi.org/10.1145/2508436.2508438}.
+Hanna, Alex, Chris Wells, Peter Maurer, Lew Friedland, Dhavan Shah, and
+Jörg Matthes. 2013. {``Partisan alignments and political polarization
+online: A computational approach to understanding the french and US
+presidential elections.''} In \emph{Proceedings of the 2nd workshop on
+politics, elections and data}, PLEAD '13, New York, NY, USA: Association
+for Computing Machinery, p. 15--22. doi:
+\href{https://doi.org/10.1145/2508436.2508438}{10.1145/2508436.2508438}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-harden2016}{}}%
 Harden, Jeffrey J., and Justin H. Kirkland. 2016. {``Do campaign donors
 influence polarization? Evidence from public financing in the american
-states.''} \emph{Legislative Studies Quarterly} 41(1): 119--152.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/lsq.12108}.
+states.''} \emph{Legislative Studies Quarterly} 41(1): 119--152. doi:
+\href{https://doi.org/10.1111/lsq.12108}{10.1111/lsq.12108}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-hayes2017}{}}%
 Hayes, Thomas J. 2017. {``Bankruptcy reform and congressional action:
 The role of organized interests in shaping policy.''} \emph{Social
-Science Research} 64: 67--78.
-\url{http://www.sciencedirect.com/science/article/pii/S0049089X16300400}.
+Science Research} 64: 67--78. doi:
+\href{https://doi.org/10.1016/j.ssresearch.2016.09.026}{10.1016/j.ssresearch.2016.09.026}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-bonferroni}{}}%
 Haynes, Winston. 2013. {``Bonferroni correction.''} In
-\emph{Encyclopedia of systems biology}, eds. Werner Dubitzky et al. New
-York, NY: Springer New York, p. 154--154.
-\url{https://doi.org/10.1007/978-1-4419-9863-7_1213}.
+\emph{Encyclopedia of systems biology}, eds. Werner Dubitzky, Olaf
+Wolkenhauer, Kwang-Hyun Cho, and Hiroki Yokota. New York, NY: Springer
+New York, p. 154--154. doi:
+\href{https://doi.org/10.1007/978-1-4419-9863-7_1213}{10.1007/978-1-4419-9863-7\_1213}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-heberlig2020}{}}%
 Heberlig, Eric, and Bruce Larson. 2020. {``Gender and small
 contributions: Fundraising by the democratic freshman class of 2018 in
-the 2020 election.''} \emph{Society} 57: 534--539.
-\url{https://doi.org/10.1007/s12115-020-00528-w}.
+the 2020 election.''} \emph{Society} 57: 534--539. doi:
+\href{https://doi.org/10.1007/s12115-020-00528-w}{10.1007/s12115-020-00528-w}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-heerwig2016}{}}%
 Heerwig, Jennifer A. 2016. {``Donations and dependence: Individual
 contributor strategies in house elections.''} \emph{Social Science
-Research} 60: 181--198.
-\url{http://www.sciencedirect.com/science/article/pii/S0049089X16303143}.
+Research} 60: 181--198. doi:
+\href{https://doi.org/10.1016/j.ssresearch.2016.06.001}{10.1016/j.ssresearch.2016.06.001}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-heerwig2018}{}}%
 Heerwig, Jennifer A. 2018. {``Money in the middle: Contribution
@@ -1312,87 +1297,90 @@ strategies among affluent donors to federal elections, 1980--20081.''}
 Herndon, James F. 1982. {``Access, record, and competition as influences
 on interest group contributions to congressional campaigns.''} \emph{The
 Journal of Politics} 44(4): 996--1019.
+https://www.jstor.org/stable/2130670.
 
 \leavevmode\vadjust pre{\hypertarget{ref-hill2017}{}}%
 Hill, Seth J., and Gregory A. Huber. 2017. {``Representativeness and
 motivations of the contemporary donorate: Results from merged survey and
-administrative records.''} \emph{Political Behavior} 39(1): 3--29.
-\url{https://doi.org/10.1007/s11109-016-9343-y}.
+administrative records.''} \emph{Political Behavior} 39(1): 3--29. doi:
+\href{https://doi.org/10.1007/s11109-016-9343-y}{10.1007/s11109-016-9343-y}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-hogan2020}{}}%
 Hogan, Robert E. 2020. {``Legislative voting and environmental
 policymaking in the american states.''} \emph{Environmental Politics}
-0(0): 1--20. \url{https://doi.org/10.1080/09644016.2020.1788897}.
+0(0): 1--20. doi:
+\href{https://doi.org/10.1080/09644016.2020.1788897}{10.1080/09644016.2020.1788897}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-honl2016}{}}%
 Honl, Ryan. 2016. {``Here are the facts about the tomah VA scandal.''}
 \emph{The Cap Times}.
+\url{https://madison.com/ct/opinion/column/ryan-honl-here-are-the-facts-about-the-tomah-va-scandal/article_03393fbd-c5d4-5856-b162-8a0fb532c562.html}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-yifanhu}{}}%
 Hu, Yifan. 2005. {``Efficient, high-quality force-directed graph
-drawing.''} \emph{Mathematica Journal} 10(1): 37--71.
+drawing.''} \emph{Mathematica Journal} 10(1): 37--71. doi:
+\href{https://doi.org/10.1.1.353.4547}{10.1.1.353.4547}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-jiang2020}{}}%
-Jiang, Shan et al. 2020. {``Modeling and measuring expressed (dis)belief
-in (mis)information.''} \emph{Proceedings of the International AAAI
-Conference on Web and Social Media} 14(1): 315--326.
+Jiang, Shan, Miriam Metzger, Andrew Flanagin, and Christo Wilson. 2020.
+{``Modeling and measuring expressed (dis)belief in (mis)information.''}
+\emph{Proceedings of the International AAAI Conference on Web and Social
+Media} 14(1): 315--326.
 \url{https://ojs.aaai.org/index.php/ICWSM/article/view/7302}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-kalla2016}{}}%
 Kalla, Joshua L., and David E. Broockman. 2016. {``Campaign
 contributions facilitate access to congressional officials: A randomized
 field experiment.''} \emph{American Journal of Political Science} 60(3):
-545--558.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12180}.
+545--558. doi:
+\href{https://doi.org/10.1111/ajps.12180}{10.1111/ajps.12180}.
 
-<<<<<<< HEAD
-\leavevmode\hypertarget{ref-kang2018}{}%
-Kang, Taewoo et al. 2018. ``Issue consistency? Comparing television
-advertising, tweets, and e-mail in the 2014 senate campaigns.''
-\emph{Political Communication} 35(1): 32--49.
+\leavevmode\vadjust pre{\hypertarget{ref-kang2018}{}}%
+Kang, Taewoo, Erika Franklin Fowler, Michael M Franz, and Travis N
+Ridout. 2018. {``Issue consistency? Comparing television advertising,
+tweets, and e-mail in the 2014 senate campaigns.''} \emph{Political
+Communication} 35(1): 32--49.
 
-\leavevmode\hypertarget{ref-karpf2010}{}%
-Karpf, David. 2010. ``Online political mobilization from the advocacy
-group's perspective: Looking beyond clicktivism.'' \emph{Policy \&
-=======
 \leavevmode\vadjust pre{\hypertarget{ref-karpf2010}{}}%
 Karpf, David. 2010. {``Online political mobilization from the advocacy
 group's perspective: Looking beyond clicktivism.''} \emph{Policy \&
->>>>>>> 17a1f043c36766253d4319fb027ef1c337158f0f
-Internet} 2(4): 7--41.
-\url{https://onlinelibrary.wiley.com/doi/abs/10.2202/1944-2866.1098}.
+Internet} 2(4): 7--41. doi:
+\href{https://doi.org/10.2202/1944-2866.1098}{10.2202/1944-2866.1098}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-rtweet}{}}%
 Kearney, Michael W. 2019. {``Rtweet: Collecting and analyzing twitter
-data.''} \emph{Journal of Open Source Software} 4(42): 1829.
-\url{https://joss.theoj.org/papers/10.21105/joss.01829}.
+data.''} \emph{Journal of Open Source Software} 4(42): 1829. doi:
+\href{https://doi.org/10.21105/joss.01829}{10.21105/joss.01829}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-keena2019}{}}%
 Keena, Alex, and Misty Knight-Finley. 2019. {``Are small donors
 polarizing? A longitudinal study of the senate.''} \emph{Election Law
-Journal: Rules, Politics, and Policy} 18(2): 132--144.
-\url{https://doi.org/10.1089/elj.2018.0498}.
+Journal: Rules, Politics, and Policy} 18(2): 132--144. doi:
+\href{https://doi.org/10.1089/elj.2018.0498}{10.1089/elj.2018.0498}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-kettler2019}{}}%
 Kettler, Jaclyn J., and Jeffrey Lyons. 2019. {``The fickle financiers of
 elections? The impact of moving on individual contributions.''}
 \emph{Journal of Elections, Public Opinion and Parties} 0(0): 1--19.
-\url{https://doi.org/10.1080/17457289.2019.1652620}.
+doi:
+\href{https://doi.org/10.1080/17457289.2019.1652620}{10.1080/17457289.2019.1652620}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-kushin2009}{}}%
 Kushin, Matthew J., and Kelin Kitchener. 2009. {``Getting political on
 social network sites: Exploring online political discourse on
-facebook.''} \emph{First Monday} 14(11).
-\url{https://journals.uic.edu/ojs/index.php/fm/article/view/2645}.
+facebook.''} \emph{First Monday} 14(11). doi:
+\href{https://doi.org/10.5210/fm.v14i11.2645}{10.5210/fm.v14i11.2645}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-langbein1986}{}}%
 Langbein, Laura I. 1986. {``Money and access: Some empirical
 evidence.''} \emph{The Journal of Politics} 40(4): 1052--1062.
+https://www.jstor.org/stable/2131013.
 
 \leavevmode\vadjust pre{\hypertarget{ref-lau1985}{}}%
 Lau, Richard R. 1985. {``Two explanations for negativity effects in
 political behavior.''} \emph{American Journal of Political Science}
-29(1): 119--138. \url{http://www.jstor.org/stable/2111215}.
+29(1): 119--138. doi:
+\href{https://doi.org/10.2307/2111215}{10.2307/2111215}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-lawrence2010}{}}%
 Lawrence, Eric, John Sides, and Henry Farrell. 2010. {``Self-segregation
@@ -1401,51 +1389,61 @@ american politics.''} \emph{Perspectives on Politics} 8(1): 141--157.
 \url{http://www.jstor.org/stable/25698520}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-lee2014}{}}%
-Lee, Jae Kook et al. 2014. {``{Social Media, Network Heterogeneity, and
-Opinion Polarization}.''} \emph{Journal of Communication} 64(4):
-702--722. \url{https://doi.org/10.1111/jcom.12077}.
+Lee, Jae Kook, Jihyang Choi, Cheonsoo Kim, and Yonghwan Kim. 2014.
+{``{Social Media, Network Heterogeneity, and Opinion Polarization}.''}
+\emph{Journal of Communication} 64(4): 702--722. doi:
+\href{https://doi.org/10.1111/jcom.12077}{10.1111/jcom.12077}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-liben2005}{}}%
-Liben-Nowell, David et al. 2005. {``Geographic routing in social
-networks.''} \emph{Proceedings of the National Academy of Sciences}
-102(33): 11623--11628. \url{https://www.pnas.org/content/102/33/11623}.
+Liben-Nowell, David, Jasmine Novak, Ravi Kumar, Prabhakar Raghavan, and
+Andrew Tomkins. 2005. {``Geographic routing in social networks.''}
+\emph{Proceedings of the National Academy of Sciences} 102(33):
+11623--11628. doi:
+\href{https://doi.org/10.1073/pnas.0503018102}{10.1073/pnas.0503018102}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-lukito2020}{}}%
 Lukito, Josephine. 2020. {``Coordinating a multi-platform disinformation
 campaign: Internet research agency activity on three u.s. Social media
 platforms, 2015 to 2017.''} \emph{Political Communication} 37(2):
-238--255. \url{https://doi.org/10.1080/10584609.2019.1661889}.
+238--255. doi:
+\href{https://doi.org/10.1080/10584609.2019.1661889}{10.1080/10584609.2019.1661889}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-mckay2018}{}}%
 McKay, Amy. 2018. {``What do campaign contributions buy? Lobbyists'
-strategic giving.''} \emph{Interest Groups \& Advocacy} 7(1).
+strategic giving.''} \emph{Interest Groups \& Advocacy} 7(1). doi:
+\href{https://doi.org/10.1057/s41309-018-0031-7}{10.1057/s41309-018-0031-7}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-milbrath1958}{}}%
 Milbrath, Lester W. 1958. {``The political party activity of washington
 lobbyists.''} \emph{The Journal of Politics} 20(2): 339--352.
+https://www.jstor.org/stable/2127043.
 
 \leavevmode\vadjust pre{\hypertarget{ref-mozafari2020}{}}%
 Mozafari, Marzieh, Reza Farahbakhsh, and Noël Crespi. 2020. {``A
 BERT-based transfer learning approach for hate speech detection in
 online social media.''} \emph{Complex Networks and Their Applications
 VIII. COMPLEX NETWORKS 2019. Studies in Computational Intelligence} 881.
-\url{https://doi.org/10.1007/978-3-030-36687-2_77}.
+doi:
+\href{https://doi.org/10.1007/978-3-030-36687-2_77}{10.1007/978-3-030-36687-2\_77}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-oklobdzija2017}{}}%
 Oklobdzija, Stan. 2017. {``Closing down and cashing in: Extremism and
 political fundraising.''} \emph{State Politics \& Policy Quarterly}
-17(2): 201--224.
+17(2): 201--224. doi:
+\href{https://doi.org/10.1177/1532440016679373}{10.1177/1532440016679373}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-park2017}{}}%
 Park, J., H. Leung, and K. Ma. 2017. {``Information fusion of stock
 prices and sentiment in social media using granger causality.''} In
 \emph{2017 IEEE international conference on multisensor fusion and
-integration for intelligent systems (MFI)}, p. 614--619.
+integration for intelligent systems (MFI)}, p. 614--619. doi:
+\href{https://doi.org/10.1109/MFI.2017.8170390}{10.1109/MFI.2017.8170390}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-powell2016}{}}%
 Powell, Eleanor Neff, and Justin Grimmer. 2016. {``Money in exile:
 Campaign contributions and committee access.''} \emph{The Journal of
-Politics} 78(4): 974--988. \url{https://doi.org/10.1086/686615}.
+Politics} 78(4): 974--988. doi:
+\href{https://doi.org/10.1086/686615}{10.1086/686615}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-r}{}}%
 R Core Team. 2013. \emph{R: A language and environment for statistical
@@ -1456,14 +1454,15 @@ computing}. Vienna, Austria: R Foundation for Statistical Computing.
 Rahn, Wendy M., Jon A. Krosnick, and Marijke Breuning. 1994.
 {``Rationalization and derivation processes in survey studies of
 political candidate evaluation.''} \emph{American Journal of Political
-Science} 38(3): 582--600. \url{http://www.jstor.org/stable/2111598}.
+Science} 38(3): 582--600. doi:
+\href{https://doi.org/10.2307/2111598}{10.2307/2111598}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-laraja2012}{}}%
 Raja, Raymond J. La, and David L. Wiltse. 2012. {``Don't blame donors
 for ideological polarization of political parties: Ideological change
 and stability among political dontributors, 1972-2008.''} \emph{American
-Politics Research} 40(3): 501--530.
-\url{https://www.aeaweb.org/articles?id=10.1257/jep.28.2.51}.
+Politics Research} 40(3): 501--530. doi:
+\href{https://doi.org/10.1177/1532673X11429845}{10.1177/1532673X11429845}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-ramiandrisoa2020}{}}%
 Ramiandrisoa, Faneva, and Josiane Mothe. 2020. {``Aggression
@@ -1474,9 +1473,9 @@ Association (ELRA), p. 26--31.
 \url{https://www.aclweb.org/anthology/2020.trac-1.5}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-scellato2010}{}}%
-Scellato, Salvatore et al. 2010. {``Distance matters: Geo-social metrics
-for online social networks.''} In WOSN'10, USA: USENIX Association, p.
-8.
+Scellato, Salvatore, Cecilia Mascolo, Mirco Musolesi, and Vito Latora.
+2010. {``Distance matters: Geo-social metrics for online social
+networks.''} In WOSN'10, USA: USENIX Association, p. 8.
 
 \leavevmode\vadjust pre{\hypertarget{ref-tsdyn}{}}%
 Stigler, Matthieu. 2010. \emph{Threshold cointegration: Overview and
@@ -1484,34 +1483,40 @@ implementation in r}.
 \url{https://cran.r-project.org/web/packages/tsDyn/vignettes/ThCointOverview.pdf}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-terechshenko2020}{}}%
-Terechshenko, Zhanna et al. 2020. {``A comparison of methods in
-political science test classification: Transfer learning models for
-politics.''} \emph{resentedattheXXXVIIPolMethAnnualMeeting}.
+Terechshenko, Zhanna, Fridolin Linder, Vishakh Padmakumar, Fengyuan Liu,
+Jonathan Nagler, Joshua A. Tucker, and Richard Bonneau. 2020. {``A
+comparison of methods in political science test classification: Transfer
+learning models for politics.''} Presented at the XXXVII PolMeth Annual
+Meeting.
 
 \leavevmode\vadjust pre{\hypertarget{ref-tian2020}{}}%
-Tian, Lin et al. 2020. {``Early detection of rumours on twitter via
-stance transfer learning.''} In \emph{Advances in information
-retrieval}, eds. Joemon M. Jose et al. Cham: Springer International
-Publishing, p. 575--588.
+Tian, Lin, Xiuzhen Zhang, Yan Wang, and Huan Liu. 2020. {``Early
+detection of rumours on twitter via stance transfer learning.''} In
+\emph{Advances in information retrieval}, eds. Joemon M. Jose, Emine
+Yilmaz, João Magalhães, Pablo Castells, Nicola Ferro, Mário J. Silva,
+and Flávio Martins. Cham: Springer International Publishing, p.
+575--588.
 
 \leavevmode\vadjust pre{\hypertarget{ref-vlad2019}{}}%
-Vlad, George-Alexandru et al. 2019. {``Sentence-level propaganda
-detection in news articles with transfer learning and
-{BERT}-{B}i{LSTM}-capsule model.''} In \emph{Proceedings of the second
-workshop on natural language processing for internet freedom:
-Censorship, disinformation, and propaganda}, Hong Kong, China:
-Association for Computational Linguistics, p. 148--154.
-\url{https://www.aclweb.org/anthology/D19-5022}.
+Vlad, George-Alexandru, Mircea-Adrian Tanase, Cristian Onose, and
+Dumitru-Clementin Cercel. 2019. {``Sentence-level propaganda detection
+in news articles with transfer learning and {BERT}-{B}i{LSTM}-capsule
+model.''} In \emph{Proceedings of the second workshop on natural
+language processing for internet freedom: Censorship, disinformation,
+and propaganda}, Hong Kong, China: Association for Computational
+Linguistics, p. 148--154. doi:
+\href{https://doi.org/10.18653/v1/D19-5022}{10.18653/v1/D19-5022}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-welch1980}{}}%
 Welch, W. P. 1980. {``The allocation of political monies: Economic
-interest groups.''} \emph{Public Choice} 35(1): 97--120.
-\url{https://doi.org/10.1007/BF00154752}.
+interest groups.''} \emph{Public Choice} 35(1): 97--120. doi:
+\href{https://doi.org/10.1007/BF00154752}{10.1007/BF00154752}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-yiannakis1981}{}}%
 Yiannakis, Diana Evans. 1981. {``The grateful electorate: Casework and
 congressional elections.''} \emph{American Journal of Political Science}
-25(3): 568--580. \url{http://www.jstor.org/stable/2110819}.
+25(3): 568--580. doi:
+\href{https://doi.org/10.2307/2110819}{10.2307/2110819}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-lmtest}{}}%
 Zeileis, Achim, and Torsten Hothorn. 2002. {``Diagnostic checking in
@@ -1525,5 +1530,6 @@ regression relationships.''} \emph{R News} 2(3): 7--10.
 
 
 \newpage
+
 \singlespacing 
 \end{document}

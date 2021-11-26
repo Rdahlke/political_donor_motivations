@@ -7,10 +7,15 @@ $else$
 \usepackage{lmodern}
 $endif$
 
-
   \usepackage[$if(fontenc)$$fontenc$$else$T1$endif$]{fontenc}
   \usepackage[utf8]{inputenc}
 
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newenvironment{CSLReferences}%
+    {\setlength{\parindent}{0pt}%
+    \everypar{\setlength{\hangindent}{\cslhangindent}}\ignorespaces}%
+    {\par}
 
 
 
@@ -88,17 +93,16 @@ $if(anonymous)$$else$\author{$for(author)$\Large $author.name$\vspace{0.05in} \n
 \date{}
 
 \usepackage{titlesec}
-
 \titleformat*{\section}{\normalsize\bfseries}
 \titleformat*{\subsection}{\normalsize\itshape}
 \titleformat*{\subsubsection}{\normalsize\itshape}
 \titleformat*{\paragraph}{\normalsize\itshape}
 \titleformat*{\subparagraph}{\normalsize\itshape}
 
-
 $if(natbib)$
 \usepackage{natbib}
 \bibliographystyle{$if(biblio-style)$$biblio-style$$else$plainnat$endif$}
+\bibliographystyle{/Users/elainesui/Desktop/OAE/politicalDonorMotivations/ajps2.bst}
 \usepackage[strings]{underscore} % protect underscores in most circumstances
 $endif$
 
@@ -112,7 +116,6 @@ $endif$
 $if(listings)$
 \usepackage{listings}
 $endif$
-
 
 \newtheorem{hypothesis}{Hypothesis}
 \usepackage{setspace}
@@ -179,7 +182,6 @@ $endif$
 
 
 \begin{document}
-	
 % \pagenumbering{arabic}% resets `page` counter to 1 
 %$if(appendix)$
 %\renewcommand*{\thepage}{$appendixletter$--\arabic{page}}
@@ -266,6 +268,7 @@ $endif$
 
 
 \newpage
+
 \singlespacing 
 $if(natbib)$
 $if(bibliography)$
@@ -276,6 +279,7 @@ $else$
 \renewcommand\refname{$biblio-title$}
 $endif$
 $endif$
+
 \bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
 
 $endif$

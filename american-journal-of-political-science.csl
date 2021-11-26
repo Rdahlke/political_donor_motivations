@@ -52,6 +52,11 @@
     <choose>
       <if type="legal_case" match="none">
         <choose>
+          <if variable="doi">
+            <group delimiter=" ">
+              <text prefix="doi: " variable="doi"/>
+            </group>
+          </if>
           <if variable="URL">
             <group delimiter=" ">
               <text variable="URL"/>
@@ -63,6 +68,11 @@
                   <date-part name="year"/>
                 </date>
               </group>
+            </group>
+          </if>
+          <if variable="note">
+            <group delimiter=" ">
+              <text variable="note"/>
             </group>
           </if>
         </choose>
@@ -157,7 +167,7 @@
       </group>
     </layout>
   </citation>
-  <bibliography hanging-indent="true" et-al-min="4" et-al-use-first="1" entry-spacing="0">
+  <bibliography hanging-indent="true" et-al-min="10" et-al-use-first="7" entry-spacing="0">
     <sort>
       <key macro="author"/>
       <key variable="title"/>
