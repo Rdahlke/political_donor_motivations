@@ -57,8 +57,7 @@
 \setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
 
 
-\title{Political Donor Motivations and Public Support of Policies: A
-Time-Series Analysis  }
+\title{Revealing Political Donor Motivations  }
  
 
 
@@ -125,8 +124,7 @@ Time-Series Analysis  }
             bookmarks=true,
             pdfauthor={},
              pdfkeywords = {},  
-            pdftitle={Political Donor Motivations and Public Support of
-Policies: A Time-Series Analysis},
+            pdftitle={Revealing Political Donor Motivations},
             colorlinks=true,
             citecolor=blue,
             urlcolor=blue,
@@ -624,26 +622,25 @@ Coalitions and policy topics that are accepted by either \(H_{1a}\) or
 \(H_{1b}\) are in Table 1. The full results of the Granger causality
 tests are visualized in Figure 2.
 
-\begin{longtable}[]{@{}rllrrl@{}}
+\begin{longtable}[]{@{}rllrl@{}}
 \caption{\(H_{1a}\) and \(H_{1b}\) acceptances}\tabularnewline
 \toprule
-coalition & policy topic & model & Lag & F-statistic & p-value \\
+coalition & policy topic & model & F-statistic & p-value \\
 \midrule
 \endfirsthead
 \toprule
-coalition & policy topic & model & Lag & F-statistic & p-value \\
+coalition & policy topic & model & F-statistic & p-value \\
 \midrule
 \endhead
-0 & veterans issues: bipartisan & consumption & 5 & 7.6 &
+0 & veterans issues: bipartisan & consumption & 7.6 & \textless.001 \\
+1 & veterans issues: bipartisan & access & 7.1 & \textless.001 \\
+1 & drug abuse: bipartisan & consumption & 4.5 & \textless.001 \\
+3 & race issues: liberal & access & 6.7 & \textless.001 \\
+4 & guns: conservative & consumption & 6.5 & \textless.001 \\
+6 & abortion and women's issues: conservative & access & 14.2 &
 \textless.001 \\
-1 & veterans issues: bipartisan & access & 7 & 7.1 & \textless.001 \\
-1 & drug abuse: bipartisan & consumption & 7 & 4.5 & \textless.001 \\
-3 & race issues: liberal & access & 4 & 6.7 & \textless.001 \\
-4 & guns: conservative & consumption & 4 & 6.5 & \textless.001 \\
-6 & abortion and women's issues: conservative & access & 2 & 14.2 &
-\textless.001 \\
-7 & drug abuse: bipartisan & consumption & 7 & 5.7 & \textless.001 \\
-11 & infrastructure: liberal & consumption & 7 & 5.8 & \textless.001 \\
+7 & drug abuse: bipartisan & consumption & 5.7 & \textless.001 \\
+11 & infrastructure: liberal & consumption & 5.8 & \textless.001 \\
 \bottomrule
 \end{longtable}
 
@@ -967,65 +964,8 @@ that different donors can fit under different motivational models.
 
 \newpage
 
-\hypertarget{appendix}{%
-\section{Appendix}\label{appendix}}
-
-\begin{longtable}[t]{>{\raggedright\arraybackslash}p{.65in}|>{\raggedright\arraybackslash}p{1in}|>{\raggedright\arraybackslash}p{1in}|>{\raggedright\arraybackslash}p{.7in}|>{\raggedright\arraybackslash}p{2.5in}}
-\caption{\label{tab:unnamed-chunk-6}Social Media Examples}\\
-\hline
-example \# & topic & campaign & social media site & post\\
-\hline
-\endfirsthead
-\caption[]{Social Media Examples \textit{(continued)}}\\
-\hline
-example \# & topic & campaign & social media site & post\\
-\hline
-\endhead
-1 & race issues: liberal & Bowen 4 Action & Twitter & @ JoyAnnReid: \#OscarsSoWhite black people can't even get nominated for the movies about black people...\\
-\hline
-2 & race issues: liberal & Citizens of the 81st for Dave Considine & Twitter & 1 in every 9 African-Americans are disenfranchised because of felony convictions in Wisconsin\\
-\hline
-3 & abortion and women's issues: conservative & Ken Skowronski for Assembly & Facebook & Last night I had a great time at the Wisconsin Right to Life Dinner with my fellow colleagues. I am proud to have supported the bold Pro-Life reforms we have put in place and I will continue to defend the rights of those who cannot defend themselves.\\
-\hline
-4 & abortion and women's issues: conservative & Friends \& Neighbors of Robin Vos & Twitter & An Assembly committee will vote on a bill to ban the sale of aborted children's body parts on Wednesday.\\
-\hline
-5 & abortion and women's issues: conservative & Friends of Chuck Wichgers & Facebook & 'I'm glad to know Chuck, who is a solid conservative. He's shown that he understands the principles that secure our freedom and that he will work for them in office. But more than that, I've seen that he is passionate about the God-given dignity of every human life. He knows that every person's right to live and to live freely comes from a much higher source than government.'PATRICK MCILHERAN, FORMER EDITORIAL WRITER, MILWAUKEE JOURNAL SENTINEL\\
-\hline
-6 & veterans issues: bipartisan & Sanfelippo for Assembly & Twitter & Welcome Home Veterans Initiative seeks to solve veteran homelessness in state:\\
-\hline
-7 & veterans issues: bipartisan & Citizens for Peter Barca & Twitter & Regionalizing Wisconsin's county veterans service offices remains a concern in vet community\\
-\hline
-8 & guns: conservative & Scott Fitzgerald for Senate & Twitter & Thanks to the Wisconsin Game Preserve Association for the honor of their 2015 Legislator of the Year award!\\
-\hline
-9 & guns: conservative & Kremer for Wisconsin & Facebook & This is a fair interview with Frederica Freyberg discussing the 'Campus Carry Act' in Wisconsin.  This aired on public television yesterday morning.\\
-\hline
-10 & infrastructure: liberal & Friends of Jonathan Brostoff & Facebook & Dr. Mark Stout has written a compelling alternative to the \$1.1 billion highway proposal. This option that would save money and provide a brighter, more progressive, more responsible future for our state. If you haven't yet, please take a look and share widely.\\
-\hline
-11 & infrastructure: liberal & Wachs for Assembly & Twitter & WI roads rank 3rd worst in US. Yet Scott Walker isnt ready to put politics aside to solve our infrastructure woes.\\
-\hline
-12 & drug abuse: bipartisan & Michael Schraa for Assembly & Facebook & A great story about the HOPE Agenda and my colleague on Joint Finance, WI State Rep John Nygren's efforts to fight against heroin and opiate addiction.\\
-\hline
-\end{longtable}
-
-\begin{tabular}{l|l|l}
-\hline
-Method & koRpus & stringi\\
-\hline
-Word count & 5293 & 5266\\
-\hline
-Character count & 35477 & 35491\\
-\hline
-Sentence count & 277 & Not available\\
-\hline
-Reading time & 26.5 minutes & 26.3 minutes\\
-\hline
-\end{tabular}
-
-\newpage
-
 \hypertarget{references}{%
-\section*{References}\label{references}}
-\addcontentsline{toc}{section}{References}
+\section{References}\label{references}}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
@@ -1526,6 +1466,60 @@ regression relationships.''} \emph{R News} 2(3): 7--10.
 \url{https://CRAN.R-project.org/doc/Rnews/}.
 
 \end{CSLReferences}
+
+\newpage
+
+\setcounter{page}{1}
+
+\hypertarget{supporting-information}{%
+\section{Supporting Information}\label{supporting-information}}
+
+Contents and page number
+
+\begin{itemize}
+\tightlist
+\item
+  Social Media Examples, 2-5
+\end{itemize}
+
+\newpage
+
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{.65in}|>{\raggedright\arraybackslash}p{1in}|>{\raggedright\arraybackslash}p{1in}|>{\raggedright\arraybackslash}p{.7in}|>{\raggedright\arraybackslash}p{2.5in}}
+\caption{\label{tab:unnamed-chunk-6}Social Media Examples}\\
+\hline
+example \# & topic & campaign & social media site & post\\
+\hline
+\endfirsthead
+\caption[]{Social Media Examples \textit{(continued)}}\\
+\hline
+example \# & topic & campaign & social media site & post\\
+\hline
+\endhead
+1 & race issues: liberal & Bowen 4 Action & Twitter & @ JoyAnnReid: \#OscarsSoWhite black people can't even get nominated for the movies about black people...\\
+\hline
+2 & race issues: liberal & Citizens of the 81st for Dave Considine & Twitter & 1 in every 9 African-Americans are disenfranchised because of felony convictions in Wisconsin\\
+\hline
+3 & abortion and women's issues: conservative & Ken Skowronski for Assembly & Facebook & Last night I had a great time at the Wisconsin Right to Life Dinner with my fellow colleagues. I am proud to have supported the bold Pro-Life reforms we have put in place and I will continue to defend the rights of those who cannot defend themselves.\\
+\hline
+4 & abortion and women's issues: conservative & Friends \& Neighbors of Robin Vos & Twitter & An Assembly committee will vote on a bill to ban the sale of aborted children's body parts on Wednesday.\\
+\hline
+5 & abortion and women's issues: conservative & Friends of Chuck Wichgers & Facebook & 'I'm glad to know Chuck, who is a solid conservative. He's shown that he understands the principles that secure our freedom and that he will work for them in office. But more than that, I've seen that he is passionate about the God-given dignity of every human life. He knows that every person's right to live and to live freely comes from a much higher source than government.'PATRICK MCILHERAN, FORMER EDITORIAL WRITER, MILWAUKEE JOURNAL SENTINEL\\
+\hline
+6 & veterans issues: bipartisan & Sanfelippo for Assembly & Twitter & Welcome Home Veterans Initiative seeks to solve veteran homelessness in state:\\
+\hline
+7 & veterans issues: bipartisan & Citizens for Peter Barca & Twitter & Regionalizing Wisconsin's county veterans service offices remains a concern in vet community\\
+\hline
+8 & guns: conservative & Scott Fitzgerald for Senate & Twitter & Thanks to the Wisconsin Game Preserve Association for the honor of their 2015 Legislator of the Year award!\\
+\hline
+9 & guns: conservative & Kremer for Wisconsin & Facebook & This is a fair interview with Frederica Freyberg discussing the 'Campus Carry Act' in Wisconsin.  This aired on public television yesterday morning.\\
+\hline
+10 & infrastructure: liberal & Friends of Jonathan Brostoff & Facebook & Dr. Mark Stout has written a compelling alternative to the \$1.1 billion highway proposal. This option that would save money and provide a brighter, more progressive, more responsible future for our state. If you haven't yet, please take a look and share widely.\\
+\hline
+11 & infrastructure: liberal & Wachs for Assembly & Twitter & WI roads rank 3rd worst in US. Yet Scott Walker isnt ready to put politics aside to solve our infrastructure woes.\\
+\hline
+12 & drug abuse: bipartisan & Michael Schraa for Assembly & Facebook & A great story about the HOPE Agenda and my colleague on Joint Finance, WI State Rep John Nygren's efforts to fight against heroin and opiate addiction.\\
+\hline
+\end{longtable}
 
 
 

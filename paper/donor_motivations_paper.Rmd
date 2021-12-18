@@ -7,7 +7,7 @@ output:
     template: ../svm-latex-ms.tex
 #  word_document:
 #always_allow_html: yes
-title: "Political Donor Motivations and Public Support of Policies: A Time-Series Analysis"
+title: "Revealing Political Donor Motivations"
 abstract: "The two predominant theories of political donor motivations are the access-oriented model and the consumption model. This paper combines political donation records and social media posts from politicians to examine behaviors predicted by these two theories using a time-series methodology. The access-oriented model of donors predicts that donations from specific groups of donors will precede public support of certain policies. The consumption model predicts that donations from various groups of donors will lag in response to public support of certain policy issues. This paper statistically derives coalitions of similar donors and tests the competing models of political donor motivations. While past research has treated each model monolithically, presuming that all donors operate under one model or the other, I find evidence of both motivational models in different donors. (Word Count: 5293)"
 keywords: ""
 date: "`r format(Sys.time(), '%B %d, %Y')`"
@@ -117,7 +117,8 @@ read_csv("../data/granger_results.csv") %>%
   filter(result != "no relationship") %>% 
   mutate(f_statistic = round(f_statistic, 1),
          p_value = if_else(p_value < .001, "<.001", as.character(p_value))) %>% 
-  knitr::kable(col.names = c("coalition", "policy topic", "model", "Lag", "F-statistic", "p-value"),
+  select(-lag) %>% 
+  knitr::kable(col.names = c("coalition", "policy topic", "model", "F-statistic", "p-value"),
              caption = "$H_{1a}$ and $H_{1b}$ acceptances")
 ```
 
@@ -223,7 +224,22 @@ Campaign finance scholars are divided on the motivations of political donors. Do
 
 \newpage
 
-# Appendix
+# References
+
+<div id="refs"></div>
+
+\newpage
+
+\setcounter{page}{1}
+
+# Supporting Information
+
+Contents and page number
+
+  - Social Media Examples, 2-5
+  
+\newpage
+
 
 ```{r echo = F, include = T}
 tibble::tibble("example #" = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"),
@@ -240,11 +256,3 @@ tibble::tibble("example #" = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10"
   kableExtra::column_spec(5, width = "2.5in") %>% 
   kableExtra::kable_styling(latex_options =c("repeat_header"))
 ```
-
-```{r include = T}
-wordcountaddin:::text_stats()
-```
-
-\newpage
-
-# References
